@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "rtm-aktu-site",
+      "runtimeExecutable": "powershell.exe",
+      "runtimeArgs": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:\\Users\\Kazi Rejaul Alam\\AppData\\Local\\Temp\\claude\\E--0000-Claude-Code---RTM-AKTU\\8461f492-603e-425b-8c65-85964f7d3ad4\\scratchpad\\static-server.ps1"
+      ],
+      "port": 8843
+    }
+  ]
+}
