@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobileNav();
   initStickyHeader();
   initScrollSpy();
+  initHeroSlider();
   renderGallery();
   initSlider({
     trackId: 'galleryTrack',
@@ -93,6 +94,176 @@ function initScrollSpy() {
   }, { rootMargin: '-45% 0px -50% 0px' });
 
   sections.forEach((section) => observer.observe(section));
+}
+
+// ------------------------------------------------------------------
+// Hero: slides are generated from this list, so the hero can be
+// changed just by editing this array — no HTML markup to duplicate.
+//
+// Each slide is entirely optional field-by-field (pillLabel, heading,
+// subText, buttons, showSeal) — only what's present gets rendered.
+// verticalPosition: 'top' | 'center' | 'bottom' — where the content
+// block sits within the hero area; defaults to 'center' if omitted.
+// 1 slide in the array = static hero (no rotation, no dots).
+// 2+ slides = auto-rotating carousel with dot indicators.
+// ------------------------------------------------------------------
+const heroSlides = [
+  {
+    backgroundImage: 'images/hero/slide-1.jpg',
+    pillLabel: 'SYLHET &middot; BANGLADESH &middot; EST. 2020',
+    heading: [
+      { text: 'Shaping The Future Through', color: 'white', breakAfter: true },
+      { text: 'Education', color: 'gold' },
+      { text: ' and ', color: 'white' },
+      { text: 'Innovation', color: 'gold' },
+    ],
+    subText: "RTM Al-Kabir Technical University delivers world-class technical education through experienced faculty, modern learning facilities, and an industry-focused curriculum built for tomorrow's engineers and leaders.",
+    showSeal: true,
+    buttons: [
+      { text: 'Explore Programs', style: 'primary', href: '#programs' },
+      { text: 'Virtual Campus Tour', style: 'outline', href: '#campus-life' },
+    ],
+  },
+  {
+    backgroundImage: 'images/hero/slide-2.jpg',
+    heading: [
+      { text: 'Admissions Open for', color: 'white', breakAfter: true },
+      { text: 'Fall 2026', color: 'gold' },
+    ],
+    showSeal: false,
+    buttons: [
+      { text: 'Apply Now', style: 'primary', href: 'pages/admissions.html' },
+    ],
+  },
+  {
+    backgroundImage: 'images/hero/slide-3.jpg',
+    pillLabel: 'SCHOLARSHIPS &middot; FINANCIAL AID',
+    heading: [
+      { text: 'Merit Scholarships Up To', color: 'white', breakAfter: true },
+      { text: '100% Tuition', color: 'gold' },
+    ],
+    subText: 'We reward academic excellence and support talented students from every background with need-based and merit scholarships across all faculties.',
+    showSeal: true,
+  },
+];
+
+function renderHeroSlide(slide, index) {
+  const { backgroundImage, pillLabel, heading, subText, showSeal, buttons, verticalPosition } = slide;
+  const position = verticalPosition || 'center';
+
+  const pillHtml = pillLabel
+    ? `<p class="pill pill--light"><img src="images/icons/student-cap.png" alt="" class="pill__icon">${pillLabel}</p>`
+    : '';
+
+  const headingHtml = heading && heading.length
+    ? `<h1 class="hero__title">${heading
+        .map(({ text, color, breakAfter }) => {
+          const segment = color === 'gold' ? `<span class="text-gold">${text}</span>` : text;
+          return breakAfter ? `${segment}<br>` : segment;
+        })
+        .join('')}</h1>`
+    : '';
+
+  const subTextHtml = subText ? `<p class="hero__subtitle">${subText}</p>` : '';
+
+  const buttonsHtml = buttons && buttons.length
+    ? `<div class="hero__actions">${buttons
+        .map(({ text, style, href }) => {
+          const cls = style === 'primary' ? 'btn btn-primary' : 'btn btn-outline btn-outline--light';
+          return `<a href="${href}" class="${cls}">${text}</a>`;
+        })
+        .join('')}</div>`
+    : '';
+
+  const sealPathId = `sealCirclePath-${index}`;
+  const sealHtml = showSeal
+    ? `<div class="hero__seal" aria-hidden="true">
+        <svg viewBox="0 0 210 210" class="hero__seal-rotate">
+          <defs>
+            <path id="${sealPathId}" d="M 105,105 m -85,0 a 85,85 0 1,1 170,0 a 85,85 0 1,1 -170,0" />
+          </defs>
+          <text fill="#FFFFFF" font-size="11" letter-spacing="2" font-family="Inter, sans-serif">
+            <textPath href="#${sealPathId}">RTM AL-KABIR TECHNICAL UNIVERSITY &middot; SYLHET &middot; RTM AL-KABIR TECHNICAL UNIVERSITY &middot; SYLHET &middot;</textPath>
+          </text>
+        </svg>
+        <img src="images/Logo-Seal.png" alt="" class="hero__seal-logo">
+      </div>`
+    : '';
+
+  return `
+    <div class="hero__slide" style="background-image: url('${backgroundImage}');">
+      <div class="hero__overlay"></div>
+      <div class="hero__inner">
+        <div class="hero__content hero__content--${position}">
+          ${pillHtml}
+          ${headingHtml}
+          ${subTextHtml}
+          ${buttonsHtml}
+        </div>
+        ${sealHtml}
+      </div>
+    </div>`;
+}
+
+function initHeroSlider() {
+  const slidesWrap = document.getElementById('heroSlides');
+  const dotsWrap = document.getElementById('heroDots');
+  const heroSection = document.getElementById('home');
+  if (!slidesWrap || !dotsWrap || !heroSection || !heroSlides.length) return;
+
+  slidesWrap.innerHTML = heroSlides.map(renderHeroSlide).join('');
+  const slideEls = Array.from(slidesWrap.querySelectorAll('.hero__slide'));
+
+  const isMultiSlide = heroSlides.length > 1;
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const rotationEnabled = isMultiSlide && !prefersReducedMotion;
+
+  let dots = [];
+  if (isMultiSlide) {
+    dotsWrap.innerHTML = heroSlides
+      .map((_, i) => `<button type="button" class="hero__dot" role="tab" aria-label="Go to slide ${i + 1}"></button>`)
+      .join('');
+    dots = Array.from(dotsWrap.children);
+  }
+
+  let activeIndex = 0;
+  let timer = null;
+
+  const setActive = (index) => {
+    activeIndex = index;
+    slideEls.forEach((el, i) => el.classList.toggle('is-active', i === index));
+    dots.forEach((dot, i) => dot.classList.toggle('is-active', i === index));
+  };
+
+  const goTo = (index) => setActive((index + heroSlides.length) % heroSlides.length);
+
+  const startTimer = () => {
+    if (!rotationEnabled) return;
+    timer = window.setInterval(() => goTo(activeIndex + 1), 7000);
+  };
+
+  const stopTimer = () => {
+    if (timer) {
+      clearInterval(timer);
+      timer = null;
+    }
+  };
+
+  dots.forEach((dot, i) => {
+    dot.addEventListener('click', () => {
+      goTo(i);
+      stopTimer();
+      startTimer();
+    });
+  });
+
+  if (rotationEnabled) {
+    heroSection.addEventListener('mouseenter', stopTimer);
+    heroSection.addEventListener('mouseleave', startTimer);
+  }
+
+  setActive(0);
+  startTimer();
 }
 
 // ------------------------------------------------------------------

@@ -88,32 +88,12 @@
 
     <!-- ============================================================
          3. HERO SECTION
+         Slides are generated from the `heroSlides` array in script.js —
+         1 slide renders as a static hero, 2+ slides auto-rotate.
     ============================================================ -->
-    <section class="hero" id="home" style="background-image: url('images/hero-bg.jpg');">
-      <div class="hero__overlay"></div>
-      <div class="hero__inner">
-        <div class="hero__content">
-          <p class="pill pill--light"><img src="images/icons/student-cap.png" alt="" class="pill__icon">SYLHET &middot; BANGLADESH &middot; EST. 2020</p>
-          <h1 class="hero__title">Shaping The Future Through<br><span class="text-gold">Education</span> and <span class="text-gold">Innovation</span></h1>
-          <p class="hero__subtitle">RTM Al-Kabir Technical University delivers world-class technical education through experienced faculty, modern learning facilities, and an industry-focused curriculum built for tomorrow's engineers and leaders.</p>
-          <div class="hero__actions">
-            <a href="#programs" class="btn btn-primary">Explore Programs</a>
-            <a href="#campus-life" class="btn btn-outline btn-outline--light">Virtual Campus Tour</a>
-          </div>
-        </div>
-
-        <div class="hero__seal" aria-hidden="true">
-          <svg viewBox="0 0 210 210" class="hero__seal-rotate">
-            <defs>
-              <path id="sealCirclePath" d="M 105,105 m -85,0 a 85,85 0 1,1 170,0 a 85,85 0 1,1 -170,0" />
-            </defs>
-            <text fill="#FFFFFF" font-size="11" letter-spacing="2" font-family="Inter, sans-serif">
-              <textPath href="#sealCirclePath">RTM AL-KABIR TECHNICAL UNIVERSITY &middot; SYLHET &middot; RTM AL-KABIR TECHNICAL UNIVERSITY &middot; SYLHET &middot;</textPath>
-            </text>
-          </svg>
-          <img src="images/Logo-Seal.png" alt="" class="hero__seal-logo">
-        </div>
-      </div>
+    <section class="hero" id="home">
+      <div class="hero__slides" id="heroSlides"></div>
+      <div class="hero__dots" id="heroDots" role="tablist" aria-label="Hero slides"></div>
     </section>
 
     <!-- ============================================================
