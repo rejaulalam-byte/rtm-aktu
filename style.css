@@ -3640,7 +3640,11 @@ button {
 }
 
 /* ==========================================================================
-   22. Chancellor's Message Page
+   22. Leadership Message Pages (shared "cm-" template)
+   Standing template for every homepage-linked detail page in this family
+   (Chancellor's Message, Chairman's Message, and future pages like VC's
+   Message) — compact hero, sidebar quick-links card, capped photo/bio
+   column, quote banner. Reused verbatim across pages; only content differs.
    ========================================================================== */
 
 /* --- Sidebar + photo/bio two-column layout --- */
@@ -3762,4 +3766,23 @@ button {
   aspect-ratio: 840 / 435;
   border-radius: 10px;
   margin-bottom: 3rem;
+}
+
+/* --- Bold centered italic pull-quote, directly under the photo on
+   letter-style message pages (e.g. Chairman's Message) --- */
+.cm-pull-quote {
+  font-weight: 700;
+  font-style: italic;
+  text-align: center;
+  color: var(--color-navy);
+  font-size: 1.05rem;
+  line-height: 1.65;
+  margin-bottom: 1.75rem;
+}
+
+/* --- Closing signature block on letter-style message pages: bold name,
+   then plain title/org lines --- */
+.cm-signature__name {
+  font-weight: 700;
+  color: var(--color-navy);
 }
