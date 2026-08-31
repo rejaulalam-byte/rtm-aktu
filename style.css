@@ -3677,8 +3677,28 @@ button {
 .cm-sidebar__heading {
   position: relative;
   font-size: 1.15rem;
-  padding-bottom: 0.85rem;
+  padding-bottom: 18.6px;
   margin-bottom: 1.5rem;
+}
+
+/* Two-part underline, fully content-driven (no widths hardcoded to the
+   current wording) so it keeps working if this heading's text is ever
+   edited (e.g. from a future admin panel):
+   - The bold segment is a border-bottom on the first word's own <span> —
+     borders on inline elements always hug the exact rendered width of
+     their content, so it automatically matches whatever the first word is.
+   - The thin segment is a full-width ::after on the heading. The heading
+     is a block-level child of .cm-sidebar with no width of its own, so it
+     already spans exactly the sidebar's inner (padded) content width — the
+     same right boundary as the .cm-sidebar__link rows below it. width:100%
+     matches that boundary; it intentionally does NOT add extra width
+     beyond it (that would overshoot past the link rows to the sidebar
+     box's outer edge). Both segments sit at the same "bottom: 0" of the
+     heading box as the span's border, so they read as one continuous line
+     that tapers in thickness rather than two disconnected bars. */
+.cm-sidebar__heading-word1 {
+  padding-bottom: 0.85rem;
+  border-bottom: 4px solid var(--color-gold);
 }
 
 .cm-sidebar__heading::after {
@@ -3686,9 +3706,8 @@ button {
   position: absolute;
   left: 0;
   bottom: 0;
-  width: 46px;
-  height: 3px;
-  border-radius: 999px;
+  width: 100%;
+  height: 1px;
   background-color: var(--color-gold);
 }
 
@@ -3735,10 +3754,12 @@ button {
 /* --- Chancellor photo (reuses .img-ph / .split-section__image, just needs
    spacing since it stacks above the bio text instead of sitting beside it,
    plus a flatter 3:2 aspect ratio instead of .split-section__image's default
-   4:3 — same source-order specificity as that shared class, so this wins).
+   4:3, and a smaller radius than that class's --radius-lg — same source-order
+   specificity as that shared class, so these win).
    .img-ph img already sets object-fit: cover, so the photo fills the shorter
    frame without distortion. --- */
 .cm-photo {
-  aspect-ratio: 840 / 410;
-  margin-bottom: 1.75rem;
+  aspect-ratio: 840 / 435;
+  border-radius: 10px;
+  margin-bottom: 3rem;
 }
