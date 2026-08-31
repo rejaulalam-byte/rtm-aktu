@@ -788,6 +788,17 @@ button {
   color: var(--color-red);
 }
 
+/* Whole-card link variant (Chancellor card): reset anchor defaults so the
+   <a> picks up the exact same box styling/hover lift as .leader-card. */
+.leader-card--link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.leader-card--link:hover .leader-card__link {
+  color: var(--color-red);
+}
+
 /* ==========================================================================
    5. About The University
    ========================================================================== */
@@ -3626,4 +3637,93 @@ button {
     left: auto;
     max-width: 180px;
   }
+}
+
+/* ==========================================================================
+   22. Chancellor's Message Page
+   ========================================================================== */
+
+/* --- Sidebar + photo/bio two-column layout --- */
+.cm-layout {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+@media (max-width: 860px) {
+  .cm-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --- "University Inside" quick-links card --- */
+.cm-sidebar {
+  background-color: var(--color-bg-light);
+  border-radius: var(--radius-md);
+  padding: 1.75rem 1.5rem;
+}
+
+.cm-sidebar__heading {
+  position: relative;
+  font-size: 1.15rem;
+  padding-bottom: 0.85rem;
+  margin-bottom: 1.5rem;
+}
+
+.cm-sidebar__heading::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 46px;
+  height: 3px;
+  border-radius: 999px;
+  background-color: var(--color-gold);
+}
+
+.cm-sidebar__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.cm-sidebar__link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.85rem 1.1rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(12, 35, 80, 0.14);
+  background-color: var(--color-white);
+  color: var(--color-navy);
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.cm-sidebar__link-arrow {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  color: var(--color-gold);
+  transition: transform 0.2s ease;
+}
+
+.cm-sidebar__link:hover {
+  background-color: rgba(201, 162, 39, 0.1);
+  border-color: var(--color-gold);
+  transform: translateX(3px);
+}
+
+.cm-sidebar__link:hover .cm-sidebar__link-arrow {
+  transform: translate(2px, -2px);
+}
+
+/* --- Chancellor photo (reuses .img-ph / .split-section__image, just needs
+   spacing since it stacks above the bio text instead of sitting beside it) --- */
+.cm-photo {
+  margin-bottom: 1.75rem;
 }
