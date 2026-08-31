@@ -3657,6 +3657,16 @@ button {
   }
 }
 
+/* Cap the photo/bio column at ~2.8x the sidebar's 300px width (reference
+   design measurement) instead of letting the 1fr track stretch it edge to
+   edge. justify-self keeps it pinned left so the leftover track space reads
+   as genuine whitespace rather than being filled. Below 860px the layout
+   drops to a single 1fr column (see above), where this cap has no effect. */
+.cm-content {
+  max-width: 840px;
+  justify-self: start;
+}
+
 /* --- "University Inside" quick-links card --- */
 .cm-sidebar {
   background-color: var(--color-bg-light);
@@ -3723,7 +3733,12 @@ button {
 }
 
 /* --- Chancellor photo (reuses .img-ph / .split-section__image, just needs
-   spacing since it stacks above the bio text instead of sitting beside it) --- */
+   spacing since it stacks above the bio text instead of sitting beside it,
+   plus a flatter 3:2 aspect ratio instead of .split-section__image's default
+   4:3 — same source-order specificity as that shared class, so this wins).
+   .img-ph img already sets object-fit: cover, so the photo fills the shorter
+   frame without distortion. --- */
 .cm-photo {
+  aspect-ratio: 840 / 410;
   margin-bottom: 1.75rem;
 }
