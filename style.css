@@ -1067,13 +1067,20 @@ button {
   }
 }
 
+/* Compact program card: the outer <a> (the whole card is clickable) supplies
+   a light-background "frame" padding; .program-card__inner is the white
+   bordered card sitting inside it, holding the icon badge, title,
+   description, and View Details button. Shared between this auto-scrolling
+   carousel and the Featured Programs page's .program-card-grid, so sizing/
+   hover behavior lives once. Roughly 344x429px per the reference design. */
 .program-card {
-  flex: 0 0 340px;
-  padding: 2.25rem;
+  display: block;
+  flex: 0 0 344px;
+  width: 100%;
+  max-width: 344px;
+  padding: 0.9rem;
   border-radius: var(--radius-md);
-  border: 1px solid #eef0f3;
-  border-top: 4px solid var(--color-gold);
-  background-color: var(--color-white);
+  background-color: var(--color-bg-light);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
@@ -1082,40 +1089,90 @@ button {
   box-shadow: var(--shadow-card);
 }
 
+.program-card__inner {
+  height: 100%;
+  min-height: 340px;
+  padding: 2rem 1.5rem;
+  border-radius: calc(var(--radius-md) - 4px);
+  border: 1px solid #eef0f3;
+  background-color: var(--color-white);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.program-card__icon {
+  width: 64px;
+  height: 64px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-navy);
+  margin-bottom: 1.25rem;
+}
+
+.program-card__icon svg {
+  width: 64px;
+  height: 64px;
+}
+
+/* Each badge holds a shared program icon (images/programs/icons/*, reused
+   identically here and in the homepage carousel) via the site's standard
+   .img-ph placeholder mechanism. The icon fills the full 64px badge space
+   with no background shape behind it. The descendant-selector scoping
+   below (rather than a dedicated modifier class) is why plain .img-ph
+   markup works here unchanged; there's no room for the fallback's usual
+   "Image Coming Soon" label at this size, so that markup is simply omitted
+   rather than hidden. The fallback svg needs its own explicit size here
+   (.img-ph__fallback svg's base 40px and .program-card__icon svg's 64px
+   above tie on specificity, so this can't rely on either winning). */
+.program-card__icon .img-ph {
+  width: 64px;
+  height: 64px;
+  background-color: transparent;
+}
+
+.program-card__icon .img-ph img {
+  object-fit: contain;
+}
+
+.program-card__icon .img-ph__fallback {
+  padding: 0;
+}
+
+.program-card__icon .img-ph__fallback svg {
+  width: 48px;
+  height: 48px;
+}
+
 .program-card__title {
-  font-size: 1.2rem;
-  margin-bottom: 0.85rem;
+  font-size: 1.05rem;
+  margin-bottom: 0.75rem;
 }
 
 .program-card__desc {
   color: var(--color-text-muted);
-  font-size: 1rem;
-  margin-bottom: 1.25rem;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
 }
 
-.program-card__link {
-  color: var(--color-navy);
-  font-weight: 600;
-  font-size: 0.95rem;
-  transition: color 0.2s ease;
-}
-
-.program-card__link:hover {
-  color: var(--color-red);
+.program-card__inner .btn {
+  margin-top: auto;
+  padding: 0.6rem 1.4rem;
+  font-size: 0.85rem;
 }
 
 @media (max-width: 560px) {
   .program-card {
     flex-basis: 280px;
-    padding: 1.75rem;
+    max-width: 280px;
   }
 
-  .program-card__title {
-    font-size: 1.05rem;
-  }
-
-  .program-card__desc {
-    font-size: 0.9rem;
+  .program-card__inner {
+    min-height: 0;
+    padding: 1.5rem 1.25rem;
   }
 }
 
@@ -3923,4 +3980,59 @@ button {
 .faculty-card--link {
   text-decoration: none;
   color: inherit;
+}
+
+/* ==========================================================================
+   24. Featured Programs Page
+   ========================================================================== */
+
+/* Department heading above each .program-card-grid. Reuses the same
+   thick+thin two-segment gold underline as "Univet Inside"
+   (.cm-sidebar__heading) but with different proportions: there the thick
+   segment covers only the first word; here it covers the FULL heading text
+   via a wrapping inline span (borders on inline elements hug their content's
+   exact rendered width, so this keeps working if the wording changes), and
+   the thin segment - a content-width ::after on the heading itself - picks
+   up right after it and continues to the end of the .cm-content column. */
+.fp-dept-heading {
+  position: relative;
+  font-size: 1.35rem;
+  padding-bottom: 1.05rem;
+  margin: 3rem 0 1.75rem;
+}
+
+.fp-dept-heading:first-of-type {
+  margin-top: 2rem;
+}
+
+.fp-dept-heading__text {
+  padding-bottom: 0.85rem;
+  border-bottom: 4px solid var(--color-gold);
+}
+
+.fp-dept-heading::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-gold);
+}
+
+/* Same left-aligned wrap principle as .dept-programs-grid (an odd card out
+   sits in column 1 at its own natural width, never centered or stretched)
+   but sized for the smaller .program-card component instead. */
+.program-card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  justify-items: start;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 640px) {
+  .program-card-grid {
+    grid-template-columns: 1fr;
+  }
 }
