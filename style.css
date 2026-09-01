@@ -2558,6 +2558,28 @@ button {
   line-height: 1.8;
 }
 
+/* Chancellor/Chairman/VC message pages: this quote's second line is long
+   enough that the shared clamp() above still wraps it onto a 3rd line from
+   tablet width up. Override font-size only for this quote (not the shared
+   base, which other pages' quote banners rely on) so it fits in one line
+   from 768px up. No legible size fits it on phone-width screens, so below
+   768px it's left to wrap naturally onto 3 lines instead of 1. */
+@media (min-width: 768px) {
+  .quote-banner__text--pledge {
+    font-size: clamp(1.25rem, calc((100vw - 48px) * 0.0285), 1.75rem);
+  }
+}
+
+/* Below 768px the shared clamp()'s 1.5rem floor is still too large for this
+   quote's long second line — it wraps onto 5 lines instead of 3. Scale it
+   down (tested at 320-767px) so phones land on the same 3-line wrap the
+   tablet/desktop rule's un-overridden fallback was meant to give. */
+@media (max-width: 767px) {
+  .quote-banner__text--pledge {
+    font-size: clamp(0.75rem, calc((100vw - 48px) * 0.046), 1.25rem);
+  }
+}
+
 /* ==========================================================================
    18. Academics Page
    ========================================================================== */
