@@ -1062,7 +1062,7 @@ button {
     -webkit-overflow-scrolling: touch;
   }
 
-  .programs__track > .program-card:nth-child(n + 9) {
+  .programs__track > .program-card:nth-child(n + 11) {
     display: none;
   }
 }
