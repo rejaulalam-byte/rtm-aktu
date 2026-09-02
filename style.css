@@ -28,6 +28,21 @@
   --shadow-card: 0 10px 30px rgba(12, 35, 80, 0.08);
 }
 
+/* === Advertisement Banner Background Config ===
+   Change these two values to switch the "Scholarship Programs" banner
+   (Home, About Us, Academics, Admissions, Leadership & Management,
+   International Applicants) between its default gradient and a
+   background image. Edited here once, it updates all pages at once.
+   --ad-banner-bg-color is a plain solid color (CSS background-color
+   cannot hold a gradient) — it shows through as a fallback/backdrop.
+   --ad-banner-bg-image holds the actual gradient or photo; set it to
+   url('images/ads/scholarship-banner-bg.jpg') to switch to an image.
+   TODO: wire this to the admin panel once it's built. */
+:root {
+  --ad-banner-bg-color: #0a2e30;
+  --ad-banner-bg-image: linear-gradient(120deg, #0d3b3f 0%, #0a2e30 100%);
+}
+
 /* ==========================================================================
    Reset & Base
    ========================================================================== */
@@ -1186,7 +1201,10 @@ button {
    ========================================================================== */
 
 .scholarship {
-  background: linear-gradient(120deg, #0d3b3f 0%, #0a2e30 100%);
+  background-color: var(--ad-banner-bg-color);
+  background-image: var(--ad-banner-bg-image);
+  background-size: cover;
+  background-position: center;
 }
 
 .scholarship__inner {
