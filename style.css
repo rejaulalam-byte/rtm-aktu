@@ -3865,6 +3865,13 @@ button {
   margin-bottom: 3rem;
 }
 
+/* About the University page: the embedded map (reusing Contact page's
+   .cp-map treatment) sits directly under the social icons with no heading
+   above it to supply spacing, so give it its own top margin here. */
+.cm-content__map {
+  margin-top: 2rem;
+}
+
 /* --- Bold centered italic pull-quote, directly under the photo on
    letter-style message pages (e.g. Chairman's Message) --- */
 .cm-pull-quote {
