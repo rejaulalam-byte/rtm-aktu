@@ -2490,6 +2490,7 @@ button {
   background: linear-gradient(160deg, var(--color-navy) 0%, var(--color-navy-light) 100%);
   border-radius: var(--radius-lg);
   padding: 2.5rem;
+  margin-top: calc(2.9rem + 5px);
 }
 
 .contact-card__title {
@@ -2752,6 +2753,23 @@ button {
 
 .text-section__text--center {
   text-align: center;
+}
+
+.text-section__subheading {
+  font-size: 1.2rem;
+  margin: 0.5rem 0 0.9rem;
+}
+
+.text-section__list {
+  color: var(--color-text-muted);
+  margin: 0 0 1.1rem 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.text-section__list li {
+  list-style: disc;
 }
 
 .text-section__inner .btn {
@@ -3484,6 +3502,12 @@ button {
   max-width: 620px;
 }
 
+/* Widens the About Us page's instance so the copy wraps to 2 lines by
+   default (3 for longer copy) instead of wrapping early at 520px. */
+.au-scholarship--wide .scholarship__text {
+  max-width: 680px;
+}
+
 /* --- Contact Us icon row --- */
 .lm-contact-icons {
   display: flex;
@@ -3865,11 +3889,80 @@ button {
   margin-bottom: 3rem;
 }
 
-/* About the University page: the embedded map (reusing Contact page's
-   .cp-map treatment) sits directly under the social icons with no heading
-   above it to supply spacing, so give it its own top margin here. */
-.cm-content__map {
-  margin-top: 2rem;
+/* About the University page: the 9 feature sections and the relocated
+   social/map block below the intro need to line up with the intro
+   paragraph's column, which is narrower than full page width because it
+   shares .cm-layout's grid with the sidebar (300px + 3rem gap). Reusing
+   .cm-layout here (with an empty first track standing in for the
+   sidebar's width) reproduces that exact offset and its 860px collapse
+   breakpoint. .auniv-feature-col is a dedicated class rather than
+   reusing .cm-content itself, because a later, unrelated rule
+   (.cm-content .section-heading__title) would otherwise override this
+   layout's split-section heading spacing. width:100% (not just
+   max-width) matters here: without it, justify-self:start sizes the
+   item to its content's fit-content width, so narrower content (the
+   social icons + map, which don't need the full 840px) would end up
+   narrower than the sections whose content is wide enough to hit the
+   cap on its own — breaking the shared left/right alignment this is
+   meant to guarantee. */
+.auniv-feature-col {
+  grid-column: 2;
+  width: 100%;
+  max-width: 840px;
+  justify-self: start;
+}
+
+@media (max-width: 860px) {
+  .auniv-feature-col {
+    grid-column: 1;
+  }
+}
+
+/* .split-section__grid already sets align-items:center sitewide, so the
+   9 feature rows' text is already vertically centered against their
+   image (verified: 0px center-offset on every row). This scoped rule
+   just pins that intent explicitly for this page, so it can't silently
+   drift if the shared .split-section__grid rule ever changes elsewhere
+   on the site. */
+.auniv-feature-col .split-section__grid {
+  align-items: center;
+}
+
+/* The 9 feature sections (and the relocated social/map block) previously
+   sat in their own <section> elements using the sitewide bg-white/bg-light
+   alternating rhythm, which reads as separate cards. They should instead
+   read as one continuous column, so this removes their background (no
+   background-color is set - they just show the page's base white).
+   .section-inner's vertical padding is tightened from the sitewide 5rem
+   down to 22.2px top and bottom, so two adjacent .auniv-feature-section
+   elements sum to a 44.4px gap between them - the deliberately-chosen
+   uniform transition size for this page (half the original intro-to-
+   first-section gap), applied consistently everywhere below, including
+   the intro/sidebar section's bottom padding (see .auniv-intro-section)
+   so the intro-to-first-feature transition matches too. Horizontal
+   padding is untouched. */
+.auniv-feature-section .section-inner {
+  padding-top: 22.2px;
+  padding-bottom: 22.2px;
+}
+
+/* Bottom padding only, on the intro/sidebar section (keeps its top
+   padding, i.e. the gap below the page hero, untouched) - brought down
+   to the same 22.2px per-side value as .auniv-feature-section so the
+   intro-to-first-feature-section gap matches the uniform 44.4px used
+   for every other transition on this page. */
+.auniv-intro-section .section-inner {
+  padding-bottom: 22.2px;
+}
+
+/* The base .section-heading__title clamp (36px at desktop widths) is
+   sized for full section openers elsewhere on the site; inside this
+   page's narrower 840px column it reads oversized next to the ~16px
+   body paragraph. Scoped to .auniv-feature-col only, so headings that
+   share the same base class everywhere else (academics.html and
+   friends) are unaffected. */
+.auniv-feature-col .section-heading__title {
+  font-size: 25px;
 }
 
 /* --- Bold centered italic pull-quote, directly under the photo on
