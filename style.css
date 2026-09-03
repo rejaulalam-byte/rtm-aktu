@@ -3889,80 +3889,84 @@ button {
   margin-bottom: 3rem;
 }
 
-/* About the University page: the 9 feature sections and the relocated
-   social/map block below the intro need to line up with the intro
-   paragraph's column, which is narrower than full page width because it
-   shares .cm-layout's grid with the sidebar (300px + 3rem gap). Reusing
-   .cm-layout here (with an empty first track standing in for the
-   sidebar's width) reproduces that exact offset and its 860px collapse
-   breakpoint. .auniv-feature-col is a dedicated class rather than
-   reusing .cm-content itself, because a later, unrelated rule
-   (.cm-content .section-heading__title) would otherwise override this
-   layout's split-section heading spacing. width:100% (not just
-   max-width) matters here: without it, justify-self:start sizes the
-   item to its content's fit-content width, so narrower content (the
-   social icons + map, which don't need the full 840px) would end up
-   narrower than the sections whose content is wide enough to hit the
-   cap on its own — breaking the shared left/right alignment this is
-   meant to guarantee. */
-.auniv-feature-col {
-  grid-column: 2;
-  width: 100%;
-  max-width: 840px;
-  justify-self: start;
+/* About the University page: the embedded map (reusing Contact page's
+   .cp-map treatment) sits directly under the social icons with no heading
+   above it to supply spacing, so give it its own top margin here. */
+.cm-content__map {
+  margin-top: 2rem;
 }
 
-@media (max-width: 860px) {
-  .auniv-feature-col {
-    grid-column: 1;
-  }
+/* About RTM-AKTU page intro heading: the intro block now sits directly in
+   plain .section-inner (matching the 9 feature rows' container below it,
+   so their left/right edges line up), rather than the narrower centered
+   .text-section__inner. That container itself is left-aligned by default,
+   so this centers just the heading text explicitly. */
+.rtm-intro-heading {
+  text-align: center;
 }
 
-/* .split-section__grid already sets align-items:center sitewide, so the
-   9 feature rows' text is already vertically centered against their
-   image (verified: 0px center-offset on every row). This scoped rule
-   just pins that intent explicitly for this page, so it can't silently
-   drift if the shared .split-section__grid rule ever changes elsewhere
-   on the site. */
-.auniv-feature-col .split-section__grid {
-  align-items: center;
+/* Halves the visible gap between the intro paragraph and the Computer
+   Laboratory row below it (measured at 74.39px, sitewide .section-inner's
+   default 5rem/80px bottom padding being the biggest contributor) by
+   trimming just this section's own bottom padding to 42.8px - a 37.2px
+   cut, landing the total gap at ~37.2px (50% of the original). Scoped to
+   this section only, so the 22.2px rhythm between the 9 feature rows
+   below is untouched. */
+.rtm-intro-section .section-inner {
+  padding-bottom: 42.8px;
 }
 
-/* The 9 feature sections (and the relocated social/map block) previously
-   sat in their own <section> elements using the sitewide bg-white/bg-light
-   alternating rhythm, which reads as separate cards. They should instead
-   read as one continuous column, so this removes their background (no
-   background-color is set - they just show the page's base white).
-   .section-inner's vertical padding is tightened from the sitewide 5rem
-   down to 22.2px top and bottom, so two adjacent .auniv-feature-section
-   elements sum to a 44.4px gap between them - the deliberately-chosen
-   uniform transition size for this page (half the original intro-to-
-   first-section gap), applied consistently everywhere below, including
-   the intro/sidebar section's bottom padding (see .auniv-intro-section)
-   so the intro-to-first-feature transition matches too. Horizontal
-   padding is untouched. */
-.auniv-feature-section .section-inner {
+/* About RTM-AKTU page: the 9 alternating feature rows are full-width
+   (no sidebar on this page), so .section-inner alone (sitewide max-width)
+   is enough - no cm-layout/column-offset trick needed here. They should
+   read as one continuous column rather than separate cards, so no
+   background-color is set and vertical padding is tightened from the
+   sitewide 5rem down to 22.2px top and bottom (two adjacent sections sum
+   to a 44.4px gap, matching the rhythm used elsewhere on the old
+   About the University page for the same continuous-flow effect). */
+.rtm-feature-section .section-inner {
   padding-top: 22.2px;
   padding-bottom: 22.2px;
 }
 
-/* Bottom padding only, on the intro/sidebar section (keeps its top
-   padding, i.e. the gap below the page hero, untouched) - brought down
-   to the same 22.2px per-side value as .auniv-feature-section so the
-   intro-to-first-feature-section gap matches the uniform 44.4px used
-   for every other transition on this page. */
-.auniv-intro-section .section-inner {
-  padding-bottom: 22.2px;
+/* Uniform heading size across all 9 feature rows: half of the base
+   .section-heading__title's desktop-width computed value (36px, from its
+   sitewide clamp(1.7rem, 3vw, 2.25rem)) - fixed rather than clamped, since
+   these headings read oversized next to the shrunk ~360px photos. */
+.rtm-feature-section .section-heading__title {
+  font-size: 18px;
 }
 
-/* The base .section-heading__title clamp (36px at desktop widths) is
-   sized for full section openers elsewhere on the site; inside this
-   page's narrower 840px column it reads oversized next to the ~16px
-   body paragraph. Scoped to .auniv-feature-col only, so headings that
-   share the same base class everywhere else (academics.html and
-   friends) are unaffected. */
-.auniv-feature-col .section-heading__title {
-  font-size: 25px;
+/* Computer Laboratory row only: .split-section__grid's sitewide
+   align-items:center centers this row's text block against its taller
+   360x270px image, leaving a 37.78px top-offset between them (measured
+   after the font-size shrink above). Because align-items:center re-splits
+   any margin-top change evenly above/below, a plain -22.7px nudge only
+   moves the visible gap by half that (measured); doubling it to -45.4px
+   is what actually lands the gap at ~15.1px (40% of original - a 60%
+   reduction), closer to top-aligned without fully flattening it. Scoped
+   to this row only; the other 8 rows keep the sitewide centered
+   alignment untouched. */
+.rtm-cl-content {
+  margin-top: -45.4px;
+}
+
+/* Student Development is the last of the 9 feature rows, so its bottom
+   padding also sets the gap before the quote banner that follows. Adds
+   80px on top of the shared 22.2px from .rtm-feature-section .section-inner
+   above, pushing the quote banner further down - scoped to this row only. */
+.rtm-feature-section--last .section-inner {
+  padding-bottom: calc(22.2px + 80px);
+}
+
+/* Placeholder sizing pending the reference screenshot: caps each feature
+   photo well below the .split-section__image default (which stretches to
+   fill its whole grid column) and centers it within that column so left-
+   and right-side rows still line up symmetrically. Revisit once the
+   actual reference image is available to match exact proportions. */
+.rtm-feature-image {
+  max-width: 360px;
+  margin: 0 auto;
 }
 
 /* --- Bold centered italic pull-quote, directly under the photo on
