@@ -2558,19 +2558,52 @@ button {
   display: none;
 }
 
-.faq-accordion__caret {
+/* Round +/- icon, matching about-us.html's .faq-item__icon exactly
+   (same size/colors) so both pages' accordions look consistent. A
+   clean glyph swap rather than that icon's rotate(45deg) + / x
+   trick, since this is a dedicated FAQ page with its own accordion
+   rather than a compact teaser. */
+.faq-accordion__icon {
   flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: rgba(201, 162, 39, 0.12);
   color: var(--color-gold);
-  font-size: 0.7rem;
-  transition: transform 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  line-height: 1;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-.faq-accordion__item[open] .faq-accordion__caret {
-  transform: rotate(180deg);
+.faq-accordion__icon-minus {
+  display: none;
 }
 
+.faq-accordion__item[open] .faq-accordion__icon {
+  background-color: var(--color-gold);
+  color: var(--color-navy);
+}
+
+.faq-accordion__item[open] .faq-accordion__icon-plus {
+  display: none;
+}
+
+.faq-accordion__item[open] .faq-accordion__icon-minus {
+  display: inline;
+}
+
+/* Left inset matches About Us's .faq-item__answer p exactly (measured:
+   0 22.4px 20px 42.4px) - the extra 20px beyond the question's own
+   1.4rem padding is what visually indents the answer under the
+   question text instead of sitting flush with the card edge. Right
+   padding is a deliberate departure from that reference (72.4px vs
+   its 22.4px) for extra breathing room before the round icon on this
+   page's own accordion. */
 .faq-accordion__answer {
-  padding: 0 1.4rem 1.25rem;
+  padding: 0 72.4px 1.25rem calc(1.4rem + 20px);
   color: var(--color-text-muted);
   font-size: 0.92rem;
 }
@@ -2596,12 +2629,14 @@ button {
   color: var(--color-white);
   font-size: 1.35rem;
   margin-bottom: 0.5rem;
+  text-align: center;
 }
 
 .contact-card__subtitle {
   color: rgba(255, 255, 255, 0.75);
   font-size: 0.92rem;
   margin-bottom: 1.75rem;
+  text-align: center;
 }
 
 .contact-form {
@@ -2641,7 +2676,7 @@ button {
 }
 
 .contact-form__submit {
-  align-self: flex-start;
+  align-self: center;
   background: linear-gradient(135deg, var(--color-red) 0%, #7f2323 100%);
   color: var(--color-white);
   border-color: transparent;
