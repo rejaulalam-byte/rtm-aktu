@@ -2810,6 +2810,43 @@ button {
   margin-top: 0.5rem;
 }
 
+/* --- "Read More" reveal over long policy text (Code of Conduct page):
+   native <details>/<summary>, no JS. One-way reveal, not a collapsible
+   accordion - once opened the control itself disappears entirely (the
+   [open] rule below), since a fresh page load already resets it. --- */
+.conduct-more {
+  text-align: center;
+}
+
+.conduct-more__toggle {
+  display: inline-block;
+  list-style: none;
+  margin-top: 0.5rem;
+  color: var(--color-gold);
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.conduct-more__toggle:hover {
+  text-decoration: underline;
+}
+
+.conduct-more__toggle::-webkit-details-marker {
+  display: none;
+}
+
+.conduct-more[open] > summary {
+  display: none;
+}
+
+.conduct-more__body {
+  text-align: left;
+  margin-top: 2rem;
+}
+
 /* --- Split sections: text + image, either order (Featured/Postgraduate/Undergraduate/Institutes/Deans) --- */
 .split-section__grid {
   display: grid;
@@ -3826,13 +3863,14 @@ button {
   justify-self: start;
 }
 
-/* Faculty pages (Science & Engineering, Business & Development
-   Studies, Education Health & Technology): in-body headings like
-   "Academic Programs" and "Our Commitment" sit directly above their
-   own paragraph text, not as standalone section titles - so they use
-   the sitewide .section-heading__title class (36px) only for its
-   weight/family, with the size overridden here to paragraph size
-   (16px) + 8px. This is scoped to this modifier class rather than
+/* Sitewide convention: a heading paired directly with its own body
+   paragraph (not a standalone section title) is sized at paragraph
+   text size (16px) + 8px, not the large sitewide heading size. First
+   used for the faculty pages' in-body headings ("Academic Programs",
+   "Our Commitment") inside .cm-content, and reused as-is anywhere
+   else the same pairing occurs (e.g. the Code of Conduct page's
+   policy sub-headings, combined with .text-section__subheading for
+   its margin rhythm). Scoped to this modifier class rather than
    changing .section-heading__title itself, since that class is
    shared with unrelated standalone titles elsewhere (hero headings,
    centered section titles like "Vision, Mission & Core Value"). */
