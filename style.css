@@ -2398,6 +2398,40 @@ button {
   color: var(--color-red);
 }
 
+/* --- Vision, Mission & Core Value detail page: timeline left, graphic
+   right (mirror of .foundation__grid's column order, which puts the
+   illustration first) --- */
+.foundation-detail__grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 3.5rem;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+@media (max-width: 860px) {
+  .foundation-detail__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .foundation-detail__media {
+    order: -1;
+  }
+}
+
+.foundation-detail__media {
+  display: flex;
+  justify-content: center;
+}
+
+.foundation-detail__image {
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 657 / 677;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+}
+
 /* --- FAQ + Contact --- */
 .faq-contact__grid {
   display: grid;
