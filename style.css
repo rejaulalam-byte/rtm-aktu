@@ -2520,6 +2520,71 @@ button {
   font-size: 0.92rem;
 }
 
+/* --- FAQ & Contact page accordion: native <details>/<summary>, no JS
+   (same dependency-free approach as the Code of Conduct page's
+   .conduct-more). Distinct from .faq-item above (which is a JS-driven
+   accordion used on About Us) - shaded rows with a rotating caret,
+   matching this page's own mockup rather than reusing that component. */
+.faq-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin: 2rem 0;
+}
+
+.faq-accordion__item {
+  border: 1px solid #eef0f3;
+  border-radius: var(--radius-md);
+  background-color: var(--color-bg-light);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+}
+
+.faq-accordion__question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.1rem 1.4rem;
+  list-style: none;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.98rem;
+  color: var(--color-navy);
+  cursor: pointer;
+}
+
+.faq-accordion__question::-webkit-details-marker {
+  display: none;
+}
+
+.faq-accordion__caret {
+  flex-shrink: 0;
+  color: var(--color-gold);
+  font-size: 0.7rem;
+  transition: transform 0.2s ease;
+}
+
+.faq-accordion__item[open] .faq-accordion__caret {
+  transform: rotate(180deg);
+}
+
+.faq-accordion__answer {
+  padding: 0 1.4rem 1.25rem;
+  color: var(--color-text-muted);
+  font-size: 0.92rem;
+}
+
+/* Standalone centered placement for .contact-card (FAQ & Contact page),
+   vs. its original narrower column width inside .faq-contact__grid on
+   About Us - width/centering only, the card and form beneath stay the
+   shared component untouched. */
+.contact-card--wide {
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .contact-card {
   background: linear-gradient(160deg, var(--color-navy) 0%, var(--color-navy-light) 100%);
   border-radius: var(--radius-lg);
