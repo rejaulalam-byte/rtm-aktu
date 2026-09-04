@@ -3900,9 +3900,14 @@ button {
    plain .section-inner (matching the 9 feature rows' container below it,
    so their left/right edges line up), rather than the narrower centered
    .text-section__inner. That container itself is left-aligned by default,
-   so this centers just the heading text explicitly. */
+   so this centers just the heading text explicitly. It also skips the
+   margin-bottom that the "Welcome International Students" heading gets
+   from its .text-section__inner .section-heading__title rule, leaving the
+   paragraph text touching the heading (measured at 0px) - so it's added
+   back here directly, matching that section's measured 24px (1.5rem) gap. */
 .rtm-intro-heading {
   text-align: center;
+  margin-bottom: 1.5rem;
 }
 
 /* Halves the visible gap between the intro paragraph and the Computer
