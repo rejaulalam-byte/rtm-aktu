@@ -3826,6 +3826,20 @@ button {
   justify-self: start;
 }
 
+/* Faculty pages (Science & Engineering, Business & Development
+   Studies, Education Health & Technology): in-body headings like
+   "Academic Programs" and "Our Commitment" sit directly above their
+   own paragraph text, not as standalone section titles - so they use
+   the sitewide .section-heading__title class (36px) only for its
+   weight/family, with the size overridden here to paragraph size
+   (16px) + 8px. This is scoped to this modifier class rather than
+   changing .section-heading__title itself, since that class is
+   shared with unrelated standalone titles elsewhere (hero headings,
+   centered section titles like "Vision, Mission & Core Value"). */
+.cm-content__heading {
+  font-size: 24px;
+}
+
 /* --- "University Inside" quick-links card --- */
 .cm-sidebar {
   background-color: var(--color-bg-light);
