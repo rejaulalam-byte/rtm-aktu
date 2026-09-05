@@ -4163,6 +4163,81 @@ button {
   transform: translate(2px, -2px);
 }
 
+/* --- Why Choice Us page: intro text + student photo, and the 4 stacked
+   feature rows (Modern Campus / Expert Faculty / Research Facility /
+   Career Support) below it, all inside .cm-content --- */
+.advantage-intro {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 2.5rem;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+@media (max-width: 860px) {
+  .advantage-intro {
+    grid-template-columns: 1fr;
+  }
+}
+
+.advantage-intro__text {
+  margin-bottom: 0;
+}
+
+/* Approximates the Figma design's soft backlight glow behind the student
+   photo with a blurred radial gradient sitting behind the frame (z-index
+   -1), rather than a real blur/lighting effect. */
+.advantage-intro__photo {
+  position: relative;
+}
+
+.advantage-intro__photo::before {
+  content: "";
+  position: absolute;
+  inset: -12%;
+  background: radial-gradient(circle, rgba(255, 106, 37, 0.35), rgba(64, 124, 255, 0.22) 55%, transparent 75%);
+  filter: blur(48px);
+  z-index: -1;
+}
+
+.advantage-intro__photo-frame {
+  aspect-ratio: 600 / 794;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+}
+
+.advantage-feature {
+  margin-bottom: 2.5rem;
+}
+
+.advantage-feature:last-child {
+  margin-bottom: 0;
+}
+
+.advantage-feature__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #17629D;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.advantage-feature__link-arrow {
+  width: 12px;
+  height: 12px;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.advantage-feature__link:hover {
+  color: var(--color-navy);
+}
+
+.advantage-feature__link:hover .advantage-feature__link-arrow {
+  transform: translate(2px, -2px);
+}
+
 /* About RTM-AKTU page intro heading: the intro block now sits directly in
    plain .section-inner (matching the 9 feature rows' container below it,
    so their left/right edges line up), rather than the narrower centered
