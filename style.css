@@ -4192,6 +4192,14 @@ button {
   margin-bottom: 1.1rem;
 }
 
+/* Academic System page: its heading opens the .cm-content column (the
+   other cm- pages open with a photo instead, sitting flush with the
+   .cm-sidebar box's top edge), so the in-column top margin above doesn't
+   apply here - it would push the heading below where the sidebar starts. */
+.cm-content > .section-heading:first-child .section-heading__title {
+  margin-top: 0;
+}
+
 /* --- Department card: reusable across faculty pages (CSE/EEE here, other
    departments on future faculty pages) --- */
 .dept-card {
