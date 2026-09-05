@@ -4254,6 +4254,82 @@ button {
   transform: translate(2px, -2px);
 }
 
+/* --- University News page: numbered news list. Item 01 is the dark
+   "featured" row (--featured modifier); 02-04 are the light gray
+   bordered rows. Each row reuses .date-meta/.date-meta__item/
+   .date-meta__icon for its date+weekday text (built for the homepage's
+   News & Notice section) and .img-ph for its thumbnail's broken-image
+   fallback (the sitewide convention used throughout the site). --- */
+.uni-news-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.uni-news-item {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 1.5rem;
+  background-color: var(--color-bg-light);
+  border: 1px solid #ebebeb;
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+}
+
+.uni-news-item--featured {
+  background-color: var(--color-navy);
+  border-color: var(--color-navy);
+}
+
+.uni-news-item__number {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 3rem;
+  line-height: 1;
+  color: rgba(34, 34, 34, 0.6);
+  padding-right: 1.5rem;
+  border-right: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.uni-news-item--featured .uni-news-item__number {
+  color: var(--color-white);
+  border-right-color: rgba(255, 255, 255, 0.2);
+}
+
+.uni-news-item__headline {
+  color: var(--color-navy);
+  font-weight: 500;
+  margin-bottom: 0.6rem;
+}
+
+.uni-news-item--featured .uni-news-item__headline {
+  color: var(--color-white);
+}
+
+.uni-news-item__thumb {
+  width: 130px;
+  aspect-ratio: 179 / 143;
+  border-radius: var(--radius-sm);
+  flex-shrink: 0;
+}
+
+.date-meta--on-dark {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+@media (max-width: 760px) {
+  .uni-news-item {
+    grid-template-columns: auto 1fr;
+  }
+
+  .uni-news-item__thumb {
+    grid-column: 1 / -1;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+  }
+}
+
 /* About RTM-AKTU page intro heading: the intro block now sits directly in
    plain .section-inner (matching the 9 feature rows' container below it,
    so their left/right edges line up), rather than the narrower centered
