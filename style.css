@@ -2910,6 +2910,18 @@ button {
   margin-top: 0.5rem;
 }
 
+/* Inline bold+underline cross-link inside body copy (e.g. BISD page's
+   "...please CLICK on this LINK" pointer to the CRTM page). Underline is
+   set explicitly since the sitewide `a` reset strips it. */
+.text-section__link {
+  color: var(--color-navy);
+  text-decoration: underline;
+}
+
+.text-section__link:hover {
+  color: var(--color-gold);
+}
+
 /* --- "Read More" reveal over long policy text (Code of Conduct page):
    native <details>/<summary>, no JS. One-way reveal, not a collapsible
    accordion - once opened the control itself disappears entirely (the
