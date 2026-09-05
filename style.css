@@ -1361,9 +1361,17 @@ button {
   gap: 1rem;
   align-items: flex-start;
   background-color: var(--color-white);
+  border: 1px solid transparent;
   border-radius: var(--radius-md);
   padding: 1.25rem;
   box-shadow: var(--shadow-card);
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+/* Same subtle gold tint + border convention as .cm-sidebar__link:hover */
+.news-list__item:hover {
+  background-color: rgba(201, 162, 39, 0.08);
+  border-color: var(--color-gold);
 }
 
 .news-list__number {
@@ -1419,10 +1427,17 @@ button {
   align-items: flex-start;
   padding: 1.1rem 0;
   border-bottom: 1px solid #eef0f3;
+  border-radius: var(--radius-sm);
+  transition: background-color 0.2s ease;
 }
 
 .notice-box__item:last-child {
   border-bottom: none;
+}
+
+/* Same subtle gold tint as .news-list__item:hover / .cm-sidebar__link:hover */
+.notice-box__item:hover {
+  background-color: rgba(201, 162, 39, 0.08);
 }
 
 .notice-box__icon {
@@ -3503,10 +3518,18 @@ button {
   align-items: center;
   gap: 1.75rem;
   padding: 1.5rem;
+  border: 1px solid transparent;
   border-radius: var(--radius-md);
   background-color: var(--color-white);
   box-shadow: var(--shadow-card);
   margin-bottom: 1.75rem;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+/* Same subtle gold tint + border convention as .cm-sidebar__link:hover */
+.adm-news-card:hover {
+  background-color: rgba(201, 162, 39, 0.08);
+  border-color: var(--color-gold);
 }
 
 .adm-news-card--with-nav {
@@ -4275,6 +4298,7 @@ button {
   border: 1px solid #ebebeb;
   border-radius: var(--radius-md);
   padding: 1.5rem;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
 .uni-news-item--featured {
@@ -4328,6 +4352,37 @@ button {
     width: 100%;
     aspect-ratio: 16 / 9;
   }
+}
+
+/* Pronounced hover for these full-width rows (vs. the subtle tint used on
+   the smaller homepage/Admissions news cards): the whole box fills with
+   gold, including item 01's already-navy resting state, so every row gets
+   visible feedback. Gold (not navy) is used precisely so it reads against
+   both the light and dark resting states; text/icons switch to navy for
+   contrast against it. Placed after the --featured rules and .date-meta--
+   on-dark (both same specificity) so this wins the source-order tie for
+   item 01's hover. */
+.uni-news-item:hover {
+  background-color: var(--color-gold);
+  border-color: var(--color-gold);
+}
+
+.uni-news-item:hover .uni-news-item__number {
+  color: var(--color-navy);
+  border-right-color: rgba(12, 35, 80, 0.2);
+}
+
+.uni-news-item:hover .uni-news-item__headline {
+  color: var(--color-navy);
+}
+
+.uni-news-item:hover .date-meta,
+.uni-news-item:hover .date-meta--on-dark {
+  color: var(--color-navy);
+}
+
+.uni-news-item:hover .date-meta__icon {
+  color: var(--color-navy);
 }
 
 /* About RTM-AKTU page intro heading: the intro block now sits directly in
