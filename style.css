@@ -4082,6 +4082,75 @@ button {
   margin-top: 2rem;
 }
 
+/* --- Institutes & Centers Courses page: BISD/CRTM info cards below the
+   body text. No existing card component matches this shape (centered
+   title, bold-lead-in body copy, arrow link) so this is a small
+   page-specific pair, built from shared tokens (--shadow-card,
+   --color-gold) to stay visually consistent with the rest of the site. */
+.ic-card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.75rem;
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+}
+
+@media (max-width: 720px) {
+  .ic-card-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.ic-card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  padding: 2.25rem 2rem;
+  text-align: center;
+}
+
+/* Matches the sitewide .cm-content__heading convention (a heading paired
+   directly with its own body copy, not a standalone section title) rather
+   than the Figma spec's 44px, which read oversized next to the card body
+   text. */
+.ic-card__title {
+  font-size: 24px;
+  color: var(--color-navy);
+  margin-bottom: 1rem;
+}
+
+.ic-card__text {
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+/* margin-top: auto pins this to the card's bottom edge regardless of how
+   long the body text above it runs, so both cards' links line up even
+   when .ic-card-grid's grid stretch already equalizes card height. */
+.ic-card__link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-top: auto;
+  font-weight: 500;
+  color: rgba(34, 34, 34, 0.77);
+}
+
+.ic-card__link-arrow {
+  width: 18px;
+  height: 18px;
+  color: var(--color-gold);
+  transition: transform 0.2s ease;
+}
+
+.ic-card__link:hover .ic-card__link-arrow {
+  transform: translate(2px, -2px);
+}
+
 /* About RTM-AKTU page intro heading: the intro block now sits directly in
    plain .section-inner (matching the 9 feature rows' container below it,
    so their left/right edges line up), rather than the narrower centered
