@@ -1380,9 +1380,30 @@ button {
   margin-bottom: 0.35rem;
 }
 
-.news-list__date {
+/* --- Date + weekday meta row: reused by both the Current News cards and
+   the Notice Board items below (same muted-gray icon+label convention as
+   .utility-bar__item / .site-footer__contact-item). The weekday text is
+   filled in by initDateWeekdays() in script.js from each .js-weekday's
+   data-date, never hardcoded, so it can't drift from the date. --- */
+.date-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
   color: var(--color-text-muted);
   font-size: 0.82rem;
+}
+
+.date-meta__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.date-meta__icon {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  color: var(--color-gold);
 }
 
 .notice-box {
@@ -1421,11 +1442,6 @@ button {
   font-weight: 500;
   font-size: 0.95rem;
   margin-bottom: 0.35rem;
-}
-
-.notice-box__date {
-  color: var(--color-text-muted);
-  font-size: 0.82rem;
 }
 
 /* ==========================================================================

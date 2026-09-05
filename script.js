@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initNewsletterForm();
   initCampusLifeVideo();
   initContactPageForm();
+  initDateWeekdays();
 });
 
 // ------------------------------------------------------------------
@@ -482,6 +483,21 @@ function initContactPageForm() {
     e.preventDefault();
     status.textContent = 'Thank you! Your message has been sent — our team will get back to you soon.';
     form.reset();
+  });
+}
+
+// ------------------------------------------------------------------
+// News & Notice date rows: the weekday label next to each date is
+// computed from that item's data-date rather than hardcoded, so it
+// can never drift out of sync if the date is edited later.
+// ------------------------------------------------------------------
+function initDateWeekdays() {
+  document.querySelectorAll('.js-weekday').forEach((el) => {
+    const dateValue = el.dataset.date;
+    if (!dateValue) return;
+    const date = new Date(`${dateValue}T00:00:00`);
+    if (Number.isNaN(date.getTime())) return;
+    el.textContent = date.toLocaleDateString('en-US', { weekday: 'long' });
   });
 }
 
