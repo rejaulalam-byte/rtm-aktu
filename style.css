@@ -4660,3 +4660,73 @@ button {
     grid-template-columns: 1fr;
   }
 }
+
+/* ==========================================================================
+   25. Deans & Heads Page
+   ========================================================================== */
+
+/* Design calls out 50px specifically for this page's centered title,
+   larger than the sitewide .section-heading__title clamp (max 36px) - an
+   explicit, page-scoped size rather than the shared default. */
+.dh-page-title.section-heading__title {
+  font-size: 50px;
+}
+
+/* Bordered data table: new component, no existing page has a table like
+   this. Real <table> markup since the content is genuinely tabular
+   (Sl. No / Name & Info / Persona), with a department banner row
+   (colspan 3) breaking up the Heads table between departments. */
+.dh-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 3rem;
+  table-layout: fixed;
+}
+
+.dh-table th,
+.dh-table td {
+  border: 1px solid #bebebe;
+  padding: 1rem 1.5rem;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.dh-table__head th {
+  background-color: rgba(34, 34, 34, 0.4);
+  color: var(--color-navy);
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+.dh-table__num,
+.dh-table__head th:first-child {
+  text-align: center;
+}
+
+.dh-table__dept td {
+  background-color: rgba(34, 34, 34, 0.2);
+  color: var(--color-navy);
+  font-weight: 600;
+  font-size: 24px;
+}
+
+.dh-table__name {
+  font-weight: 500;
+  margin-bottom: 0.35rem;
+}
+
+.dh-table__info p {
+  margin: 0 0 0.35rem;
+  color: var(--color-text-muted);
+}
+
+.dh-table__info p:last-child {
+  margin-bottom: 0;
+}
+
+.dh-table__photo {
+  width: 148px;
+  height: 148px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+}
