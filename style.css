@@ -4730,3 +4730,92 @@ button {
   object-fit: cover;
   border-radius: var(--radius-sm);
 }
+
+/* ==========================================================================
+   26. Faculty Members Page
+   ========================================================================== */
+
+/* Design calls out 50px for this page's centered title, same as
+   .dh-page-title on the Deans & Heads page - larger than the sitewide
+   .section-heading__title clamp (max 36px). */
+.fmp-page-title.section-heading__title {
+  font-size: 50px;
+}
+
+/* New card grid: not a reuse of .fm-grid/.fm-card (the Academics page
+   carousel and leadership-management.html share those, with a different
+   card shape - gold-ringed 200px photo, no border box). This page's design
+   calls for a bordered box with a plain 183px circular photo, so it gets
+   its own component instead of bending the shared one.
+   3 equal columns, matching the design's "3 per row, last row 1" grid -
+   card width follows from the column track rather than a fixed px, since
+   the site's content column (~840px) can't fit three literal 315px cards
+   side by side the way the (much wider) Figma canvas does. */
+.fmp-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+  margin-top: 1rem;
+}
+
+@media (max-width: 720px) {
+  .fmp-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .fmp-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.fmp-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border: 1px solid #8e8e8e;
+  border-radius: var(--radius-sm);
+  padding: 2rem 1.25rem;
+}
+
+.fmp-card__link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+.fmp-card__photo {
+  width: 183px;
+  height: 183px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1.5rem;
+}
+
+.fmp-card__name {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-navy);
+  margin-bottom: 0.4rem;
+  transition: color 0.2s ease;
+}
+
+.fmp-card__link:hover .fmp-card__name {
+  color: var(--color-gold);
+}
+
+.fmp-card__role {
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--color-text-muted);
+  margin-bottom: 0.4rem;
+}
+
+.fmp-card__dept {
+  font-size: 14px;
+  color: var(--color-text-muted);
+}

@@ -5,54 +5,188 @@ document.addEventListener('DOMContentLoaded', () => {
 // ------------------------------------------------------------------
 // All Faculty Members listing (pages/faculty-members.html): cards are
 // generated from this list, so adding a new faculty member only needs
-// a new entry here (plus their photo in images/academics/faculty/ and
-// their profile page in pages/faculty/) — no HTML markup to duplicate.
+// a new entry here - no HTML markup to duplicate. Individual faculty
+// detail pages don't exist yet (an admin panel will manage these
+// eventually), so every card links to "#" for now.
 //
 // Paths below are relative to pages/faculty-members.html, since that
 // is the only page this file renders onto.
 // ------------------------------------------------------------------
 const facultyMembers = [
   {
-    photo: '../images/academics/faculty/faculty-1.jpg',
-    name: 'Md. Samiul Alim',
-    title: 'Lecturer',
-    department: 'Department of CSE',
-    link: 'faculty/md-samiul-alim.html',
+    photo: '../images/faculty-members/abdullah-rajib.png',
+    name: 'Abdullah Rajib',
+    role: 'Assistant professor',
+    department: 'Department of Computer Science and Engineering (CSE)',
+    link: '#',
   },
   {
-    photo: '../images/academics/faculty/faculty-2.jpg',
-    name: 'Ananda Chakraborty',
-    title: 'Faculty Member',
-    department: 'Department of CSE',
-    link: 'faculty/ananda-chakraborty.html',
-  },
-  {
-    photo: '../images/academics/faculty/faculty-3.jpg',
-    name: 'S.A.M. Thahmid',
-    title: 'Faculty Member',
-    department: 'Department of Education',
-    link: 'faculty/sam-thahmid.html',
-  },
-  {
-    photo: '../images/academics/faculty/faculty-4.jpg',
-    name: 'Jerin Akter',
-    title: 'Lecturer',
+    photo: '../images/faculty-members/abu-syeed-muhammed-abdullah.png',
+    name: 'Abu Syeed Muhammed Abdullah',
+    role: 'Associate Professor and Head, &<br>Exam Controller',
     department: 'Department of Business Administration',
-    link: 'faculty/jerin-akter.html',
+    link: '#',
   },
   {
-    photo: '../images/academics/faculty/faculty-5.jpg',
-    name: 'Faculty Member 5',
-    title: 'Faculty Member',
-    department: 'Department Name',
-    link: 'faculty/faculty-member-5.html',
+    photo: '../images/faculty-members/adiba-sabiha.png',
+    name: 'Adiba Sabiha',
+    role: 'Lecturer',
+    department: 'Department of Business Administration',
+    link: '#',
   },
   {
-    photo: '../images/academics/faculty/faculty-6.jpg',
-    name: 'Faculty Member 6',
-    title: 'Faculty Member',
-    department: 'Department Name',
-    link: 'faculty/faculty-member-6.html',
+    photo: '../images/faculty-members/ananda-chakraborty.png',
+    name: 'Ananda Chakraborty',
+    role: 'Faculty Member',
+    department: 'Department of Computer Science and Engineering (CSE)',
+    link: '#',
+  },
+  {
+    photo: '../images/faculty-members/dilara-ahmed-choudhury.png',
+    name: 'Dilara Ahmed Choudhury',
+    role: 'Assistant Professor',
+    department: 'Department of Applied Health and Nutrition',
+    link: '#',
+  },
+  {
+    photo: '../images/faculty-members/fahmid-ahmed-chowdhury.png',
+    name: 'Fahmid Ahmed Chowdhury',
+    role: 'Lecturer',
+    department: 'Department of Business Administration',
+    link: '#',
+  },
+  {
+    photo: '../images/faculty-members/jamal-ahmed.png',
+    name: 'Jamal Ahmed',
+    role: 'MPH Program Coordinator',
+    department: 'Department of Applied Health and Nutrition',
+    link: '#',
+  },
+  {
+    photo: '../images/faculty-members/jannatul-nayem-novera.png',
+    name: 'Jannatul Nayem Novera',
+    role: 'Lecturer',
+    department: 'Department of Electrical and Electronic Engineering (EEE)',
+    link: '#',
+  },
+  {
+    photo: '../images/faculty-members/jerin-akter.png',
+    name: 'Jerin Akter',
+    role: 'Lecturer',
+    department: 'Department of Business Administration',
+    link: '#',
+  },
+  {
+    photo: '../images/faculty-members/mahmuda-shatu-rethe.png',
+    name: 'Mahmuda Shatu Rethe',
+    role: 'Lecturer',
+    department: 'Department of Technology',
+    link: '#',
+  },
+  {
+    photo: '../images/faculty-members/md-abdul-awal-ansary.png',
+    name: 'Md. Abdul Awal Ansary',
+    role: 'Associate Professor and Head',
+    department: 'Department of Computer Science and Engineering (CSE)',
+    link: '#',
+  },
+  {
+    photo: '../images/faculty-members/md-eyakub-ali.png',
+    name: 'Md. Eyakub Ali',
+    role: 'Lecturer',
+    department: 'Department of Electrical and Electronic Engineering (EEE)',
+    link: '#',
+  },
+  {
+    photo: '../images/faculty-members/md-mizanur-rahman.png',
+    name: 'Md. Mizanur Rahman',
+    role: 'Lecturer',
+    department: 'Department of Technology',
+    link: '#',
+  },
+  {
+    photo: '../images/faculty-members/md-nazrul-islam.png',
+    name: 'Md. Nazrul Islam',
+    role: 'Adjunct Faculty',
+    department: 'Department of Applied Health and Nutrition',
+    link: '#',
+  },
+  {
+    photo: '../images/faculty-members/md-ruhul-amin.png',
+    name: 'Md. Ruhul Amin',
+    role: 'Lecturer',
+    department: 'Department of Electrical and Electronic Engineering (EEE)',
+    link: '#',
+  },
+  {
+    photo: '../images/faculty-members/md-samiul-alim.png',
+    name: 'Md. Samiul Alim',
+    role: 'Lecturer',
+    department: 'Department of Computer Science and Engineering (CSE)',
+    link: '#',
+  },
+  {
+    photo: '../images/faculty-members/mohammad-mahmudul-alam-mia.png',
+    name: 'Mohammad Mahmudul Alam Mia',
+    role: 'Associate Professor and Head',
+    department: 'Department of Electrical and Electronic Engineering (EEE)',
+    link: '#',
+  },
+  {
+    photo: '../images/faculty-members/nujhat-sadia-hafiz.png',
+    name: 'Nujhat Sadia Hafiz',
+    role: 'Senior Lecturer',
+    department: 'Department of Technology',
+    link: '#',
+  },
+  {
+    photo: '../images/faculty-members/nusrat-rikza.png',
+    name: 'Nusrat Rikza, Ph.D',
+    role: 'Associate Professor and Head',
+    department: 'Department of Education',
+    link: '#',
+  },
+  {
+    photo: '../images/faculty-members/rasa-iffat-helmi.png',
+    name: 'Rasa Iffat Helmi',
+    role: 'Assistant Professor',
+    department: 'Department of Computer Science and Engineering (CSE)',
+    link: '#',
+  },
+  {
+    photo: '../images/faculty-members/sam-thahmid.png',
+    name: 'S.A.M. Thahmid',
+    role: 'Faculty Member',
+    department: 'Department of Education',
+    link: '#',
+  },
+  {
+    photo: '../images/faculty-members/sayed-shifat-ahmed.png',
+    name: 'Sayed Shifat Ahmed',
+    role: 'Lecturer',
+    department: 'Department of Electrical and Electronic Engineering (EEE)',
+    link: '#',
+  },
+  {
+    photo: '../images/faculty-members/shahnaz-jasmeen-keya.png',
+    name: 'Shahnaz Jasmeen Keya',
+    role: 'Language Instructor in English',
+    department: 'Department of Education',
+    link: '#',
+  },
+  {
+    photo: '../images/faculty-members/shanta-yeasmin.png',
+    name: 'Shanta Yeasmin',
+    role: 'Lecturer and Acting Head',
+    department: 'Department of Technology',
+    link: '#',
+  },
+  {
+    photo: '../images/faculty-members/tarana-hasan.png',
+    name: 'Tarana Hasan',
+    role: 'Lecturer',
+    department: 'Department of Business Administration',
+    link: '#',
   },
 ];
 
@@ -61,20 +195,14 @@ function renderFacultyGrid() {
   if (!grid) return;
 
   grid.innerHTML = facultyMembers
-    .map(({ photo, name, title, department, link }) => `
-      <article class="fm-card">
-        <a href="${link}" class="fm-card__link">
-          <div class="img-ph fm-card__photo">
-            <img src="${photo}" alt="Portrait of ${name}" loading="lazy" onerror="this.closest('.img-ph').classList.add('img-ph--broken')">
-            <div class="img-ph__fallback" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="4" width="18" height="16" rx="2" stroke="currentColor" stroke-width="1.6"/><circle cx="8.5" cy="9.5" r="1.5" stroke="currentColor" stroke-width="1.6"/><path d="m4 17 5-5 3 3 3-3.5L21 15" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              <span>Image Coming Soon</span>
-            </div>
-          </div>
-          <h3 class="fm-card__name">${name}</h3>
+    .map(({ photo, name, role, department, link }) => `
+      <article class="fmp-card">
+        <a href="${link}" class="fmp-card__link">
+          <img src="${photo}" alt="Portrait of ${name}" class="fmp-card__photo" loading="lazy">
+          <h3 class="fmp-card__name">${name}</h3>
         </a>
-        <p class="fm-card__role">${title}</p>
-        <p class="fm-card__dept">${department}</p>
+        <p class="fmp-card__role">${role}</p>
+        <p class="fmp-card__dept">${department}</p>
       </article>
     `)
     .join('');
