@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Adiba Sabiha | Faculty Members | RTM Al-Kabir Technical University (RTM-AKTU)</title>
-  <meta name="description" content="Profile of Adiba Sabiha, Lecturer in the Department of Business Administration at RTM Al-Kabir Technical University (RTM-AKTU), Sylhet.">
+  <title>Faculty Profile | RTM Al-Kabir Technical University (RTM-AKTU)</title>
+  <meta name="description" content="Faculty member profile at RTM Al-Kabir Technical University (RTM-AKTU), Sylhet.">
   <link rel="icon" href="../../images/favicon.png" type="image/png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -98,7 +98,7 @@
           <span class="page-hero__breadcrumb-sep">/</span>
           <a href="../faculty-members.html">Faculty Members</a>
           <span class="page-hero__breadcrumb-sep">/</span>
-          <span class="page-hero__breadcrumb-current">Profile of Adiba Sabiha</span>
+          <span class="page-hero__breadcrumb-current" id="fprBreadcrumbCurrent"></span>
         </nav>
       </div>
     </section>
@@ -176,39 +176,33 @@
             </ul>
           </aside>
 
-          <div class="cm-content">
+          <div class="cm-content" id="fprContent">
             <div class="fpr-banner">
-              <h2 class="fpr-banner__title">Profile of Adiba Sabiha</h2>
+              <h2 class="fpr-banner__title" id="fprBannerTitle"></h2>
             </div>
 
             <div class="fpr-layout">
               <div class="fpr-card">
-                <img src="../../images/faculty-members/adiba-sabiha.png" alt="Portrait of Adiba Sabiha" class="fpr-card__photo" loading="lazy">
-                <p class="fpr-card__role">Lecturer</p>
-                <p class="fpr-card__dept">Department of Business Administration</p>
+                <img id="fprPhoto" class="fpr-card__photo" src="" alt="" loading="lazy">
+                <p class="fpr-card__role" id="fprRole"></p>
+                <p class="fpr-card__dept" id="fprDept"></p>
 
                 <h3 class="fpr-card__heading">Contact Information</h3>
-                <p class="fpr-card__address">
-                  RTM Al-Kabir Technical University<br>
-                  RTM Point, East Shahi Eidgah<br>
-                  TB Gate, Sylhet-3100, Bangladesh
-                </p>
+                <p class="fpr-card__address" id="fprAddress"></p>
 
                 <p class="fpr-card__contact">
                   <svg class="fpr-card__contact-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.5 10v9a1 1 0 0 0 1 1H9.5a1 1 0 0 0 1-1V15a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                  <a href="tel:+8801731605254">Mob.: 01731605254</a>
+                  <a id="fprPhoneLink" href="#"></a>
                 </p>
                 <p class="fpr-card__contact">
                   <svg class="fpr-card__contact-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                  <a href="mailto:adiba@rtm-aktu.ac.bd">adiba@rtm-aktu.ac.bd</a>
+                  <a id="fprEmailLink" href="#"></a>
                 </p>
               </div>
 
               <div class="fpr-bio">
                 <h2 class="fpr-bio__heading">Short Biography</h2>
-                <p class="text-section__text">Ms. Adiba Sabiha is currently serving as a Lecturer in the Department of Business Administration at RTM Al-Kabir Technical University (RTM-AKTU) from August 01, 2021. Prior to this, she worked with Johns Hopkins University Center for Communication Programs (JHUCCP) as a Research Monitor.</p>
-                <p class="text-section__text">Ms. Adiba pursued her Bachelor of Social Science in Anthropology from Shahjalal University of Science and Technology, Sylhet, Bangladesh. During her academic journey, she gained various research experiences in both qualitative and quantitative research. She also worked in several research projects as a Research Assistant.</p>
-                <p class="text-section__text">Ms. Adiba has outstanding leadership and team management skills. She was the Joint Secretary of Zakiganj Students' Organization, SUST. Besides, she also gained communication and management skills by working as a volunteer in Volunteer of Bangladesh (VBD).</p>
+                <div id="fprBio"></div>
               </div>
             </div>
 
@@ -341,26 +335,47 @@
   </footer>
 
   <script src="../../script.js"></script>
+  <script src="faculty-profiles.js"></script>
   <script src="profile-tabs.js"></script>
   <script>
-    // Per-profile data: the 9 possible tab fields for this template (see
-    // FACULTY_PROFILE_TAB_FIELDS in profile-tabs.js). Only fields with
-    // content render as a tab. Copy this script block into future
-    // faculty/*.html pages and just update the values below.
-    const facultyProfileTabsData = {
-      'Research Interest': 'Gender and Women Studies, Indigenous rights, Social Justice and Policy Issues, Criminology, Visual Anthropology, Biopolitics, Epidemiology, Public Health.',
-      'Academic Information': '',
-      'Courses Taught': '',
-      'Areas of Expertise': '',
-      'Experience': '',
-      'Teaching and Academic Contributions': '',
-      'Publications & Research': '',
-      'Seminars/Workshops Participation': '',
-      'Contact': '',
-    };
-
+    // Reads ?id= from the URL, looks it up in facultyProfiles
+    // (faculty-profiles.js), and renders the whole page from that record.
     document.addEventListener('DOMContentLoaded', () => {
-      renderProfileTabs(facultyProfileTabsData);
+      const id = new URLSearchParams(window.location.search).get('id');
+      const profile = id ? facultyProfiles[id] : undefined;
+
+      if (!profile) {
+        document.getElementById('fprContent').innerHTML = '<p class="text-section__text">No faculty profile found for this link.</p>';
+        return;
+      }
+
+      document.title = `${profile.name} | Faculty Members | RTM Al-Kabir Technical University (RTM-AKTU)`;
+
+      const profileTitle = `Profile of ${profile.name}`;
+      document.getElementById('fprBreadcrumbCurrent').textContent = profileTitle;
+      document.getElementById('fprBannerTitle').textContent = profileTitle;
+
+      const photo = document.getElementById('fprPhoto');
+      photo.src = profile.photo;
+      photo.alt = `Portrait of ${profile.name}`;
+
+      document.getElementById('fprRole').textContent = profile.role;
+      document.getElementById('fprDept').textContent = profile.department;
+      document.getElementById('fprAddress').innerHTML = profile.address.join('<br>\n                  ');
+
+      const phoneLink = document.getElementById('fprPhoneLink');
+      phoneLink.href = profile.phoneHref;
+      phoneLink.textContent = `Mob.: ${profile.phone}`;
+
+      const emailLink = document.getElementById('fprEmailLink');
+      emailLink.href = `mailto:${profile.email}`;
+      emailLink.textContent = profile.email;
+
+      document.getElementById('fprBio').innerHTML = profile.bio
+        .map((paragraph) => `<p class="text-section__text">${paragraph}</p>`)
+        .join('');
+
+      renderProfileTabs(profile.tabs);
     });
   </script>
 </body>
