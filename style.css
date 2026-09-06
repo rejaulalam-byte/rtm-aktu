@@ -4735,13 +4735,6 @@ button {
    26. Faculty Members Page
    ========================================================================== */
 
-/* Design calls out 50px for this page's centered title, same as
-   .dh-page-title on the Deans & Heads page - larger than the sitewide
-   .section-heading__title clamp (max 36px). */
-.fmp-page-title.section-heading__title {
-  font-size: 50px;
-}
-
 /* New card grid: not a reuse of .fm-grid/.fm-card (the Academics page
    carousel and leadership-management.html share those, with a different
    card shape - gold-ringed 200px photo, no border box). This page's design
@@ -4754,7 +4747,7 @@ button {
 .fmp-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.75rem;
+  gap: 1.25rem;
   margin-top: 1rem;
 }
 
@@ -4775,9 +4768,15 @@ button {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  border: 1px solid #8e8e8e;
+  /* Lightened from the Figma spec's #8e8e8e, which read as a hard outline
+     at this size - reuses the same faint-border tint as .cm-sidebar__link
+     so it sits as a boundary hint rather than a stroke. */
+  border: 1px solid rgba(12, 35, 80, 0.14);
   border-radius: var(--radius-sm);
-  padding: 2rem 1.25rem;
+  /* Trimmed from the Figma spec's 1.25rem side padding - at this page's
+     narrower (site max-width-constrained) card width, that padding made
+     long names (e.g. "Fahmid Ahmed Chowdhury") wrap awkwardly. */
+  padding: 2rem 0.75rem;
 }
 
 .fmp-card__link {
@@ -4818,4 +4817,53 @@ button {
 .fmp-card__dept {
   font-size: 14px;
   color: var(--color-text-muted);
+}
+
+/* Search/filter bar: same input padding/font/focus-glow as
+   .contact-form__input, but with a visible border since this sits
+   directly on the page's white background instead of a colored form
+   panel - reuses .fmp-card's same faint sidebar-link border tint. */
+.fmp-search {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 1.5rem 0 2rem;
+}
+
+.fmp-search__input,
+.fmp-search__select {
+  flex: 1 1 200px;
+  min-width: 0;
+  border: 1px solid rgba(12, 35, 80, 0.14);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-white);
+  padding: 0.85rem 1.1rem;
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  color: var(--color-text);
+  outline: none;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.fmp-search__input:focus,
+.fmp-search__select:focus {
+  border-color: var(--color-gold);
+  box-shadow: 0 0 0 3px rgba(201, 162, 39, 0.45);
+}
+
+.fmp-search__input::placeholder {
+  color: var(--color-text);
+  opacity: 0.5;
+}
+
+.fmp-search__submit {
+  flex: 0 0 auto;
+}
+
+@media (max-width: 640px) {
+  .fmp-search__input,
+  .fmp-search__select,
+  .fmp-search__submit {
+    flex: 1 1 100%;
+  }
 }

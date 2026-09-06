@@ -1,5 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => {
   renderFacultyGrid();
+  populateSearchFilters();
+
+  const form = document.getElementById('facultySearchForm');
+  if (form) {
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      applyFacultySearch();
+    });
+  }
 });
 
 // ------------------------------------------------------------------
@@ -190,11 +199,62 @@ const facultyMembers = [
   },
 ];
 
-function renderFacultyGrid() {
+// A member's role can carry a literal "<br>" for card display (e.g. Abu
+// Syeed Muhammed Abdullah's two-line title) - the search dropdown and the
+// filter match both need the plain-text version instead.
+function plainRole(role) {
+  return role.replace(/<br\s*\/?>/gi, ' ').trim();
+}
+
+// Dropdown options are derived straight from the dataset (not a separate
+// hardcoded list) so they can never drift out of sync with it. Designation
+// strings are shown exactly as entered - no normalizing "Assistant
+// professor" and "Assistant Professor" into one, since that's a
+// data-modeling call for whenever an admin panel manages this list.
+function populateSearchFilters() {
+  const deptSelect = document.getElementById('facultySearchDept');
+  const roleSelect = document.getElementById('facultySearchRole');
+  if (!deptSelect || !roleSelect) return;
+
+  const departments = [...new Set(facultyMembers.map((m) => m.department))];
+  departments.forEach((department) => {
+    const option = document.createElement('option');
+    option.value = department;
+    option.textContent = department;
+    deptSelect.appendChild(option);
+  });
+
+  const roles = [...new Set(facultyMembers.map((m) => plainRole(m.role)))];
+  roles.forEach((role) => {
+    const option = document.createElement('option');
+    option.value = role;
+    option.textContent = role;
+    roleSelect.appendChild(option);
+  });
+}
+
+// Name/email search: only a name field exists in the current dataset, so
+// this matches on name alone for now.
+function applyFacultySearch() {
+  const nameQuery = document.getElementById('facultySearchName').value.trim().toLowerCase();
+  const deptFilter = document.getElementById('facultySearchDept').value;
+  const roleFilter = document.getElementById('facultySearchRole').value;
+
+  const filtered = facultyMembers.filter((m) => {
+    const matchesName = !nameQuery || m.name.toLowerCase().includes(nameQuery);
+    const matchesDept = !deptFilter || m.department === deptFilter;
+    const matchesRole = !roleFilter || plainRole(m.role) === roleFilter;
+    return matchesName && matchesDept && matchesRole;
+  });
+
+  renderFacultyGrid(filtered);
+}
+
+function renderFacultyGrid(members = facultyMembers) {
   const grid = document.getElementById('facultyMembersGrid');
   if (!grid) return;
 
-  grid.innerHTML = facultyMembers
+  grid.innerHTML = members
     .map(({ photo, name, role, department, link }) => `
       <article class="fmp-card">
         <a href="${link}" class="fmp-card__link">

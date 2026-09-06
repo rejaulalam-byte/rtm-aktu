@@ -176,9 +176,20 @@
 
           <div class="cm-content text-section__inner text-section--left">
             <div class="section-heading section-heading--center">
-              <h2 class="section-heading__title fmp-page-title">Faculty Members</h2>
+              <h2 class="section-heading__title">Faculty Members</h2>
               <p class="text-section__text text-section__text--center">Meet the dedicated minds who bring knowledge, experience and inspiration into every classroom&mdash;guiding our students to learn, grow and shape a brighter future.</p>
             </div>
+
+            <form class="fmp-search" id="facultySearchForm">
+              <input type="text" class="fmp-search__input" id="facultySearchName" placeholder="Name or Email" aria-label="Search by name or email">
+              <select class="fmp-search__select" id="facultySearchDept" aria-label="Filter by faculty or department">
+                <option value="">All Faculties &amp; Departments</option>
+              </select>
+              <select class="fmp-search__select" id="facultySearchRole" aria-label="Filter by designation">
+                <option value="">All Designations</option>
+              </select>
+              <button type="submit" class="btn btn-primary fmp-search__submit">Search</button>
+            </form>
 
             <div class="fmp-grid" id="facultyMembersGrid"></div>
           </div>
