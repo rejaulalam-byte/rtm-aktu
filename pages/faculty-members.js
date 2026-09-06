@@ -41,7 +41,7 @@ const facultyMembers = [
     name: 'Adiba Sabiha',
     role: 'Lecturer',
     department: 'Department of Business Administration',
-    link: '#',
+    link: 'faculty/profile.html?id=adiba-sabiha',
   },
   {
     photo: '../images/faculty-members/ananda-chakraborty.png',
