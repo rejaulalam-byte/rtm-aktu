@@ -23,6 +23,43 @@ const FACULTY_PROFILE_TAB_FIELDS = [
   'Contact',
 ];
 
+// A tab field's value can be either:
+//  - a plain string -> rendered as a single paragraph (e.g. Research Interest)
+//  - an array of sections -> each section is { heading?, items? } for a
+//    bullet list, or { heading?, lines? } for stacked plain-text lines
+//    (e.g. Contact). `heading` is optional on any section - omit it for
+//    a plain bullet list with no sub-group label. Item/line strings may
+//    contain inline HTML (e.g. an <a> tag) since they're inserted as-is.
+function hasTabContent(content) {
+  if (!content) return false;
+  if (typeof content === 'string') return content.trim().length > 0;
+  if (Array.isArray(content)) return content.length > 0;
+  return false;
+}
+
+function renderProfileTabBody(content) {
+  if (typeof content === 'string') {
+    return `<p class="fpr-tabs__panel-text">${content}</p>`;
+  }
+
+  return content
+    .map((section) => {
+      const heading = section.heading
+        ? `<h4 class="text-section__subheading cm-content__heading">${section.heading}</h4>`
+        : '';
+      if (section.items) {
+        const items = section.items.map((item) => `<li>${item}</li>`).join('');
+        return `${heading}<ul class="text-section__list">${items}</ul>`;
+      }
+      if (section.lines) {
+        const lines = section.lines.map((line) => `<p class="fpr-tabs__panel-text">${line}</p>`).join('');
+        return `${heading}${lines}`;
+      }
+      return heading;
+    })
+    .join('');
+}
+
 function renderProfileTabs(tabsData) {
   const tabsList = document.getElementById('facultyProfileTabs');
   const tabPanels = document.getElementById('facultyProfileTabPanels');
@@ -30,7 +67,7 @@ function renderProfileTabs(tabsData) {
 
   const entries = FACULTY_PROFILE_TAB_FIELDS
     .map((label) => [label, tabsData[label]])
-    .filter(([, content]) => content && content.trim());
+    .filter(([, content]) => hasTabContent(content));
   if (entries.length === 0) return;
 
   tabsList.innerHTML = entries
@@ -43,7 +80,7 @@ function renderProfileTabs(tabsData) {
     .map(([label, content], i) => `
       <div class="fpr-tabs__panel${i === 0 ? ' is-active' : ''}" data-tab-panel="${label}">
         <h3 class="fpr-tabs__panel-title">${label.toUpperCase()}</h3>
-        <p class="fpr-tabs__panel-text">${content}</p>
+        ${renderProfileTabBody(content)}
       </div>
     `)
     .join('');
