@@ -4735,6 +4735,16 @@ button {
    26. Faculty Members Page
    ========================================================================== */
 
+/* The shared .section-heading's 3rem bottom margin left a visibly bigger
+   gap above .fmp-search (48px, collapsed against .fmp-search's own 24px
+   top margin) than the gap below it (32px, collapsed between
+   .fmp-search's 32px bottom margin and .fmp-grid's 16px top margin).
+   Scoped here rather than changing .section-heading itself, which other
+   pages also rely on. Trims the top gap down to match. */
+.fmp-heading {
+  margin-bottom: 2rem;
+}
+
 /* New card grid: not a reuse of .fm-grid/.fm-card (the Academics page
    carousel and leadership-management.html share those, with a different
    card shape - gold-ringed 200px photo, no border box). This page's design
