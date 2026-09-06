@@ -4886,11 +4886,11 @@ button {
   max-width: 100%;
 }
 
-/* Design calls out #e2c400 for this banner, which doesn't match the site's
-   actual brand gold (--color-gold, #C9A227) used everywhere else - uses
-   the real token instead for consistency. */
+/* #F2F2F9 (same tint as .fpr-tabs__panels below) - chosen after
+   comparing it side by side against the site's brand gold
+   (--color-gold), which this banner used previously. */
 .fpr-banner {
-  background-color: var(--color-gold);
+  background-color: #F2F2F9;
   border-radius: var(--radius-md);
   padding: 1rem 1.5rem;
   margin-bottom: 2rem;
