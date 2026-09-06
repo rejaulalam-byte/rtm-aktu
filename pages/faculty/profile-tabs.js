@@ -7,9 +7,9 @@
 // content for; renderProfileTabs() looks up each field from this list
 // against that object, so a page's own key order never matters. Only
 // fields that actually have content render as a tab - a field left
-// empty/undefined is skipped entirely, not shown greyed out. The
-// first available tab is active by default; clicking a tab button
-// shows its panel and hides the rest.
+// empty/undefined is skipped entirely, not shown greyed out. No tab is
+// active on page load; clicking a tab button activates it and shows
+// its panel, hiding whichever other panel was showing.
 // ------------------------------------------------------------------
 const FACULTY_PROFILE_TAB_FIELDS = [
   'Research Interest',
@@ -71,14 +71,14 @@ function renderProfileTabs(tabsData) {
   if (entries.length === 0) return;
 
   tabsList.innerHTML = entries
-    .map(([label], i) => `
-      <button type="button" class="fpr-tabs__btn${i === 0 ? ' is-active' : ''}" data-tab="${label}">${label}</button>
+    .map(([label]) => `
+      <button type="button" class="fpr-tabs__btn" data-tab="${label}">${label}</button>
     `)
     .join('');
 
   tabPanels.innerHTML = entries
-    .map(([label, content], i) => `
-      <div class="fpr-tabs__panel${i === 0 ? ' is-active' : ''}" data-tab-panel="${label}">
+    .map(([label, content]) => `
+      <div class="fpr-tabs__panel" data-tab-panel="${label}">
         <h3 class="fpr-tabs__panel-title">${label.toUpperCase()}</h3>
         ${renderProfileTabBody(content)}
       </div>

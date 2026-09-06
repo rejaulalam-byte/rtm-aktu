@@ -104,114 +104,44 @@
     </section>
 
     <!-- ============================================================
-         4. SIDEBAR + PROFILE
+         4. PROFILE (no sidebar on this template - full width)
     ============================================================ -->
     <section class="bg-white">
       <div class="section-inner">
-        <div class="cm-layout">
+        <div class="fpr-page" id="fprContent">
+          <div class="fpr-banner">
+            <h2 class="fpr-banner__title" id="fprBannerTitle"></h2>
+          </div>
 
-          <aside class="cm-sidebar">
-            <h3 class="cm-sidebar__heading"><span class="cm-sidebar__heading-word1">Univet</span> Inside</h3>
-            <ul class="cm-sidebar__list">
-              <li>
-                <a href="../academic-system.html" class="cm-sidebar__link">
-                  <span>Academic System</span>
-                  <svg class="cm-sidebar__link-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </a>
-              </li>
-              <li>
-                <a href="../faculty-science-engineering.html" class="cm-sidebar__link">
-                  <span>Faculty of Science &amp; Engineering</span>
-                  <svg class="cm-sidebar__link-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </a>
-              </li>
-              <li>
-                <a href="../faculty-business-development.html" class="cm-sidebar__link">
-                  <span>Faculty of Business and Development Studies</span>
-                  <svg class="cm-sidebar__link-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </a>
-              </li>
-              <li>
-                <a href="../faculty-education-health-technology.html" class="cm-sidebar__link">
-                  <span>Faculty of Education, Health &amp; Technology</span>
-                  <svg class="cm-sidebar__link-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </a>
-              </li>
-              <li>
-                <a href="../featured-programs.html" class="cm-sidebar__link">
-                  <span>Featured Programs</span>
-                  <svg class="cm-sidebar__link-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </a>
-              </li>
-              <li>
-                <a href="../postgraduate-programs.html" class="cm-sidebar__link">
-                  <span>Postgraduate Programs</span>
-                  <svg class="cm-sidebar__link-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </a>
-              </li>
-              <li>
-                <a href="../undergraduate-programs.html" class="cm-sidebar__link">
-                  <span>Undergraduate Programs</span>
-                  <svg class="cm-sidebar__link-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </a>
-              </li>
-              <li>
-                <a href="../institutes-centers-courses.html" class="cm-sidebar__link">
-                  <span>Institutes &amp; Centers Courses</span>
-                  <svg class="cm-sidebar__link-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </a>
-              </li>
-              <li>
-                <a href="../deans-heads.html" class="cm-sidebar__link">
-                  <span>Deans &amp; Heads</span>
-                  <svg class="cm-sidebar__link-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </a>
-              </li>
-              <li>
-                <a href="#" class="cm-sidebar__link">
-                  <span>Academic Policy</span>
-                  <svg class="cm-sidebar__link-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </a>
-              </li>
-            </ul>
-          </aside>
+          <div class="fpr-layout">
+            <div class="fpr-card">
+              <img id="fprPhoto" class="fpr-card__photo" src="" alt="" loading="lazy">
+              <p class="fpr-card__role" id="fprRole"></p>
+              <p class="fpr-card__dept" id="fprDept"></p>
 
-          <div class="cm-content" id="fprContent">
-            <div class="fpr-banner">
-              <h2 class="fpr-banner__title" id="fprBannerTitle"></h2>
+              <h3 class="fpr-card__heading">Contact Information</h3>
+              <p class="fpr-card__address" id="fprAddress"></p>
+
+              <p class="fpr-card__contact">
+                <svg class="fpr-card__contact-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.5 10v9a1 1 0 0 0 1 1H9.5a1 1 0 0 0 1-1V15a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <a id="fprPhoneLink" href="#"></a>
+              </p>
+              <p class="fpr-card__contact">
+                <svg class="fpr-card__contact-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <a id="fprEmailLink" href="#"></a>
+              </p>
             </div>
 
-            <div class="fpr-layout">
-              <div class="fpr-card">
-                <img id="fprPhoto" class="fpr-card__photo" src="" alt="" loading="lazy">
-                <p class="fpr-card__role" id="fprRole"></p>
-                <p class="fpr-card__dept" id="fprDept"></p>
-
-                <h3 class="fpr-card__heading">Contact Information</h3>
-                <p class="fpr-card__address" id="fprAddress"></p>
-
-                <p class="fpr-card__contact">
-                  <svg class="fpr-card__contact-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.5 10v9a1 1 0 0 0 1 1H9.5a1 1 0 0 0 1-1V15a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                  <a id="fprPhoneLink" href="#"></a>
-                </p>
-                <p class="fpr-card__contact">
-                  <svg class="fpr-card__contact-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                  <a id="fprEmailLink" href="#"></a>
-                </p>
-              </div>
-
-              <div class="fpr-bio">
-                <h2 class="fpr-bio__heading">Short Biography</h2>
-                <div id="fprBio"></div>
-              </div>
-            </div>
-
-            <div class="fpr-tabs">
-              <div class="fpr-tabs__list" id="facultyProfileTabs"></div>
-              <div class="fpr-tabs__panels" id="facultyProfileTabPanels"></div>
+            <div class="fpr-bio">
+              <h2 class="fpr-bio__heading">Short Biography</h2>
+              <div id="fprBio"></div>
             </div>
           </div>
 
+          <div class="fpr-tabs">
+            <div class="fpr-tabs__list" id="facultyProfileTabs"></div>
+            <div class="fpr-tabs__panels" id="facultyProfileTabPanels"></div>
+          </div>
         </div>
       </div>
     </section>
