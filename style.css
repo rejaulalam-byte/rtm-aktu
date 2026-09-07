@@ -4314,6 +4314,14 @@ button {
    -1), rather than a real blur/lighting effect. */
 .advantage-intro__photo {
   position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-self: start;
+  /* Pulls the photo up to align its top with the "Why Choose RTM-AKTU?"
+     heading above (measured ~93px at desktop widths - the heading's own
+     margin-bottom plus title line box), since the heading lives outside
+     this grid and CSS alone can't read its rendered height. */
+  margin-top: -93px;
 }
 
 .advantage-intro__photo::before {
@@ -4325,10 +4333,17 @@ button {
   z-index: -1;
 }
 
+/* Photo is now a transparent-background cutout (body + its own drop
+   shadow) instead of a boxy JPG, so the old card treatment (bounding
+   background, rounded mask, shadow) is gone. Sized past its grid
+   column and right-anchored via the parent's flex justify-end, so it
+   can render bigger than the old JPG without disturbing the text
+   column's width. */
 .advantage-intro__photo-frame {
-  aspect-ratio: 600 / 794;
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-card);
+  width: 113%;
+  flex-shrink: 0;
+  aspect-ratio: 583.2146 / 965;
+  background-color: transparent;
 }
 
 .advantage-feature {
