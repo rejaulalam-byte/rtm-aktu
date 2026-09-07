@@ -2997,6 +2997,22 @@ button {
   margin-top: 2rem;
 }
 
+/* --- Academic Policy page: progressive "Read More" reading pattern
+   (pages/academic-policy.js). Same gold link look as .conduct-more__toggle
+   above, reused directly on a <button> since this needs multi-step JS
+   disclosure rather than one native <details> toggle. --- */
+.policy-readmore {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.policy-readmore-btn {
+  border: none;
+  background: none;
+  padding: 0;
+  font-size: 0.95rem;
+}
+
 /* --- Split sections: text + image, either order (Featured/Postgraduate/Undergraduate/Institutes/Deans) --- */
 .split-section__grid {
   display: grid;
