@@ -2231,6 +2231,13 @@ button {
   color: var(--color-white);
 }
 
+/* One-off: Institutes & Centers Courses breadcrumb groups "Home / Academics"
+   as a single gold block (per Figma), unlike every other page's uniformly
+   dim separators - so only this specific separator gets the gold override. */
+.page-hero__breadcrumb-sep--accent {
+  color: var(--color-gold);
+}
+
 /* --- About University collage (Section 2 media) --- */
 .about-us__collage-main {
   position: relative;
