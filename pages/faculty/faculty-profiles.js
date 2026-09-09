@@ -694,4 +694,90 @@ const facultyProfiles = {
       ],
     },
   },
+  'fahmid-ahmed-chowdhury': {
+    name: 'Fahmid Ahmed Chowdhury',
+    role: 'Lecturer',
+    department: 'Department of Business Administration',
+    photo: '../../images/faculty-members/fahmid-ahmed-chowdhury.png',
+    address: [
+      'RTM Al-Kabir Technical University (RTM-AKTU)',
+      'Campus: RTM Point, East Shahi Eidgah, TB Gate, Sylhet-3100, Bangladesh',
+    ],
+    phone: '01790022111',
+    phoneHref: 'tel:+8801790022111',
+    email: 'fahmid@rtm-aktu.ac.bd',
+    bio: [
+      "Fahmid Ahmed Chowdhury is a faculty member at RTM Al-Kabir Technical University (RTM-AKTU) with excellent track record of teaching and research. He currently serves as a Lecturer in the Department of Business Administration at RTM Al-Kabir Technical University (RTM-AKTU). In addition to his academic role, he is working part-time as an Invigilator at the British Council, where he contributes to maintaining examination standards and ensuring compliance with international assessment protocols. He has also completed an internship at Pubali Bank PLC, where he gained practical knowledge and hands-on experience in banking operations and financial services. He is actively involved in teaching a wide range of undergraduate and graduate courses in business and management disciplines. His professional journey reflects a strong commitment to academic excellence, student development, and practical learning. Alongside his academic responsibilities, he is engaged in business activities, which provide him with valuable real-world insights that enrich his teaching approach.",
+      "Fahmid Ahmed Chowdhury completed his Bachelor of Business Administration (BBA) with a major in Human Resource Management and Master of Business Administration (MBA) with a major in Finance and Banking from Leading University, Sylhet. With a blend of academic engagement and practical exposure, he continues to contribute to business education and student skill development.",
+      "His research interests lie in the broad areas of Finance, Banking, and Human Resource Management, with a focus on addressing contemporary challenges in business and economic development. He is particularly interested in exploring the integration of financial systems with organizational performance, as well as the role of human capital in achieving sustainable competitive advantage.",
+    ],
+    tabs: {
+      'Research Interest': [
+        {
+          lines: [
+            'His research interests lie at the intersection of human resource management and financial decision-making. He is particularly interested in areas such as:',
+          ],
+        },
+        {
+          items: [
+            'Human Resource Development and Organizational Behavior',
+            'Financial Decision-Making and Investment Analysis',
+            'Labor Law and Employee Relations',
+            'Banking Performance and Risk Management',
+            'Business Research Methods and Data-Driven Decision Making',
+            'The Impact of Training and Development on Employee Performance',
+          ],
+        },
+      ],
+      'Academic Information': [
+        {
+          items: [
+            'Master of Business Administration (MBA), Major: Finance & Banking, Leading University, 2023',
+            'Bachelor of Business Administration (BBA), Major: Human Resource Management, Leading University, 2024',
+          ],
+        },
+      ],
+      'Courses Taught': [
+        {
+          items: [
+            'In BBA: Introduction to Business, Principles of Finance, Human Resource Management, Labor Law, Auditing & Taxation, Macroeconomics, Microeconomics, Business Mathematics, Mathematics for Decision Making',
+            'In MBA: Corporate Finance, Security Analysis and Portfolio Management, Managerial Economics, Research Methods in Business, Auditing and Taxation',
+          ],
+        },
+      ],
+      'Areas of Expertise': '',
+      'Experience': [
+        {
+          items: [
+            'Lecturer, Department of Business Administration, RTM Al-Kabir Technical University, Sylhet, from 1st September 2024 to date.',
+            'Exams Invigilator at British Council, Bangladesh (Part-time), from 20 October 2023.',
+            'Internship at Pubali Bank PLC, Dargagate Branch, Sylhet, from 15 Nov 2022 to 15 Feb 2023.',
+          ],
+        },
+      ],
+      'Teaching and Academic Contributions': '',
+      'Publications & Research': '',
+      'Seminars/Workshops Participation': [
+        {
+          items: [
+            'Attended a workshop on "CV Writing & Job Interview Workshop" hosted by Earthpedia Global and Leading University Business Club, 2024.',
+            'Attended a workshop on "Business Idea Competition" hosted by Leading University Business Club, 2022.',
+            'Attended a workshop on "Career Grooming & CV Writing" coordinated by IQAC & Leading University Business Club, 2022.',
+            'Effective HR Practices in Modern Organizations, Sylhet Chamber of Commerce and Industry, 2023.',
+          ],
+        },
+      ],
+      'Contact': [
+        {
+          lines: [
+            'Department of Business Administration',
+            'RTM Al-Kabir Technical University (RTM-AKTU)',
+            'Campus: RTM Point, East Shahi Eidgah, TB Gate, Sylhet-3100, Bangladesh',
+            'Mobile: <a href="tel:+8801790022111">01790022111</a>',
+            'Email: <a href="mailto:fahmid@rtm-aktu.ac.bd">fahmid@rtm-aktu.ac.bd</a>',
+          ],
+        },
+      ],
+    },
+  },
 };

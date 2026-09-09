@@ -62,7 +62,7 @@ const facultyMembers = [
     name: 'Fahmid Ahmed Chowdhury',
     role: 'Lecturer',
     department: 'Department of Business Administration',
-    link: '#',
+    link: 'faculty/profile.html?id=fahmid-ahmed-chowdhury',
   },
   {
     photo: '../images/faculty-members/jamal-ahmed.png',
