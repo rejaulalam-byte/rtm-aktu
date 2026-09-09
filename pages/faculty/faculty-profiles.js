@@ -591,4 +591,107 @@ const facultyProfiles = {
       ],
     },
   },
+  'abu-syeed-muhammed-abdullah': {
+    name: 'Abu Syeed Muhammed Abdullah',
+    role: 'Associate Professor and Head & Exam Controller',
+    department: 'Department of Business Administration',
+    photo: '../../images/faculty-members/abu-syeed-muhammed-abdullah.png',
+    address: [
+      'RTM Al-Kabir Technical University (RTM-AKTU)',
+      'Campus: RTM Point, East Shahi Eidgah, TB Gate, Sylhet-3100, Bangladesh',
+    ],
+    phone: '01746461461',
+    phoneHref: 'tel:+8801746461461',
+    email: 'abdullah@rtm-aktu.ac.bd',
+    bio: [
+      "Abu Syeed Muhammed Abdullah is an Associate Professor and Head in the Department of Business Administration at RTM Al-Kabir Technical University. He is a senior academic professional with demonstrated commitment to excellence in teaching, research, and academic leadership in Business and Development Studies. Prior to this role, he was an associate professor of the Department of Business Administration at Sylhet International University (SIU). He also worked as the coordinator of BBA program and the Proctor at SIU. Before joining SIU, he worked at Grameen Phone Ltd., a leading telecom company operating in Bangladesh.",
+      "He completed his MBA in (i) Finance and Banking & (ii) Management Information System (Dual Major) from Shahjalal University of Science and Technology, Sylhet. He completed BBA in Finance and Management Information System (Dual Major) with Honors award from the same university. Currently he is pursuing his PhD in the area of Finance at Shahjalal University of Science and Technology, Sylhet.",
+      "His research interest covers a wide range of area of Finance including Financial Management, Corporate Finance, Financial Modeling, and Derivative Finance. He is particularly interested in research activities related to Machine Learning for Finance, and AI inclusion in Islamic Finance. He has published numerous articles in peer-reviewed national and international journals, and has presented his work at various academic conferences.",
+    ],
+    tabs: {
+      'Research Interest': 'Management Studies, Business Strategy, Organizational Development, Applied Research, Higher Education Pedagogy.',
+      'Academic Information': [
+        {
+          items: [
+            'MPhil/PhD, etc.: PhD Continued at Shahjalal University of Science and Technology, Sylhet.',
+            'Postgraduation/Masters: MBA in (1) Finance and Banking & (2) MIS (Dual Major) from Shahjalal University of Science and Technology, Sylhet. Result: CGPA 3.95 on 4.00 Grade Scale.',
+            "Graduation/Hon's: BBA in (1) Finance & (2) MIS (Dual Major) with Honors Award from Shahjalal University of Science and Technology, Sylhet. Result: CGPA 3.79 on 4.00 Grade Scale.",
+            'Higher Secondary School Certificate (HSC) or equivalent: HSC in Science Group from Sylhet M.C. College under Cumilla Board. Result: First Division.',
+            'Secondary School Certificate (SSC) or equivalent: SSC in Science Group from Nobin Chandra High School, Kulaura under Cumilla Board. Result: First Division.',
+          ],
+        },
+      ],
+      'Courses Taught': [
+        {
+          lines: [
+            'He delivered instructions in a number of courses in undergraduate level. Courses he taught in undergraduate level includes Principles of Finance, Financial Management, Investment Management, Financial Institutions, International Finance, Financial Analysis and Control, Working Capital Management, Advanced Bank and Insurance Management, Bank Fund Management, Operations Research, Introduction to MIS, Business Research, Business Mathematics, Business Statistics-I, Production and Operations Management, Financial Accounting-I, Financial Accounting-II, Management Accounting, Advanced Computer Skills, Principles of Management.',
+            'In the graduate level i.e. in MBA program, he delivered lectures in Managerial Finance, Corporate Finance, Portfolio Management, Management Science, Financial Accounting, Advanced Management Accounting, Derivatives, E-commerce and Web Page Design, Management of Technology, Quantitative Analysis for Business Decisions, Capital Budgeting and Investment Analysis, Quantitative Tools in Business, Marketing Principles and Practices, Management Principles and Organizational Behavior.',
+          ],
+        },
+      ],
+      'Areas of Expertise': [
+        {
+          items: [
+            'Business Administration',
+            'Teaching',
+            'Research',
+            'Academic Development',
+          ],
+        },
+        {
+          heading: 'Professional Engagement',
+          lines: [
+            'Contributes to academic and professional communities through research initiatives, collaborative projects, and institutional development activities.',
+          ],
+        },
+      ],
+      'Experience': [
+        {
+          heading: 'Professional Activities',
+          items: [
+            'Associate Professor, RTM Al-Kabir Technical University, from 01/08/2021 to date.',
+            'Associate Professor, Sylhet International University, from 24/02/2021 to 31/07/2021.',
+            'Assistant Professor, Sylhet International University, from 18/05/2014 to 23/02/2021.',
+            'Lecturer, Sylhet International University, from 01/10/2009 to 17/05/2014.',
+            'Jr. Lecturer, Sylhet International University, from 20/04/2009 to 30/09/2009.',
+            'Officer, Emerging Sales, Grameen Phone Ltd., from 25/04/2006 to 04/02/2008.',
+          ],
+        },
+        {
+          heading: 'Administrative Experiences',
+          items: [
+            'Head, Department of Business Administration, from 21/08/2023 to date.',
+            'Controller of Examinations at RTM Al-Kabir Technical University, from 04/06/2023 to date.',
+            'Deputy Controller of Examinations at RTM Al-Kabir Technical University, from 27/03/2023 to 03/06/2023.',
+            'Proctor at RTM Al-Kabir Technical University, from 01/08/2021 to 03/06/2023.',
+          ],
+        },
+      ],
+      'Teaching and Academic Contributions': 'Actively engaged in curriculum development, student mentoring, and innovative teaching methodologies that enhance learning outcomes and academic performance.',
+      'Publications & Research': [
+        {
+          items: [
+            '"Measuring Consumers Satisfaction towards the Services of Mobile Phone Operators in Bangladesh", International Journal of Management Sciences, Research Academy of Social Sciences, Volume 1, Issue No. 11, 2013, Pp: 436-444, Online ISSN: 2310-2845.',
+            '"A Model Based on Average Investment for Solving Complex Annuity Problems of Sinking Fund", Asia-Pacific Journal of Business, Kangwon National University, South Korea, Volume 4, Issue No. 2, December 2013, Pp: 41-53, ISSN 2233-5900.',
+            '"Non-Disclosure Practices of Interest Rate and Compounding Frequency in Sinking Fund Proposals by the Banks Operating in Bangladesh: A Serious Pitfall for Investors", International Journal of Research in Computer Application & Management, Volume 4, Issue No. 01, January 2014, Pp: 44-50, ISSN 2231-1009.',
+            '"Detection and Remedies for Industrial Sickness in Small Industrial Units of Bangladesh: A Study on Sick Industrial Units of Industrial Estates in Sylhet Division", Researchers World – Journal of Arts, Science & Commerce, Volume V, Issue 2, April 2014, Pp: 40-50, Online ISSN: 2229-4686.',
+            '"Evaluation of Entrepreneurship Development Training Program of Bangladesh Small & Cottage Industries Corporation: A study on 3-Days Long Workshop on Entrepreneurial Development Arranged by BSCIC, Sylhet District", Indian Journal of Commerce & Management Studies, Volume V, Issue 2, May 2014, Pp: 53-61, Online ISSN: 2229-5674.',
+          ],
+        },
+      ],
+      'Seminars/Workshops Participation': '',
+      'Contact': [
+        {
+          lines: [
+            'Department of Business Administration',
+            'RTM Al-Kabir Technical University (RTM-AKTU)',
+            'Campus: RTM Point, East Shahi Eidgah, TB Gate, Sylhet-3100, Bangladesh',
+            'Contact: <a href="tel:+8801751232222">+8801751232222</a> | <a href="tel:+8801746461461">+8801746461461</a>',
+            'Email: <a href="mailto:abdullah@rtm-aktu.ac.bd">abdullah@rtm-aktu.ac.bd</a>',
+            'Website: <a href="https://www.rtm-aktu.ac.bd" target="_blank" rel="noopener">www.rtm-aktu.ac.bd</a>',
+          ],
+        },
+      ],
+    },
+  },
 };

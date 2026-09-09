@@ -34,7 +34,7 @@ const facultyMembers = [
     name: 'Abu Syeed Muhammed Abdullah',
     role: 'Associate Professor and Head, &<br>Exam Controller',
     department: 'Department of Business Administration',
-    link: '#',
+    link: 'faculty/profile.html?id=abu-syeed-muhammed-abdullah',
   },
   {
     photo: '../images/faculty-members/adiba-sabiha.png',
