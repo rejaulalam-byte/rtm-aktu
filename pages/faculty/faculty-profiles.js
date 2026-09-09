@@ -271,4 +271,104 @@ const facultyProfiles = {
       ],
     },
   },
+  'jerin-akter': {
+    name: 'Jerin Akter',
+    role: 'Lecturer',
+    department: 'Department of Business Administration',
+    photo: '../../images/academics/faculty/faculty-4.jpg',
+    address: [
+      'RTM Al-Kabir Technical University (RTM-AKTU)',
+      'Campus: RTM Point, East Shahi Eidgah, TB Gate, Sylhet-3100, Bangladesh',
+    ],
+    phone: '01710462074',
+    phoneHref: 'tel:+8801710462074',
+    email: 'jerin@rtm-aktu.ac.bd',
+    bio: [
+      "Jerin Akter is serving as a Lecturer in the Department of Business Administration with a specialization in Finance and Accounting. She possesses a strong academic foundation in business education, supported by practical experience in administration, academic coordination, financial record management, and digital communication. Before joining academia, she worked as a School Coordinator at School of Joy under APASEN, UK, where she supervised teachers, coordinated academic activities, organized training workshops, maintained institutional records, and supported the overall development of students. Her role enabled her to gain extensive experience in educational administration, student guidance, and academic planning. She also worked as an SEO Executive at Orbit Technology, where she developed expertise in website content management, online branding, digital communication, and search engine optimization.",
+      "Jerin Akter completed her MBA in Accounting from Bangladesh University of Professionals (BUP) achieving an outstanding result. She earned her BBA in Finance and Banking from Sylhet International University with a CGPA of 3.91 out of 4.00.",
+      "Her research experience includes conducting an academic study entitled \"Evaluating the Support Services in Educational Sectors on the Viewpoints of Customers and Consumers: A Study on the Coaching Centers of Sylhet City.\" In this research, she collected and analyzed primary data from coaching centers and students in Sylhet city and prepared a comprehensive report with interpretation and recommendations.",
+      "In addition to her academic qualifications, she has completed professional training on Neuro-Developmental Disabilities from APASEN, UK, and Speech Therapy training.",
+    ],
+    tabs: {
+      'Research Interest': [
+        {
+          lines: [
+            'Her research interests lie in the fields of Financial Accounting, Financial Management, Business Education, Educational Administration, and Student Counseling & Academic Support. She is particularly interested in exploring effective methods of accounting education, improving financial management practices, and strengthening educational administration in academic institutions. She also focuses on student development, academic support systems, and the role of counseling in enhancing student performance and learning outcomes.',
+          ],
+        },
+        {
+          heading: 'Academic and Research Interests',
+          items: [
+            'Management Studies',
+            'Business Strategy',
+            'Organizational Development',
+            'Applied Research',
+            'Higher Education Pedagogy',
+          ],
+        },
+      ],
+      'Academic Information': [
+        {
+          items: [
+            'MBA in Accounting – Bangladesh University of Professionals (BUP), outstanding result',
+            'BBA in Finance and Banking – Sylhet International University, CGPA 3.91 out of 4.00',
+          ],
+        },
+      ],
+      'Courses Taught': [
+        {
+          lines: [
+            'Delivered undergraduate-level instruction in Finance, Accounting, and Business Administration, integrating theoretical knowledge with practical application and case-based learning. Courses taught include Financial Accounting, Cost Accounting, Management Accounting, Intermediate Accounting, Advanced Accounting, Auditing, Taxation, Corporate Accounting, Accounting Information Systems, Financial Statement Analysis, Accounting Theory, International Accounting, Public Sector Accounting, Business Finance, Corporate Finance, Business Mathematics, Economics, Microeconomics, Macroeconomics, Banking and Insurance, Human Resource Management, and Business Communication.',
+            'Developed course outlines, lesson plans, lecture materials, assignments, and assessment strategies to support student learning and academic development. Guided students in understanding accounting principles, financial reporting, business decision-making, and analytical problem-solving. Emphasized practical applications through examples, case studies, presentations, and classroom discussions to prepare students for professional roles in business, finance, and accounting.',
+            'Provided academic mentoring, evaluated student performance, supervised assignments and presentations, and supported students in developing communication, analytical, and professional skills. Also encouraged students to strengthen their knowledge of modern business practices, financial management, and organizational leadership.',
+          ],
+        },
+      ],
+      'Areas of Expertise': [
+        {
+          items: [
+            'Business Administration',
+            'Teaching',
+            'Research',
+            'Academic Development',
+          ],
+        },
+        {
+          heading: 'Professional Engagement',
+          lines: [
+            'Contributes to academic and professional communities through research initiatives, collaborative projects, and institutional development activities.',
+          ],
+        },
+      ],
+      'Experience': [
+        {
+          heading: 'School Coordinator — School of Joy, under APASEN, UK',
+          lines: [
+            'Supervised teachers, coordinated academic activities, organized training workshops, maintained institutional records, and supported the overall development of students, gaining extensive experience in educational administration, student guidance, and academic planning.',
+          ],
+        },
+        {
+          heading: 'SEO Executive — Orbit Technology',
+          lines: [
+            'Developed expertise in website content management, online branding, digital communication, and search engine optimization.',
+          ],
+        },
+      ],
+      'Teaching and Academic Contributions': 'Actively engaged in curriculum development, student mentoring, and innovative teaching methodologies that enhance learning outcomes and academic performance.',
+      'Publications & Research': '',
+      'Seminars/Workshops Participation': '',
+      'Contact': [
+        {
+          lines: [
+            'Department of Business Administration (Major: Finance & Accounting)',
+            'RTM Al-Kabir Technical University (RTM-AKTU)',
+            'Campus: RTM Point, East Shahi Eidgah, TB Gate, Sylhet-3100, Bangladesh',
+            'Email: <a href="mailto:jerin@rtm-aktu.ac.bd">jerin@rtm-aktu.ac.bd</a>',
+            'Contact: <a href="tel:+8801710462074">+8801710462074</a>',
+            'Website: <a href="https://www.rtm-aktu.ac.bd" target="_blank" rel="noopener">www.rtm-aktu.ac.bd</a>',
+          ],
+        },
+      ],
+    },
+  },
 };

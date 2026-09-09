@@ -83,7 +83,7 @@ const facultyMembers = [
     name: 'Jerin Akter',
     role: 'Lecturer',
     department: 'Department of Business Administration',
-    link: '#',
+    link: 'faculty/profile.html?id=jerin-akter',
   },
   {
     photo: '../images/faculty-members/mahmuda-shatu-rethe.png',
