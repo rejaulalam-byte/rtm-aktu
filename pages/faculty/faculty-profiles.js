@@ -517,4 +517,78 @@ const facultyProfiles = {
       ],
     },
   },
+  'abdullah-rajib': {
+    name: 'Abdullah Rajib',
+    role: 'Assistant Professor',
+    department: 'Department of Computer Science and Engineering (CSE)',
+    photo: '../../images/faculty-members/abdullah-rajib.png',
+    address: [
+      'RTM Al-Kabir Technical University (RTM-AKTU)',
+      'Campus: RTM Point, East Shahi Eidgah, TB Gate, Sylhet-3100, Bangladesh',
+    ],
+    phone: '01675937860',
+    phoneHref: 'tel:+8801675937860',
+    email: 'rajib@rtm-aktu.ac.bd',
+    bio: [
+      "Abdullah Rajib has been serving as an Assistant Professor in the Department of Computer Science and Engineering at RTM Al-Kabir Technical University (RTM-AKTU) since August 1, 2023. Prior to this appointment, he held the position of Assistant Professor and Head of the Department of Computer Science and Engineering at Sylhet International University (SIU). During his tenure at SIU, he also contributed as the Departmental Coordinator and served as Assistant Controller of Examinations, demonstrating strong leadership and administrative capabilities.",
+      "He completed both his B.Sc. and M.Sc. degrees in Applied Physics, Electronics & Communication Engineering (currently recognized as the EEE discipline) from the prestigious University of Dhaka—one of the leading and most renowned institutions in Bangladesh, known for its academic excellence and rich heritage.",
+      "Throughout his academic journey, Mr. Abdullah has consistently demonstrated excellence, receiving multiple prestigious scholarships, including the Junior Scholarship, Board Scholarships based on SSC and HSC results, and the Imdad-Sitara Khan Scholarship at the undergraduate level. Notably, he was also awarded a highly competitive scholarship from Sumitomo Corporation, Japan, granted annually to only 20 students of University of Dhaka based on outstanding academic performance.",
+      "In addition to his academic and administrative achievements, he has contributed to research, with publications in international journals and conference papers presented in IEEE conference proceedings.",
+    ],
+    tabs: {
+      'Research Interest': 'Embedded System Design and Simulation, Artificial Intelligence, Machine Learning, Biomedical Engineering, VLSI Design, Renewable Energy and Power System Engineering.',
+      'Academic Information': [
+        {
+          items: [
+            'M.Sc. in Applied Physics, Electronics & Communication Engineering (Currently EEE department), 2012, University of Dhaka, Dhaka, Bangladesh.',
+            'B.Sc. in Applied Physics, Electronics & Communication Engineering (Currently EEE department), 2011, University of Dhaka, Dhaka, Bangladesh.',
+            'Higher Secondary Certificate, 2007, Amritalal Dey College, Barisal, Bangladesh.',
+            'Secondary School Certificate, 2005, Tarki Bandar Victory Secondary School, Barisal, Bangladesh.',
+          ],
+        },
+      ],
+      'Courses Taught': 'Data Structure, Data Communication, Digital Logic Design, Microprocessors and Microcontrollers, Basic Electrical Engineering, Discrete Mathematics, Computer Architecture, Digital System Design, Magnetism and Modern Physics, VLSI Design, Digital Signal Processing, Digital Image Processing and Related Lab Courses.',
+      'Areas of Expertise': '',
+      'Experience': [
+        {
+          items: [
+            'Assistant Professor, Dept. of Computer Science and Engineering, RTM Al-Kabir Technical University, Sylhet, Bangladesh — 1st August 2023 to date.',
+            'Head of the Department (February 28, 2023 – 31 July, 2023), Department of Computer Science and Engineering, Sylhet International University, Sylhet.',
+            'Assistant Professor (February 26, 2023 – 31 July, 2023), Department of Computer Science and Engineering, Sylhet International University, Sylhet.',
+            'Course Coordinator in CSE Department (28 July, 2022 – 31 July, 2023), Sylhet International University, Sylhet.',
+            'Lecturer and Assistant Controller in the Examination Controller Office (February 25, 2022 – 30 October, 2022), Sylhet International University, Sylhet.',
+            'Lecturer (November 01, 2014 – February 25, 2023), Department of Computer Science and Engineering, Sylhet International University, Sylhet.',
+          ],
+        },
+      ],
+      'Teaching and Academic Contributions': '',
+      'Publications & Research': [
+        {
+          items: [
+            'Rubel Chandra Talukder, Rajib Karmakar (Currently Abdullah Rajib), SK Biswas, PK Sarkar, "Design, Implementation and Performance Analysis of Analog Electronic System for Bioelectrocal Impedance Measurement Application," International Journal of Electronic and Electrical Engineering, vol. 5, no. 5, pp. 381-384, 2012 [Special Issue].',
+            'MD Abdul Awal Ansary, Md. Umor Faruk Jahangir, Abdullah Rajib, "A Philosophical Survey and Recommendations Regarding ICT Skills of Primary School Teachers in Sylhet District, Bangladesh," SIU Journal, Volume 7, Issue 1, December 2022 [Accepted for Publication].',
+          ],
+        },
+      ],
+      'Seminars/Workshops Participation': [
+        {
+          items: [
+            'As a faculty member of the CSE Department, Sylhet International University, under the HEQEP Project, UGC, Bangladesh, participated in several workshops on different topics of HEQEP.',
+            'As a participant from the Department of CSE, Sylhet International University, participated in "International Symposium on Quality Assurance in Engineering Education through Accreditation-III" organized by the Board of Accreditation for Engineering and Technical Education (BAETE), Bangladesh.',
+          ],
+        },
+      ],
+      'Contact': [
+        {
+          lines: [
+            'RTM Al-Kabir Technical University (RTM-AKTU)',
+            'Department of Computer Science and Engineering',
+            'Campus: RTM Point, East Shahi Eidgah, TB Gate, Sylhet-3100, Bangladesh',
+            'Mobile: <a href="tel:+8801675937860">+8801675937860</a>',
+            'Email: <a href="mailto:rajib@rtm-aktu.ac.bd">rajib@rtm-aktu.ac.bd</a>',
+          ],
+        },
+      ],
+    },
+  },
 };

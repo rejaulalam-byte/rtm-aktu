@@ -27,7 +27,7 @@ const facultyMembers = [
     name: 'Abdullah Rajib',
     role: 'Assistant professor',
     department: 'Department of Computer Science and Engineering (CSE)',
-    link: '#',
+    link: 'faculty/profile.html?id=abdullah-rajib',
   },
   {
     photo: '../images/faculty-members/abu-syeed-muhammed-abdullah.png',
