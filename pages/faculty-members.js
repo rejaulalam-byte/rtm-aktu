@@ -132,7 +132,7 @@ const facultyMembers = [
     name: 'Md. Samiul Alim',
     role: 'Lecturer',
     department: 'Department of Computer Science and Engineering (CSE)',
-    link: '#',
+    link: 'faculty/profile.html?id=md-samiul-alim',
   },
   {
     photo: '../images/faculty-members/mohammad-mahmudul-alam-mia.png',

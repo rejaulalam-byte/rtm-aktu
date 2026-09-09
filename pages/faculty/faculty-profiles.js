@@ -371,4 +371,56 @@ const facultyProfiles = {
       ],
     },
   },
+  'md-samiul-alim': {
+    name: 'Md. Samiul Alim',
+    role: 'Lecturer',
+    department: 'Department of Computer Science and Engineering (CSE)',
+    photo: '../../images/academics/faculty/faculty-1.jpg',
+    address: [
+      'RTM Al-Kabir Technical University (RTM-AKTU)',
+      'Campus: RTM Point, East Shahi Eidgah, TB Gate, Sylhet-3100, Bangladesh',
+    ],
+    phone: '01730298445',
+    phoneHref: 'tel:+8801730298445',
+    email: 'samiul@rtm-aktu.ac.bd',
+    bio: [
+      "Md. Samiul Alim is an academic professional at RTM Al-Kabir Technical University (RTM-AKTU) with demonstrated commitment to excellence in teaching and research. He currently serves as a Lecturer in the Department of Computer Science and Engineering at RTM Al-Kabir Technical University (RTM-AKTU) since November 1, 2024. Prior to this, he worked as a Lecturer in the Department of Computer Science and Engineering at Pabna Engineering College under the University of Rajshahi (RU).",
+      "He obtained his B.Sc. (Engg.) in Computer Science and Engineering (CSE) from Pabna University of Science and Technology.",
+      "His research interests include Artificial Intelligence, Machine Learning, Deep Learning, Computer Vision, Medical Image Analysis, Image Processing, and Healthcare Data Analytics. He has published several articles in reputable journals and international conference proceedings, including Systems and Soft Computing.",
+    ],
+    tabs: {
+      'Research Interest': 'His research interests include Artificial Intelligence, Machine Learning, Deep Learning, Computer Vision, Medical Image Analysis, Image Processing, and Healthcare Data Analytics. He has published several articles in reputable journals and international conference proceedings, including Systems and Soft Computing.',
+      'Academic Information': [
+        {
+          items: [
+            'B.Sc. (Engg.) in Computer Science and Engineering (CSE) – Pabna University of Science and Technology',
+          ],
+        },
+      ],
+      'Courses Taught': '',
+      'Areas of Expertise': '',
+      'Experience': [
+        {
+          heading: 'Lecturer — Department of Computer Science and Engineering, Pabna Engineering College (under University of Rajshahi)',
+          lines: [
+            'Prior role held before joining RTM Al-Kabir Technical University (RTM-AKTU) as Lecturer in the Department of Computer Science and Engineering on November 1, 2024.',
+          ],
+        },
+      ],
+      'Teaching and Academic Contributions': '',
+      'Publications & Research': '',
+      'Seminars/Workshops Participation': '',
+      'Contact': [
+        {
+          lines: [
+            'Department of Computer Science and Engineering (CSE)',
+            'RTM Al-Kabir Technical University (RTM-AKTU)',
+            'Campus: RTM Point, East Shahi Eidgah, TB Gate, Sylhet-3100, Bangladesh',
+            'Mobile: <a href="tel:+8801730298445">01730298445</a>',
+            'Email: <a href="mailto:samiul@rtm-aktu.ac.bd">samiul@rtm-aktu.ac.bd</a>',
+          ],
+        },
+      ],
+    },
+  },
 };
