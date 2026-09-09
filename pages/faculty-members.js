@@ -55,7 +55,7 @@ const facultyMembers = [
     name: 'Dilara Ahmed Choudhury',
     role: 'Assistant Professor',
     department: 'Department of Applied Health and Nutrition',
-    link: '#',
+    link: 'faculty/profile.html?id=dilara-ahmed-choudhury',
   },
   {
     photo: '../images/faculty-members/fahmid-ahmed-chowdhury.png',
