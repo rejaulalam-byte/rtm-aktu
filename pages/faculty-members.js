@@ -167,7 +167,7 @@ const facultyMembers = [
     name: 'S.A.M. Thahmid',
     role: 'Faculty Member',
     department: 'Department of Education',
-    link: '#',
+    link: 'faculty/profile.html?id=sam-thahmid',
   },
   {
     photo: '../images/faculty-members/sayed-shifat-ahmed.png',

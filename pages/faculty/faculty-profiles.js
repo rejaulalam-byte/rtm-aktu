@@ -423,4 +423,98 @@ const facultyProfiles = {
       ],
     },
   },
+  'sam-thahmid': {
+    name: 'S.A.M. Thahmid',
+    role: 'Faculty Member',
+    department: 'Department of Education',
+    photo: '../../images/academics/faculty/faculty-3.jpg',
+    address: [
+      'RTM Al-Kabir Technical University (RTM-AKTU)',
+      'Campus: RTM Point, East Shahi Eidgah, TB Gate, Sylhet-3100, Bangladesh',
+    ],
+    phone: '01795011223',
+    phoneHref: 'tel:+8801795011223',
+    email: 'thahmid@rtm-aktu.ac.bd',
+    bio: [
+      "S.A.M. Thahmid is a language instructor under BIISD and RTM Al-Kabir Technical University specializing in English language teaching, literature, and academic writing. He designs learner-centered lessons that balance communicative practice with rigorous academic standards, emphasizing critical thinking, academic integrity, and confident English communication in both spoken and written contexts. His teaching practice is grounded in evidence-based curricula, scaffolded activities, and targeted feedback through error analysis, ensuring measurable improvement in student performance.",
+      "Tahmid holds a B.A. Honors in English Language and Literature from Metropolitan University, Bangladesh, and is nearing completion of an M.A. in English Language Teaching at the same institution.",
+      "His professional journey reflects a commitment to pedagogy, student support, and academic leadership; all directed toward helping learners achieve success in academic and professional English. Alongside his academic role, Sam has contributed to student development and leadership through positions such as Student Advisor and previously Senior Vice President at the MU Speakers' Club of English, where he provided mentoring, counseling, and coordinated extracurricular initiatives. He has also gained experience as a Student Counselor supporting student welfare and growth, and as Head of Documentation at PranBin Education.",
+      "Tahmid's research focus on ELT and ELE pedagogy and curriculum development, with a particular emphasis on designing learner-centered curricula, evidence-based teaching methods, and effective assessment practices.",
+    ],
+    tabs: {
+      'Research Interest': [
+        {
+          lines: [
+            "S.A.M. Thahmid's research interests focus on ELT and ELE pedagogy and curriculum development, with a particular emphasis on designing learner-centered curricula, evidence-based teaching methods, and effective assessment practices. He is interested in exploring innovative pedagogical approaches—such as task-based learning, materials development, technology-enhanced instruction, and formative assessment—to improve communicative competence across diverse learner populations.",
+          ],
+        },
+        {
+          heading: 'Academic and Research Interests',
+          items: [
+            'Management Studies',
+            'Business Strategy',
+            'Organizational Development',
+            'Applied Research',
+            'Higher Education Pedagogy',
+          ],
+        },
+      ],
+      'Academic Information': [
+        {
+          items: [
+            'B.A. Honors in English Language and Literature – Metropolitan University, Bangladesh',
+            'M.A. in English Language Teaching (ELT) – Metropolitan University, Bangladesh (in progress)',
+          ],
+        },
+      ],
+      'Courses Taught': 'S.A.M. Thahmid has delivered undergraduate-level instruction in English language, literature, and communication, integrating theoretical frameworks with practice-based, seminar and workshop learning. He has designed and taught courses that develop critical reading, analytical writing, and communicative competence, and has created course materials, lesson plans, and assessment strategies aligned with clear learning outcomes. His teaching repertoire includes Language, Media and Communication; Shakespeare; Introduction to English Poetry and Rhetoric; Introduction to English Drama; Greek and Roman Classics in Translation; Continental Literature; American Literature I; and Renaissance Literature, reflecting a broad and interdisciplinary approach to English studies.',
+      'Areas of Expertise': [
+        {
+          items: [
+            'Business Administration',
+            'Teaching',
+            'Research',
+            'Academic Development',
+          ],
+        },
+        {
+          heading: 'Professional Engagement',
+          lines: [
+            'Contributes to academic and professional communities through research initiatives, collaborative projects, and institutional development activities.',
+          ],
+        },
+      ],
+      'Experience': [
+        {
+          heading: "Student Advisor / Senior Vice President — MU Speakers' Club of English, Metropolitan University",
+          lines: [
+            'Provided mentoring, counseling, and coordinated extracurricular initiatives.',
+          ],
+        },
+        {
+          heading: 'Student Counselor',
+          lines: [
+            'Supported student welfare and growth.',
+          ],
+        },
+        {
+          heading: 'Head of Documentation — PranBin Education',
+        },
+      ],
+      'Teaching and Academic Contributions': 'Actively engaged in curriculum development, student mentoring, and innovative teaching methodologies that enhance learning outcomes and academic performance.',
+      'Publications & Research': '',
+      'Seminars/Workshops Participation': '',
+      'Contact': [
+        {
+          lines: [
+            'Department of Education',
+            'RTM Al-Kabir Technical University (RTM-AKTU)',
+            'Campus: RTM Point, East Shahi Eidgah, TB Gate, Sylhet-3100, Bangladesh',
+            'Phone: <a href="tel:+8801795011223">+8801795011223</a>',
+            'Email: <a href="mailto:thahmid@rtm-aktu.ac.bd">thahmid@rtm-aktu.ac.bd</a>',
+          ],
+        },
+      ],
+    },
+  },
 };
