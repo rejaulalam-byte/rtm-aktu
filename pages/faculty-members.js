@@ -48,7 +48,7 @@ const facultyMembers = [
     name: 'Ananda Chakraborty',
     role: 'Faculty Member',
     department: 'Department of Computer Science and Engineering (CSE)',
-    link: '#',
+    link: 'faculty/profile.html?id=ananda-chakraborty',
   },
   {
     photo: '../images/faculty-members/dilara-ahmed-choudhury.png',

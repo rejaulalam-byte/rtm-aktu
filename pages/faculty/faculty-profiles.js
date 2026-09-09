@@ -232,4 +232,43 @@ const facultyProfiles = {
       ],
     },
   },
+  'ananda-chakraborty': {
+    name: 'Ananda Chakraborty',
+    role: 'Faculty Member',
+    department: 'Department of Computer Science and Engineering (CSE)',
+    photo: '../../images/academics/faculty/faculty-2.jpg',
+    address: [
+      'RTM Al-Kabir Technical University (RTM-AKTU)',
+      'Campus: RTM Point, East Shahi Eidgah, TB Gate, Sylhet-3100, Bangladesh',
+    ],
+    phone: '01762461851',
+    phoneHref: 'tel:+8801762461851',
+    email: 'ananda@rtm-aktu.ac.bd',
+    bio: [
+      "Ananda Chakraborty currently serves as the Lecturer of the Department of B.Sc. (Hons.) in Computer Science and Engineering (CSE) at RTM Al-Kabir Technical University (RTM-AKTU). Prior to this role, he worked as a research student at Department of Mathematics, Shahjalal University of Science and Technology (SUST), Sylhet. In addition to his academic and professional achievements, he has been received National Science and Technology (NST) Fellowship for his M.S. research.",
+      "Ananda Chakraborty completed his Master of Science (M.S) in Mathematics from the prestigious Shahjalal University of Science and Technology, Sylhet. With a strong combination of academic excellence, research experience, and analytical innovation, he continues to contribute significantly to mathematics education and its applications in computer science.",
+      "His research interests focus on pure mathematics, including algebra, algebraic coding theory, and lattice theory, with interdisciplinary applications in computer science and information technology. He is particularly engaged in advancing theoretical frameworks and exploring their applications in cryptography, coding systems, and secure communication.",
+    ],
+    tabs: {
+      'Research Interest': '',
+      'Academic Information': '',
+      'Courses Taught': '',
+      'Areas of Expertise': '',
+      'Experience': '',
+      'Teaching and Academic Contributions': '',
+      'Publications & Research': '',
+      'Seminars/Workshops Participation': '',
+      'Contact': [
+        {
+          lines: [
+            'Department of Computer Science and Engineering (CSE)',
+            'RTM Al-Kabir Technical University (RTM-AKTU)',
+            'Campus: RTM Point, East Shahi Eidgah, TB Gate, Sylhet-3100, Bangladesh',
+            'Mobile: 01762461851',
+            'Email: <a href="mailto:ananda@rtm-aktu.ac.bd">ananda@rtm-aktu.ac.bd</a>',
+          ],
+        },
+      ],
+    },
+  },
 };
