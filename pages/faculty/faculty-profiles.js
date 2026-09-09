@@ -780,4 +780,97 @@ const facultyProfiles = {
       ],
     },
   },
+  'jamal-ahmed': {
+    name: 'Jamal Ahmed',
+    role: 'MPH Program Coordinator',
+    department: 'Department of Applied Health and Nutrition',
+    photo: '../../images/faculty-members/jamal-ahmed.png',
+    address: [
+      'RTM Al-Kabir Technical University (RTM-AKTU)',
+      'Campus: RTM Point, East Shahi Eidgah, TB Gate, Sylhet-3100, Bangladesh',
+    ],
+    phone: '01711983427',
+    phoneHref: 'tel:+8801711983427',
+    email: 'jamal@rtm-aktu.ac.bd',
+    bio: [
+      "Jamal Ahmed is a senior professional at RTM Al-Kabir Technical University (RTM-AKTU) with demonstrated commitment to excellence in teaching, research, and academic leadership. He is currently acting as the Deputy Registrar and Student Advisor at RTM Al-Kabir Technical University (RTM-AKTU). In addition to his administrative responsibilities, he is actively engaged in academia as a Lecturer and MPH Program Coordinator in the Department of Applied Health and Nutrition, where he contributes to curriculum development, academic coordination, and postgraduate program management.",
+      "With over 30 years of extensive professional experience in public health, research, and development sectors, Mr. Ahmed has worked with several renowned national and international organizations, including BRAC, icddr,b, Johns Hopkins University Bangladesh Office, and Shimantik. His professional expertise spans maternal and neonatal health, health systems strengthening, capacity building, project implementation, and stakeholder coordination across multiple levels of governance.",
+      "Mr. Ahmed completed his Master of Public Health (MPH) from Atish Dipankar University of Science and Technology. He also holds a Master of Science (MSc) degree from the University of Chittagong and a Bachelor of Science (Honours) degree from MC College, Sylhet.",
+      "His research interests include maternal and child health, health systems strengthening, community-based health interventions, health service delivery, and public health program evaluation. He is particularly interested in capacity building of health systems, strengthening community engagement, and improving service delivery through evidence-based interventions and effective coordination among stakeholders.",
+    ],
+    tabs: {
+      'Research Interest': [
+        {
+          lines: [
+            'His research interests include maternal and child health, health systems strengthening, community-based health interventions, health service delivery, and public health program evaluation. He is particularly interested in capacity building of health systems, strengthening community engagement, and improving service delivery through evidence-based interventions and effective coordination among stakeholders.',
+          ],
+        },
+        {
+          heading: 'Academic and Research Interests',
+          items: [
+            'Management Studies',
+            'Business Strategy',
+            'Organizational Development',
+            'Applied Research',
+            'Higher Education Pedagogy',
+          ],
+        },
+      ],
+      'Academic Information': [
+        {
+          items: [
+            'Master of Public Health (MPH) – Atish Dipankar University of Science and Technology',
+            'Master of Science (MSc) – University of Chittagong',
+            'Bachelor of Science (Honours) – MC College, Sylhet',
+          ],
+        },
+      ],
+      'Courses Taught': 'Courses taught include Population and Development, Community Health and Service Development, Environmental and Occupational Health and Safety, Public Health Information, Education and Communication (IEC), and Health Informatics. He is actively involved in curriculum planning, course design, and academic coordination as part of the MPH program. Developed lecture materials, assessment tools, and practical learning approaches to enhance student understanding of public health concepts and systems. Emphasized evidence-based learning, community-oriented approaches, and application of health information systems in public health practice.',
+      'Areas of Expertise': [
+        {
+          items: [
+            'Business Administration',
+            'Teaching',
+            'Research',
+            'Academic Development',
+          ],
+        },
+        {
+          heading: 'Professional Engagement',
+          lines: [
+            'Contributes to academic and professional communities through research initiatives, collaborative projects, and institutional development activities.',
+          ],
+        },
+      ],
+      'Experience': [
+        {
+          heading: 'Deputy Registrar and Student Advisor — RTM Al-Kabir Technical University (RTM-AKTU)',
+          lines: [
+            'Current administrative role, held alongside his academic position as Lecturer and MPH Program Coordinator in the Department of Applied Health and Nutrition.',
+          ],
+        },
+        {
+          heading: 'Prior Professional Experience',
+          lines: [
+            'Over 30 years of experience in public health, research, and development, having worked with BRAC, icddr,b, Johns Hopkins University Bangladesh Office, and Shimantik — spanning maternal and neonatal health, health systems strengthening, capacity building, project implementation, and stakeholder coordination across multiple levels of governance.',
+          ],
+        },
+      ],
+      'Teaching and Academic Contributions': 'Actively engaged in curriculum development, student mentoring, and innovative teaching methodologies that enhance learning outcomes and academic performance.',
+      'Publications & Research': '',
+      'Seminars/Workshops Participation': '',
+      'Contact': [
+        {
+          lines: [
+            'Department of Applied Health and Nutrition',
+            'RTM Al-Kabir Technical University (RTM-AKTU)',
+            'Campus: RTM Point, East Shahi Eidgah, TB Gate, Sylhet-3100, Bangladesh',
+            'Contact: <a href="tel:+8801711983427">+8801711983427</a>',
+            'Email: <a href="mailto:jamal@rtm-aktu.ac.bd">jamal@rtm-aktu.ac.bd</a>',
+            'Website: <a href="https://www.rtm-aktu.ac.bd" target="_blank" rel="noopener">www.rtm-aktu.ac.bd</a>',
+          ],
+        },
+      ],
+    },
+  },
 };

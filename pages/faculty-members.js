@@ -69,7 +69,7 @@ const facultyMembers = [
     name: 'Jamal Ahmed',
     role: 'MPH Program Coordinator',
     department: 'Department of Applied Health and Nutrition',
-    link: '#',
+    link: 'faculty/profile.html?id=jamal-ahmed',
   },
   {
     photo: '../images/faculty-members/jannatul-nayem-novera.png',
