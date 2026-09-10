@@ -69,13 +69,18 @@ function initNewsCarousel() {
 }
 
 // ------------------------------------------------------------------
-// Filter tabs card (pages/admissions.html): "Current Events" / "Results"
-// / "Others" each hold their own small list of items. Clicking a tab
-// switches the active data source and resets the carousel to item 1;
-// the prev/next arrows then cycle through that tab's items, looping
-// at both ends — same pattern as the Current News carousel above.
-// Add or edit entries in the arrays below (plus photos in
-// images/admissions/) to change what each tab shows.
+// Filter tabs card (pages/admissions.html): "Current Events" is still a
+// live in-page filter (data-category="events") - clicking it switches
+// the card below and the prev/next arrows cycle through its items.
+// "Notices" and "Result" are plain deferred links (href="#", no
+// data-category) pending the real All Notices / Results pages, so they
+// no longer drive this card - see initFilterCarousel()'s `tabs` query,
+// which only wires up elements that still have data-category.
+//
+// The `results` and `others` entries below are unused now but kept as
+// ready-made content for whenever "Notices"/"Result" get wired to real
+// pages (or re-enabled as filter tabs) - re-add data-category="others"
+// (Notices) / data-category="results" (Result) to bring one back.
 // ------------------------------------------------------------------
 const filterCategories = {
   events: [
@@ -161,7 +166,7 @@ function initFilterCarousel() {
   const link = document.getElementById('filterLink');
   const imageWrap = document.getElementById('filterImageWrap');
   const image = document.getElementById('filterImage');
-  const tabs = Array.from(tabsWrap.querySelectorAll('.adm-filter-tab'));
+  const tabs = Array.from(tabsWrap.querySelectorAll('.adm-filter-tab[data-category]'));
 
   let category = 'events';
   let index = 0;
