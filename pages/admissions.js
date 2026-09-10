@@ -5,30 +5,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // ------------------------------------------------------------------
 // Current News card (pages/admissions.html): the arrows cycle through
-// this list, swapping headline/excerpt/date/image together as one
-// unit. Add a new entry here (plus the photo in images/admissions/)
-// to include another news item — no HTML markup to duplicate.
+// the news items flagged `showOnAdmissions: true` in the shared
+// pages/news/news-data.js (loaded before this file), swapping
+// headline/excerpt/date/image and the "Read More" link together as one
+// unit. Flip that flag on a news-data.js entry (and give it an
+// `excerpt`) to include it here — no HTML markup to duplicate.
 // ------------------------------------------------------------------
-const newsItems = [
-  {
-    image: '../images/admissions/news-1.jpg',
-    headline: 'RTM-AKTU Opens Admission Window for Upcoming Academic Session',
-    excerpt: 'Prospective students can now begin the application process for undergraduate and postgraduate programs across all faculties.',
-    date: 'Aug 18, 2026',
-  },
-  {
-    image: '../images/admissions/news-2.jpg',
-    headline: 'New Scholarship Fund Launched for First-Generation University Students',
-    excerpt: 'The scholarship office has opened applications for a new needs-based fund supporting students who are the first in their family to attend university.',
-    date: 'Aug 25, 2026',
-  },
-  {
-    image: '../images/admissions/news-3.jpg',
-    headline: 'Department of CSE Signs Research Partnership with Regional Tech Firm',
-    excerpt: 'The partnership will fund joint research projects and create new internship placements for undergraduate students starting next semester.',
-    date: 'Sep 05, 2026',
-  },
-];
+const newsItems = Object.entries(newsData)
+  .filter(([, item]) => item.showOnAdmissions)
+  .map(([id, item]) => ({
+    id,
+    image: item.image,
+    headline: item.headline,
+    excerpt: item.excerpt,
+    date: formatNewsDateShort(item.date),
+  }));
 
 function initNewsCarousel() {
   const card = document.getElementById('newsCard');
@@ -41,6 +32,7 @@ function initNewsCarousel() {
   const date = document.getElementById('newsDate');
   const imageWrap = document.getElementById('newsImageWrap');
   const image = document.getElementById('newsImage');
+  const readMoreLink = document.getElementById('newsReadMoreLink');
 
   let index = 0;
 
@@ -52,7 +44,12 @@ function initNewsCarousel() {
     imageWrap.classList.remove('img-ph--broken');
     image.src = item.image;
     image.alt = item.headline;
+    readMoreLink.href = `news-details.html?id=${item.id}`;
   };
+
+  // Initial paint: the static markup matches newsItems[0], but
+  // readMoreLink still needs its href set before any arrow click.
+  render();
 
   prevBtn.addEventListener('click', () => {
     index = (index - 1 + newsItems.length) % newsItems.length;

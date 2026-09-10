@@ -4399,10 +4399,17 @@ button {
   border: 1px solid #ebebeb;
   border-radius: var(--radius-md);
   padding: 1.5rem;
+  color: inherit;
+  text-decoration: none;
   transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
-.uni-news-item--featured {
+/* Always-dark treatment: used explicitly (not as any row's default state)
+   for the single-item summary bar on the News Details page, matching the
+   Figma spec's static "current item" display. Listing rows never carry
+   this class - see .uni-news-item:hover below for their interactive
+   feedback instead. */
+.uni-news-item--dark {
   background-color: var(--color-navy);
   border-color: var(--color-navy);
 }
@@ -4417,7 +4424,7 @@ button {
   border-right: 1px solid rgba(0, 0, 0, 0.08);
 }
 
-.uni-news-item--featured .uni-news-item__number {
+.uni-news-item--dark .uni-news-item__number {
   color: var(--color-white);
   border-right-color: rgba(255, 255, 255, 0.2);
 }
@@ -4428,7 +4435,7 @@ button {
   margin-bottom: 0.6rem;
 }
 
-.uni-news-item--featured .uni-news-item__headline {
+.uni-news-item--dark .uni-news-item__headline {
   color: var(--color-white);
 }
 
@@ -4457,33 +4464,69 @@ button {
 
 /* Pronounced hover for these full-width rows (vs. the subtle tint used on
    the smaller homepage/Admissions news cards): the whole box fills with
-   gold, including item 01's already-navy resting state, so every row gets
-   visible feedback. Gold (not navy) is used precisely so it reads against
-   both the light and dark resting states; text/icons switch to navy for
-   contrast against it. Placed after the --featured rules and .date-meta--
-   on-dark (both same specificity) so this wins the source-order tie for
-   item 01's hover. */
-.uni-news-item:hover {
+   gold, so every row gets visible feedback. Gold (not navy) is used
+   precisely so it reads against the light resting state; text/icons switch
+   to navy for contrast against it. Scoped to `a.uni-news-item` - only the
+   listing rows are real links; the News Details page's static summary bar
+   (.uni-news-item--dark, not an <a>) never matches this. */
+a.uni-news-item:hover {
   background-color: var(--color-gold);
   border-color: var(--color-gold);
 }
 
-.uni-news-item:hover .uni-news-item__number {
+a.uni-news-item:hover .uni-news-item__number {
   color: var(--color-navy);
   border-right-color: rgba(12, 35, 80, 0.2);
 }
 
-.uni-news-item:hover .uni-news-item__headline {
+a.uni-news-item:hover .uni-news-item__headline {
   color: var(--color-navy);
 }
 
-.uni-news-item:hover .date-meta,
-.uni-news-item:hover .date-meta--on-dark {
+a.uni-news-item:hover .date-meta,
+a.uni-news-item:hover .date-meta--on-dark {
   color: var(--color-navy);
 }
 
-.uni-news-item:hover .date-meta__icon {
+a.uni-news-item:hover .date-meta__icon {
   color: var(--color-navy);
+}
+
+/* News Details page (pages/news-details.html): summary bar reuses
+   .uni-news-item--dark but without a third (thumbnail) grid column - the
+   photo sits separately, beside the body text below. */
+.news-detail-summary {
+  grid-template-columns: auto 1fr;
+}
+
+.news-detail-body {
+  display: flex;
+  align-items: flex-start;
+  gap: 2.5rem;
+  margin-top: 1.75rem;
+}
+
+.news-detail-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.news-detail-photo {
+  width: 380px;
+  max-width: 100%;
+  aspect-ratio: 476 / 328;
+  border-radius: var(--radius-md);
+  flex-shrink: 0;
+}
+
+@media (max-width: 760px) {
+  .news-detail-body {
+    flex-direction: column;
+  }
+
+  .news-detail-photo {
+    width: 100%;
+  }
 }
 
 /* About RTM-AKTU page intro heading: the intro block now sits directly in
