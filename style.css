@@ -4499,33 +4499,38 @@ a.uni-news-item:hover .date-meta__icon {
   grid-template-columns: auto 1fr;
 }
 
+/* Real text-wrap (not a fixed two-column split): .news-detail-photo
+   floats right and .news-detail-text's paragraphs flow around it as
+   plain block content, narrowing beside the image and returning to full
+   width once they clear its bottom - standard float-wrap, so a short
+   first paragraph doesn't leave an empty gap under the photo the way a
+   flex column split would. The photo must come before the text in the
+   markup for this to work: floats only affect content that follows them. */
 .news-detail-body {
-  display: flex;
-  align-items: flex-start;
-  gap: 2.5rem;
   margin-top: 1.75rem;
 }
 
-.news-detail-text {
-  flex: 1;
-  min-width: 0;
+.news-detail-body::after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
 .news-detail-photo {
+  float: right;
   width: 380px;
   max-width: 100%;
   aspect-ratio: 476 / 328;
   border-radius: var(--radius-md);
-  flex-shrink: 0;
+  margin-left: 2.5rem;
+  margin-bottom: 1.5rem;
 }
 
 @media (max-width: 760px) {
-  .news-detail-body {
-    flex-direction: column;
-  }
-
   .news-detail-photo {
+    float: none;
     width: 100%;
+    margin-left: 0;
   }
 }
 
