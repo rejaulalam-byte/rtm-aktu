@@ -7,9 +7,11 @@ document.addEventListener('DOMContentLoaded', () => {
 // Current News card (pages/admissions.html): the arrows cycle through
 // the news items flagged `showOnAdmissions: true` in the shared
 // pages/news/news-data.js (loaded before this file), swapping
-// headline/excerpt/date/image and the "Read More" link together as one
-// unit. Flip that flag on a news-data.js entry (and give it an
-// `excerpt`) to include it here — no HTML markup to duplicate.
+// headline/excerpt/date/weekday/image together as one unit. The
+// headline and the photo are the only two clickable elements, both
+// linking to that item's News Details page. Flip the flag on a
+// news-data.js entry (and give it an `excerpt`) to include it here —
+// no HTML markup to duplicate.
 // ------------------------------------------------------------------
 const newsItems = Object.entries(newsData)
   .filter(([, item]) => item.showOnAdmissions)
@@ -19,6 +21,7 @@ const newsItems = Object.entries(newsData)
     headline: item.headline,
     excerpt: item.excerpt,
     date: formatNewsDateShort(item.date),
+    weekday: formatNewsWeekday(item.date),
   }));
 
 function initNewsCarousel() {
@@ -30,25 +33,28 @@ function initNewsCarousel() {
   const headline = document.getElementById('newsHeadline');
   const excerpt = document.getElementById('newsExcerpt');
   const date = document.getElementById('newsDate');
+  const weekday = document.getElementById('newsWeekday');
   const imageWrap = document.getElementById('newsImageWrap');
   const image = document.getElementById('newsImage');
-  const readMoreLink = document.getElementById('newsReadMoreLink');
 
   let index = 0;
 
   const render = () => {
     const item = newsItems[index];
+    const link = `news-details.html?id=${item.id}`;
     headline.textContent = item.headline;
+    headline.href = link;
     excerpt.textContent = item.excerpt;
     date.textContent = item.date;
+    weekday.textContent = item.weekday;
     imageWrap.classList.remove('img-ph--broken');
+    imageWrap.href = link;
     image.src = item.image;
     image.alt = item.headline;
-    readMoreLink.href = `news-details.html?id=${item.id}`;
   };
 
-  // Initial paint: the static markup matches newsItems[0], but
-  // readMoreLink still needs its href set before any arrow click.
+  // Initial paint: the static markup matches newsItems[0], but the
+  // headline/photo links still need their href set before any arrow click.
   render();
 
   prevBtn.addEventListener('click', () => {

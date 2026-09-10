@@ -3601,7 +3601,12 @@ button {
   color: var(--color-white);
 }
 
+/* Anchor now (headline is one of the Current News card's two clickable
+   elements, see #newsCard below) - display:block keeps its margin-bottom
+   working the way it did as a <p>, since inline elements ignore vertical
+   margins. */
 .adm-news-card__headline {
+  display: block;
   color: var(--color-navy);
   font-weight: 700;
   font-size: 1.1rem;
@@ -3613,6 +3618,8 @@ button {
   margin-bottom: 0.75rem;
 }
 
+/* Still used by the filter tabs card's date span (#filterDate) below;
+   the Current News card's date+weekday now use .date-meta instead. */
 .adm-news-card__date {
   display: block;
   color: var(--color-text-muted);
@@ -3620,17 +3627,10 @@ button {
   margin-bottom: 0.75rem;
 }
 
-.adm-news-card__link {
-  color: var(--color-navy);
-  font-weight: 600;
-  font-size: 0.92rem;
-  transition: color 0.2s ease;
-}
-
-.adm-news-card__link:hover {
-  color: var(--color-red);
-}
-
+/* #newsCard: only the headline (.adm-news-card__headline) and the photo
+   (.adm-news-card__image, now an <a>) are links - the "Read More" link
+   was removed and the rest of the card (excerpt, date/weekday, and the
+   card itself) is intentionally not clickable. */
 #newsCard {
   position: relative;
 }
