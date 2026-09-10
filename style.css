@@ -4554,6 +4554,18 @@ a.uni-news-item:hover .date-meta__icon {
   border: 1px solid #d4d4d4;
   border-radius: var(--radius-md);
   padding: 1.25rem 1.5rem;
+  color: inherit;
+  text-decoration: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Listing rows (pages/notice-updates.html) are links to their Notice
+   Details page; the summary bar reused on pages/notice-details.html
+   itself (.notice-card--static) isn't, so it's excluded from this
+   selector by only matching the <a> tag. */
+a.notice-card:hover {
+  border-color: var(--color-navy);
+  box-shadow: var(--shadow-card);
 }
 
 .notice-card__badge {
@@ -4582,6 +4594,40 @@ a.uni-news-item:hover .date-meta__icon {
     flex-direction: column;
     align-items: flex-start;
   }
+}
+
+/* Notice Details page (pages/notice-details.html): "View All Notice"
+   sits pinned to the top-right of the centered "Notice Details" heading
+   without affecting its centering - same color/weight/hover convention
+   as .adm-news-header__link. */
+.notice-details-heading {
+  position: relative;
+}
+
+.notice-details-heading__link {
+  position: absolute;
+  top: 0.35rem;
+  right: 0;
+  color: var(--color-navy);
+  font-weight: 600;
+  font-size: 0.92rem;
+  transition: color 0.2s ease;
+}
+
+.notice-details-heading__link:hover {
+  color: var(--color-red);
+}
+
+.notice-detail-intro {
+  margin-top: 1.75rem;
+}
+
+.notice-detail-document {
+  width: 100%;
+  max-width: 500px;
+  aspect-ratio: 794 / 1122;
+  margin: 1.5rem auto 0;
+  border-radius: var(--radius-md);
 }
 
 /* About RTM-AKTU page intro heading: the intro block now sits directly in
