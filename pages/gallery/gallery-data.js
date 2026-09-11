@@ -10,9 +10,13 @@
 // numbered cover photo (images/photo-gallery/cover-0N.jpg).
 //
 // Paths below are relative to pages/photo-gallery.html.
+//
+// Id convention: "<short-name>-<year>" (e.g. tree-plantation-week-2026,
+// annual-sports-competition-2025) so a repeat annual event gets its own
+// id instead of colliding with - or overwriting - a past year's album.
 // ------------------------------------------------------------------
 const galleryData = {
-  'tree-plantation-week': {
+  'tree-plantation-week-2026': {
     heading: 'The university observes Tree Plantation Week.',
     date: '2026-08-22',
     image: '../images/photo-gallery/cover-01.jpg',

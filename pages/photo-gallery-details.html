@@ -114,10 +114,10 @@
     <section class="bg-white">
       <div class="section-inner" id="pgdContent">
         <div class="section-heading section-heading--center">
-          <h2 class="section-heading__title">Moments &amp; Memories</h2>
+          <h2 class="section-heading__title" id="pgdHeading">Moments &amp; Memories</h2>
         </div>
 
-        <p class="pgd-intro">Explore the memorable moments that bring our university community together. From academic programs and celebrations to student activities and special events, these photographs capture the experiences, achievements, and cherished memories of life at RTM-AKTU.</p>
+        <p class="pgd-intro" id="pgdIntro">Explore the memorable moments that bring our university community together. From academic programs and celebrations to student activities and special events, these photographs capture the experiences, achievements, and cherished memories of life at RTM-AKTU.</p>
 
         <div class="pgd-date-row">
           <span class="date-meta__item">
@@ -296,6 +296,11 @@
       document.title = `${detail.breadcrumbLabel} | Photo Gallery | RTM Al-Kabir Technical University (RTM-AKTU)`;
       document.getElementById('pgdBreadcrumbCurrent').textContent = detail.breadcrumbLabel;
       document.getElementById('pgdDate').textContent = formatGalleryDateLong(listItem.date);
+
+      // heading/intro are optional per-album overrides - when a detail
+      // record omits them, the generic text already in the markup stands.
+      if (detail.heading) document.getElementById('pgdHeading').textContent = detail.heading;
+      if (detail.intro) document.getElementById('pgdIntro').textContent = detail.intro;
 
       const viewerPhoto = document.getElementById('pgdViewerPhoto');
       const viewerCaption = document.getElementById('pgdViewerCaption');
