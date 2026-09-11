@@ -77,35 +77,27 @@ function initNewsCarousel() {
 // no longer drive this card - see initFilterCarousel()'s `tabs` query,
 // which only wires up elements that still have data-category.
 //
+// `events` is now sourced from the shared pages/events/events-data.js
+// (loaded before this file) instead of its own inline array - same
+// migration already done for the Admissions "Current News" card onto
+// pages/news/news-data.js. Only items flagged `showOnAdmissions: true`
+// appear here; flip that flag on an events-data.js entry to include it.
+//
 // The `results` and `others` entries below are unused now but kept as
 // ready-made content for whenever "Notices"/"Result" get wired to real
 // pages (or re-enabled as filter tabs) - re-add data-category="others"
 // (Notices) / data-category="results" (Result) to bring one back.
 // ------------------------------------------------------------------
 const filterCategories = {
-  events: [
-    {
-      image: '../images/admissions/event-1.jpg',
-      headline: 'Orientation Day for New Undergraduate Students',
-      excerpt: 'Join us for a full day of campus tours, faculty introductions, and academic advising ahead of the new semester.',
-      date: 'Sep 02, 2026',
+  events: Object.values(eventsData)
+    .filter((item) => item.showOnAdmissions)
+    .map((item) => ({
+      image: item.image,
+      headline: item.headline,
+      excerpt: item.excerpt,
+      date: formatEventDateShort(item.date),
       link: 'View All Events &rarr;',
-    },
-    {
-      image: '../images/admissions/event-2.jpg',
-      headline: 'Annual Tech Fest 2026 Opens Registration for Student Teams',
-      excerpt: 'Students from all departments can now register for this year\'s hackathon, robotics showcase, and innovation exhibits.',
-      date: 'Sep 20, 2026',
-      link: 'View All Events &rarr;',
-    },
-    {
-      image: '../images/admissions/event-3.jpg',
-      headline: 'Career Fair Brings Regional Employers to Campus',
-      excerpt: 'Final-year students are invited to meet recruiters from partner companies for internship and job placement opportunities.',
-      date: 'Oct 10, 2026',
-      link: 'View All Events &rarr;',
-    },
-  ],
+    })),
   results: [
     {
       image: '../images/admissions/result-1.jpg',

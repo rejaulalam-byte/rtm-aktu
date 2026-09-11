@@ -120,7 +120,7 @@
                 </a>
               </li>
               <li>
-                <a href="#" class="cm-sidebar__link">
+                <a href="current-events.html" class="cm-sidebar__link">
                   <span>Current Events</span>
                   <svg class="cm-sidebar__link-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 </a>
@@ -151,7 +151,11 @@
               <h2 class="section-heading__title">Latest News &amp; Updates</h2>
             </div>
 
+            <div class="listing-controls" id="listingControls"></div>
+
             <div class="uni-news-list" id="uniNewsList"></div>
+
+            <div class="listing-pagination" id="listingPagination"></div>
           </div>
 
         </div>
@@ -278,19 +282,31 @@
 
   <script src="../script.js"></script>
   <script src="news/news-data.js"></script>
+  <script src="listing-controls.js"></script>
   <script>
-    // Renders .uni-news-list from newsData (pages/news/news-data.js) in
-    // object-definition order, each row a link to its News Details page -
-    // same wiring pattern as pages/faculty-members.js's grid rendering.
+    // Renders .uni-news-list from newsData (pages/news/news-data.js), each
+    // row a link to its News Details page, through the shared
+    // pagination/search controls (pages/listing-controls.js) instead of a
+    // single flat render pass - same item markup as before.
     document.addEventListener('DOMContentLoaded', () => {
-      const list = document.getElementById('uniNewsList');
-      if (!list) return;
+      const listEl = document.getElementById('uniNewsList');
+      const controlsEl = document.getElementById('listingControls');
+      const paginationEl = document.getElementById('listingPagination');
+      if (!listEl || !controlsEl || !paginationEl) return;
 
-      list.innerHTML = Object.entries(newsData)
-        .map(([id, item], index) => {
+      const items = Object.entries(newsData).map(([id, item]) => ({ id, ...item }));
+
+      initListingControls({
+        listEl,
+        controlsEl,
+        paginationEl,
+        items,
+        getDate: (item) => item.date,
+        emptyMessage: 'No news items match your search.',
+        renderItem: (item, index) => {
           const number = String(index + 1).padStart(2, '0');
           return `
-            <a href="news-details.html?id=${id}" class="uni-news-item">
+            <a href="news-details.html?id=${item.id}" class="uni-news-item">
               <span class="uni-news-item__number">${number}</span>
               <div class="uni-news-item__body">
                 <p class="uni-news-item__headline">${item.headline}</p>
@@ -313,8 +329,8 @@
               </div>
             </a>
           `;
-        })
-        .join('');
+        },
+      });
     });
   </script>
 </body>

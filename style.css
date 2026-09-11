@@ -4596,13 +4596,15 @@ a.notice-card:hover {
   }
 }
 
-/* Notice Details page (pages/notice-details.html) and News Details page
-   (pages/news-details.html): the "View All Notices"/"View Latest News &
-   Updates" link sits in its own right-aligned row directly above the
-   detail card, with a small 5px gap - same color/weight/hover convention
-   as .adm-news-header__link. */
+/* Notice Details page (pages/notice-details.html), News Details page
+   (pages/news-details.html), and Event Details page
+   (pages/event-details.html): the "View All Notices"/"View Latest News &
+   Updates"/"View All Events" link sits in its own right-aligned row
+   directly above the detail card, with a small 5px gap - same
+   color/weight/hover convention as .adm-news-header__link. */
 .notice-details-link-row,
-.news-details-link-row {
+.news-details-link-row,
+.event-details-link-row {
   text-align: right;
   /* Pull up 10px into .section-heading's 3rem bottom margin (title-to-link
      gap), and push down 5px more than before (link-to-card gap: 5px -> 10px). */
@@ -4611,7 +4613,8 @@ a.notice-card:hover {
 }
 
 .notice-details-heading__link,
-.news-details-link-row__link {
+.news-details-link-row__link,
+.event-details-link-row__link {
   color: var(--color-navy);
   font-weight: 600;
   font-size: 0.92rem;
@@ -4619,7 +4622,8 @@ a.notice-card:hover {
 }
 
 .notice-details-heading__link:hover,
-.news-details-link-row__link:hover {
+.news-details-link-row__link:hover,
+.event-details-link-row__link:hover {
   color: var(--color-red);
 }
 
@@ -5314,4 +5318,172 @@ a.notice-card:hover {
 .fpr-tabs__panel-text {
   color: var(--color-text-muted);
   line-height: 1.6;
+}
+
+/* ==========================================================================
+   28. Listing Controls: Search + Rows-Per-Page + Pagination
+   ========================================================================== */
+
+/* Shared by every listing page built on the "cm-" template that uses
+   pages/listing-controls.js (pages/notice-updates.html,
+   pages/university-news.html, pages/current-events.html): a search +
+   rows-per-page row above the list, and page-number controls below it.
+   Search input styling matches .fmp-search__input (Faculty Members
+   directory's own search bar) for a consistent look across the site's
+   two client-side search/filter UIs. */
+.listing-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.listing-controls__search {
+  position: relative;
+  flex: 1 1 260px;
+  min-width: 0;
+  max-width: 360px;
+}
+
+.listing-controls__search-icon {
+  position: absolute;
+  top: 50%;
+  left: 1.1rem;
+  width: 18px;
+  height: 18px;
+  transform: translateY(-50%);
+  color: var(--color-text-muted);
+  pointer-events: none;
+}
+
+.listing-controls__search-input {
+  width: 100%;
+  border: 1px solid rgba(12, 35, 80, 0.14);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-white);
+  padding: 0.85rem 1.1rem 0.85rem 2.6rem;
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  color: var(--color-text);
+  outline: none;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.listing-controls__search-input:focus {
+  border-color: var(--color-gold);
+  box-shadow: 0 0 0 3px rgba(201, 162, 39, 0.45);
+}
+
+.listing-controls__search-input::placeholder {
+  color: var(--color-text);
+  opacity: 0.5;
+}
+
+.listing-controls__page-size {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.92rem;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+.listing-controls__page-size-select {
+  border: 1px solid rgba(12, 35, 80, 0.14);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-white);
+  padding: 0.5rem 0.75rem;
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  color: var(--color-navy);
+  outline: none;
+  cursor: pointer;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.listing-controls__page-size-select:focus {
+  border-color: var(--color-gold);
+  box-shadow: 0 0 0 3px rgba(201, 162, 39, 0.45);
+}
+
+.listing-empty {
+  padding: 2rem 0;
+  text-align: center;
+  color: var(--color-text-muted);
+}
+
+/* Page: <prev> 1 2 3 ... N <next> - centered below the list. Active
+   page uses the brand navy fill (matches .btn-primary's navy text and
+   .fmp-search__input's gold focus, so gold stays reserved for focus
+   states, not a second "current page" signal). */
+.listing-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 2.5rem;
+}
+
+.listing-pagination__pages {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.listing-pagination__btn,
+.listing-pagination__nav {
+  min-width: 40px;
+  height: 40px;
+  padding: 0 0.5rem;
+  border: 1px solid rgba(12, 35, 80, 0.14);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-white);
+  color: var(--color-navy);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.92rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.listing-pagination__btn:hover:not(.is-active):not(:disabled),
+.listing-pagination__nav:hover:not(:disabled) {
+  border-color: var(--color-gold);
+  color: var(--color-gold);
+}
+
+.listing-pagination__btn.is-active {
+  background-color: var(--color-navy);
+  border-color: var(--color-navy);
+  color: var(--color-white);
+  cursor: default;
+}
+
+.listing-pagination__btn:disabled,
+.listing-pagination__nav:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.listing-pagination__ellipsis {
+  color: var(--color-text-muted);
+  padding: 0 0.25rem;
+}
+
+@media (max-width: 560px) {
+  .listing-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .listing-controls__search {
+    max-width: none;
+  }
+
+  .listing-controls__page-size {
+    justify-content: space-between;
+  }
 }
