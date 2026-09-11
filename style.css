@@ -5648,3 +5648,120 @@ a.notice-card:hover {
 .gallery-card__link:hover .gallery-card__link-arrow {
   transform: translate(2px, -2px);
 }
+
+/* ==========================================================================
+   Photo Gallery - Album Detail (pages/photo-gallery-details.html)
+   ========================================================================== */
+
+.pgd-intro {
+  max-width: 760px;
+  margin: 0 auto 1.5rem;
+  color: var(--color-text);
+  line-height: 1.9;
+  text-align: center;
+}
+
+.pgd-date-row {
+  display: flex;
+  justify-content: center;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 2rem;
+}
+
+.pgd-viewer {
+  max-width: 765px;
+  margin: 0 auto 2rem;
+}
+
+.pgd-viewer__photo {
+  aspect-ratio: 3 / 2;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+}
+
+.pgd-viewer__caption {
+  text-align: center;
+  color: var(--color-navy);
+  font-weight: 500;
+  margin-top: 1.25rem;
+}
+
+.pgd-thumb-strip {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: var(--color-bg-light);
+  border-radius: var(--radius-md);
+  padding: 1.75rem;
+  margin-bottom: 2.5rem;
+}
+
+.pgd-thumb-arrow {
+  margin: 0;
+}
+
+.pgd-thumb-viewport {
+  flex: 1;
+  overflow: hidden;
+}
+
+.pgd-thumb-track {
+  display: flex;
+  gap: 1.25rem;
+  transition: transform 0.4s ease;
+}
+
+.pgd-thumb {
+  flex: 0 0 calc(33.333% - 0.85rem);
+  aspect-ratio: 310 / 234;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 2px solid transparent;
+  padding: 0;
+  cursor: pointer;
+  background-color: var(--color-white);
+  transition: border-color 0.2s ease;
+}
+
+.pgd-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.pgd-thumb.is-active {
+  border-color: var(--color-gold);
+}
+
+@media (max-width: 860px) {
+  .pgd-thumb {
+    flex: 0 0 calc(50% - 0.65rem);
+  }
+}
+
+@media (max-width: 560px) {
+  .pgd-thumb {
+    flex: 0 0 100%;
+  }
+}
+
+/* Translucent grey pill, distinct from .btn/.pill - matches the Figma
+   "View All Pictures" control, which is neither a filled/outline .btn
+   nor the gold .pill used for section eyebrows elsewhere on the site. */
+.pgd-view-all {
+  display: inline-flex;
+  align-items: center;
+  background-color: rgba(105, 105, 105, 0.15);
+  border: 1px solid rgba(34, 34, 34, 0.15);
+  color: var(--color-text);
+  font-weight: 500;
+  padding: 0.85rem 1.75rem;
+  border-radius: 999px;
+  transition: background-color 0.2s ease;
+}
+
+.pgd-view-all:hover {
+  background-color: rgba(105, 105, 105, 0.28);
+}
