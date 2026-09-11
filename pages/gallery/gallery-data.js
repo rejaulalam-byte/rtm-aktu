@@ -51,6 +51,11 @@ const galleryData = {
     date: '2025-08-22',
     image: '../images/photo-gallery/cover-07.jpg',
   },
+  'victory-day-2022': {
+    heading: 'Observance of Victory Day (December 16) in Bangladesh by the university.',
+    date: '2022-12-16',
+    image: '../images/photo-gallery/cover-08.jpg',
+  },
 };
 
 // Shared date helpers so the grid always formats the same ISO `date`

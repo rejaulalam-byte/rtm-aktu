@@ -273,10 +273,10 @@ function initHeroSlider() {
 // images/gallery/) — no HTML markup to duplicate.
 // ------------------------------------------------------------------
 const galleryImages = [
-  { src: 'images/gallery/gallery-1.png', alt: 'Students on campus' },
-  { src: 'images/gallery/gallery-2.png', alt: 'University library' },
-  { src: 'images/gallery/gallery-3.png', alt: 'Engineering lab' },
-  { src: 'images/gallery/gallery-4.png', alt: 'Graduation ceremony' },
+  { src: 'images/gallery/gallery-1.png', alt: 'Annual Sports Week celebration', id: 'annual-sports-competition-2025' },
+  { src: 'images/gallery/gallery-2.png', alt: 'Tree Plantation Week planting activity', id: 'tree-plantation-week-2026' },
+  { src: 'images/gallery/gallery-3.png', alt: 'Convocation 2025 graduation ceremony', id: 'convocation-2025' },
+  { src: 'images/gallery/gallery-4.png', alt: "University's Victory Day observance", id: 'victory-day-2022' },
 ];
 
 function renderGallery() {
@@ -284,8 +284,8 @@ function renderGallery() {
   if (!track) return;
 
   track.innerHTML = galleryImages
-    .map(({ src, alt }) => `
-      <figure class="gallery__item"><img src="${src}" alt="${alt}" loading="lazy"></figure>
+    .map(({ src, alt, id }) => `
+      <a href="pages/photo-gallery-details.html?id=${id}" class="gallery__item"><img src="${src}" alt="${alt}" loading="lazy"></a>
     `)
     .join('');
 }

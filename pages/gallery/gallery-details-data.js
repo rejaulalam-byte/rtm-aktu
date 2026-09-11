@@ -66,4 +66,10 @@ const galleryDetailsData = {
       { src: '../images/photo-gallery/cover-07.jpg', caption: 'The university campus comes alive with the alumni reunion.' },
     ],
   },
+  'victory-day-2022': {
+    breadcrumbLabel: 'Victory Day 2022',
+    photos: [
+      { src: '../images/photo-gallery/cover-08.jpg', caption: 'Observance of Victory Day (December 16) in Bangladesh by the university.' },
+    ],
+  },
 };
