@@ -5558,6 +5558,32 @@ a.notice-card:hover {
   }
 }
 
+/* Extra-wide tiers on top of the 3-column baseline above: the 3-column
+   layout is deliberate at normal desktop widths (keeps photos reasonably
+   large, paginated rather than dumping everything at once), but on very
+   wide monitors that leaves the section's fixed max-width mostly empty.
+   Widen .gallery-grid-section's max-width in step with the extra columns
+   so card width stays close to the baseline (~380px) instead of shrinking. */
+@media (min-width: 1700px) {
+  .gallery-grid-section {
+    max-width: 1680px;
+  }
+
+  .gallery-card-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 2200px) {
+  .gallery-grid-section {
+    max-width: 2000px;
+  }
+
+  .gallery-card-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
 /* Same overflow:hidden + border-radius + box-shadow "photo caps the
    card" treatment as .dept-card, so the cover photo's top corners round
    off automatically with no separate top-only radius needed on it. */

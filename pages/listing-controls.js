@@ -66,7 +66,8 @@ function initListingControls({
   defaultPageSize,
   emptyMessage = 'No entries match your search.',
 }) {
-  defaultPageSize = defaultPageSize || pageSizeOptions[0];
+  const firstOption = pageSizeOptions[0];
+  defaultPageSize = defaultPageSize || (typeof firstOption === 'object' ? firstOption.value : firstOption);
   getSemester = getSemester || (() => null);
 
   const hasSemester = items.some((item) => getSemester(item));
@@ -111,7 +112,13 @@ function initListingControls({
       <label class="listing-controls__page-size">
         Show
         <select id="listingPageSizeSelect" class="listing-controls__page-size-select">
-          ${pageSizeOptions.map((n) => `<option value="${n}" ${n === pageSize ? 'selected' : ''}>${n}</option>`).join('')}
+          ${pageSizeOptions
+            .map((opt) => {
+              const value = typeof opt === 'object' ? opt.value : opt;
+              const label = typeof opt === 'object' ? opt.label : opt;
+              return `<option value="${value}" ${value === pageSize ? 'selected' : ''}>${label}</option>`;
+            })
+            .join('')}
         </select>
         per page
       </label>
@@ -132,10 +139,13 @@ function initListingControls({
 
   function renderList() {
     const filtered = getFiltered();
-    const totalPages = Math.max(1, Math.ceil(filtered.length / pageSize));
+    // pageSize can be Infinity (an "All" page-size option) - 0 * Infinity
+    // is NaN, which breaks slice(), so that case skips slicing entirely
+    // and shows every filtered item on the one page.
+    const totalPages = pageSize === Infinity ? 1 : Math.max(1, Math.ceil(filtered.length / pageSize));
     page = Math.min(page, totalPages);
-    const start = (page - 1) * pageSize;
-    const pageItems = filtered.slice(start, start + pageSize);
+    const start = pageSize === Infinity ? 0 : (page - 1) * pageSize;
+    const pageItems = pageSize === Infinity ? filtered : filtered.slice(start, start + pageSize);
 
     listEl.innerHTML = pageItems.length
       ? pageItems.map((item, i) => renderItem(item, start + i)).join('')
@@ -144,7 +154,7 @@ function initListingControls({
 
   function renderPagination() {
     const filtered = getFiltered();
-    const totalPages = Math.max(1, Math.ceil(filtered.length / pageSize));
+    const totalPages = pageSize === Infinity ? 1 : Math.max(1, Math.ceil(filtered.length / pageSize));
 
     if (totalPages <= 1) {
       paginationEl.innerHTML = `

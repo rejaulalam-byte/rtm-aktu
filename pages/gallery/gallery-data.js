@@ -4,45 +4,48 @@
 // id, same data-driven pattern as pages/news/news-data.js,
 // pages/notices/notices-data.js and pages/events/events-data.js.
 //
-// Real Figma copy for these albums wasn't available when this file
-// was created, so headings/dates below are representative campus-life
-// placeholders, and every entry shares one placeholder cover photo
-// (images/photo-gallery/cover-0N.jpg, copied from an existing campus
-// photo already in the repo) - swap each entry's own text/date and
-// drop a real photo at that same numbered path to replace a placeholder.
+// Headings, dates and cover images below match the Figma source
+// (file TzuvEKEzb297MFROjbO9UF, node 1406:475, "photo gallery group
+// image-01" through "image-07") - each entry's image is that same
+// numbered cover photo (images/photo-gallery/cover-0N.jpg).
 //
 // Paths below are relative to pages/photo-gallery.html.
 // ------------------------------------------------------------------
 const galleryData = {
-  'orientation-day-highlights': {
-    heading: 'Orientation Day Highlights',
+  'tree-plantation-week': {
+    heading: 'The university observes Tree Plantation Week.',
     date: '2026-08-22',
     image: '../images/photo-gallery/cover-01.jpg',
   },
-  'annual-tech-fest-2026': {
-    heading: 'Annual Tech Fest 2026',
-    date: '2026-09-20',
+  'mothers-day-family-affairs': {
+    heading: "Teachers & Students Family Affairs on the occasion of Mothers' Day",
+    date: '2026-06-10',
     image: '../images/photo-gallery/cover-02.jpg',
   },
-  'convocation-ceremony': {
-    heading: 'Convocation Ceremony',
-    date: '2026-10-12',
+  'inter-departmental-seminars': {
+    heading: 'Various departments of the university organize inter-departmental seminars.',
+    date: '2026-04-22',
     image: '../images/photo-gallery/cover-03.jpg',
   },
-  'inter-department-sports-week': {
-    heading: 'Inter-Department Sports Week',
-    date: '2026-10-28',
+  'annual-sports-competition-2025': {
+    heading: 'The university has successfully concluded its annual sports competition for 2025.',
+    date: '2025-12-25',
     image: '../images/photo-gallery/cover-04.jpg',
   },
-  'cultural-night': {
-    heading: 'Cultural Night',
-    date: '2026-11-15',
+  'job-fair-for-graduates': {
+    heading: 'The university successfully organized a job fair for its graduates.',
+    date: '2025-12-10',
     image: '../images/photo-gallery/cover-05.jpg',
   },
-  'campus-library-and-study-spaces': {
-    heading: 'Campus Library & Study Spaces',
-    date: '2026-11-30',
+  'convocation-2025': {
+    heading: 'Students revel in joy as they attend the 2025 convocation.',
+    date: '2025-11-22',
     image: '../images/photo-gallery/cover-06.jpg',
+  },
+  'alumni-reunion': {
+    heading: 'The university campus comes alive with the alumni reunion.',
+    date: '2025-08-22',
+    image: '../images/photo-gallery/cover-07.jpg',
   },
 };
 
@@ -51,9 +54,4 @@ const galleryData = {
 function formatGalleryDateLong(isoDate) {
   const date = new Date(`${isoDate}T00:00:00`);
   return date.toLocaleDateString('en-US', { day: 'numeric', month: 'long', year: 'numeric' });
-}
-
-function formatGalleryWeekday(isoDate) {
-  const date = new Date(`${isoDate}T00:00:00`);
-  return date.toLocaleDateString('en-US', { weekday: 'long' });
 }

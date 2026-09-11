@@ -109,7 +109,7 @@
          width than squeezed beside a sidebar column.
     ============================================================ -->
     <section class="bg-white">
-      <div class="section-inner">
+      <div class="section-inner gallery-grid-section">
         <div class="section-heading section-heading--center">
           <h2 class="section-heading__title">Campus Life in Frames</h2>
         </div>
@@ -262,6 +262,7 @@
         paginationEl,
         items,
         getDate: (item) => item.date,
+        pageSizeOptions: [9, 15, 20, { value: Infinity, label: 'All' }],
         emptyMessage: 'No albums match your search.',
         renderItem: (item) => `
           <article class="gallery-card">
