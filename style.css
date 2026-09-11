@@ -5532,3 +5532,69 @@ a.notice-card:hover {
 .ua-document {
   aspect-ratio: 855 / 1175;
 }
+
+/* ==========================================================================
+   30. Photo Gallery Page (pages/photo-gallery.html)
+   ========================================================================== */
+
+/* Same 3/2/1 responsive breakpoints as .fmp-grid (Faculty Members
+   directory), the site's other 3-per-row search+grid page. */
+.gallery-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+@media (max-width: 900px) {
+  .gallery-card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .gallery-card-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Same overflow:hidden + border-radius + box-shadow "photo caps the
+   card" treatment as .dept-card, so the cover photo's top corners round
+   off automatically with no separate top-only radius needed on it. */
+.gallery-card {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid #ebebeb;
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-card);
+}
+
+.gallery-card__cover {
+  aspect-ratio: 4 / 3;
+}
+
+.gallery-card__body {
+  padding: 1.25rem 1.5rem 1.5rem;
+}
+
+.gallery-card__heading {
+  color: var(--color-navy);
+  font-size: 1.05rem;
+  margin-bottom: 1rem;
+}
+
+.gallery-card__footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+/* Compact button sizing scoped to this card footer - same convention as
+   .program-card__inner .btn, whose default size is too large next to
+   the date-meta row at this card's width. */
+.gallery-card__link {
+  padding: 0.55rem 1rem;
+  font-size: 0.8rem;
+}
