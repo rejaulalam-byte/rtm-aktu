@@ -4596,25 +4596,30 @@ a.notice-card:hover {
   }
 }
 
-/* Notice Details page (pages/notice-details.html): "View All Notice"
-   sits pinned to the top-right of the centered "Notice Details" heading
-   without affecting its centering - same color/weight/hover convention
+/* Notice Details page (pages/notice-details.html) and News Details page
+   (pages/news-details.html): the "View All Notices"/"View Latest News &
+   Updates" link sits in its own right-aligned row directly above the
+   detail card, with a small 5px gap - same color/weight/hover convention
    as .adm-news-header__link. */
-.notice-details-heading {
-  position: relative;
+.notice-details-link-row,
+.news-details-link-row {
+  text-align: right;
+  /* Pull up 10px into .section-heading's 3rem bottom margin (title-to-link
+     gap), and push down 5px more than before (link-to-card gap: 5px -> 10px). */
+  margin-top: -10px;
+  margin-bottom: 10px;
 }
 
-.notice-details-heading__link {
-  position: absolute;
-  top: 0.35rem;
-  right: 0;
+.notice-details-heading__link,
+.news-details-link-row__link {
   color: var(--color-navy);
   font-weight: 600;
   font-size: 0.92rem;
   transition: color 0.2s ease;
 }
 
-.notice-details-heading__link:hover {
+.notice-details-heading__link:hover,
+.news-details-link-row__link:hover {
   color: var(--color-red);
 }
 
