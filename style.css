@@ -4462,16 +4462,16 @@ button {
   }
 }
 
-/* Pronounced hover for these full-width rows (vs. the subtle tint used on
-   the smaller homepage/Admissions news cards): the whole box fills with
-   gold, so every row gets visible feedback. Gold (not navy) is used
-   precisely so it reads against the light resting state; text/icons switch
-   to navy for contrast against it. Scoped to `a.uni-news-item` - only the
+/* Hover for these full-width rows: a soft gold tint (not a solid fill -
+   that read as too bold/jarring against the light resting state) so every
+   row still gets visible feedback without turning into a bold color block.
+   Text/icons switch to navy, which stays comfortably readable against
+   this lighter background too. Scoped to `a.uni-news-item` - only the
    listing rows are real links; the News Details page's static summary bar
    (.uni-news-item--dark, not an <a>) never matches this. */
 a.uni-news-item:hover {
-  background-color: var(--color-gold);
-  border-color: var(--color-gold);
+  background-color: rgba(201, 162, 39, 0.12);
+  border-color: rgba(201, 162, 39, 0.5);
 }
 
 a.uni-news-item:hover .uni-news-item__number {

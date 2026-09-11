@@ -1,13 +1,14 @@
 // ------------------------------------------------------------------
-// Shared pagination + rows-per-page + year/semester search for the
-// listing pages built on the shared "cm-" template (pages/notice-updates.html,
-// pages/university-news.html, pages/current-events.html). Purely
-// client-side - filters/sorts the array each page already loads from
-// its own <page>-data.js, then hands the current page's slice to that
-// page's own renderItem() to build the same markup it already built
-// before pagination existed. This file only owns pagination/search
-// state and the controls/list re-render loop, not the item markup -
-// each page keeps its own template string.
+// Shared pagination + rows-per-page + year/month-year/semester search
+// for the listing pages built on the shared "cm-" template
+// (pages/notice-updates.html, pages/university-news.html,
+// pages/current-events.html). Purely client-side - filters/sorts the
+// array each page already loads from its own <page>-data.js, then
+// hands the current page's slice to that page's own renderItem() to
+// build the same markup it already built before pagination existed.
+// This file only owns pagination/search state and the controls/list
+// re-render loop, not the item markup - each page keeps its own
+// template string.
 //
 // Usage (see pages/university-news.html's inline script for a full
 // example):
@@ -19,6 +20,40 @@
 //     renderItem: (item, index) => `...html for one row...`,
 //   });
 // ------------------------------------------------------------------
+
+// Full name + standard 3-letter abbreviation for each month, both
+// matched case-insensitively - "March, 2026", "march 2026" and
+// "Mar 2026" all resolve to the same { monthIndex: 2, year: 2026 }.
+const LISTING_MONTHS = [
+  { name: 'january', abbr: 'jan' },
+  { name: 'february', abbr: 'feb' },
+  { name: 'march', abbr: 'mar' },
+  { name: 'april', abbr: 'apr' },
+  { name: 'may', abbr: 'may' },
+  { name: 'june', abbr: 'jun' },
+  { name: 'july', abbr: 'jul' },
+  { name: 'august', abbr: 'aug' },
+  { name: 'september', abbr: 'sep' },
+  { name: 'october', abbr: 'oct' },
+  { name: 'november', abbr: 'nov' },
+  { name: 'december', abbr: 'dec' },
+];
+
+// Recognizes "<month name or abbreviation><space or comma><4-digit year>"
+// (e.g. "March, 2026", "march 2026", "Mar,2026"). Returns null for
+// anything else - including a bare year - so the caller can fall back to
+// the existing partial year/semester match.
+function parseListingMonthYear(query) {
+  const match = query.match(/^([a-z]+)[\s,]+(\d{4})$/i);
+  if (!match) return null;
+
+  const monthText = match[1].toLowerCase();
+  const monthIndex = LISTING_MONTHS.findIndex((m) => m.name === monthText || m.abbr === monthText);
+  if (monthIndex === -1) return null;
+
+  return { monthIndex, year: Number(match[2]) };
+}
+
 function initListingControls({
   listEl,
   controlsEl,
@@ -40,13 +75,25 @@ function initListingControls({
   let pageSize = defaultPageSize;
   let page = 1;
 
+  function itemDate(item) {
+    return new Date(`${getDate(item)}T00:00:00`);
+  }
+
   function itemYear(item) {
-    return String(new Date(`${getDate(item)}T00:00:00`).getFullYear());
+    return String(itemDate(item).getFullYear());
   }
 
   function matchesQuery(item) {
-    const q = query.trim().toLowerCase();
-    if (!q) return true;
+    const raw = query.trim();
+    if (!raw) return true;
+
+    const monthYear = parseListingMonthYear(raw);
+    if (monthYear) {
+      const date = itemDate(item);
+      return date.getFullYear() === monthYear.year && date.getMonth() === monthYear.monthIndex;
+    }
+
+    const q = raw.toLowerCase();
     const semester = getSemester(item);
     return itemYear(item).includes(q) || (!!semester && semester.toLowerCase().includes(q));
   }
@@ -59,7 +106,7 @@ function initListingControls({
     controlsEl.innerHTML = `
       <div class="listing-controls__search">
         <svg class="listing-controls__search-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.8"/><path d="m20 20-3.5-3.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
-        <input type="search" id="listingSearchInput" class="listing-controls__search-input" placeholder="${hasSemester ? 'Search by year or semester' : 'Search by year'}" value="${query}">
+        <input type="search" id="listingSearchInput" class="listing-controls__search-input" placeholder="${hasSemester ? 'Search by year, month year, or semester' : 'Search by year or month, year'}" value="${query}">
       </div>
       <label class="listing-controls__page-size">
         Show
