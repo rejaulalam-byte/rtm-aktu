@@ -5487,3 +5487,48 @@ a.notice-card:hover {
     justify-content: space-between;
   }
 }
+
+/* ==========================================================================
+   29. University Advertisement Page (pages/university-advertisement.html)
+   ========================================================================== */
+
+/* Edited-in-place page - no data file, no ?id= pattern, just this one
+   heading/paragraph/date/document. 50px/SemiBold/#222 per the Figma spec,
+   layered onto .section-heading__title (Poppins already inherited from
+   the sitewide h1-h4 rule) rather than its default 700-weight navy. */
+.ua-heading {
+  font-size: 50px;
+  font-weight: 600;
+  color: #222;
+}
+
+/* .text-section__text already gives the muted color/bottom-margin;
+   --center already gives text-align:center. Width is the Figma spec's own
+   1349px - wider than .section-inner ever renders, so in practice this
+   paragraph is only ever bounded by that outer container, not this rule. */
+.ua-text {
+  font-size: 18px;
+  max-width: 1349px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* .date-meta is a block-level flex row (fills its container, left-aligned
+   by default) everywhere else it's used - switched to inline-flex here so
+   this wrapper's text-align:center can actually center it. */
+.ua-meta-row {
+  text-align: center;
+  margin: 1.5rem 0 2.5rem;
+}
+
+.ua-meta-row .date-meta {
+  display: inline-flex;
+}
+
+/* Reuses notice-details.html's .notice-detail-document treatment
+   (width/max-width/margin/border-radius) as-is; only the aspect-ratio is
+   overridden, since this page's own document is a slightly different
+   855x1175 portrait per the Figma spec (vs. that page's 794x1122). */
+.ua-document {
+  aspect-ratio: 855 / 1175;
+}
