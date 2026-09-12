@@ -5835,6 +5835,23 @@ a.notice-card:hover {
   margin-left: 3px;
 }
 
+/* Grid-card variant: smaller and more translucent than the detail
+   page's viewer button - just enough to signal "this is a video",
+   not a clickable affordance of its own (the whole card already
+   links out). */
+.vg-play-icon--grid {
+  width: 40px;
+  height: 40px;
+  border-width: 2px;
+  background-color: rgba(12, 35, 80, 0.35);
+}
+
+.vg-play-icon--grid .icon {
+  width: 16px;
+  height: 16px;
+  margin-left: 2px;
+}
+
 /* Detail-page "now playing" button: bigger and actually clickable,
    same visual language as the homepage's .campus-life__play-btn. */
 .vg-play-icon--viewer {
