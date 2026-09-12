@@ -54,3 +54,13 @@ function formatVideoGalleryDateLong(isoDate) {
   const date = new Date(`${isoDate}T00:00:00`);
   return date.toLocaleDateString('en-US', { day: 'numeric', month: 'long', year: 'numeric' });
 }
+
+// Figma's card date format: "5-July-2026" (day-Month-year, hyphenated,
+// no leading zero on the day) - used by the video-gallery grid card only.
+function formatVideoGalleryDateShort(isoDate) {
+  const date = new Date(`${isoDate}T00:00:00`);
+  const day = date.getDate();
+  const month = date.toLocaleDateString('en-US', { month: 'long' });
+  const year = date.getFullYear();
+  return `${day}-${month}-${year}`;
+}

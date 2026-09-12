@@ -5786,10 +5786,29 @@ a.notice-card:hover {
 
 /* Figma's six cards come in with two slightly different corner radii
    (59.486px / 45px) - normalized to one consistent value here rather
-   than reproducing both. Wins over .gallery-card's own border-radius
-   by source order (both are single-class selectors). */
-.gallery-card--video {
+   than reproducing both. Per Figma, this dramatic shape belongs only
+   to the cover photo - the card body below (heading/date/link) stays
+   a normal near-square panel at .gallery-card's own subtle radius. */
+.gallery-card--video .gallery-card__cover {
   border-radius: 50px 50px 0 50px;
+}
+
+/* Figma spec: plain black, regular-weight caption - not the bold navy
+   heading style shared with Photo Gallery's .gallery-card__heading. */
+.gallery-card--video .gallery-card__heading {
+  color: #000;
+  font-weight: 400;
+}
+
+/* Figma's "Explore All Videos" arrow points diagonally (~45deg), unlike
+   Photo Gallery's shared straight .gallery-card__link-arrow. Rotate only
+   here so the base rule (and Photo Gallery's use of it) stays untouched. */
+.gallery-card--video .gallery-card__link-arrow {
+  transform: rotate(-45deg);
+}
+
+.gallery-card--video .gallery-card__link:hover .gallery-card__link-arrow {
+  transform: rotate(-45deg) translate(2px, -2px);
 }
 
 /* Grid-card play icon: small, decorative (the whole card already
