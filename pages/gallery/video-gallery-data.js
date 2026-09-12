@@ -9,9 +9,8 @@
 // "video box-1" through "video box-6") - two small grammar fixes
 // applied to the Figma copy (campus-notes-2026, campus-movement-2026).
 //
-// `image` is a shared placeholder (images/campus-life/campus-life-poster.jpg,
-// already used by the homepage's "Discover Our Campus Life" video) until
-// each group's own real thumbnail is supplied.
+// `image` is each group's real cover photo (images/video-gallery/cover-0N.jpg,
+// numbered in the same order as the groups below).
 //
 // Paths below are relative to pages/video-gallery.html.
 //
@@ -21,32 +20,32 @@ const videoGalleryData = {
   'freshers-welcome-2026': {
     heading: "Arrival of new students at the university for the freshers' welcome ceremony.",
     date: '2026-07-05',
-    image: '../images/campus-life/campus-life-poster.jpg',
+    image: '../images/video-gallery/cover-01.jpg',
   },
   'fashion-show-2026': {
     heading: 'The Fashion Design Department organized a fashion show at the university auditorium.',
     date: '2026-07-25',
-    image: '../images/campus-life/campus-life-poster.jpg',
+    image: '../images/video-gallery/cover-02.jpg',
   },
   'campus-life-2026': {
     heading: 'Students enjoying the university campus life.',
     date: '2026-02-20',
-    image: '../images/campus-life/campus-life-poster.jpg',
+    image: '../images/video-gallery/cover-03.jpg',
   },
   'campus-notes-2026': {
     heading: "Students discussing their class notes on the university's campus.",
     date: '2026-03-05',
-    image: '../images/campus-life/campus-life-poster.jpg',
+    image: '../images/video-gallery/cover-04.jpg',
   },
   'campus-movement-2026': {
     heading: "Students enjoying free movement inside the university's campus.",
     date: '2026-05-14',
-    image: '../images/campus-life/campus-life-poster.jpg',
+    image: '../images/video-gallery/cover-05.jpg',
   },
   'library-facilities-2026': {
     heading: "Students always using the university's library facilities.",
     date: '2026-08-20',
-    image: '../images/campus-life/campus-life-poster.jpg',
+    image: '../images/video-gallery/cover-06.jpg',
   },
 };
 
