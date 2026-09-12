@@ -5962,13 +5962,21 @@ a.notice-card:hover {
   height: 16px;
 }
 
-/* Click-to-load YouTube iframe fills the same aspect-ratio box the
-   thumbnail/play-button state uses (.img-ph.pgd-viewer__photo already
-   supplies position:relative + overflow:hidden + the rounded frame). */
-.pgd-viewer__photo iframe {
+/* Click-to-load YouTube iframe (or, pre-admin-panel, a local test <video> -
+   see testVideoFile in video-gallery-details-data.js) fills the same
+   aspect-ratio box the thumbnail/play-button state uses
+   (.img-ph.pgd-viewer__photo already supplies position:relative +
+   overflow:hidden + the rounded frame). */
+.pgd-viewer__photo iframe,
+.pgd-viewer__photo video {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   border: 0;
+}
+
+.pgd-viewer__photo video {
+  object-fit: cover;
+  object-position: center;
 }

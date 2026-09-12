@@ -17,42 +17,49 @@
 // as gallery-details-data.js - omitted here, so the shared template
 // (pages/video-details.html) falls back to its generic Campus Reels
 // heading/paragraph.
+//
+// `testVideoFile` is a temporary pre-admin-panel field for local
+// playback testing (see pages/video-details.html's showVideo/
+// playActiveVideo) - set it to a local mp4 path under
+// videos/video-gallery/<group-id>/ to preview the laptop-frame player
+// with real footage. Leave it null once the admin panel supplies real
+// `youtubeId`s; that's the field the live site will actually use.
 // ------------------------------------------------------------------
 const videoGalleryDetailsData = {
   'freshers-welcome-2026': {
     breadcrumbLabel: "Freshers' Welcome 2026",
     videos: [
-      { youtubeId: null, thumbnail: '../images/video-gallery/freshers-welcome-2026/thumb-01.jpg', caption: "Arrival of new students at the university for the freshers' welcome ceremony." },
+      { youtubeId: null, testVideoFile: null, thumbnail: '../images/video-gallery/freshers-welcome-2026/thumb-01.jpg', caption: "Arrival of new students at the university for the freshers' welcome ceremony." },
     ],
   },
   'fashion-show-2026': {
     breadcrumbLabel: 'Fashion Show 2026',
     videos: [
-      { youtubeId: null, thumbnail: '../images/video-gallery/fashion-show-2026/thumb-01.jpg', caption: 'The Fashion Design Department organized a fashion show at the university auditorium.' },
+      { youtubeId: null, testVideoFile: null, thumbnail: '../images/video-gallery/fashion-show-2026/thumb-01.jpg', caption: 'The Fashion Design Department organized a fashion show at the university auditorium.' },
     ],
   },
   'campus-life-2026': {
     breadcrumbLabel: 'Campus Life',
     videos: [
-      { youtubeId: null, thumbnail: '../images/video-gallery/campus-life-2026/thumb-01.jpg', caption: 'Students enjoying the university campus life.' },
+      { youtubeId: null, testVideoFile: null, thumbnail: '../images/video-gallery/campus-life-2026/thumb-01.jpg', caption: 'Students enjoying the university campus life.' },
     ],
   },
   'campus-notes-2026': {
     breadcrumbLabel: 'Class Notes on Campus',
     videos: [
-      { youtubeId: null, thumbnail: '../images/video-gallery/campus-notes-2026/thumb-01.jpg', caption: "Students discussing their class notes on the university's campus." },
+      { youtubeId: null, testVideoFile: null, thumbnail: '../images/video-gallery/campus-notes-2026/thumb-01.jpg', caption: "Students discussing their class notes on the university's campus." },
     ],
   },
   'campus-movement-2026': {
     breadcrumbLabel: 'Campus Movement',
     videos: [
-      { youtubeId: null, thumbnail: '../images/video-gallery/campus-movement-2026/thumb-01.jpg', caption: "Students enjoying free movement inside the university's campus." },
+      { youtubeId: null, testVideoFile: null, thumbnail: '../images/video-gallery/campus-movement-2026/thumb-01.jpg', caption: "Students enjoying free movement inside the university's campus." },
     ],
   },
   'library-facilities-2026': {
     breadcrumbLabel: 'Library Facilities',
     videos: [
-      { youtubeId: null, thumbnail: '../images/video-gallery/library-facilities-2026/thumb-01.jpg', caption: "Students always using the university's library facilities." },
+      { youtubeId: null, testVideoFile: null, thumbnail: '../images/video-gallery/library-facilities-2026/thumb-01.jpg', caption: "Students always using the university's library facilities." },
     ],
   },
 };

@@ -329,6 +329,19 @@
       const comingSoon = document.getElementById('vgdComingSoon');
 
       function playActiveVideo(video) {
+        // testVideoFile is a temporary pre-admin-panel field for local
+        // playback testing - see video-gallery-details-data.js.
+        if (video.testVideoFile) {
+          const videoEl = document.createElement('video');
+          videoEl.src = video.testVideoFile;
+          videoEl.controls = true;
+          videoEl.autoplay = true;
+          videoEl.playsInline = true;
+          viewerFrame.classList.remove('img-ph--broken');
+          viewerFrame.innerHTML = '';
+          viewerFrame.appendChild(videoEl);
+          return;
+        }
         if (!video.youtubeId) return;
         const iframe = document.createElement('iframe');
         iframe.src = `https://www.youtube.com/embed/${video.youtubeId}?autoplay=1`;
@@ -341,6 +354,7 @@
       }
 
       function showVideo(video) {
+        const hasVideo = !!(video.youtubeId || video.testVideoFile);
         viewerFrame.classList.remove('img-ph--broken');
         viewerFrame.innerHTML = `
           <img id="vgdViewerThumb" src="${video.thumbnail}" alt="${video.caption}" onerror="this.closest('.img-ph').classList.add('img-ph--broken')">
@@ -348,15 +362,15 @@
             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="4" width="18" height="16" rx="2" stroke="currentColor" stroke-width="1.6"/><circle cx="8.5" cy="9.5" r="1.5" stroke="currentColor" stroke-width="1.6"/><path d="m4 17 5-5 3 3 3-3.5L21 15" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
             <span>Video Coming Soon</span>
           </div>
-          <button type="button" class="vg-play-icon vg-play-icon--viewer ${video.youtubeId ? '' : 'is-disabled'}" id="vgdPlayBtn" aria-label="${video.youtubeId ? 'Play video' : 'Video coming soon'}">
+          <button type="button" class="vg-play-icon vg-play-icon--viewer ${hasVideo ? '' : 'is-disabled'}" id="vgdPlayBtn" aria-label="${hasVideo ? 'Play video' : 'Video coming soon'}">
             <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M8 5v14l11-7-11-7Z" fill="currentColor"/></svg>
           </button>
         `;
         viewerCaption.textContent = video.caption;
-        comingSoon.hidden = !!video.youtubeId;
+        comingSoon.hidden = hasVideo;
 
         const newPlayBtn = viewerFrame.querySelector('#vgdPlayBtn');
-        if (video.youtubeId) {
+        if (hasVideo) {
           newPlayBtn.addEventListener('click', () => playActiveVideo(video));
         }
       }
