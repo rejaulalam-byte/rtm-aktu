@@ -131,15 +131,18 @@
         </div>
 
         <div class="pgd-viewer">
-          <div class="img-ph pgd-viewer__photo" id="vgdViewerFrame">
-            <img id="vgdViewerThumb" src="" alt="" onerror="this.closest('.img-ph').classList.add('img-ph--broken')">
-            <div class="img-ph__fallback" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="4" width="18" height="16" rx="2" stroke="currentColor" stroke-width="1.6"/><circle cx="8.5" cy="9.5" r="1.5" stroke="currentColor" stroke-width="1.6"/><path d="m4 17 5-5 3 3 3-3.5L21 15" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              <span>Video Coming Soon</span>
+          <div class="vgd-laptop-frame">
+            <div class="img-ph pgd-viewer__photo" id="vgdViewerFrame">
+              <img id="vgdViewerThumb" src="" alt="" onerror="this.closest('.img-ph').classList.add('img-ph--broken')">
+              <div class="img-ph__fallback" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="4" width="18" height="16" rx="2" stroke="currentColor" stroke-width="1.6"/><circle cx="8.5" cy="9.5" r="1.5" stroke="currentColor" stroke-width="1.6"/><path d="m4 17 5-5 3 3 3-3.5L21 15" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span>Video Coming Soon</span>
+              </div>
+              <button type="button" class="vg-play-icon vg-play-icon--viewer" id="vgdPlayBtn" aria-label="Play video">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M8 5v14l11-7-11-7Z" fill="currentColor"/></svg>
+              </button>
             </div>
-            <button type="button" class="vg-play-icon vg-play-icon--viewer" id="vgdPlayBtn" aria-label="Play video">
-              <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M8 5v14l11-7-11-7Z" fill="currentColor"/></svg>
-            </button>
+            <img src="../images/video-gallery/laptop-frame.png" alt="" class="vgd-laptop-frame__img" aria-hidden="true">
           </div>
           <p class="pgd-viewer__caption" id="vgdViewerCaption"></p>
           <p class="vgd-coming-soon" id="vgdComingSoon" hidden>
