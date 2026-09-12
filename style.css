@@ -5856,6 +5856,14 @@ a.notice-card:hover {
   margin-left: 2px;
 }
 
+/* Figma specifies 45px 3-corner rounding for this page's thumbnail
+   strip specifically - different from the listing grid's 50px and
+   from Photo Gallery's own #pgdThumbTrack .pgd-thumb (untouched, own
+   ID keeps this scoped to video-details.html only). */
+#vgdThumbTrack .pgd-thumb {
+  border-radius: 45px 45px 0 45px;
+}
+
 /* Detail-page "now playing" button: bigger and actually clickable,
    same visual language as the homepage's .campus-life__play-btn. */
 .vg-play-icon--viewer {
