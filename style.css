@@ -5597,6 +5597,10 @@ a.notice-card:hover {
 
 .gallery-card__cover {
   aspect-ratio: 4 / 3;
+  /* Was always a <div> before; now also used as an <a> (cover-photo
+     link) on both gallery pages, and <a> defaults to inline - keep it
+     block so the aspect-ratio/width:100% sizing above stays identical. */
+  display: block;
 }
 
 .gallery-card__body {
