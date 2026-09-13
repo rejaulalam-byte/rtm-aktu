@@ -744,7 +744,7 @@ button {
 .announcement-marquee {
   background-color: var(--color-navy);
   overflow: hidden;
-  padding: 0.65rem 0;
+  padding: 1.275rem 0;
 }
 
 .announcement-marquee__track {
@@ -757,8 +757,8 @@ button {
   white-space: nowrap;
   padding-right: 4rem;
   font-weight: 600;
-  font-size: 0.95rem;
-  color: var(--color-gold);
+  font-size: 1.9rem;
+  color: var(--color-white);
 }
 
 @keyframes announcement-marquee-scroll {
