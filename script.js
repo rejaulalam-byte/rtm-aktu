@@ -107,8 +107,8 @@ function initScrollSpy() {
 // this section didn't exist. Any length of text is fine; it scrolls.
 // ------------------------------------------------------------------
 const siteAnnouncement = {
-  enabled: false,
-  text: '',
+  enabled: true,
+  text: 'Our website is now under construction...',
 };
 
 function initAnnouncementMarquee() {
