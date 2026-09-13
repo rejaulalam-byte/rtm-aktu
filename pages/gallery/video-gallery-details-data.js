@@ -29,37 +29,37 @@ const videoGalleryDetailsData = {
   'freshers-welcome-2026': {
     breadcrumbLabel: "Freshers' Welcome 2026",
     videos: [
-      { youtubeId: null, testVideoFile: null, thumbnail: '../images/video-gallery/freshers-welcome-2026/thumb-01.jpg', caption: "Arrival of new students at the university for the freshers' welcome ceremony." },
+      { youtubeId: 'zi7m8BswSW4', testVideoFile: null, thumbnail: '../images/video-gallery/freshers-welcome-2026/thumb-01.jpg', caption: "Arrival of new students at the university for the freshers' welcome ceremony." },
     ],
   },
   'fashion-show-2026': {
     breadcrumbLabel: 'Fashion Show 2026',
     videos: [
-      { youtubeId: null, testVideoFile: null, thumbnail: '../images/video-gallery/fashion-show-2026/thumb-01.jpg', caption: 'The Fashion Design Department organized a fashion show at the university auditorium.' },
+      { youtubeId: 'hI6zX6bG6XY', testVideoFile: null, thumbnail: '../images/video-gallery/fashion-show-2026/thumb-01.jpg', caption: 'The Fashion Design Department organized a fashion show at the university auditorium.' },
     ],
   },
   'campus-life-2026': {
     breadcrumbLabel: 'Campus Life',
     videos: [
-      { youtubeId: null, testVideoFile: null, thumbnail: '../images/video-gallery/campus-life-2026/thumb-01.jpg', caption: 'Students enjoying the university campus life.' },
+      { youtubeId: 'uI-KPtw_gqM', testVideoFile: null, thumbnail: '../images/video-gallery/campus-life-2026/thumb-01.jpg', caption: 'Students enjoying the university campus life.' },
     ],
   },
   'campus-notes-2026': {
     breadcrumbLabel: 'Class Notes on Campus',
     videos: [
-      { youtubeId: null, testVideoFile: null, thumbnail: '../images/video-gallery/campus-notes-2026/thumb-01.jpg', caption: "Students discussing their class notes on the university's campus." },
+      { youtubeId: 'OYkmWN9OsvQ', testVideoFile: null, thumbnail: '../images/video-gallery/campus-notes-2026/thumb-01.jpg', caption: "Students discussing their class notes on the university's campus." },
     ],
   },
   'campus-movement-2026': {
     breadcrumbLabel: 'Campus Movement',
     videos: [
-      { youtubeId: null, testVideoFile: null, thumbnail: '../images/video-gallery/campus-movement-2026/thumb-01.jpg', caption: "Students enjoying free movement inside the university's campus." },
+      { youtubeId: '_aVHFtynAic', testVideoFile: null, thumbnail: '../images/video-gallery/campus-movement-2026/thumb-01.jpg', caption: "Students enjoying free movement inside the university's campus." },
     ],
   },
   'library-facilities-2026': {
     breadcrumbLabel: 'Library Facilities',
     videos: [
-      { youtubeId: null, testVideoFile: null, thumbnail: '../images/video-gallery/library-facilities-2026/thumb-01.jpg', caption: "Students always using the university's library facilities." },
+      { youtubeId: 'aTncNBSKBOk', testVideoFile: null, thumbnail: '../images/video-gallery/library-facilities-2026/thumb-01.jpg', caption: "Students always using the university's library facilities." },
     ],
   },
 };
