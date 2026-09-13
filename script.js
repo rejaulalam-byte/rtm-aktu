@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initStickyHeader();
   initScrollSpy();
   initHeroSlider();
+  initAnnouncementMarquee();
   renderGallery();
   initSlider({
     trackId: 'galleryTrack',
@@ -95,6 +96,34 @@ function initScrollSpy() {
   }, { rootMargin: '-45% 0px -50% 0px' });
 
   sections.forEach((section) => observer.observe(section));
+}
+
+// ------------------------------------------------------------------
+// Site-wide announcement marquee (admin-panel ready)
+// Set `enabled: true` and fill in `text` to show a scrolling banner
+// between the Hero and Leadership sections on the Home page.
+// Set `enabled: false` (or leave `text` empty) to hide it completely —
+// the sections above and below will sit flush again, exactly as if
+// this section didn't exist. Any length of text is fine; it scrolls.
+// ------------------------------------------------------------------
+const siteAnnouncement = {
+  enabled: false,
+  text: '',
+};
+
+function initAnnouncementMarquee() {
+  const section = document.getElementById('announcementMarquee');
+  if (!section) return;
+
+  if (!siteAnnouncement.enabled || !siteAnnouncement.text.trim()) {
+    section.hidden = true;
+    return;
+  }
+
+  section.querySelectorAll('.announcement-marquee__text').forEach((el) => {
+    el.textContent = siteAnnouncement.text;
+  });
+  section.hidden = false;
 }
 
 // ------------------------------------------------------------------

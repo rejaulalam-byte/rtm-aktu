@@ -97,6 +97,19 @@
     </section>
 
     <!-- ============================================================
+         ANNOUNCEMENT MARQUEE
+         Admin-controlled scrolling banner. Hidden by default — driven
+         by the `siteAnnouncement` config in script.js. When disabled or
+         empty, this section stays `hidden` and takes no vertical space.
+    ============================================================ -->
+    <section class="announcement-marquee" id="announcementMarquee" role="region" aria-label="Announcement" hidden>
+      <div class="announcement-marquee__track" id="announcementMarqueeTrack">
+        <span class="announcement-marquee__text"></span>
+        <span class="announcement-marquee__text" aria-hidden="true"></span>
+      </div>
+    </section>
+
+    <!-- ============================================================
          4. LEADERSHIP MESSAGES
     ============================================================ -->
     <section class="leadership" id="leadership">

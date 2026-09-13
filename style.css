@@ -738,6 +738,41 @@ button {
 }
 
 /* ==========================================================================
+   Announcement Marquee
+   ========================================================================== */
+
+.announcement-marquee {
+  background-color: var(--color-navy);
+  overflow: hidden;
+  padding: 0.65rem 0;
+}
+
+.announcement-marquee__track {
+  display: flex;
+  width: max-content;
+  animation: announcement-marquee-scroll 22s linear infinite;
+}
+
+.announcement-marquee__text {
+  white-space: nowrap;
+  padding-right: 4rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--color-gold);
+}
+
+@keyframes announcement-marquee-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .announcement-marquee__track {
+    animation: none;
+  }
+}
+
+/* ==========================================================================
    4. Leadership Messages
    ========================================================================== */
 
