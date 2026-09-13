@@ -348,6 +348,7 @@
         iframe.title = video.caption;
         iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
         iframe.allowFullscreen = true;
+        iframe.referrerPolicy = 'strict-origin-when-cross-origin';
         viewerFrame.classList.remove('img-ph--broken');
         viewerFrame.innerHTML = '';
         viewerFrame.appendChild(iframe);

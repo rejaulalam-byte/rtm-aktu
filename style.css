@@ -5679,6 +5679,14 @@ a.notice-card:hover {
   text-align: center;
 }
 
+#vgdContent .pgd-viewer {
+  max-width: 965px;
+}
+
+#vgdContent .pgd-date-row {
+  margin-bottom: 4.6rem;
+}
+
 .pgd-viewer__photo {
   aspect-ratio: 765 / 450;
   border-radius: var(--radius-md);
@@ -5688,7 +5696,7 @@ a.notice-card:hover {
 .vgd-laptop-frame {
   position: relative;
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 3573 / 1892;
 }
 
 .vgd-laptop-frame__img {
@@ -5702,10 +5710,10 @@ a.notice-card:hover {
 
 .vgd-laptop-frame .pgd-viewer__photo {
   position: absolute;
-  left: 17.475%;
-  top: 22.167%;
-  width: 65.325%;
-  height: 49.167%;
+  left: 12.762%;
+  top: 5.919%;
+  width: 73.126%;
+  height: 77.960%;
   z-index: 1;
   border-radius: 0;
 }
