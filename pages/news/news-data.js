@@ -32,6 +32,7 @@ const newsData = {
     date: '2026-08-28',
     image: '../images/university-news/news-01.jpg',
     showOnAdmissions: false,
+    showOnHome: true,
     body: newsPlaceholderBody,
   },
   'new-academic-programs-introduced-this-semester': {
@@ -39,6 +40,7 @@ const newsData = {
     date: '2026-08-26',
     image: '../images/university-news/news-02.jpg',
     showOnAdmissions: false,
+    showOnHome: false,
     body: newsPlaceholderBody,
   },
   'students-achieve-outstanding-results-in-national-competitions': {
@@ -46,6 +48,7 @@ const newsData = {
     date: '2026-08-26',
     image: '../images/university-news/news-03.jpg',
     showOnAdmissions: false,
+    showOnHome: true,
     body: newsPlaceholderBody,
   },
   'ugc-member-inaugurates-laboratories': {
@@ -53,6 +56,7 @@ const newsData = {
     date: '2026-08-26',
     image: '../images/university-news/news-04.jpg',
     showOnAdmissions: false,
+    showOnHome: false,
     body: newsPlaceholderBody,
   },
   'rtm-aktu-opens-admission-window-for-upcoming-academic-session': {
@@ -60,6 +64,7 @@ const newsData = {
     date: '2026-08-18',
     image: '../images/admissions/news-1.jpg',
     showOnAdmissions: true,
+    showOnHome: true,
     excerpt: 'Prospective students can now begin the application process for undergraduate and postgraduate programs across all faculties.',
     body: newsPlaceholderBody,
   },
@@ -68,6 +73,7 @@ const newsData = {
     date: '2026-08-25',
     image: '../images/admissions/news-2.jpg',
     showOnAdmissions: true,
+    showOnHome: false,
     excerpt: 'The scholarship office has opened applications for a new needs-based fund supporting students who are the first in their family to attend university.',
     body: newsPlaceholderBody,
   },
@@ -76,6 +82,7 @@ const newsData = {
     date: '2026-09-05',
     image: '../images/admissions/news-3.jpg',
     showOnAdmissions: true,
+    showOnHome: false,
     excerpt: 'The partnership will fund joint research projects and create new internship placements for undergraduate students starting next semester.',
     body: newsPlaceholderBody,
   },

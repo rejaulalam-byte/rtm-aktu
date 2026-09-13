@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollSpy();
   initHeroSlider();
   initAnnouncementMarquee();
+  renderCurrentNews();
   renderGallery();
   initSlider({
     trackId: 'galleryTrack',
@@ -124,6 +125,50 @@ function initAnnouncementMarquee() {
     el.textContent = siteAnnouncement.text;
   });
   section.hidden = false;
+}
+
+// ------------------------------------------------------------------
+// Home page "Current News" list (#currentNewsList): renders the news
+// items flagged `showOnHome: true` in the shared pages/news/news-data.js
+// (loaded before this file on index.html), each row linking to its News
+// Details page - same data-driven pattern as the Admissions "Current
+// News" carousel (showOnAdmissions). Flip the flag on a news-data.js
+// entry to swap what shows here - no HTML markup to duplicate.
+// initDateWeekdays(), called later in this same DOMContentLoaded
+// listener, fills in the .js-weekday spans rendered below.
+// ------------------------------------------------------------------
+function renderCurrentNews() {
+  const listEl = document.getElementById('currentNewsList');
+  if (!listEl || typeof newsData === 'undefined') return;
+
+  const items = Object.entries(newsData)
+    .filter(([, item]) => item.showOnHome)
+    .map(([id, item]) => ({ id, ...item }));
+
+  listEl.innerHTML = items
+    .map((item, index) => {
+      const number = String(index + 1).padStart(2, '0');
+      return `
+        <li>
+          <a href="pages/news-details.html?id=${item.id}" class="news-list__item">
+            <span class="news-list__number">${number}</span>
+            <div>
+              <p class="news-list__headline">${item.headline}</p>
+              <div class="date-meta">
+                <span class="date-meta__item">
+                  <svg class="date-meta__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M4 9h16M8 3v4M16 3v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                  ${formatNewsDateShort(item.date)}
+                </span>
+                <span class="date-meta__item">
+                  <svg class="date-meta__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M4 9h16M8 3v4M16 3v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><rect x="7.5" y="12" width="4" height="4" rx="1" fill="currentColor"/></svg>
+                  <span class="js-weekday" data-date="${item.date}"></span>
+                </span>
+              </div>
+            </div>
+          </a>
+        </li>`;
+    })
+    .join('');
 }
 
 // ------------------------------------------------------------------
