@@ -212,8 +212,8 @@ function renderHeroSlide(slide, index) {
           <defs>
             <path id="${sealPathId}" d="M 105,105 m -85,0 a 85,85 0 1,1 170,0 a 85,85 0 1,1 -170,0" />
           </defs>
-          <text fill="#FFFFFF" font-size="11" letter-spacing="2" font-family="Inter, sans-serif">
-            <textPath href="#${sealPathId}">RTM AL-KABIR TECHNICAL UNIVERSITY &middot; SYLHET &middot; RTM AL-KABIR TECHNICAL UNIVERSITY &middot; SYLHET &middot;</textPath>
+          <text fill="#FFFFFF" font-size="13.5" letter-spacing="2" font-family="Inter, sans-serif">
+            <textPath href="#${sealPathId}">RTM AL-KABIR TECHNICAL UNIVERSITY (RTM-AKTU) &middot; SYLHET &middot;</textPath>
           </text>
         </svg>
         <img src="images/Logo-Seal.png" alt="" class="hero__seal-logo">
