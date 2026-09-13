@@ -748,22 +748,22 @@ button {
 }
 
 .announcement-marquee__track {
-  display: flex;
+  display: inline-block;
   width: max-content;
+  padding-left: 100%;
   animation: announcement-marquee-scroll 22s linear infinite;
 }
 
 .announcement-marquee__text {
   white-space: nowrap;
-  padding-right: 4rem;
   font-weight: 600;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   color: var(--color-white);
 }
 
 @keyframes announcement-marquee-scroll {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+  from { transform: translate(0, 0); }
+  to { transform: translate(-100%, 0); }
 }
 
 @media (prefers-reduced-motion: reduce) {
