@@ -4103,6 +4103,27 @@ button {
   font-size: 24px;
 }
 
+/* Page-specific spacing tweaks for pages/admission.html only.
+   Padding (not margin) so the added space stacks on top of the existing
+   margin-collapsed gap instead of being swallowed by it. */
+.admission-heading--programs {
+  padding-bottom: 10px;
+}
+
+.admission-heading--fee-waiver {
+  padding-top: 5px;
+  padding-bottom: 10px;
+}
+
+.admission-heading--requirements {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.admission-heading--process {
+  padding-top: 5px;
+}
+
 /* --- "University Inside" quick-links card --- */
 .cm-sidebar {
   background-color: var(--color-bg-light);
