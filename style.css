@@ -4122,9 +4122,16 @@ button {
 
 .admission-heading--process {
   padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.admission-heading--tuition-fees {
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 .admission-heading--contact {
+  padding-top: 5px;
   padding-bottom: 10px;
 }
 
