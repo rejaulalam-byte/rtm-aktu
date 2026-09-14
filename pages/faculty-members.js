@@ -76,7 +76,7 @@ const facultyMembers = [
     name: 'Jannatul Nayem Novera',
     role: 'Lecturer',
     department: 'Department of Electrical and Electronic Engineering (EEE)',
-    link: '#',
+    link: 'faculty/profile.html?id=jannatul-nayem-novera',
   },
   {
     photo: '../images/faculty-members/jerin-akter.png',

@@ -873,4 +873,75 @@ const facultyProfiles = {
       ],
     },
   },
+  'jannatul-nayem-novera': {
+    name: 'Jannatul Nayem Novera',
+    role: 'Lecturer',
+    department: 'Department of Electrical and Electronic Engineering (EEE)',
+    photo: '../../images/faculty-members/jannatul-nayem-novera.png',
+    address: [
+      'RTM Al-Kabir Technical University (RTM-AKTU)',
+      'Campus: RTM Point, East Shahi Eidgah, TB Gate, Sylhet-3100, Bangladesh',
+    ],
+    phone: '01756805668',
+    phoneHref: 'tel:+8801756805668',
+    email: 'jannatul@rtm-aktu.ac.bd',
+    bio: [
+      "Jannatul Nayem Novera currently serves as a Lecturer in the Department of Electrical and Electronic Engineering at RTM Al-Kabir Technical University (RTM-AKTU), Sylhet, Bangladesh. She is an academic professional at RTM Al-Kabir Technical University (RTM-AKTU) with demonstrated commitment to excellence in teaching and research. She specializes in biomedical engineering, machine learning, and deep learning applications, with a focus on intelligent healthcare systems, bioelectrical impedance analysis, and AI-driven biomedical prediction. She has published research on intracellular fluid modeling, hybrid plasmonic waveguides for nano-scale light confinement, and machine learning–based biomedical optimization, and has received the National Science and Technology (NST) Fellowship and the Bank Asia Higher Studies Scholarship.",
+      "She holds an M.Sc. in Electrical and Electronic Engineering from Noakhali Science and Technology University, following her B.Sc. in the same discipline.",
+      "Her research interests lie in the fields of biomedical engineering, machine learning, and deep learning. She is particularly interested in developing intelligent healthcare systems, applying data-driven models for biomedical prediction, and integrating advanced signal and image processing techniques into medical diagnostics. Her work also explores nano-scale photonic structures and AI-based approaches to improve accuracy and efficiency in biomedical and engineering applications.",
+      "Currently, she is investigating advanced deep learning models for biomedical image enhancement, healthcare prediction systems, and integration of AI and IoT for smart sensing applications. She teaches courses in electronics, digital systems, programming, telecommunication engineering, and experimental laboratories, combining theory with practical, hands-on learning. She also mentors students, supervises research projects, and organizes technical events to promote innovation and skill development within the EEE community.",
+    ],
+    tabs: {
+      'Research Interest': 'Her research interests span the fields of Biomedical engineering and image processing.',
+      'Academic Information': [
+        {
+          items: [
+            'Bachelor of Science in Electrical and Electronic Engineering, 2021, Noakhali Science and Technology University, Noakhali.',
+            'Higher Secondary School Certificate, Science, 2016, Haziganj Degree College, Comilla Education Board.',
+            'Secondary School Certificate, Science, 2014, Haziganj Pilot Girls High School, Comilla Education Board.',
+          ],
+        },
+      ],
+      'Courses Taught': 'Electronics-II, Electronics-II Laboratory, Circuit Simulation Laboratory, Basic Mechanical Engineering, Basic Mechanical Engineering Laboratory, Chemistry, Chemistry Laboratory.',
+      'Areas of Expertise': '',
+      'Experience': [
+        {
+          items: [
+            'Lecturer, Department of Electrical and Electronic Engineering, RTM-AKTU, from 01/02/2025 to till now.',
+            'Internship Trainee, on Industrial Technology of Electrical Engineering and Instrumentation, from 09/03/2021 to 30/03/2021.',
+          ],
+        },
+      ],
+      'Teaching and Academic Contributions': '',
+      'Publications & Research': [
+        {
+          items: [
+            'Mathematical Models Development of Intracellular Fluid with Bioelectrical Impedance Analysis. (ICISET 2024)',
+            'A Novel Hybrid Plasmonic Waveguide for Nano-Scale Light Confinement and Long Propagation Range. (ECCE 2025)',
+            'Machine Learning-Driven Optimization of Bioelectrical Impedance Analysis for Intracellular Fluid Prediction. (ICERIE 2025)',
+            'Adaptation Attention module based Generative Adversarial Network (AAM-GAN) for Underwater Image Enhancement and Object Detection. (MSc. Thesis)',
+          ],
+        },
+      ],
+      'Seminars/Workshops Participation': [
+        {
+          items: [
+            'Conducted a workshop on Basic C programming (2023).',
+            'Attended a day-long seminar on "python programming" organized by NSTU CSTE Club.',
+          ],
+        },
+      ],
+      'Contact': [
+        {
+          lines: [
+            'Department of Electrical and Electronic Engineering',
+            'RTM Al-Kabir Technical University (RTM-AKTU)',
+            'Campus: RTM Point, East Shahi Eidgah, TB Gate, Sylhet-3100, Bangladesh',
+            'Email: <a href="mailto:jannatul@rtm-aktu.ac.bd">jannatul@rtm-aktu.ac.bd</a>',
+            'Contact: <a href="tel:+8801756805668">+8801756805668</a>',
+          ],
+        },
+      ],
+    },
+  },
 };
