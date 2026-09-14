@@ -375,7 +375,7 @@ const facultyProfiles = {
     name: 'Md. Samiul Alim',
     role: 'Lecturer',
     department: 'Department of Computer Science and Engineering (CSE)',
-    photo: '../../images/academics/faculty/faculty-1.jpg',
+    photo: '../../images/faculty-members/md-samiul-alim.png',
     address: [
       'RTM Al-Kabir Technical University (RTM-AKTU)',
       'Campus: RTM Point, East Shahi Eidgah, TB Gate, Sylhet-3100, Bangladesh',
@@ -868,6 +868,960 @@ const facultyProfiles = {
             'Contact: <a href="tel:+8801711983427">+8801711983427</a>',
             'Email: <a href="mailto:jamal@rtm-aktu.ac.bd">jamal@rtm-aktu.ac.bd</a>',
             'Website: <a href="https://www.rtm-aktu.ac.bd" target="_blank" rel="noopener">www.rtm-aktu.ac.bd</a>',
+          ],
+        },
+      ],
+    },
+  },
+  'jannatul-nayem-novera': {
+    name: 'Jannatul Nayem Novera',
+    role: 'Lecturer',
+    department: 'Department of Electrical and Electronic Engineering (EEE)',
+    photo: '../../images/faculty-members/jannatul-nayem-novera.png',
+    address: [
+      'RTM Al-Kabir Technical University (RTM-AKTU)',
+      'Campus: RTM Point, East Shahi Eidgah, TB Gate, Sylhet-3100, Bangladesh',
+    ],
+    phone: '01756805668',
+    phoneHref: 'tel:+8801756805668',
+    email: 'jannatul@rtm-aktu.ac.bd',
+    bio: [
+      "Jannatul Nayem Novera currently serves as a Lecturer in the Department of Electrical and Electronic Engineering at RTM Al-Kabir Technical University (RTM-AKTU), Sylhet, Bangladesh. She is an academic professional at RTM Al-Kabir Technical University (RTM-AKTU) with demonstrated commitment to excellence in teaching and research. She specializes in biomedical engineering, machine learning, and deep learning applications, with a focus on intelligent healthcare systems, bioelectrical impedance analysis, and AI-driven biomedical prediction. She has published research on intracellular fluid modeling, hybrid plasmonic waveguides for nano-scale light confinement, and machine learning–based biomedical optimization, and has received the National Science and Technology (NST) Fellowship and the Bank Asia Higher Studies Scholarship.",
+      "She holds an M.Sc. in Electrical and Electronic Engineering from Noakhali Science and Technology University, following her B.Sc. in the same discipline.",
+      "Her research interests lie in the fields of biomedical engineering, machine learning, and deep learning. She is particularly interested in developing intelligent healthcare systems, applying data-driven models for biomedical prediction, and integrating advanced signal and image processing techniques into medical diagnostics. Her work also explores nano-scale photonic structures and AI-based approaches to improve accuracy and efficiency in biomedical and engineering applications.",
+      "Currently, she is investigating advanced deep learning models for biomedical image enhancement, healthcare prediction systems, and integration of AI and IoT for smart sensing applications. She teaches courses in electronics, digital systems, programming, telecommunication engineering, and experimental laboratories, combining theory with practical, hands-on learning. She also mentors students, supervises research projects, and organizes technical events to promote innovation and skill development within the EEE community.",
+    ],
+    tabs: {
+      'Research Interest': 'Her research interests span the fields of Biomedical engineering and image processing.',
+      'Academic Information': [
+        {
+          items: [
+            'Bachelor of Science in Electrical and Electronic Engineering, 2021, Noakhali Science and Technology University, Noakhali.',
+            'Higher Secondary School Certificate, Science, 2016, Haziganj Degree College, Comilla Education Board.',
+            'Secondary School Certificate, Science, 2014, Haziganj Pilot Girls High School, Comilla Education Board.',
+          ],
+        },
+      ],
+      'Courses Taught': 'Electronics-II, Electronics-II Laboratory, Circuit Simulation Laboratory, Basic Mechanical Engineering, Basic Mechanical Engineering Laboratory, Chemistry, Chemistry Laboratory.',
+      'Areas of Expertise': '',
+      'Experience': [
+        {
+          items: [
+            'Lecturer, Department of Electrical and Electronic Engineering, RTM-AKTU, from 01/02/2025 to till now.',
+            'Internship Trainee, on Industrial Technology of Electrical Engineering and Instrumentation, from 09/03/2021 to 30/03/2021.',
+          ],
+        },
+      ],
+      'Teaching and Academic Contributions': '',
+      'Publications & Research': [
+        {
+          items: [
+            'Mathematical Models Development of Intracellular Fluid with Bioelectrical Impedance Analysis. (ICISET 2024)',
+            'A Novel Hybrid Plasmonic Waveguide for Nano-Scale Light Confinement and Long Propagation Range. (ECCE 2025)',
+            'Machine Learning-Driven Optimization of Bioelectrical Impedance Analysis for Intracellular Fluid Prediction. (ICERIE 2025)',
+            'Adaptation Attention module based Generative Adversarial Network (AAM-GAN) for Underwater Image Enhancement and Object Detection. (MSc. Thesis)',
+          ],
+        },
+      ],
+      'Seminars/Workshops Participation': [
+        {
+          items: [
+            'Conducted a workshop on Basic C programming (2023).',
+            'Attended a day-long seminar on "python programming" organized by NSTU CSTE Club.',
+          ],
+        },
+      ],
+      'Contact': [
+        {
+          lines: [
+            'Department of Electrical and Electronic Engineering',
+            'RTM Al-Kabir Technical University (RTM-AKTU)',
+            'Campus: RTM Point, East Shahi Eidgah, TB Gate, Sylhet-3100, Bangladesh',
+            'Email: <a href="mailto:jannatul@rtm-aktu.ac.bd">jannatul@rtm-aktu.ac.bd</a>',
+            'Contact: <a href="tel:+8801756805668">+8801756805668</a>',
+          ],
+        },
+      ],
+    },
+  },
+  'mahmuda-shatu-rethe': {
+    name: 'Mahmuda Shatu Rethe',
+    role: 'Lecturer',
+    department: 'Department of Technology',
+    photo: '../../images/faculty-members/mahmuda-shatu-rethe.png',
+    address: [
+      'RTM Al-Kabir Technical University (RTM-AKTU)',
+      'Campus: RTM Point, East Shahi Eidgah, TB Gate, Sylhet-3100, Bangladesh',
+    ],
+    phone: '01303306903',
+    phoneHref: 'tel:+8801303306903',
+    email: 'mahmuda@rtm-aktu.ac.bd',
+    bio: [
+      "Mahmuda Shatu Rethe is currently serving as a Lecturer in the Department of Technology (Fashion Design) at RTM Al-Kabir Technical University (RTM-AKTU). She is an academic professional at RTM Al-Kabir Technical University (RTM-AKTU) with demonstrated commitment to excellence in teaching and research. She has previously worked at Cotton Field BD (Ltd.), Mondol Group, as a Trainee Executive in the R&D Department. She has great communication, organizing, and team-building skills.",
+      "Mahmuda Shatu Rethe obtained her Bachelor of Science degree in Fashion Design and Technology from Uttara University.",
+      "In addition to her teaching, she is actively engaged in curriculum development, student mentoring, and innovative teaching methodologies that enhance learning outcomes and academic performance.",
+      "Her research interests span the fields of draping technique and the history of street fashion.",
+    ],
+    tabs: {
+      'Research Interest': [
+        {
+          lines: [
+            'Her research interests span the fields of draping technique and the history of street fashion.',
+          ],
+        },
+        {
+          heading: 'Academic and Research Interests',
+          items: [
+            'Management Studies',
+            'Business Strategy',
+            'Organizational Development',
+            'Applied Research',
+            'Higher Education Pedagogy',
+          ],
+        },
+      ],
+      'Academic Information': [
+        {
+          items: [
+            'Bachelor of Science in Fashion Design and Technology at Uttara University, Dhaka.',
+            'Higher Secondary School Certificate, Science, 2019, Shahit Tajuddin Ahamed GOVT College, Dhaka Education Board.',
+            'Secondary School Certificate, Science, 2016, Kapaleswer High School, Dhaka Education Board.',
+          ],
+        },
+      ],
+      'Courses Taught': 'Draping-2, Introduction to Fashion and Clothing Related Industry in Bangladesh, Pattern Making and Apparel Construction, Pattern Drafting-2, Pattern Drafting-3, Draping-1, Draping-2 (Evening Gown), Surface Ornamentation, Clothing Material and Store Management.',
+      'Areas of Expertise': [
+        {
+          items: [
+            'Business Administration',
+            'Teaching',
+            'Research',
+            'Academic Development',
+          ],
+        },
+        {
+          heading: 'Professional Engagement',
+          lines: [
+            'Contributes to academic and professional communities through research initiatives, collaborative projects, and institutional development activities.',
+          ],
+        },
+      ],
+      'Experience': [
+        {
+          items: [
+            'Lecturer, Department of Technology (Fashion Design), RTM-AKTU, from 07/10/2024 to till now.',
+            'Research & Development (R&D) Department Intern, Mondol Group (Cotton Field BD Ltd.), from 14/04/2024 to 14/07/2024.',
+          ],
+        },
+      ],
+      'Teaching and Academic Contributions': 'Actively engaged in curriculum development, student mentoring, and innovative teaching methodologies that enhance learning outcomes and academic performance.',
+      'Publications & Research': '',
+      'Seminars/Workshops Participation': '',
+      'Contact': [
+        {
+          lines: [
+            'Department of Technology (Fashion Design)',
+            'RTM Al-Kabir Technical University (RTM-AKTU)',
+            'Campus: RTM Point, East Shahi Eidgah, TB Gate, Sylhet-3100, Bangladesh',
+            'Email: <a href="mailto:mahmuda@rtm-aktu.ac.bd">mahmuda@rtm-aktu.ac.bd</a>',
+            'Contact: <a href="tel:+8801303306903">+8801303306903</a>, <a href="tel:+8801867618402">01867618402</a>',
+          ],
+        },
+      ],
+    },
+  },
+  'md-abdul-awal-ansary': {
+    name: 'Md. Abdul Awal Ansary',
+    role: 'Associate Professor and Head',
+    department: 'Department of Computer Science and Engineering (CSE)',
+    photo: '../../images/faculty-members/md-abdul-awal-ansary.png',
+    address: [
+      'RTM Al-Kabir Technical University (RTM-AKTU)',
+      'Campus: RTM Point, East Shahi Eidgah, TB Gate, Sylhet-3100, Bangladesh',
+    ],
+    phone: '01710445033',
+    phoneHref: 'tel:+8801710445033',
+    email: 'awalansary@rtm-aktu.ac.bd',
+    bio: [
+      "Md. Abdul Awal Ansary is currently serving as an Associate Professor and Head of the Department of Computer Science and Engineering (CSE) at RTM Al-Kabir Technical University (RTM-AKTU). He joined the university as an Associate Professor on 15 February 2022 and has been serving as the Head of the Department since 1 March 2022. Prior to this, Mr. Ansary served as an Associate Professor and Head of the Department of Computer Science and Engineering at Sylhet International University (SIU). He joined the Department of CSE at SIU on 2 April 2005.",
+      "He has completed his B.Sc. Engineering and M.Sc. degrees in Computer Science and Engineering from Shahjalal University of Science and Technology (SUST). He is currently pursuing his PhD in the Department of Computer Science and Engineering at SUST. His research focuses on Natural Language Processing (NLP), particularly on developing a Neural Machine Translation system between Bangla and English by integrating linguistic knowledge.",
+      "Mr. Ansary has published several research articles in reputed journals as well as in the proceedings of IEEE flagship and portfolio conferences. In addition to his academic and research activities, he has participated in numerous training workshops and seminars, particularly under the Higher Education Quality Enhancement Project (HEQEP) and Outcome Based Education (OBE), during his teaching career.",
+    ],
+    tabs: {
+      'Research Interest': 'Management Studies, Business Strategy, Organizational Development, Applied Research, Higher Education Pedagogy.',
+      'Academic Information': [
+        {
+          items: [
+            'Ph.D. Research Fellow in Computer Science and Engineering, Shahjalal University of Science and Technology, Sylhet, Bangladesh.',
+            'M.Sc. in Computer Science and Engineering, Shahjalal University of Science and Technology, Sylhet, Bangladesh.',
+            'B.Sc. Engineering in Computer Science and Engineering, Shahjalal University of Science and Technology, Sylhet, Bangladesh.',
+            'Higher Secondary Certificate (HSC) Examination (Science), Dhaka College, Board: Dhaka, Bangladesh.',
+            'Secondary School Certificate (SSC) Examination (Science) (Board stand missed by 1 mark), Deen Nath Institution Satkapon, Bahubal, Habiganj, Board: Comilla, Bangladesh.',
+          ],
+        },
+      ],
+      'Courses Taught': "Computer Vision and Image Processing with Lab, Computer Interfacing with Lab, Programming in C/C++/Java with Lab, Algorithms with Lab, Data Structure with Lab, Database Systems with Lab, Computer Networking with Lab, Operating Systems with Lab, Computer Graphics with Lab, Software Engineering with Lab, Computer Fundamentals with Lab, and supervised and evaluated students' Project/Thesis work.",
+      'Areas of Expertise': [
+        {
+          items: [
+            'Business Administration',
+            'Teaching',
+            'Research',
+            'Academic Development',
+          ],
+        },
+        {
+          heading: 'Professional Engagement',
+          lines: [
+            'Contributes to academic and professional communities through research initiatives, collaborative projects, and institutional development activities.',
+          ],
+        },
+      ],
+      'Experience': [
+        {
+          heading: 'Professional Activities',
+          items: [
+            'Associate Professor, Dept. of Computer Science and Engineering, RTM Al-Kabir Technical University, Sylhet, Bangladesh, 15th February 2022 to date.',
+            'Associate Professor, Dept. of Computer Science and Engineering, Sylhet International University, Sylhet, Bangladesh, 23rd February 2021 to 14th February 2022.',
+            'Assistant Professor, Dept. of Computer Science and Engineering, Sylhet International University, Sylhet, Bangladesh, 11th February 2009 to 22nd February 2021.',
+            'Head, Dept. of Computer Science and Engineering, RTM Al-Kabir Technical University, Sylhet, Bangladesh, 1st March 2022 to date.',
+            'Head, Dept. of Computer Science and Engineering, Sylhet International University, Sylhet, Bangladesh, 1st November 2019 to 14th February 2022.',
+            'Head, Dept. of Computer Science and Engineering, Sylhet International University, Sylhet, Bangladesh, 28th July 2012 to 11th November 2012.',
+            'Coordinator, Dept. of Computer Science and Engineering, Sylhet International University, Sylhet, Bangladesh, 3rd October 2007 to 27th July 2012.',
+            'Lecturer, Dept. of Computer Science and Engineering, Sylhet International University, Sylhet, Bangladesh, 2nd April 2005 to 10th February 2009.',
+          ],
+        },
+        {
+          heading: 'Administrative Experiences',
+          items: [
+            'Provost, Female Hostel, Sylhet International University, from 25th May 2010 to 5th August 2020.',
+            'Member, Self-Assessment (SA) Committee, CSE Department, Sylhet International University under HEQEP Project, UGC, Bangladesh.',
+            'Syndicate Member, 2009–2010, Sylhet International University.',
+            'Academic Council Member, 2008–2012, Sylhet International University.',
+            'Academic Council Member, 2019 – 15th February 2022, Sylhet International University.',
+            'Director, Center for Research, Testing and Consultancy (CRTC), Sylhet International University.',
+            'President, CSE Society, Sylhet International University.',
+            'Convener, 3-day long regular annual program named "ICT Fest 2009" including inter-university computer-programming contest among the students, seminars, workshops, motion pictures display and software/hardware exhibition, 5th–7th February 2009, Campus of Sylhet International University.',
+            'Convener, ICT Awareness Conference and Programming Contest 2008, Campus of Sylhet International University, 16th February 2008.',
+            'Member, Cultural Program Management Committee, Sylhet International University, 2007.',
+            'Treasurer, ICT Awareness Program and Software Exhibition 2005, Campus of Sylhet International University.',
+            'Judge, ICT projects of "Project Fair 2008", Institute of Business & Information Technology (IBIT), Al Hamra, Sylhet, Bangladesh.',
+            'Project Director, "SIU Monitoring Drone" (2019) and "Line Follower Robot" (2018), under CRTC, Sylhet International University.',
+            'President, Organization Committee, Computer Fair and Exhibition-2001, Bahubal, Habiganj, Bangladesh.',
+            'President, Organization Committee, Computer Fair and Exhibition-2002, Bahubal, Habiganj, Bangladesh.',
+            'Former President, Bahubal Thana IT Club (BTITC), 2001–2003.',
+            'Former member, CSE Society, Department of Computer Science & Engineering, Shahjalal University of Science & Technology, Sylhet, Bangladesh.',
+          ],
+        },
+      ],
+      'Teaching and Academic Contributions': 'Actively engaged in curriculum development, student mentoring, and innovative teaching methodologies that enhance learning outcomes and academic performance.',
+      'Publications & Research': [
+        {
+          heading: 'Publications',
+          items: [
+            'Md. Abdul Awal Ansary, "Data Warehousing with AFT Star Schema", SIU Studies, Vol-1, Issue no-3, July-December 2007, ISSN 1991-3052.',
+            'Md. Abdul Awal Ansary, Sushanta Acharjee, "Straight Flavor of Binary Number in Decimal Number System", ARPN Journal of Systems and Software, Vol. 2, No. 11, November 2012, ISSN 2222-9833.',
+            'Md. Abdul Awal Ansary, Mohammad Reza Selim, Muhammad Zafar Iqbal, "Bangla Academic Dictionaries (BAD) Corpus with some Applications and Statistical Analysis", Journal of Emerging Trends in Computing and Information Sciences, Vol. 3, No. 11, November 2012, ISSN 2079-8407.',
+            'Md. Abdul Awal Ansary, Mohammad Reza Selim, Muhammad Zafar Iqbal, "Overcoming the Language Divide between English and Bengali through EBTran System", Journal of Emerging Trends in Computing and Information Sciences, Vol. 4, No. 1, January 2013, ISSN 2079-8407.',
+            'Md. Abdul Awal Ansary, Jiaul Hasan Jony, "N-gram Based Bangla Text (News) Categorization System", SIU Studies, Vol-05, Issue no-11, July-December 2016, ISSN 1991-3052.',
+            'Md. Abdul Awal Ansary, Rajarshi Roy Chowdhury, Md. Jakir Mia, "A Survey of Software Development Practices in Sylhet Metropolitan Software Firms, Bangladesh", International Journal of Engineering and Innovative Technology, Volume 3, Issue 7, January 2014, ISSN 2277-3754.',
+            'Md. Abdul Awal Ansary, Mir Mehedi Hasan, "An Intelligent Line Following Robot with Obstacle Detection", International Journal of Science and Engineering Investigations, Vol. 5, Issue 53, June 2016, ISSN 2251-8843.',
+            'Rajarshi Roy Chowdhury, Md. Abdul Awal Ansary, "A Secured Mutual Authentication Protocol for RFID System", International Journal of Scientific & Technology Research, Volume 3, Issue 5, May 2014, ISSN 2277-8616.',
+            'Shahjahan Ahmed, Mohammad Mahmudul Alam Mia, Sushanta Acharjee, Md. Abdul Awal Ansary, "More Efficient Use of Photovoltaic Solar Panel Using Multiple Fixed Directed Mirrors or Aluminum Foils Instead of Solar Trackers in Rural Perspective of Bangladesh", International Journal of Scientific & Technology Research, Volume 3, Issue 4, April 2014, ISSN 2277-8616.',
+          ],
+        },
+        {
+          heading: 'Research Projects',
+          items: [
+            'Transfer Based Approach to "English to Bengali Translation".',
+            'Security Management System of a Multinational Company.',
+            'Optical Fiber Network for Mymensingh.',
+            'Result Processing System.',
+            'Banking Transaction System.',
+            'Library Management System.',
+            'University Administration Automation System.',
+            'Computer Interfacing and Instrumentation.',
+            'Design of a Digital Clock.',
+            'Shopping Mall Management System.',
+            'CD Selling & Renting Management System.',
+          ],
+        },
+      ],
+      'Seminars/Workshops Participation': [
+        {
+          items: [
+            'Successfully completed a 2-semester (1-year) long software development project as an internship at IDLC Com. Pvt. Ltd., Dhaka, Bangladesh, in 2004.',
+            'Participated in a 5-day long workshop on Teaching-Learning, Curriculum and Quality Assurance at GTI, Bangladesh Agricultural University, Mymensingh, Bangladesh, 27–31 March 2016.',
+            'Participated in a 5-day long short course on Current Trends in Research Leading to Industrial Applications of Image Processing at Islamic University of Technology, Dhaka, Bangladesh, 21–24 December 2015.',
+            'Participated in a 2-day long workshop on Academic Writing at Shahjalal University of Science and Technology, Sylhet, Bangladesh, 22–23 August 2014.',
+            'As a member of the Self-Assessment (SA) Committee, CSE Department, Sylhet International University under the HEQEP Project, UGC, Bangladesh, participated in several workshops on different topics of HEQEP.',
+          ],
+        },
+      ],
+      'Contact': [
+        {
+          lines: [
+            'Md. Abdul Awal Ansary',
+            'Associate Professor and Head',
+            'Department of Computer Science and Engineering (CSE)',
+            'RTM Al-Kabir Technical University (RTM-AKTU)',
+            'Campus: RTM Point, East Shahi Eidgah, TB Gate, Sylhet-3100, Bangladesh',
+            'Email: <a href="mailto:awalansary@rtm-aktu.ac.bd">awalansary@rtm-aktu.ac.bd</a>',
+            'Contact: <a href="tel:+8801710445033">+8801710445033</a>',
+            'Website: <a href="https://www.rtm-aktu.ac.bd" target="_blank" rel="noopener">www.rtm-aktu.ac.bd</a>',
+          ],
+        },
+      ],
+    },
+  },
+  'md-eyakub-ali': {
+    name: 'Md. Eyakub Ali',
+    role: 'Lecturer',
+    department: 'Department of Electrical and Electronic Engineering (EEE)',
+    photo: '../../images/faculty-members/md-eyakub-ali.png',
+    address: [
+      'RTM Al-Kabir Technical University (RTM-AKTU)',
+      'Campus: RTM Point, East Shahi Eidgah, TB Gate, Sylhet-3100, Bangladesh',
+    ],
+    phone: '01705344484',
+    phoneHref: 'tel:+8801705344484',
+    email: 'eyakub@rtm-aktu.ac.bd',
+    bio: [
+      "Md. Eyakub Ali currently serves as a Lecturer in the Department of Electrical and Electronic Engineering at RTM Al-Kabir Technical University (RTM-AKTU), Sylhet, Bangladesh. He is an academic professional at RTM Al-Kabir Technical University (RTM-AKTU) with demonstrated commitment to excellence in teaching and research. Prior to his academic career, he worked as a Trainee Executive in Machine Learning at E-Learning and Earning Limited. He teaches programming and engineering courses and is proficient in C, Python, MATLAB, Arduino, and simulation tools such as NI Multisim and LTSpice. His current research explores AI-driven engineering applications and IoT-based systems, including AI-based rainfall prediction models, bioelectrical impedance analysis for health monitoring, and smart sensing devices for engineering applications. Outside academia, he actively contributes to student development and technical communities through leadership and innovation initiatives. He has also demonstrated strong leadership and organizational capabilities, serving as Vice President of the NSTU EEE Association, Treasurer of the RTM-AKTU Robotics Club, and Organizer of EEE Carnival 2025. He is a Member of IEEE and Founder of NSTU Robotics Club.",
+      "He holds both M.Sc. (Engg.) and B.Sc. degrees in Electrical and Electronic Engineering from Noakhali Science and Technology University.",
+      "His research interests lie in the fields of Machine Learning (ML), Internet of Things (IoT), robotics, and renewable energy systems, particularly solar cell technologies. He is especially interested in developing intelligent data-driven models, designing smart and connected systems, and integrating AI-based solutions into real-world engineering applications. His research focuses on machine learning, biomedical sensing, metamaterials, and rainfall forecasting. He has published in reputable journals, including Science of the Total Environment and Physica Scripta.",
+    ],
+    tabs: {
+      'Research Interest': 'His research interests span the fields of Machine Learning (ML), Internet of Things (IoT), Robotics, and Solar Cells.',
+      'Academic Information': [
+        {
+          items: [
+            'Bachelor of Science in Electrical and Electronic Engineering, 2021, Noakhali Science and Technology University, Noakhali.',
+            'Higher Secondary School Certificate, Science, 2017, Abdul Kadir Mollah City College, Dhaka Education Board.',
+            'Secondary School Certificate, Science, 2015, Homeland Ideal School, Sylhet Education Board.',
+          ],
+        },
+      ],
+      'Courses Taught': 'Physics-I, Physics-I Lab, Digital Electronics and Logic Design, Digital Electronics and Logic Design Lab, Electronic Devices and Circuits, Electronic Devices and Circuits Lab, Digital Logic Design, Digital Logic Design Lab.',
+      'Areas of Expertise': '',
+      'Experience': [
+        {
+          items: [
+            'Lecturer, Department of Electrical and Electronic Engineering, RTM-AKTU, from 01/03/2024 to till now.',
+            'Trainee Executive of Machine Learning, E-learning and Earning LTD, from 09/03/2023 to 30/09/2023.',
+          ],
+        },
+      ],
+      'Teaching and Academic Contributions': '',
+      'Publications & Research': [
+        {
+          items: [
+            'Hole Transport Layer Free Non-Toxic Perovskite Solar Cell Using ZnSe Electron Transport Material. (Accepted: MIET 2022 & Published on Springer: <a href="https://link.springer.com/chapter/10.1007/978-3-031-34622-4_39" target="_blank" rel="noopener">link</a>).',
+            'Amphibious Plastic Waste Collector with AI Image Recognition and Plastic Sensing Technique. (Accepted: BRIS, ID: GWT-1029).',
+          ],
+        },
+      ],
+      'Seminars/Workshops Participation': [
+        {
+          items: [
+            'Attended a day-long seminar on "PhD Talk" organized by NSTU Science Club.',
+            'Conducted a workshop on Basic C programming (2022).',
+            'Conducted a workshop on Introduction to Robotics (2022).',
+          ],
+        },
+      ],
+      'Contact': [
+        {
+          lines: [
+            'Department of Electrical and Electronic Engineering',
+            'RTM Al-Kabir Technical University (RTM-AKTU)',
+            'Campus: RTM Point, East Shahi Eidgah, TB Gate, Sylhet-3100, Bangladesh',
+            'Email: <a href="mailto:eyakub@rtm-aktu.ac.bd">eyakub@rtm-aktu.ac.bd</a>',
+            'Contact: <a href="tel:+8801705344484">+8801705344484</a>',
+          ],
+        },
+      ],
+    },
+  },
+  'md-mizanur-rahman': {
+    name: 'Md. Mizanur Rahman',
+    role: 'Lecturer',
+    department: 'Department of Technology',
+    photo: '../../images/faculty-members/md-mizanur-rahman.png',
+    address: [
+      'RTM Al-Kabir Technical University (RTM-AKTU)',
+      'Campus: RTM Point, East Shahi Eidgah, TB Gate, Sylhet-3100, Bangladesh',
+    ],
+    phone: '01648846942',
+    phoneHref: 'tel:+8801648846942',
+    email: 'mizanur@rtm-aktu.ac.bd',
+    bio: [
+      "Md. Mizanur Rahman is currently serving as a Lecturer in the Department of Technology (Fashion Design) at RTM Al-Kabir Technical University (RTM-AKTU). He has demonstrated commitment to excellence in teaching and research in relation to fashion design. He began his professional career as a Trainee Fashion Designer at Sale Point Fashion House, where he gained practical experience in design studio operations and fashion development. He has also served as a Fashion Designer at Sale Point Fashion House and later worked as an Industrial Engineer at Energy Pack Fashion Ltd. Through these roles, he developed strong expertise in fashion design, production processes, and industrial workflow management. Mr. Mizanur possesses excellent communication, organizational, and team-building skills, enabling him to collaborate effectively with design and production teams to achieve organizational goals.",
+      "Mr. Mizanur obtained his Bachelor of Science degree in Fashion Design & Technology from Uttara University. He later completed his Master's degree from RTM Al-Kabir Technical University.",
+      "His research interests lie in the fields of fashion trend analysis, pattern technology, and textile technology. He is particularly interested in exploring innovative approaches to fashion design, learning emerging fashion trends, and integrating modern textile technologies into contemporary fashion development.",
+    ],
+    tabs: {
+      'Research Interest': [
+        {
+          lines: [
+            'His research interests lie in the fields of fashion trend analysis, pattern technology, and textile technology. He is particularly interested in exploring innovative approaches to fashion design, learning emerging fashion trends, and integrating modern textile technologies into contemporary fashion development.',
+          ],
+        },
+        {
+          heading: 'Academic and Research Interests',
+          items: [
+            'Management Studies',
+            'Business Strategy',
+            'Organizational Development',
+            'Applied Research',
+            'Higher Education Pedagogy',
+          ],
+        },
+      ],
+      'Academic Information': [
+        {
+          items: [
+            'Masters of Education (Med), Running, RTM Al-Kabir Technical University, Sylhet.',
+            'Bachelor of Science in Fashion Design & Technology, 2018, Uttara University, Dhaka.',
+            'Higher Secondary School Certificate, Science, 2013, Technical School & College Panchgargh, BTEB Board.',
+            'Secondary School Certificate, Science, 2011, Textile Vocational Institute Rangpur, BTEB Board.',
+          ],
+        },
+      ],
+      'Courses Taught': 'Delivered undergraduate-level instruction in fashion design and apparel technology, integrating theoretical knowledge with practical studio-based learning. Courses taught include Fashion Styling and Promotion, Textile Technology, Quality Control, Product Development, Advanced Pattern Making, Pattern Drafting, Fashion Art, Sewing Technology, Computer-Aided Design (CAD), and Industrial Training. Developed course materials, lesson plans, and assessment strategies to support student learning and skill development. Supervised studio practice, guided students in creative design processes, technical pattern development, and garment construction techniques. Emphasized industry-relevant practices, quality standards, and production processes to prepare students for professional roles in the fashion and textile sector. Provided academic mentoring, evaluated student projects, and supported students during industrial training placements to strengthen their practical and professional competencies.',
+      'Areas of Expertise': [
+        {
+          items: [
+            'Business Administration',
+            'Teaching',
+            'Research',
+            'Academic Development',
+          ],
+        },
+        {
+          heading: 'Professional Engagement',
+          lines: [
+            'Contributes to academic and professional communities through research initiatives, collaborative projects, and institutional development activities.',
+          ],
+        },
+      ],
+      'Experience': [
+        {
+          items: [
+            'Lecturer, Department of Technology (Fashion Design), RTM-AKTU, from 01/07/2024 to till now.',
+            'Industrial Engineer of Energy Pack Fashion Ltd., from 15/01/2022 to 30/06/2024.',
+            'Trainee Fashion Designer of Sale Point Fashion House, from 01/01/2020 to 30/12/2021.',
+          ],
+        },
+      ],
+      'Teaching and Academic Contributions': 'Actively engaged in curriculum development, student mentoring, and innovative teaching methodologies that enhance learning outcomes and academic performance.',
+      'Publications & Research': '',
+      'Seminars/Workshops Participation': [
+        {
+          items: [
+            'Attended a Fashion Designer on "Fashion Show" organized by Uttara University.',
+            'Attended a Designer on "Jewelry Exhibition" organized by Uttara University.',
+            'Attended a Designer on "Kids Dress Exhibition" organized by Uttara University.',
+            'Conducted a workshop on Introduction to Visual Merchandising (2017).',
+          ],
+        },
+      ],
+      'Contact': [
+        {
+          lines: [
+            'Department of Technology (Fashion Design)',
+            'RTM Al-Kabir Technical University (RTM-AKTU)',
+            'Campus: RTM Point, East Shahi Eidgah, TB Gate, Sylhet-3100, Bangladesh',
+            'Email: <a href="mailto:mizanur@rtm-aktu.ac.bd">mizanur@rtm-aktu.ac.bd</a>',
+            'Contact: <a href="tel:+8801648846942">+8801648846942</a>',
+            'Website: <a href="https://www.rtm-aktu.ac.bd" target="_blank" rel="noopener">www.rtm-aktu.ac.bd</a>',
+          ],
+        },
+      ],
+    },
+  },
+  'md-nazrul-islam': {
+    name: 'Md. Nazrul Islam',
+    role: 'Adjunct Faculty',
+    department: 'Department of Applied Health and Nutrition',
+    photo: '../../images/faculty-members/md-nazrul-islam.png',
+    address: [
+      'RTM Al-Kabir Technical University (RTM-AKTU)',
+      'Campus: TB Gate, Tultikor, Sylhet-3100, Bangladesh',
+    ],
+    phone: '01791000571',
+    phoneHref: 'tel:+8801791000571',
+    email: 'naameera2008@gmail.com',
+    bio: [
+      "Md. Nazrul Islam, formerly the Associate Professor and Head of the Department of Applied Health and Nutrition at RTM Al-Kabir Technical University (RTM-AKTU), is now associated with the university as an Adjunct Faculty member. Prior to this, an accomplished Program Director and highly effective at overseeing multi-country program development and implementation funded by various donors like UNFPA, SSCAF, World Bank, Packard Foundation, Hewlett Foundation, Bill and Melinda Gates Foundation, Gillespie Foundation, DFID/UKAID, USAID, European Commission, and Bi-lateral Governments Project. Versatile leader proficient in handling diverse functions on a daily basis. Offering 17 years' experience in program development and management, communication and research for eradicating poverty, health system strengthening and population development for attaining the global population and reproductive health agenda for sustainable development. Excels at multitasking and liaising with various donors, governments and departments. Analytical problem solver and exceptional decision-maker.",
+      "He taught Master's in Development Studies at East West University, Dhaka. He also taught PhD students during the academic course works of the PhD program at Institute for Social and Economic Change (ISEC), a world eminent academic and research institute located in Karnataka, India.",
+      "Talented, skilled in handling administrative, operational and outreach program functions. Excel at working with Governments to provide technical support to promote health workforce to introduce medical courses like B.Sc. in Nursing Degree, community health workers and paramedics through public and private universities/medical colleges and private training institutions in Bangladesh. Demonstrated leadership skills leveraged to drive teams toward success and sustain organizational missions. Strong managerial skills and programmatic abilities with expertise in directing teams of professionals in high-volume settings. Specialized in revamping and turning around under-performing programs. Proven leader at working with team members and collaborating with high level stakeholders for policy changes. Proficient Program Director with exceptional strengths in strategic planning, market forecasting, and staff development. Over 6 years of experience creating new customer-focused programs that drive business development in private health sector to create job markets and business development for economic growth.",
+    ],
+    tabs: {
+      'Research Interest': "Research interest covers a wide range of public health issues including COVID-19 response, health system and management, South-South Cooperation, social capital, governance and public service delivery, population policy and demography, Public Expenditure Review, Poverty Impact Analysis, Quality of Care (QoC).",
+      'Academic Information': [
+        {
+          items: [
+            "Ph.D. in Political Science, completed 09/2004, University of Mysore, India.",
+            "Master of Arts in Political Science, completed 08/1996, Bangalore University, Bangalore, Karnataka, India.",
+            "Master of Arts in Public Administration, completed 07/1996, University of Dhaka, Dhaka, Bangladesh.",
+            "Bachelor of Arts in Public Administration, completed 07/1989, University of Dhaka, Dhaka, Bangladesh.",
+          ],
+        },
+      ],
+      'Courses Taught': "Fundamentals of Public Health and Environment, Philosophy and Forms of Development and Governance, International Public Health.",
+      'Areas of Expertise': '',
+      'Experience': [
+        {
+          heading: 'Program Director — Partners in Population and Development (PPD), Dhaka, Bangladesh (03/2009 to Current)',
+          items: [
+            "Developed inter-country and South-South cooperation programs, multi-year strategic planning at national and global levels from ground up, laying out framework and defining roles.",
+            "Identified strategic activities, operation and management tasks to keep in line with departmental budget. Identified program and budgeting risks and developed mitigation plans. Addressed and resolved technical, financial and operational concerns by working with team members, directors and partners.",
+            "Promoted partnerships, technical cooperation, evidence based knowledge management and capacity building programs to accelerate the progress in achieving Sustainable Development Goals in member countries.",
+            "Improved revenues 10% by implementing successful projects and service deliveries activities, innovation to programming and dialogue that penetrated new opportunity for grants.",
+            "Constructed 36 Community clinics in 6 Districts of Bangladesh to ensure healthcare to 200,000 rural poor.",
+            "Worked for 1,622,298 target population including 64,214 beneficiaries of pregnant women in 6 Upazilas in 2 Districts.",
+            "Oversaw financial management of programs and operations monitoring and controlling program income and expenses, ensuring quarterly and annual financial reporting.",
+            "Oversaw program design, proposal development, program implementation to ensure high quality, accurate outcomes are achieved.",
+            "Provided technical support to country focal persons/government officials for planning, budgeting, implementing and reporting.",
+            "Led strategic engagement to identify country needs and opportunities and to lead teams to achieve demonstrable and high quality results.",
+            "Mobilized resources through strategic planning, developing concept note, project proposals and budgeting.",
+            "Worked with Board Members to turn mandates into real-world policies and advance program objectives. Contributed in preparing speeches/presentations and dialogue for them as ministerial panelists and speakers for global forum.",
+            "Met and collaborated with program staffs to uncover issues, identify applicable solutions and offer guidance in identify country needs and opportunities and to lead teams to achieve demonstrable and high quality results.",
+            "Engaged in policy review, ensuring policy compliance for internal and external obligation and ensure accountability and transparency in management.",
+            "Recruited, interviewed and hired staff members offering exceptional talent and brought great skills to team. Oversaw team of 16 personnel focused on program, finance and administration capacity building and motivation with strong management organogram.",
+          ],
+        },
+        {
+          heading: 'Coordinator, Private Sector Health — RTM Research and Training Institute (formerly JSI Bangladesh), Dhaka (03/2006 to 02/2009)',
+          items: [
+            "Conducted value chain analysis and identify value chain of the private sector, explore ideas, develop interventions and implement interventions through partnership/sub-contracting with Ministries, SMEs, NGOs, public and private universities, private medical colleges, medical institutions to increase economic growth of the poor.",
+            "Developed and implemented variety of innovative policies and strategies to promote youth development.",
+            "Facilitated technical assistance to the government agencies and institutions for establishing training institutions with polices, designing modules for training of trainers (ToT), develop curricula for training courses including B.Sc. Nursing and short courses for nurses, community health workers, health assistant, community paramedics and health technologists etc.",
+            "Achieved to newly established first time in Bangladesh in 2008, 5 BSc in Nursing Colleges associated with Public Medical Colleges with 500 student's capacity and 19 Private Nursing Colleges associated with private medical colleges with 860 student's capacities those who comes from hard to reach and poor families and 90% are female of the total students get admission annually. Several short courses that mainly targeted for thousands of poor female students to become community health workers/paramedics those who later worked at Micro Credit Institutions/NGOs.",
+            "Liaison with Ministries, NGOs, Donors, and public & private organizations.",
+            "Conferred with representatives of local governments and partners to assess and meet community needs. Educated families and community members about domestic violence, including its impact on children.",
+            "Applied need assessment, market research to design up-to-date programs. Conceptualized future program components.",
+            "Oversaw expenditures and worked with finance department to manage budgets. Maintained accurate, current and compliant financial records by monitoring and addressing variances.",
+            "Oversaw productivity streams for ongoing and special projects.",
+            "Established positive working relationships with colleagues, manager and partners through regular communication and effective anticipation of needs.",
+            "Prepared monthly, quarterly and annual reports to submits donors and directors.",
+            "Assessed personnel performance and implemented incentives and team-building events to boost morale.",
+            "Led comprehensive designing training and skill building programs for youth development, poverty elimination and economic growth at sectoral level and national level.",
+            "Helped partners with day-to-day work and complex problems by applying motivational and analytical strategies.",
+            "Resolved employment-related disputes through proactive communication.",
+            "Supervised staff, organize staff meetings to discuss new ideas and update participants on program details and milestones.",
+            "Coordinated work between multiple partners, departments gathered and organized all logistics, printed materials, publications, presentations required for program participation.",
+          ],
+        },
+        {
+          heading: 'Program Officer — JSI Research and Training Institute, Inc., Dhaka (11/2004 to 02/2006)',
+          items: [
+            "Designed program implementation and maintenance plan, including ensuring availability of appropriate resources. Evaluated program operations, successes and deficiencies to identify concerns and recommend strategies to enhance processes and elevate results. Developed and recommended policies and procedures for evaluating programs.",
+            "Determined staffing plans to achieve program goals and objectives and participated in hiring decisions for new program staff.",
+            "Collaborated with senior leadership team to implement special projects, increasing program and organizational capacity. Provided key leadership to project managers, directors and other team members. Turned strategic mandates into actionable program plans.",
+            "Coordinated communication among partners, stakeholders and members to foster activities and connections between departments. Oversaw 5 to 6 projects each year from concept through final delivery. Provided ongoing direction and leadership for program operations.",
+            "Negotiated with donors to secure resources, enhancing number of programs offerings without exceeding budget. Collaborated with finance department to budget and monitor program operations, ensuring sound fiscal and system management. Reduced costs and improved operational performance without sacrificing quality by developing and implementing diverse approaches.",
+            "Developed activities to determine feasibility and sustainability of programs, leading to more effective and efficient service delivery.",
+            "Analyzed internal reports to evaluate program effectiveness by using outcomes-based approach. Spearheaded implementation of program rules, frameworks and toolkits to facilitate smooth change management process. Analyzed and assessed program performance data and implemented corrective measures.",
+            "Reviewed and processed grant proposals through innovative ideas, technicality of concept and process of the budget mechanism. Conducted research to identify and scrutinize potential grantees.",
+            "Supervised 12-15 of professional and administrative personnel. Monitored employee work and developed improvement plans.",
+          ],
+        },
+        {
+          heading: 'Adjunct Faculty — East West University-Bangladesh, Dhaka (07/2005 to 12/2005)',
+          items: [
+            "Developed and kindled professional relationships with students to better communicate and enhance instruction.",
+            "Worked closely with Dean of the Department to develop and implement Masters curriculum for improved learning and student performance. Scored exams and graded student performance fairly.",
+            "Advised students in academic matters to improve successful course completion. Engaged students with insightful and compelling classroom discussion of topics relevant to coursework to boost student learning and retention.",
+            "Identified academic strengths and obstacles and developed instructional techniques to accommodate different learning styles.",
+            "Evaluated and selected instructional materials and texts to prepare course materials and lesson plans.",
+            "Examined and critiqued course material while including instructor-specific policies.",
+            "Displayed professional demeanor and served as role model for students.",
+            "Collaborated with faculty members in designing Masters curriculum for departmental courses.",
+            "Developed creative and effective teaching methods for course content to capture student's attention.",
+            "Taught classes in governance, contribution of development sectors, accountability in healthcare system and public health.",
+            "Completed classroom planning by creating and preparing exams, classroom discussions and lectures.",
+            "Used registers to keep accurate records of students' attendance and grades.",
+            "Designed and delivered class instruction to meet course competencies.",
+          ],
+        },
+      ],
+      'Teaching and Academic Contributions': '',
+      'Publications & Research': [
+        {
+          items: [
+            "SHARING BEST PRACTICES Addressing RH, Population and Development Challenges; UNFPA and PPD, 2020.",
+            "Co-author, ICPD and SDGs through South-South Cooperation beyond COVID-19; UNFPA and PPD, 2020.",
+            "Co-author, South-South Cooperation in Catalyzing Achievement of ICPD and SDGs 2030 Agenda, UNFPA and PPD, 2019.",
+            "Co-author, Ageing, Learning from the Global South, PPD, 2017.",
+            "Co-author, Population Trends and Policy Options in Selected Developing Countries, PPD, 2012.",
+            "Co-author, ICPD/15: Bangladesh' Experiences Progress and Challenges, UNFPA Bangladesh, 2009.",
+            "Co-author, The State of Health in Bangladesh 2007-Health Workforce in Bangladesh, Who Constitutes the Health care System? Bangladesh Health Workforce, Dhaka, 2008.",
+            "Co-author, Sanitation in India: Status and Challenges, Monograph, No. 11, Bangalore: Institute for Social and Economic Change, 2006.",
+            "Social Capital in Making Decentralized Governance Effective: A Study in West Bengal. Indian Social Science Review Vol. 7 (1): 133-160, 2005.",
+            "Decentralized Governance, Transparency and Accountability: Empirical Evidence from West Bengal. Journal of Grassroots Governance, Vol. II(1): 77-92, 2004.",
+            "Social Capital in Making Decentralized Governance Effective: A Study in West Bengal. Working Paper, No. 141. Bangalore: Institute for Social and Economic Change, 2004.",
+            "Decentralized Governance, Transparency and Accountability: Empirical Evidence from West Bengal. Working Paper, No. 144. Bangalore: Institute for Social and Economic Change, 2004.",
+            "Co-author, Decentralized Governance and People's Participation: Lesson from West Bengal. Working Paper, No. 131. Bangalore: Institute for Social and Economic Change, 2003.",
+            "Roots of Development. Economic and Political Weekly. Vol. XXXVIII(12-3), 2003.",
+            "Co-author, Decentralized Governance: A Review of the Idea and Issues. Working Paper No. 108. Bangalore: Institute for Social and Economic Change, 2002.",
+            "Decentralized Governance: A Review of the Idea and Issues, South Asian Journal of Socio-Political Studies. Vol. 5 No. 1: 45-51, 2004.",
+            "Co-author, Restructuring Local Environment Management for Better Health Outcomes: Towards a District Level Pilot in Karnataka, Volume 1 Population-Based Preventive Public Health Services: An Overview, Bangalore: Institute for Social and Economic Change, March 2005.",
+            "Co-author, Restructuring Local Environment Management for Better Health Outcomes: Towards a District Level Pilot in Karnataka, Volume 2 Organization and Delivery of Population-Based Preventive Public Health Services in Rural Karnataka, Bangalore: Institute for Social and Economic Change, March 2005.",
+            "Co-author, Restructuring Local Environment Management for Better Health Outcomes: Towards a District Level Pilot in Karnataka, Volume 3 Organization and Delivery of Population-Based Preventive Public Health Services in Urban Karnataka, Bangalore: Institute for Social and Economic Change, March 2005.",
+            "Co-author, Restructuring Local Environment Management for Better Health Outcomes: Towards a District Level Pilot in Karnataka, Volume 4 Operational Issues, Bangalore: Institute for Social and Economic Change, March 2005.",
+          ],
+        },
+      ],
+      'Seminars/Workshops Participation': '',
+      'Contact': [
+        {
+          lines: [
+            "Md. Nazrul Islam, PhD",
+            "Adjunct Faculty",
+            "Department of Applied Health and Nutrition",
+            "RTM Al-Kabir Technical University (RTM-AKTU)",
+            "Campus: TB Gate, Tultikor, Sylhet-3100, Bangladesh",
+            "Email: <a href=\"mailto:naameera2008@gmail.com\">naameera2008@gmail.com</a>",
+            "Contact: <a href=\"tel:+8801791000571\">+8801791000571</a>",
+            "Website: <a href=\"https://www.rtm-aktu.ac.bd\" target=\"_blank\" rel=\"noopener\">www.rtm-aktu.ac.bd</a>",
+          ],
+        },
+      ],
+    },
+  },
+  'md-ruhul-amin': {
+    name: 'Md. Ruhul Amin',
+    role: 'Lecturer',
+    department: 'Department of Electrical and Electronic Engineering (EEE)',
+    photo: '../../images/faculty-members/md-ruhul-amin.png',
+    address: [
+      'RTM Al-Kabir Technical University (RTM-AKTU)',
+      'Campus: RTM Point, East Shahi Eidgah, TB Gate, Sylhet-3100, Bangladesh',
+    ],
+    phone: '01616102587',
+    phoneHref: 'tel:+8801616102587',
+    email: 'ruhul@rtm-aktu.ac.bd',
+    bio: [
+      "Md. Ruhul Amin is a Lecturer in the Department of Electrical and Electronic Engineering at RTM Al-Kabir Technical University (RTM-AKTU), Sylhet, Bangladesh. His academic and professional activities reflect a strong commitment to teaching, research, and innovation in emerging areas of electrical and electronic engineering. Mr. Amin is proficient in simulation and analytical tools such as CST Microwave Studio, ANSYS, MATLAB/Simulink, LTSpice, and OriginPro, along with programming languages including Python, MATLAB, and C. His work integrates with advanced research and innovation in photonics, sensing technologies, and sustainable energy systems through collaborative and interdisciplinary approaches.",
+      "He is currently pursuing his M.Sc. in Electrical and Electronic Engineering at Shahjalal University of Science and Technology (SUST), where he previously completed his B.Sc. (Engg.) in the same discipline.",
+      "His research interests include photonics, terahertz metamaterials, biosensing devices, wireless power transfer, and energy systems. He is particularly engaged in the design and optimization of multiband terahertz metamaterial absorbers for high-sensitivity biochemical and biomedical sensing applications. He has contributed to several peer-reviewed journals and international conferences.",
+      "In addition to research, he is actively involved in interdisciplinary engineering projects, including wireless charging systems for electric vehicles, IoT-based smart energy monitoring, and power electronics applications.",
+    ],
+    tabs: {
+      'Research Interest': [
+        {
+          items: [
+            "THz Sensing",
+            "Metamaterials Absorption",
+            "Bio-Sensing Device",
+            "Photonics",
+            "Nonlinear Optics",
+            "Microelectronics",
+            "Bio Sensor",
+          ],
+        },
+      ],
+      'Academic Information': [
+        {
+          items: [
+            "M.Sc. in Electrical and Electronic Engineering, Shahjalal University of Science and Technology (Pursuing).",
+            "B.Sc. in Electrical and Electronic Engineering, Shahjalal University of Science and Technology.",
+            "Higher Secondary Certificate (H.S.C), 2018, Savar Model College, Savar, Dhaka.",
+            "Secondary School Certificate (S.S.C), 2016, Shahorail High School, Singair, Manikganj.",
+          ],
+        },
+      ],
+      'Courses Taught': [
+        {
+          heading: 'Theory',
+          items: [
+            "Power Electronics",
+            "Energy Conversion I",
+            "Energy Conversion II",
+            "Transmission and Distribution of Electric Power",
+            "Renewable Energy",
+            "Measurement and Instrumentation",
+            "Physics II",
+          ],
+        },
+        {
+          heading: 'Laboratory',
+          items: [
+            "Power Electronics Laboratory",
+            "Energy Conversion I Laboratory",
+            "Measurement and Instrumentation Laboratory",
+            "Engineering Drawing",
+          ],
+        },
+      ],
+      'Areas of Expertise': '',
+      'Experience': [
+        {
+          items: [
+            "Lecturer, Department of Electrical and Electronic Engineering, RTM-AKTU (Jan. 2025–Present).",
+            "Research Assistant, SUST Research Center (Aug. 2024–Present).",
+          ],
+        },
+      ],
+      'Teaching and Academic Contributions': '',
+      'Publications & Research': [
+        {
+          heading: 'International Journals',
+          items: [
+            "Mia, M. M. A., Ahmed, S. S., Amin, M. R., & Ali, M. E. (2025). Highly sensitive Triple-Band Terahertz perfect metamaterial absorber for sensing applications in organic substance. Physica Scripta. <a href=\"https://doi.org/10.1088/1402-4896/adda9c\" target=\"_blank\" rel=\"noopener\">https://doi.org/10.1088/1402-4896/adda9c</a>",
+          ],
+        },
+        {
+          heading: 'International Conference',
+          items: [
+            "Haque, H. R. Shipu, M. E. Ali, J. N. Novera, F. Mayoa, S. S. Ahmed, M. R. Amin, \"A Novel Hybrid Plasmonic Waveguide for Nano-Scale Light Confinement and Long Propagation Range,\" International Conference on Electrical, Computer and Communication Engineering (ECCE 2025), Chattogram, Bangladesh, 13-15 Feb. 2025 (Accepted).",
+            "M. M. A. Mia, S. S. Ahmed, M. R. Amin, M. E. Ali, and J. N. Novera, \"Highly Sensitive Multiband Terahertz Meta-Absorber with Concentric Resonators for Enhancing Virological and Biomolecular Sensing,\" Proc. 16th Int. Conf. Comput. Commun. Netw. Technol. (ICCCNT), IIT Indore, India, Jul. 6–11, 2025 (Accepted).",
+            "S. H. Sakil, M. A. A. Chy, M. R. Amin, and M. Rasedujjaman, \"Triple-Band I-Shaped Terahertz Metamaterial Perfect Absorber for Cancer Cell Detection,\" International Conference on Quantum Photonics, Artificial Intelligence & Nanotechnology (QPAIN 2025), Rangpur Division, Bangladesh, 23 Jun. 2025 (Accepted).",
+            "M. M. A. Mia, S. S. Ahmed, M. R. Amin, M. E. Ali, J. N. Novera, \"Triple-Band Terahertz Metamaterial Ultra-Sensitive Absorber for Multi-Class Cancer Cell Detection,\" International Conference on Quantum Photonics, Artificial Intelligence & Nanotechnology (QPAIN 2025), Rangpur Division, Bangladesh, 24 Jun. 2025 (Accepted).",
+          ],
+        },
+      ],
+      'Seminars/Workshops Participation': [
+        {
+          items: [
+            "VLSI Training at ULKASEMI (Nov. 2024 – Dec. 2024).",
+            "Industrial Training at TICI on SCADA, DCS, and PLC systems (Aug. 2023 – Sep. 2023).",
+            "Multiple technical workshops on robotics and embedded systems at SUST.",
+          ],
+        },
+      ],
+      'Contact': [
+        {
+          lines: [
+            "Department of Electrical and Electronic Engineering",
+            "RTM Al-Kabir Technical University (RTM-AKTU)",
+            "Campus: RTM Point, East Shahi Eidgah, TB Gate, Sylhet-3100, Bangladesh",
+            "Email: <a href=\"mailto:ruhul@rtm-aktu.ac.bd\">ruhul@rtm-aktu.ac.bd</a>",
+            "Contact: <a href=\"tel:+8801616102587\">+8801616102587</a>",
+            "Website: <a href=\"https://www.rtm-aktu.ac.bd\" target=\"_blank\" rel=\"noopener\">www.rtm-aktu.ac.bd</a>",
+          ],
+        },
+      ],
+    },
+  },
+  'mohammad-mahmudul-alam-mia': {
+    name: 'Mohammad Mahmudul Alam Mia',
+    role: 'Associate Professor and Head',
+    department: 'Department of Electrical and Electronic Engineering (EEE)',
+    photo: '../../images/faculty-members/mohammad-mahmudul-alam-mia.png',
+    address: [
+      'RTM Al-Kabir Technical University (RTM-AKTU)',
+      'Campus: RTM Point, East Shahi Eidgah, TB Gate, Sylhet-3100, Bangladesh',
+    ],
+    phone: '01717249414',
+    phoneHref: 'tel:+8801717249414',
+    email: 'mahmudulalam@rtm-aktu.ac.bd',
+    bio: [
+      "Mohammad Mahmudul Alam Mia is an Associate Professor and Head of the Department of Electrical and Electronic Engineering (EEE) at RTM Al-Kabir Technical University (RTM-AKTU). In addition, he is also serving as the Proctor and Acting Director of the Center for Research, Training and Management (CRTM) at the university. Prior to joining RTM-AKTU, he worked as an Assistant Professor in the Department of Electronics and Communication Engineering at Sylhet International University (SIU), where he also served as the Assistant Controller of Examinations.",
+      "He completed his Bachelor of Science (B.Sc.) in Electronics and Communication Engineering from Khulna University, Bangladesh, and obtained his Master of Science (M.Sc.) in Information and Communications Engineering from the University of Leicester, United Kingdom (UK).",
+      "With a strong research background, he has published numerous articles in reputed journals and IEEE flagship conferences. His academic career reflects a blend of teaching excellence, administrative leadership, and active research engagement in advanced communication and photonics technologies.",
+    ],
+    tabs: {
+      'Research Interest': [
+        {
+          lines: [
+            "His research interests focus on Nanophotonics, Nonlinear Optics, Photonic Crystal Fiber, Optical Biosensors, and Optical Fiber Communication. He is particularly interested in developing advanced photonic structures, terahertz metamaterials, and machine learning-assisted optical sensing techniques for biomedical and industrial applications.",
+          ],
+        },
+        {
+          heading: 'Academic and Research Interests',
+          items: [
+            "Management Studies",
+            "Business Strategy",
+            "Organizational Development",
+            "Applied Research",
+            "Higher Education Pedagogy",
+          ],
+        },
+      ],
+      'Academic Information': [
+        {
+          items: [
+            "Masters: M.Sc. in Information and Communications Engineering, University of Leicester, United Kingdom, 2011.",
+            "Graduation: B.Sc. in Electronics and Communication Engineering, Khulna University, 2009.",
+            "HSC (Science), Comilla Victoria Govt. College, Comilla, 2003.",
+            "SSC (Science), Mudaforgonj A. N. High School, Comilla, 2001.",
+          ],
+        },
+      ],
+      'Courses Taught': "Delivered undergraduate-level instruction in Electrical and Electronic Engineering, integrating theoretical concepts with practical and analytical approaches. Courses taught include Electrical Circuits I, Electronics I, Electronic Devices and Circuits, Linear System Analysis, Digital Electronics and Pulse Techniques, Communication Systems, Cellular Communication, Digital Communication, Optical Fiber Communication, Satellite Communication, Communication Engineering, and Digital Signal Processing. Developed course materials, lesson plans, and assessment strategies to enhance student learning. Guided students in analytical problem-solving, system design, and simulation-based learning. Emphasized industry-relevant knowledge, modern communication technologies, and research-oriented education to prepare students for professional and academic careers.",
+      'Areas of Expertise': [
+        {
+          items: [
+            "Business Administration",
+            "Teaching",
+            "Research",
+            "Academic Development",
+          ],
+        },
+        {
+          heading: 'Professional Engagement',
+          lines: [
+            "Contributes to academic and professional communities through research initiatives, collaborative projects, and institutional development activities.",
+          ],
+        },
+      ],
+      'Experience': [
+        {
+          heading: 'Professional Activities',
+          items: [
+            "Associate Professor and Head, RTM Al-Kabir Technical University, 26/02/2022 to till yet.",
+            "Assistant Professor, Sylhet International University, 24/02/2021 to 24/02/2022.",
+            "Lecturer, Sylhet International University, 01/11/2012 to 23/02/2021.",
+          ],
+        },
+        {
+          heading: 'Administrative Experiences',
+          items: [
+            "Working as Assistant Proctor at RTM Al-Kabir Technical University since 28th February 2022 to till yet.",
+            "Worked as Assistant Controller of Examinations at Sylhet International University since 28/05/2014 to 24/02/2022.",
+          ],
+        },
+      ],
+      'Teaching and Academic Contributions': "Actively engaged in curriculum development, student mentoring, and innovative teaching methodologies that enhance learning outcomes and academic performance.",
+      'Publications & Research': [
+        {
+          items: [
+            "S. K. Biswas, M. Ifaz Ahmad Isti, M. M. Alam Mia, H. Talukder and K. Chakrabarti, \"Numerical Analysis of an Ultra-High Negative Dispersion Compensating Micro-Structured Optical Fiber With Air-holes Arranged in Octagonal Structure,\" 2021 Devices for Integrated Circuit (DevIC), 2021, pp. 84-89. (indexed in IEEE Xplore).",
+            "J. Akter, M. N. Uddin, M. Hasan, B. K. Biswas, M. M. A. Mia and S. K. Biswas, \"Analysis of Microstructured Photonic Crystal Fiber: An Improved Design,\" 2020 11th International Conference on Computing, Communication and Networking Technologies (ICCCNT), 2020, pp. 1-4. (indexed in IEEE Xplore).",
+            "M. M. A. Mia, D. H. Himel and S. K. Biswas, \"Numerical Study of an Octagonal Photonic Crystal Fiber: An Improved Design,\" 2020 11th International Conference on Computing, Communication and Networking Technologies (ICCCNT), 2020, pp. 1-4. (indexed in IEEE Xplore).",
+            "M. J. Hasan, M. F. Wahid, M. S. Alom and M. M. A. Mia, \"A New State of Art Deep Learning Approach for Bangla Handwritten Digit Recognition using SVM Classifier,\" 2020 11th International Conference on Computing, Communication and Networking Technologies (ICCCNT), 2020, pp. 1-6. (indexed in IEEE Xplore).",
+            "M. M. A. Mia, M. A. Islam, M. S. Miah, B. Bhowmik, S. M. Mahir and S. K. Biswas, \"Highly Birefringent Dispersion Compensating Index Guiding Square Photonic Crystal Fiber with Large Nonlinearity for Fiber Optic Transmission System,\" 2020 International Conference on Computer, Electrical & Communication Engineering (ICCECE), 2020, pp. 1-5. (indexed in IEEE Xplore).",
+            "Shovasis Kumar Biswas, Tasnim Ahmed, S. M. Rakibul Islam, Md. Rubayet Islam, Mohammad Mahmudul Alam Mia, Md. Ferdous Wahid, \"Highly Nonlinear Dispersion Compensating Octagonal Photonic Crystal Fiber: Design and Analysis,\" In 2019 International Conference on Electrical, Computer and Communication Engineering (ECCE), pp. 1-5. IEEE, 2019 (indexed in IEEE Xplore).",
+            "S. K. Biswas, S. M. R. Islam, M. R. Islam, M.M. A. Mia, S. Sayem, F. Ahmed, \"Design of an Ultrahigh Birefringence Photonic Crystal Fiber with Large Nonlinearity Using All Circular Air Holes for a Fiber-Optic Transmission System,\" Photonics 5(26), (2018) (Q2 Journal).",
+            "S. M. Rakibul Islam, Md. Monirul Islam, Md. Naz Ahbabur Rahman, Mohammad Mahmudul Alam Mia, Md Shahrier Hakim, and S. K. Biswas, \"Design of Hexagonal Photonic Crystal Fiber with Ultra-High Birefringent and Large Negative Dispersion Coefficient for the Application of Broadband Fiber,\" International Journal of Engineering Science Technologies, 2(1), 9-16 (2017) [Cited in Index Copernicus, and Google Scholar].",
+            "M. I. Hasan, M. A. Awsaf, M. N. A. Rahman, M. I. H. Abdullah, M. M. A. Mia, & S. K. Biswas, \"Proposal for Ultra-high Birefringent Photonic Crystal Fiber with Ultra-low Confinement Loss, Large Negative Dispersion and Large Nonlinearity,\" Asian Journal of Applied Science and Technology (AJAST), 1(8), 152-156 (2017) [Cited in Researchgate, and Google Scholar].",
+            "Md. Iqbal Hossain Abdullah, Md. Ishtiaq Hasan, Md. Nafiz Ahbabur Rahman, Md. Aseer Awsaf, Mohammad Mahmudul Alam Mia, S. K. Biswas, \"Ultra-high Birefringent Photonic Crystal Fiber for Sensing Applications,\" Asia Pacific Journal of Engineering Science and Technology, 3(3), 121-128 (2017) [Cited in Researchgate, and Google Scholar].",
+            "Md Rubayet Islam, SR Islam, Md Tawhid Islam Opu, MMA Mia, SK Biswas, \"Ultra high birefringent hexagonal photonic crystal fibers with ultra low confinement loss employing different sizes of elliptical air holes in the core,\" Asia Pacific Journal of Engineering Science and Technology, 3(4), 141-150 (2017) [Cited in Researchgate, and Google Scholar].",
+            "S. K. Biswas, M. I. Hasan, M. A. Awsaf, M. N. A. Rahman, M. I. H. Abdullah, M. M. A. Mia, \"Design and Analysis of Hexagonal Photonic Crystal Fiber with Ultra-high Birefringent and Large Negative Dispersion Coefficient for the Application of Sensing and Broadband Dispersion Compensating Fiber,\" Asian Journal of Applied Science and Technology (AJAST), 1(8), 147-151 (2017) [Cited in Researchgate, and Google Scholar].",
+            "S.K. Biswas, M. M. A. Mia, R. Islam, S. Sinha, \"Design Of A Low Cost Non Electrical Type Baby Incubator For Developing Country,\" International Journal of Scientific & Engineering Research, vol. 7, no. 11, pp. 1148-1153, 2016 [Cited in Researchgate, and Google Scholar].",
+            "M.M.A. Mia, S. K. Biswas, M.C. Urmi, A. Siddique, \"An Algorithm For Training Multilayer Perceptron (MLP) For Image Reconstruction Using Neural Network Without Overfitting,\" International Journal of Scientific & Technology Research, 4(2), 271-275 (2015) (Online ISSN: 2277-8616) [Cited in DOAJ, EBSCO, and Google Scholar].",
+            "MMA Mia, R Islam, MF Wahid, SK Biswas, \"Image Reconstruction Using Pixel Wise Support Vector Machine (SVM) Classification,\" International Journal of Scientific & Technology Research, 4(2), 232-235 (2015) (Online ISSN: 2277-8616) [Cited in DOAJ, EBSCO, and Google Scholar].",
+            "S. K. Biswas, M. M. A. Mia, \"Image Reconstruction Using Multi Layer Perceptron (MLP) And Support Vector Machine (SVM) Classifier And Study Of Classification Accuracy,\" International Journal of Scientific & Technology Research, 4(2), 226-231 (2015) (Online ISSN: 2277-8616) [Cited in DOAJ, EBSCO, and Google Scholar].",
+            "S. Ahmed, M. M. A. Mia, S. Acherjee, M. A. A. Ansary, \"More Efficient Use Of Photovoltaic Solar Panel Using Multiple Fixed Directed Mirrors Or Aluminum Foils Instead Of Solar Trackers In Rural Perspective Of Bangladesh,\" International Journal of Scientific & Technology Research, 3(4), 294-298 (2014) (Online ISSN: 2277-8616) [Cited in DOAJ, EBSCO, and Google Scholar].",
+          ],
+        },
+      ],
+      'Seminars/Workshops Participation': '',
+      'Contact': [
+        {
+          lines: [
+            "Mohammad Mahmudul Alam Mia",
+            "Associate Professor and Head",
+            "Department of Electrical and Electronic Engineering (EEE)",
+            "RTM Al-Kabir Technical University (RTM-AKTU)",
+            "Campus: TB Gate, Tultikor, Sylhet Sadar, Bangladesh",
+            "Email: <a href=\"mailto:mahmudulalam@rtm-aktu.ac.bd\">mahmudulalam@rtm-aktu.ac.bd</a>",
+            "Alternate Email: <a href=\"mailto:mahmud_ece_ku@yahoo.com\">mahmud_ece_ku@yahoo.com</a>",
+            "Contact: <a href=\"tel:+8801717249414\">+8801717249414</a>",
+            "Website: <a href=\"https://www.rtm-aktu.ac.bd\" target=\"_blank\" rel=\"noopener\">www.rtm-aktu.ac.bd</a>",
+          ],
+        },
+      ],
+    },
+  },
+  'nujhat-sadia-hafiz': {
+    name: 'Nujhat Sadia Hafiz',
+    role: 'Senior Lecturer',
+    department: 'Department of Technology',
+    photo: '../../images/faculty-members/nujhat-sadia-hafiz.png',
+    address: [
+      'RTM Al-Kabir Technical University (RTM-AKTU)',
+      'Campus: RTM Point, East Shahi Eidgah, TB Gate, Sylhet-3100, Bangladesh',
+    ],
+    phone: '01718151905',
+    phoneHref: 'tel:+8801718151905',
+    email: 'nujhathafiz@rtm-aktu.ac.bd',
+    bio: [
+      "Nujhat Sadia Hafiz is a dedicated academic and fashion professional currently serving as a Senior Lecturer in the Department of Technology (Fashion Design) at RTM Al-Kabir Technical University (RTM-AKTU). Before entering academia, Nujhat gained valuable industry experience working as an Assistant Designer (Merchandising) at Aman Knittings Ltd., a sister concern of UNIFILL Group, from 2018 to April 2020. She also contributed as a Designer in the R&D Department at FCI Trade International Ltd., where she enhanced her expertise in fashion design, product development, and textile innovation.",
+      "She holds a Bachelor of Science (B.Sc.) in Fashion Design and Technology from BGMEA University of Fashion & Technology (BUFT). To further broaden her academic and artistic perspective, she pursued an Associate Degree in Studio Art and Design at Gateway Community College, New Haven, USA.",
+      "Her research interests include product development and fashion trend analysis, pattern technology, and textile and eco-dyeing technology. She focuses on innovative and creative approaches to fashion design, integrating modern and historical textile techniques to promote sustainable and culturally enriched design.",
+      "Passionate about the transformative power of design, Nujhat Sadia Hafiz continues to inspire students through her teaching while actively contributing to the field of fashion with creativity, vision, and professional excellence.",
+    ],
+    tabs: {
+      'Research Interest': [
+        {
+          lines: [
+            "Her research interests include product development and fashion trend analysis, pattern technology, and textile and eco-dyeing technology. She focuses on innovative and creative approaches to fashion design, integrating modern and historical textile techniques to promote sustainable and culturally enriched design. Her interests also extend to patchwork, mosaic work, craftsmanship, household design, and jewellery design, reflecting a multidisciplinary approach.",
+          ],
+        },
+        {
+          heading: 'Academic and Research Interests',
+          items: [
+            "Management Studies",
+            "Business Strategy",
+            "Organizational Development",
+            "Applied Research",
+            "Higher Education Pedagogy",
+          ],
+        },
+      ],
+      'Academic Information': [
+        {
+          items: [
+            "Associate's Degree in Studio Art Graphics Design, Gateway Community College, New Haven, CT 06511, USA.",
+            "Bachelor of Science in Fashion Design, BUFT (BGMEA University of Fashion & Technology), Dhaka-1230, Bangladesh, December 2009.",
+            "Higher Secondary School Certificate, Science Group, Sylhet Govt. Women College, Sylhet, 2004.",
+            "Secondary School Certificate, Science Group, Sylhet Govt. Girls High School, Sylhet, 2001.",
+          ],
+        },
+      ],
+      'Courses Taught': "Delivered undergraduate-level instruction in Fashion Design and Apparel Technology, integrating theoretical knowledge with hands-on studio practice. Courses include Fashion Art, Color Concepts, Elements of Design, Design Studio, Sustainable Design, Collection Development, Creative Design Analysis, Surface Ornamentation, Aesthetics of Art, Fashion History, E-Fashion and Product Development, Computer-Aided Design (CAD), and Industrial Dyeing & Printing. Developed course materials, lesson plans, and assessments to support student learning. Guided students in creative design, pattern development, and garment construction, while emphasizing industry standards and production practices. Provided academic mentoring, evaluated projects, and supported industrial training. Incorporated digital tools, including MS Office and Adobe Photoshop, Illustrator, and InDesign, to enhance both creative and technical learning outcomes.",
+      'Areas of Expertise': [
+        {
+          items: [
+            "Business Administration",
+            "Teaching",
+            "Research",
+            "Academic Development",
+          ],
+        },
+        {
+          heading: 'Professional Engagement',
+          lines: [
+            "Contributes to academic and professional communities through research initiatives, collaborative projects, and institutional development activities.",
+          ],
+        },
+      ],
+      'Experience': [
+        {
+          items: [
+            "Assistant Designer (Merchandising), Aman Knittings Ltd. – a sister concern of UNIFILL Group, 2018–April 2020.",
+            "Designer, R&D Department (Women & Kids Outerwear), FCI Trade International Ltd., 2015–2017.",
+            "Fashion Design Foundation, online certificate course, AIFD – Amethyst Institute of Fashion Design.",
+            "Event and Wedding Design/Planner (self-employed), 2008–2014.",
+            "Volunteer Teacher, Autism Management Institute, Sylhet, Bangladesh, 2012–2013.",
+            "Sketched and designed original clothing for the Bangladesh Apparel and Textile Exposition (BATEXPO), Dec. 2009.",
+          ],
+        },
+        {
+          heading: 'Achievements',
+          items: [
+            "Participated in the group art exhibition “BIJOY,” organized by Power Pac, Fanun Arts & Mahfuz Canvas, in Dec. 2022 at DIAC, Dubai.",
+            "Phi Theta Kappa Honor Society Award (May 2015).",
+            "Displayed artwork for the Connecticut Undergraduate College Artwork exhibition, an innovative and creative description of her culture and historical background (Dec. 2011).",
+          ],
+        },
+      ],
+      'Teaching and Academic Contributions': "Actively engaged in curriculum development, student mentoring, and innovative teaching methodologies that enhance learning outcomes and academic performance.",
+      'Publications & Research': '',
+      'Seminars/Workshops Participation': '',
+      'Contact': [
+        {
+          lines: [
+            "Department of Technology (Fashion Design)",
+            "RTM Al-Kabir Technical University (RTM-AKTU)",
+            "Campus: RTM Point, East Shahi Eidgah, TB Gate, Sylhet-3100, Bangladesh",
+            "Email: <a href=\"mailto:nujhathafiz@rtm-aktu.ac.bd\">nujhathafiz@rtm-aktu.ac.bd</a>",
+            "Contact: <a href=\"tel:+8801718151905\">+8801718151905</a>",
+            "Website: <a href=\"https://www.rtm-aktu.ac.bd\" target=\"_blank\" rel=\"noopener\">www.rtm-aktu.ac.bd</a>",
           ],
         },
       ],
