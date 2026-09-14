@@ -4146,6 +4146,17 @@ button {
   margin: 0.5rem 0 1.5rem;
 }
 
+/* Page-specific heading spacing tweaks for pages/instruction.html only. */
+.instruction-heading--process {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.instruction-heading--contact {
+  padding-top: 5px;
+  padding-bottom: 10px;
+}
+
 /* --- "University Inside" quick-links card --- */
 .cm-sidebar {
   background-color: var(--color-bg-light);
