@@ -146,7 +146,7 @@ const facultyMembers = [
     name: 'Nujhat Sadia Hafiz',
     role: 'Senior Lecturer',
     department: 'Department of Technology',
-    link: '#',
+    link: 'faculty/profile.html?id=nujhat-sadia-hafiz',
   },
   {
     photo: '../images/faculty-members/nusrat-rikza.png',

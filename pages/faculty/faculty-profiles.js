@@ -1727,4 +1727,104 @@ const facultyProfiles = {
       ],
     },
   },
+  'nujhat-sadia-hafiz': {
+    name: 'Nujhat Sadia Hafiz',
+    role: 'Senior Lecturer',
+    department: 'Department of Technology',
+    photo: '../../images/faculty-members/nujhat-sadia-hafiz.png',
+    address: [
+      'RTM Al-Kabir Technical University (RTM-AKTU)',
+      'Campus: RTM Point, East Shahi Eidgah, TB Gate, Sylhet-3100, Bangladesh',
+    ],
+    phone: '01718151905',
+    phoneHref: 'tel:+8801718151905',
+    email: 'nujhathafiz@rtm-aktu.ac.bd',
+    bio: [
+      "Nujhat Sadia Hafiz is a dedicated academic and fashion professional currently serving as a Senior Lecturer in the Department of Technology (Fashion Design) at RTM Al-Kabir Technical University (RTM-AKTU). Before entering academia, Nujhat gained valuable industry experience working as an Assistant Designer (Merchandising) at Aman Knittings Ltd., a sister concern of UNIFILL Group, from 2018 to April 2020. She also contributed as a Designer in the R&D Department at FCI Trade International Ltd., where she enhanced her expertise in fashion design, product development, and textile innovation.",
+      "She holds a Bachelor of Science (B.Sc.) in Fashion Design and Technology from BGMEA University of Fashion & Technology (BUFT). To further broaden her academic and artistic perspective, she pursued an Associate Degree in Studio Art and Design at Gateway Community College, New Haven, USA.",
+      "Her research interests include product development and fashion trend analysis, pattern technology, and textile and eco-dyeing technology. She focuses on innovative and creative approaches to fashion design, integrating modern and historical textile techniques to promote sustainable and culturally enriched design.",
+      "Passionate about the transformative power of design, Nujhat Sadia Hafiz continues to inspire students through her teaching while actively contributing to the field of fashion with creativity, vision, and professional excellence.",
+    ],
+    tabs: {
+      'Research Interest': [
+        {
+          lines: [
+            "Her research interests include product development and fashion trend analysis, pattern technology, and textile and eco-dyeing technology. She focuses on innovative and creative approaches to fashion design, integrating modern and historical textile techniques to promote sustainable and culturally enriched design. Her interests also extend to patchwork, mosaic work, craftsmanship, household design, and jewellery design, reflecting a multidisciplinary approach.",
+          ],
+        },
+        {
+          heading: 'Academic and Research Interests',
+          items: [
+            "Management Studies",
+            "Business Strategy",
+            "Organizational Development",
+            "Applied Research",
+            "Higher Education Pedagogy",
+          ],
+        },
+      ],
+      'Academic Information': [
+        {
+          items: [
+            "Associate's Degree in Studio Art Graphics Design, Gateway Community College, New Haven, CT 06511, USA.",
+            "Bachelor of Science in Fashion Design, BUFT (BGMEA University of Fashion & Technology), Dhaka-1230, Bangladesh, December 2009.",
+            "Higher Secondary School Certificate, Science Group, Sylhet Govt. Women College, Sylhet, 2004.",
+            "Secondary School Certificate, Science Group, Sylhet Govt. Girls High School, Sylhet, 2001.",
+          ],
+        },
+      ],
+      'Courses Taught': "Delivered undergraduate-level instruction in Fashion Design and Apparel Technology, integrating theoretical knowledge with hands-on studio practice. Courses include Fashion Art, Color Concepts, Elements of Design, Design Studio, Sustainable Design, Collection Development, Creative Design Analysis, Surface Ornamentation, Aesthetics of Art, Fashion History, E-Fashion and Product Development, Computer-Aided Design (CAD), and Industrial Dyeing & Printing. Developed course materials, lesson plans, and assessments to support student learning. Guided students in creative design, pattern development, and garment construction, while emphasizing industry standards and production practices. Provided academic mentoring, evaluated projects, and supported industrial training. Incorporated digital tools, including MS Office and Adobe Photoshop, Illustrator, and InDesign, to enhance both creative and technical learning outcomes.",
+      'Areas of Expertise': [
+        {
+          items: [
+            "Business Administration",
+            "Teaching",
+            "Research",
+            "Academic Development",
+          ],
+        },
+        {
+          heading: 'Professional Engagement',
+          lines: [
+            "Contributes to academic and professional communities through research initiatives, collaborative projects, and institutional development activities.",
+          ],
+        },
+      ],
+      'Experience': [
+        {
+          items: [
+            "Assistant Designer (Merchandising), Aman Knittings Ltd. – a sister concern of UNIFILL Group, 2018–April 2020.",
+            "Designer, R&D Department (Women & Kids Outerwear), FCI Trade International Ltd., 2015–2017.",
+            "Fashion Design Foundation, online certificate course, AIFD – Amethyst Institute of Fashion Design.",
+            "Event and Wedding Design/Planner (self-employed), 2008–2014.",
+            "Volunteer Teacher, Autism Management Institute, Sylhet, Bangladesh, 2012–2013.",
+            "Sketched and designed original clothing for the Bangladesh Apparel and Textile Exposition (BATEXPO), Dec. 2009.",
+          ],
+        },
+        {
+          heading: 'Achievements',
+          items: [
+            "Participated in the group art exhibition “BIJOY,” organized by Power Pac, Fanun Arts & Mahfuz Canvas, in Dec. 2022 at DIAC, Dubai.",
+            "Phi Theta Kappa Honor Society Award (May 2015).",
+            "Displayed artwork for the Connecticut Undergraduate College Artwork exhibition, an innovative and creative description of her culture and historical background (Dec. 2011).",
+          ],
+        },
+      ],
+      'Teaching and Academic Contributions': "Actively engaged in curriculum development, student mentoring, and innovative teaching methodologies that enhance learning outcomes and academic performance.",
+      'Publications & Research': '',
+      'Seminars/Workshops Participation': '',
+      'Contact': [
+        {
+          lines: [
+            "Department of Technology (Fashion Design)",
+            "RTM Al-Kabir Technical University (RTM-AKTU)",
+            "Campus: RTM Point, East Shahi Eidgah, TB Gate, Sylhet-3100, Bangladesh",
+            "Email: <a href=\"mailto:nujhathafiz@rtm-aktu.ac.bd\">nujhathafiz@rtm-aktu.ac.bd</a>",
+            "Contact: <a href=\"tel:+8801718151905\">+8801718151905</a>",
+            "Website: <a href=\"https://www.rtm-aktu.ac.bd\" target=\"_blank\" rel=\"noopener\">www.rtm-aktu.ac.bd</a>",
+          ],
+        },
+      ],
+    },
+  },
 };
