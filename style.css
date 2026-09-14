@@ -4183,6 +4183,32 @@ button {
   padding-bottom: 10px;
 }
 
+/* Page-specific heading spacing tweaks for pages/postgraduate-admission.html only. */
+.pg-admission-heading--fee-waiver {
+  padding-top: 5px;
+  padding-bottom: 10px;
+}
+
+.pg-admission-heading--requirements {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.pg-admission-heading--process {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.pg-admission-heading--tuition-fees {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.pg-admission-heading--contact {
+  padding-top: 5px;
+  padding-bottom: 10px;
+}
+
 /* Downloadable forms table for pages/form.html only. */
 .form-table {
   padding-top: 5px;
