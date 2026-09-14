@@ -1243,4 +1243,101 @@ const facultyProfiles = {
       ],
     },
   },
+  'md-mizanur-rahman': {
+    name: 'Md. Mizanur Rahman',
+    role: 'Lecturer',
+    department: 'Department of Technology',
+    photo: '../../images/faculty-members/md-mizanur-rahman.png',
+    address: [
+      'RTM Al-Kabir Technical University (RTM-AKTU)',
+      'Campus: RTM Point, East Shahi Eidgah, TB Gate, Sylhet-3100, Bangladesh',
+    ],
+    phone: '01648846942',
+    phoneHref: 'tel:+8801648846942',
+    email: 'mizanur@rtm-aktu.ac.bd',
+    bio: [
+      "Md. Mizanur Rahman is currently serving as a Lecturer in the Department of Technology (Fashion Design) at RTM Al-Kabir Technical University (RTM-AKTU). He has demonstrated commitment to excellence in teaching and research in relation to fashion design. He began his professional career as a Trainee Fashion Designer at Sale Point Fashion House, where he gained practical experience in design studio operations and fashion development. He has also served as a Fashion Designer at Sale Point Fashion House and later worked as an Industrial Engineer at Energy Pack Fashion Ltd. Through these roles, he developed strong expertise in fashion design, production processes, and industrial workflow management. Mr. Mizanur possesses excellent communication, organizational, and team-building skills, enabling him to collaborate effectively with design and production teams to achieve organizational goals.",
+      "Mr. Mizanur obtained his Bachelor of Science degree in Fashion Design & Technology from Uttara University. He later completed his Master's degree from RTM Al-Kabir Technical University.",
+      "His research interests lie in the fields of fashion trend analysis, pattern technology, and textile technology. He is particularly interested in exploring innovative approaches to fashion design, learning emerging fashion trends, and integrating modern textile technologies into contemporary fashion development.",
+    ],
+    tabs: {
+      'Research Interest': [
+        {
+          lines: [
+            'His research interests lie in the fields of fashion trend analysis, pattern technology, and textile technology. He is particularly interested in exploring innovative approaches to fashion design, learning emerging fashion trends, and integrating modern textile technologies into contemporary fashion development.',
+          ],
+        },
+        {
+          heading: 'Academic and Research Interests',
+          items: [
+            'Management Studies',
+            'Business Strategy',
+            'Organizational Development',
+            'Applied Research',
+            'Higher Education Pedagogy',
+          ],
+        },
+      ],
+      'Academic Information': [
+        {
+          items: [
+            'Masters of Education (Med), Running, RTM Al-Kabir Technical University, Sylhet.',
+            'Bachelor of Science in Fashion Design & Technology, 2018, Uttara University, Dhaka.',
+            'Higher Secondary School Certificate, Science, 2013, Technical School & College Panchgargh, BTEB Board.',
+            'Secondary School Certificate, Science, 2011, Textile Vocational Institute Rangpur, BTEB Board.',
+          ],
+        },
+      ],
+      'Courses Taught': 'Delivered undergraduate-level instruction in fashion design and apparel technology, integrating theoretical knowledge with practical studio-based learning. Courses taught include Fashion Styling and Promotion, Textile Technology, Quality Control, Product Development, Advanced Pattern Making, Pattern Drafting, Fashion Art, Sewing Technology, Computer-Aided Design (CAD), and Industrial Training. Developed course materials, lesson plans, and assessment strategies to support student learning and skill development. Supervised studio practice, guided students in creative design processes, technical pattern development, and garment construction techniques. Emphasized industry-relevant practices, quality standards, and production processes to prepare students for professional roles in the fashion and textile sector. Provided academic mentoring, evaluated student projects, and supported students during industrial training placements to strengthen their practical and professional competencies.',
+      'Areas of Expertise': [
+        {
+          items: [
+            'Business Administration',
+            'Teaching',
+            'Research',
+            'Academic Development',
+          ],
+        },
+        {
+          heading: 'Professional Engagement',
+          lines: [
+            'Contributes to academic and professional communities through research initiatives, collaborative projects, and institutional development activities.',
+          ],
+        },
+      ],
+      'Experience': [
+        {
+          items: [
+            'Lecturer, Department of Technology (Fashion Design), RTM-AKTU, from 01/07/2024 to till now.',
+            'Industrial Engineer of Energy Pack Fashion Ltd., from 15/01/2022 to 30/06/2024.',
+            'Trainee Fashion Designer of Sale Point Fashion House, from 01/01/2020 to 30/12/2021.',
+          ],
+        },
+      ],
+      'Teaching and Academic Contributions': 'Actively engaged in curriculum development, student mentoring, and innovative teaching methodologies that enhance learning outcomes and academic performance.',
+      'Publications & Research': '',
+      'Seminars/Workshops Participation': [
+        {
+          items: [
+            'Attended a Fashion Designer on "Fashion Show" organized by Uttara University.',
+            'Attended a Designer on "Jewelry Exhibition" organized by Uttara University.',
+            'Attended a Designer on "Kids Dress Exhibition" organized by Uttara University.',
+            'Conducted a workshop on Introduction to Visual Merchandising (2017).',
+          ],
+        },
+      ],
+      'Contact': [
+        {
+          lines: [
+            'Department of Technology (Fashion Design)',
+            'RTM Al-Kabir Technical University (RTM-AKTU)',
+            'Campus: RTM Point, East Shahi Eidgah, TB Gate, Sylhet-3100, Bangladesh',
+            'Email: <a href="mailto:mizanur@rtm-aktu.ac.bd">mizanur@rtm-aktu.ac.bd</a>',
+            'Contact: <a href="tel:+8801648846942">+8801648846942</a>',
+            'Website: <a href="https://www.rtm-aktu.ac.bd" target="_blank" rel="noopener">www.rtm-aktu.ac.bd</a>',
+          ],
+        },
+      ],
+    },
+  },
 };

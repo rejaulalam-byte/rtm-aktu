@@ -111,7 +111,7 @@ const facultyMembers = [
     name: 'Md. Mizanur Rahman',
     role: 'Lecturer',
     department: 'Department of Technology',
-    link: '#',
+    link: 'faculty/profile.html?id=md-mizanur-rahman',
   },
   {
     photo: '../images/faculty-members/md-nazrul-islam.png',
