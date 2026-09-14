@@ -4157,6 +4157,58 @@ button {
   padding-bottom: 10px;
 }
 
+/* Downloadable forms table for pages/form.html only. */
+.form-table {
+  padding-top: 5px;
+}
+
+.form-table__table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #bebebe;
+  margin-bottom: 1.1rem;
+}
+
+.form-table__table th,
+.form-table__table td {
+  border: 1px solid #bebebe;
+  padding: 1rem 1.25rem;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.form-table__table thead th {
+  background-color: var(--color-navy);
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+.form-table__table th:first-child,
+.form-table__table td:first-child {
+  text-align: center;
+  width: 90px;
+}
+
+.form-table__download {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-navy);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.form-table__download:hover {
+  color: var(--color-gold);
+}
+
+.form-table__download svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
 /* --- "University Inside" quick-links card --- */
 .cm-sidebar {
   background-color: var(--color-bg-light);
