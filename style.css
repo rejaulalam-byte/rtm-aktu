@@ -4124,6 +4124,10 @@ button {
   padding-top: 5px;
 }
 
+.admission-heading--contact {
+  padding-bottom: 10px;
+}
+
 /* --- "University Inside" quick-links card --- */
 .cm-sidebar {
   background-color: var(--color-bg-light);
