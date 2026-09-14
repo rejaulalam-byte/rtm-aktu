@@ -944,4 +944,90 @@ const facultyProfiles = {
       ],
     },
   },
+  'mahmuda-shatu-rethe': {
+    name: 'Mahmuda Shatu Rethe',
+    role: 'Lecturer',
+    department: 'Department of Technology',
+    photo: '../../images/faculty-members/mahmuda-shatu-rethe.png',
+    address: [
+      'RTM Al-Kabir Technical University (RTM-AKTU)',
+      'Campus: RTM Point, East Shahi Eidgah, TB Gate, Sylhet-3100, Bangladesh',
+    ],
+    phone: '01303306903',
+    phoneHref: 'tel:+8801303306903',
+    email: 'mahmuda@rtm-aktu.ac.bd',
+    bio: [
+      "Mahmuda Shatu Rethe is currently serving as a Lecturer in the Department of Technology (Fashion Design) at RTM Al-Kabir Technical University (RTM-AKTU). She is an academic professional at RTM Al-Kabir Technical University (RTM-AKTU) with demonstrated commitment to excellence in teaching and research. She has previously worked at Cotton Field BD (Ltd.), Mondol Group, as a Trainee Executive in the R&D Department. She has great communication, organizing, and team-building skills.",
+      "Mahmuda Shatu Rethe obtained her Bachelor of Science degree in Fashion Design and Technology from Uttara University.",
+      "In addition to her teaching, she is actively engaged in curriculum development, student mentoring, and innovative teaching methodologies that enhance learning outcomes and academic performance.",
+      "Her research interests span the fields of draping technique and the history of street fashion.",
+    ],
+    tabs: {
+      'Research Interest': [
+        {
+          lines: [
+            'Her research interests span the fields of draping technique and the history of street fashion.',
+          ],
+        },
+        {
+          heading: 'Academic and Research Interests',
+          items: [
+            'Management Studies',
+            'Business Strategy',
+            'Organizational Development',
+            'Applied Research',
+            'Higher Education Pedagogy',
+          ],
+        },
+      ],
+      'Academic Information': [
+        {
+          items: [
+            'Bachelor of Science in Fashion Design and Technology at Uttara University, Dhaka.',
+            'Higher Secondary School Certificate, Science, 2019, Shahit Tajuddin Ahamed GOVT College, Dhaka Education Board.',
+            'Secondary School Certificate, Science, 2016, Kapaleswer High School, Dhaka Education Board.',
+          ],
+        },
+      ],
+      'Courses Taught': 'Draping-2, Introduction to Fashion and Clothing Related Industry in Bangladesh, Pattern Making and Apparel Construction, Pattern Drafting-2, Pattern Drafting-3, Draping-1, Draping-2 (Evening Gown), Surface Ornamentation, Clothing Material and Store Management.',
+      'Areas of Expertise': [
+        {
+          items: [
+            'Business Administration',
+            'Teaching',
+            'Research',
+            'Academic Development',
+          ],
+        },
+        {
+          heading: 'Professional Engagement',
+          lines: [
+            'Contributes to academic and professional communities through research initiatives, collaborative projects, and institutional development activities.',
+          ],
+        },
+      ],
+      'Experience': [
+        {
+          items: [
+            'Lecturer, Department of Technology (Fashion Design), RTM-AKTU, from 07/10/2024 to till now.',
+            'Research & Development (R&D) Department Intern, Mondol Group (Cotton Field BD Ltd.), from 14/04/2024 to 14/07/2024.',
+          ],
+        },
+      ],
+      'Teaching and Academic Contributions': 'Actively engaged in curriculum development, student mentoring, and innovative teaching methodologies that enhance learning outcomes and academic performance.',
+      'Publications & Research': '',
+      'Seminars/Workshops Participation': '',
+      'Contact': [
+        {
+          lines: [
+            'Department of Technology (Fashion Design)',
+            'RTM Al-Kabir Technical University (RTM-AKTU)',
+            'Campus: RTM Point, East Shahi Eidgah, TB Gate, Sylhet-3100, Bangladesh',
+            'Email: <a href="mailto:mahmuda@rtm-aktu.ac.bd">mahmuda@rtm-aktu.ac.bd</a>',
+            'Contact: <a href="tel:+8801303306903">+8801303306903</a>, <a href="tel:+8801867618402">01867618402</a>',
+          ],
+        },
+      ],
+    },
+  },
 };

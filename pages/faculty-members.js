@@ -90,7 +90,7 @@ const facultyMembers = [
     name: 'Mahmuda Shatu Rethe',
     role: 'Lecturer',
     department: 'Department of Technology',
-    link: '#',
+    link: 'faculty/profile.html?id=mahmuda-shatu-rethe',
   },
   {
     photo: '../images/faculty-members/md-abdul-awal-ansary.png',
