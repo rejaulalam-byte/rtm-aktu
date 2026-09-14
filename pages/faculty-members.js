@@ -97,7 +97,7 @@ const facultyMembers = [
     name: 'Md. Abdul Awal Ansary',
     role: 'Associate Professor and Head',
     department: 'Department of Computer Science and Engineering (CSE)',
-    link: '#',
+    link: 'faculty/profile.html?id=md-abdul-awal-ansary',
   },
   {
     photo: '../images/faculty-members/md-eyakub-ali.png',

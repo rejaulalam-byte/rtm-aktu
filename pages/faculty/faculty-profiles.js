@@ -1030,4 +1030,148 @@ const facultyProfiles = {
       ],
     },
   },
+  'md-abdul-awal-ansary': {
+    name: 'Md. Abdul Awal Ansary',
+    role: 'Associate Professor and Head',
+    department: 'Department of Computer Science and Engineering (CSE)',
+    photo: '../../images/faculty-members/md-abdul-awal-ansary.png',
+    address: [
+      'RTM Al-Kabir Technical University (RTM-AKTU)',
+      'Campus: RTM Point, East Shahi Eidgah, TB Gate, Sylhet-3100, Bangladesh',
+    ],
+    phone: '01710445033',
+    phoneHref: 'tel:+8801710445033',
+    email: 'awalansary@rtm-aktu.ac.bd',
+    bio: [
+      "Md. Abdul Awal Ansary is currently serving as an Associate Professor and Head of the Department of Computer Science and Engineering (CSE) at RTM Al-Kabir Technical University (RTM-AKTU). He joined the university as an Associate Professor on 15 February 2022 and has been serving as the Head of the Department since 1 March 2022. Prior to this, Mr. Ansary served as an Associate Professor and Head of the Department of Computer Science and Engineering at Sylhet International University (SIU). He joined the Department of CSE at SIU on 2 April 2005.",
+      "He has completed his B.Sc. Engineering and M.Sc. degrees in Computer Science and Engineering from Shahjalal University of Science and Technology (SUST). He is currently pursuing his PhD in the Department of Computer Science and Engineering at SUST. His research focuses on Natural Language Processing (NLP), particularly on developing a Neural Machine Translation system between Bangla and English by integrating linguistic knowledge.",
+      "Mr. Ansary has published several research articles in reputed journals as well as in the proceedings of IEEE flagship and portfolio conferences. In addition to his academic and research activities, he has participated in numerous training workshops and seminars, particularly under the Higher Education Quality Enhancement Project (HEQEP) and Outcome Based Education (OBE), during his teaching career.",
+    ],
+    tabs: {
+      'Research Interest': 'Management Studies, Business Strategy, Organizational Development, Applied Research, Higher Education Pedagogy.',
+      'Academic Information': [
+        {
+          items: [
+            'Ph.D. Research Fellow in Computer Science and Engineering, Shahjalal University of Science and Technology, Sylhet, Bangladesh.',
+            'M.Sc. in Computer Science and Engineering, Shahjalal University of Science and Technology, Sylhet, Bangladesh.',
+            'B.Sc. Engineering in Computer Science and Engineering, Shahjalal University of Science and Technology, Sylhet, Bangladesh.',
+            'Higher Secondary Certificate (HSC) Examination (Science), Dhaka College, Board: Dhaka, Bangladesh.',
+            'Secondary School Certificate (SSC) Examination (Science) (Board stand missed by 1 mark), Deen Nath Institution Satkapon, Bahubal, Habiganj, Board: Comilla, Bangladesh.',
+          ],
+        },
+      ],
+      'Courses Taught': "Computer Vision and Image Processing with Lab, Computer Interfacing with Lab, Programming in C/C++/Java with Lab, Algorithms with Lab, Data Structure with Lab, Database Systems with Lab, Computer Networking with Lab, Operating Systems with Lab, Computer Graphics with Lab, Software Engineering with Lab, Computer Fundamentals with Lab, and supervised and evaluated students' Project/Thesis work.",
+      'Areas of Expertise': [
+        {
+          items: [
+            'Business Administration',
+            'Teaching',
+            'Research',
+            'Academic Development',
+          ],
+        },
+        {
+          heading: 'Professional Engagement',
+          lines: [
+            'Contributes to academic and professional communities through research initiatives, collaborative projects, and institutional development activities.',
+          ],
+        },
+      ],
+      'Experience': [
+        {
+          heading: 'Professional Activities',
+          items: [
+            'Associate Professor, Dept. of Computer Science and Engineering, RTM Al-Kabir Technical University, Sylhet, Bangladesh, 15th February 2022 to date.',
+            'Associate Professor, Dept. of Computer Science and Engineering, Sylhet International University, Sylhet, Bangladesh, 23rd February 2021 to 14th February 2022.',
+            'Assistant Professor, Dept. of Computer Science and Engineering, Sylhet International University, Sylhet, Bangladesh, 11th February 2009 to 22nd February 2021.',
+            'Head, Dept. of Computer Science and Engineering, RTM Al-Kabir Technical University, Sylhet, Bangladesh, 1st March 2022 to date.',
+            'Head, Dept. of Computer Science and Engineering, Sylhet International University, Sylhet, Bangladesh, 1st November 2019 to 14th February 2022.',
+            'Head, Dept. of Computer Science and Engineering, Sylhet International University, Sylhet, Bangladesh, 28th July 2012 to 11th November 2012.',
+            'Coordinator, Dept. of Computer Science and Engineering, Sylhet International University, Sylhet, Bangladesh, 3rd October 2007 to 27th July 2012.',
+            'Lecturer, Dept. of Computer Science and Engineering, Sylhet International University, Sylhet, Bangladesh, 2nd April 2005 to 10th February 2009.',
+          ],
+        },
+        {
+          heading: 'Administrative Experiences',
+          items: [
+            'Provost, Female Hostel, Sylhet International University, from 25th May 2010 to 5th August 2020.',
+            'Member, Self-Assessment (SA) Committee, CSE Department, Sylhet International University under HEQEP Project, UGC, Bangladesh.',
+            'Syndicate Member, 2009–2010, Sylhet International University.',
+            'Academic Council Member, 2008–2012, Sylhet International University.',
+            'Academic Council Member, 2019 – 15th February 2022, Sylhet International University.',
+            'Director, Center for Research, Testing and Consultancy (CRTC), Sylhet International University.',
+            'President, CSE Society, Sylhet International University.',
+            'Convener, 3-day long regular annual program named "ICT Fest 2009" including inter-university computer-programming contest among the students, seminars, workshops, motion pictures display and software/hardware exhibition, 5th–7th February 2009, Campus of Sylhet International University.',
+            'Convener, ICT Awareness Conference and Programming Contest 2008, Campus of Sylhet International University, 16th February 2008.',
+            'Member, Cultural Program Management Committee, Sylhet International University, 2007.',
+            'Treasurer, ICT Awareness Program and Software Exhibition 2005, Campus of Sylhet International University.',
+            'Judge, ICT projects of "Project Fair 2008", Institute of Business & Information Technology (IBIT), Al Hamra, Sylhet, Bangladesh.',
+            'Project Director, "SIU Monitoring Drone" (2019) and "Line Follower Robot" (2018), under CRTC, Sylhet International University.',
+            'President, Organization Committee, Computer Fair and Exhibition-2001, Bahubal, Habiganj, Bangladesh.',
+            'President, Organization Committee, Computer Fair and Exhibition-2002, Bahubal, Habiganj, Bangladesh.',
+            'Former President, Bahubal Thana IT Club (BTITC), 2001–2003.',
+            'Former member, CSE Society, Department of Computer Science & Engineering, Shahjalal University of Science & Technology, Sylhet, Bangladesh.',
+          ],
+        },
+      ],
+      'Teaching and Academic Contributions': 'Actively engaged in curriculum development, student mentoring, and innovative teaching methodologies that enhance learning outcomes and academic performance.',
+      'Publications & Research': [
+        {
+          heading: 'Publications',
+          items: [
+            'Md. Abdul Awal Ansary, "Data Warehousing with AFT Star Schema", SIU Studies, Vol-1, Issue no-3, July-December 2007, ISSN 1991-3052.',
+            'Md. Abdul Awal Ansary, Sushanta Acharjee, "Straight Flavor of Binary Number in Decimal Number System", ARPN Journal of Systems and Software, Vol. 2, No. 11, November 2012, ISSN 2222-9833.',
+            'Md. Abdul Awal Ansary, Mohammad Reza Selim, Muhammad Zafar Iqbal, "Bangla Academic Dictionaries (BAD) Corpus with some Applications and Statistical Analysis", Journal of Emerging Trends in Computing and Information Sciences, Vol. 3, No. 11, November 2012, ISSN 2079-8407.',
+            'Md. Abdul Awal Ansary, Mohammad Reza Selim, Muhammad Zafar Iqbal, "Overcoming the Language Divide between English and Bengali through EBTran System", Journal of Emerging Trends in Computing and Information Sciences, Vol. 4, No. 1, January 2013, ISSN 2079-8407.',
+            'Md. Abdul Awal Ansary, Jiaul Hasan Jony, "N-gram Based Bangla Text (News) Categorization System", SIU Studies, Vol-05, Issue no-11, July-December 2016, ISSN 1991-3052.',
+            'Md. Abdul Awal Ansary, Rajarshi Roy Chowdhury, Md. Jakir Mia, "A Survey of Software Development Practices in Sylhet Metropolitan Software Firms, Bangladesh", International Journal of Engineering and Innovative Technology, Volume 3, Issue 7, January 2014, ISSN 2277-3754.',
+            'Md. Abdul Awal Ansary, Mir Mehedi Hasan, "An Intelligent Line Following Robot with Obstacle Detection", International Journal of Science and Engineering Investigations, Vol. 5, Issue 53, June 2016, ISSN 2251-8843.',
+            'Rajarshi Roy Chowdhury, Md. Abdul Awal Ansary, "A Secured Mutual Authentication Protocol for RFID System", International Journal of Scientific & Technology Research, Volume 3, Issue 5, May 2014, ISSN 2277-8616.',
+            'Shahjahan Ahmed, Mohammad Mahmudul Alam Mia, Sushanta Acharjee, Md. Abdul Awal Ansary, "More Efficient Use of Photovoltaic Solar Panel Using Multiple Fixed Directed Mirrors or Aluminum Foils Instead of Solar Trackers in Rural Perspective of Bangladesh", International Journal of Scientific & Technology Research, Volume 3, Issue 4, April 2014, ISSN 2277-8616.',
+          ],
+        },
+        {
+          heading: 'Research Projects',
+          items: [
+            'Transfer Based Approach to "English to Bengali Translation".',
+            'Security Management System of a Multinational Company.',
+            'Optical Fiber Network for Mymensingh.',
+            'Result Processing System.',
+            'Banking Transaction System.',
+            'Library Management System.',
+            'University Administration Automation System.',
+            'Computer Interfacing and Instrumentation.',
+            'Design of a Digital Clock.',
+            'Shopping Mall Management System.',
+            'CD Selling & Renting Management System.',
+          ],
+        },
+      ],
+      'Seminars/Workshops Participation': [
+        {
+          items: [
+            'Successfully completed a 2-semester (1-year) long software development project as an internship at IDLC Com. Pvt. Ltd., Dhaka, Bangladesh, in 2004.',
+            'Participated in a 5-day long workshop on Teaching-Learning, Curriculum and Quality Assurance at GTI, Bangladesh Agricultural University, Mymensingh, Bangladesh, 27–31 March 2016.',
+            'Participated in a 5-day long short course on Current Trends in Research Leading to Industrial Applications of Image Processing at Islamic University of Technology, Dhaka, Bangladesh, 21–24 December 2015.',
+            'Participated in a 2-day long workshop on Academic Writing at Shahjalal University of Science and Technology, Sylhet, Bangladesh, 22–23 August 2014.',
+            'As a member of the Self-Assessment (SA) Committee, CSE Department, Sylhet International University under the HEQEP Project, UGC, Bangladesh, participated in several workshops on different topics of HEQEP.',
+          ],
+        },
+      ],
+      'Contact': [
+        {
+          lines: [
+            'Md. Abdul Awal Ansary',
+            'Associate Professor and Head',
+            'Department of Computer Science and Engineering (CSE)',
+            'RTM Al-Kabir Technical University (RTM-AKTU)',
+            'Campus: RTM Point, East Shahi Eidgah, TB Gate, Sylhet-3100, Bangladesh',
+            'Email: <a href="mailto:awalansary@rtm-aktu.ac.bd">awalansary@rtm-aktu.ac.bd</a>',
+            'Contact: <a href="tel:+8801710445033">+8801710445033</a>',
+            'Website: <a href="https://www.rtm-aktu.ac.bd" target="_blank" rel="noopener">www.rtm-aktu.ac.bd</a>',
+          ],
+        },
+      ],
+    },
+  },
 };
