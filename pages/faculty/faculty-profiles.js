@@ -375,7 +375,7 @@ const facultyProfiles = {
     name: 'Md. Samiul Alim',
     role: 'Lecturer',
     department: 'Department of Computer Science and Engineering (CSE)',
-    photo: '../../images/academics/faculty/faculty-1.jpg',
+    photo: '../../images/faculty-members/md-samiul-alim.png',
     address: [
       'RTM Al-Kabir Technical University (RTM-AKTU)',
       'Campus: RTM Point, East Shahi Eidgah, TB Gate, Sylhet-3100, Bangladesh',
