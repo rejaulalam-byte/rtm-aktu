@@ -139,7 +139,7 @@ const facultyMembers = [
     name: 'Mohammad Mahmudul Alam Mia',
     role: 'Associate Professor and Head',
     department: 'Department of Electrical and Electronic Engineering (EEE)',
-    link: '#',
+    link: 'faculty/profile.html?id=mohammad-mahmudul-alam-mia',
   },
   {
     photo: '../images/faculty-members/nujhat-sadia-hafiz.png',

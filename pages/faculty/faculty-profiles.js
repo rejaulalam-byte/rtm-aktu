@@ -1606,4 +1606,125 @@ const facultyProfiles = {
       ],
     },
   },
+  'mohammad-mahmudul-alam-mia': {
+    name: 'Mohammad Mahmudul Alam Mia',
+    role: 'Associate Professor and Head',
+    department: 'Department of Electrical and Electronic Engineering (EEE)',
+    photo: '../../images/faculty-members/mohammad-mahmudul-alam-mia.png',
+    address: [
+      'RTM Al-Kabir Technical University (RTM-AKTU)',
+      'Campus: RTM Point, East Shahi Eidgah, TB Gate, Sylhet-3100, Bangladesh',
+    ],
+    phone: '01717249414',
+    phoneHref: 'tel:+8801717249414',
+    email: 'mahmudulalam@rtm-aktu.ac.bd',
+    bio: [
+      "Mohammad Mahmudul Alam Mia is an Associate Professor and Head of the Department of Electrical and Electronic Engineering (EEE) at RTM Al-Kabir Technical University (RTM-AKTU). In addition, he is also serving as the Proctor and Acting Director of the Center for Research, Training and Management (CRTM) at the university. Prior to joining RTM-AKTU, he worked as an Assistant Professor in the Department of Electronics and Communication Engineering at Sylhet International University (SIU), where he also served as the Assistant Controller of Examinations.",
+      "He completed his Bachelor of Science (B.Sc.) in Electronics and Communication Engineering from Khulna University, Bangladesh, and obtained his Master of Science (M.Sc.) in Information and Communications Engineering from the University of Leicester, United Kingdom (UK).",
+      "With a strong research background, he has published numerous articles in reputed journals and IEEE flagship conferences. His academic career reflects a blend of teaching excellence, administrative leadership, and active research engagement in advanced communication and photonics technologies.",
+    ],
+    tabs: {
+      'Research Interest': [
+        {
+          lines: [
+            "His research interests focus on Nanophotonics, Nonlinear Optics, Photonic Crystal Fiber, Optical Biosensors, and Optical Fiber Communication. He is particularly interested in developing advanced photonic structures, terahertz metamaterials, and machine learning-assisted optical sensing techniques for biomedical and industrial applications.",
+          ],
+        },
+        {
+          heading: 'Academic and Research Interests',
+          items: [
+            "Management Studies",
+            "Business Strategy",
+            "Organizational Development",
+            "Applied Research",
+            "Higher Education Pedagogy",
+          ],
+        },
+      ],
+      'Academic Information': [
+        {
+          items: [
+            "Masters: M.Sc. in Information and Communications Engineering, University of Leicester, United Kingdom, 2011.",
+            "Graduation: B.Sc. in Electronics and Communication Engineering, Khulna University, 2009.",
+            "HSC (Science), Comilla Victoria Govt. College, Comilla, 2003.",
+            "SSC (Science), Mudaforgonj A. N. High School, Comilla, 2001.",
+          ],
+        },
+      ],
+      'Courses Taught': "Delivered undergraduate-level instruction in Electrical and Electronic Engineering, integrating theoretical concepts with practical and analytical approaches. Courses taught include Electrical Circuits I, Electronics I, Electronic Devices and Circuits, Linear System Analysis, Digital Electronics and Pulse Techniques, Communication Systems, Cellular Communication, Digital Communication, Optical Fiber Communication, Satellite Communication, Communication Engineering, and Digital Signal Processing. Developed course materials, lesson plans, and assessment strategies to enhance student learning. Guided students in analytical problem-solving, system design, and simulation-based learning. Emphasized industry-relevant knowledge, modern communication technologies, and research-oriented education to prepare students for professional and academic careers.",
+      'Areas of Expertise': [
+        {
+          items: [
+            "Business Administration",
+            "Teaching",
+            "Research",
+            "Academic Development",
+          ],
+        },
+        {
+          heading: 'Professional Engagement',
+          lines: [
+            "Contributes to academic and professional communities through research initiatives, collaborative projects, and institutional development activities.",
+          ],
+        },
+      ],
+      'Experience': [
+        {
+          heading: 'Professional Activities',
+          items: [
+            "Associate Professor and Head, RTM Al-Kabir Technical University, 26/02/2022 to till yet.",
+            "Assistant Professor, Sylhet International University, 24/02/2021 to 24/02/2022.",
+            "Lecturer, Sylhet International University, 01/11/2012 to 23/02/2021.",
+          ],
+        },
+        {
+          heading: 'Administrative Experiences',
+          items: [
+            "Working as Assistant Proctor at RTM Al-Kabir Technical University since 28th February 2022 to till yet.",
+            "Worked as Assistant Controller of Examinations at Sylhet International University since 28/05/2014 to 24/02/2022.",
+          ],
+        },
+      ],
+      'Teaching and Academic Contributions': "Actively engaged in curriculum development, student mentoring, and innovative teaching methodologies that enhance learning outcomes and academic performance.",
+      'Publications & Research': [
+        {
+          items: [
+            "S. K. Biswas, M. Ifaz Ahmad Isti, M. M. Alam Mia, H. Talukder and K. Chakrabarti, \"Numerical Analysis of an Ultra-High Negative Dispersion Compensating Micro-Structured Optical Fiber With Air-holes Arranged in Octagonal Structure,\" 2021 Devices for Integrated Circuit (DevIC), 2021, pp. 84-89. (indexed in IEEE Xplore).",
+            "J. Akter, M. N. Uddin, M. Hasan, B. K. Biswas, M. M. A. Mia and S. K. Biswas, \"Analysis of Microstructured Photonic Crystal Fiber: An Improved Design,\" 2020 11th International Conference on Computing, Communication and Networking Technologies (ICCCNT), 2020, pp. 1-4. (indexed in IEEE Xplore).",
+            "M. M. A. Mia, D. H. Himel and S. K. Biswas, \"Numerical Study of an Octagonal Photonic Crystal Fiber: An Improved Design,\" 2020 11th International Conference on Computing, Communication and Networking Technologies (ICCCNT), 2020, pp. 1-4. (indexed in IEEE Xplore).",
+            "M. J. Hasan, M. F. Wahid, M. S. Alom and M. M. A. Mia, \"A New State of Art Deep Learning Approach for Bangla Handwritten Digit Recognition using SVM Classifier,\" 2020 11th International Conference on Computing, Communication and Networking Technologies (ICCCNT), 2020, pp. 1-6. (indexed in IEEE Xplore).",
+            "M. M. A. Mia, M. A. Islam, M. S. Miah, B. Bhowmik, S. M. Mahir and S. K. Biswas, \"Highly Birefringent Dispersion Compensating Index Guiding Square Photonic Crystal Fiber with Large Nonlinearity for Fiber Optic Transmission System,\" 2020 International Conference on Computer, Electrical & Communication Engineering (ICCECE), 2020, pp. 1-5. (indexed in IEEE Xplore).",
+            "Shovasis Kumar Biswas, Tasnim Ahmed, S. M. Rakibul Islam, Md. Rubayet Islam, Mohammad Mahmudul Alam Mia, Md. Ferdous Wahid, \"Highly Nonlinear Dispersion Compensating Octagonal Photonic Crystal Fiber: Design and Analysis,\" In 2019 International Conference on Electrical, Computer and Communication Engineering (ECCE), pp. 1-5. IEEE, 2019 (indexed in IEEE Xplore).",
+            "S. K. Biswas, S. M. R. Islam, M. R. Islam, M.M. A. Mia, S. Sayem, F. Ahmed, \"Design of an Ultrahigh Birefringence Photonic Crystal Fiber with Large Nonlinearity Using All Circular Air Holes for a Fiber-Optic Transmission System,\" Photonics 5(26), (2018) (Q2 Journal).",
+            "S. M. Rakibul Islam, Md. Monirul Islam, Md. Naz Ahbabur Rahman, Mohammad Mahmudul Alam Mia, Md Shahrier Hakim, and S. K. Biswas, \"Design of Hexagonal Photonic Crystal Fiber with Ultra-High Birefringent and Large Negative Dispersion Coefficient for the Application of Broadband Fiber,\" International Journal of Engineering Science Technologies, 2(1), 9-16 (2017) [Cited in Index Copernicus, and Google Scholar].",
+            "M. I. Hasan, M. A. Awsaf, M. N. A. Rahman, M. I. H. Abdullah, M. M. A. Mia, & S. K. Biswas, \"Proposal for Ultra-high Birefringent Photonic Crystal Fiber with Ultra-low Confinement Loss, Large Negative Dispersion and Large Nonlinearity,\" Asian Journal of Applied Science and Technology (AJAST), 1(8), 152-156 (2017) [Cited in Researchgate, and Google Scholar].",
+            "Md. Iqbal Hossain Abdullah, Md. Ishtiaq Hasan, Md. Nafiz Ahbabur Rahman, Md. Aseer Awsaf, Mohammad Mahmudul Alam Mia, S. K. Biswas, \"Ultra-high Birefringent Photonic Crystal Fiber for Sensing Applications,\" Asia Pacific Journal of Engineering Science and Technology, 3(3), 121-128 (2017) [Cited in Researchgate, and Google Scholar].",
+            "Md Rubayet Islam, SR Islam, Md Tawhid Islam Opu, MMA Mia, SK Biswas, \"Ultra high birefringent hexagonal photonic crystal fibers with ultra low confinement loss employing different sizes of elliptical air holes in the core,\" Asia Pacific Journal of Engineering Science and Technology, 3(4), 141-150 (2017) [Cited in Researchgate, and Google Scholar].",
+            "S. K. Biswas, M. I. Hasan, M. A. Awsaf, M. N. A. Rahman, M. I. H. Abdullah, M. M. A. Mia, \"Design and Analysis of Hexagonal Photonic Crystal Fiber with Ultra-high Birefringent and Large Negative Dispersion Coefficient for the Application of Sensing and Broadband Dispersion Compensating Fiber,\" Asian Journal of Applied Science and Technology (AJAST), 1(8), 147-151 (2017) [Cited in Researchgate, and Google Scholar].",
+            "S.K. Biswas, M. M. A. Mia, R. Islam, S. Sinha, \"Design Of A Low Cost Non Electrical Type Baby Incubator For Developing Country,\" International Journal of Scientific & Engineering Research, vol. 7, no. 11, pp. 1148-1153, 2016 [Cited in Researchgate, and Google Scholar].",
+            "M.M.A. Mia, S. K. Biswas, M.C. Urmi, A. Siddique, \"An Algorithm For Training Multilayer Perceptron (MLP) For Image Reconstruction Using Neural Network Without Overfitting,\" International Journal of Scientific & Technology Research, 4(2), 271-275 (2015) (Online ISSN: 2277-8616) [Cited in DOAJ, EBSCO, and Google Scholar].",
+            "MMA Mia, R Islam, MF Wahid, SK Biswas, \"Image Reconstruction Using Pixel Wise Support Vector Machine (SVM) Classification,\" International Journal of Scientific & Technology Research, 4(2), 232-235 (2015) (Online ISSN: 2277-8616) [Cited in DOAJ, EBSCO, and Google Scholar].",
+            "S. K. Biswas, M. M. A. Mia, \"Image Reconstruction Using Multi Layer Perceptron (MLP) And Support Vector Machine (SVM) Classifier And Study Of Classification Accuracy,\" International Journal of Scientific & Technology Research, 4(2), 226-231 (2015) (Online ISSN: 2277-8616) [Cited in DOAJ, EBSCO, and Google Scholar].",
+            "S. Ahmed, M. M. A. Mia, S. Acherjee, M. A. A. Ansary, \"More Efficient Use Of Photovoltaic Solar Panel Using Multiple Fixed Directed Mirrors Or Aluminum Foils Instead Of Solar Trackers In Rural Perspective Of Bangladesh,\" International Journal of Scientific & Technology Research, 3(4), 294-298 (2014) (Online ISSN: 2277-8616) [Cited in DOAJ, EBSCO, and Google Scholar].",
+          ],
+        },
+      ],
+      'Seminars/Workshops Participation': '',
+      'Contact': [
+        {
+          lines: [
+            "Mohammad Mahmudul Alam Mia",
+            "Associate Professor and Head",
+            "Department of Electrical and Electronic Engineering (EEE)",
+            "RTM Al-Kabir Technical University (RTM-AKTU)",
+            "Campus: TB Gate, Tultikor, Sylhet Sadar, Bangladesh",
+            "Email: <a href=\"mailto:mahmudulalam@rtm-aktu.ac.bd\">mahmudulalam@rtm-aktu.ac.bd</a>",
+            "Alternate Email: <a href=\"mailto:mahmud_ece_ku@yahoo.com\">mahmud_ece_ku@yahoo.com</a>",
+            "Contact: <a href=\"tel:+8801717249414\">+8801717249414</a>",
+            "Website: <a href=\"https://www.rtm-aktu.ac.bd\" target=\"_blank\" rel=\"noopener\">www.rtm-aktu.ac.bd</a>",
+          ],
+        },
+      ],
+    },
+  },
 };
