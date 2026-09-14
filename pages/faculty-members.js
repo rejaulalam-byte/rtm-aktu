@@ -104,7 +104,7 @@ const facultyMembers = [
     name: 'Md. Eyakub Ali',
     role: 'Lecturer',
     department: 'Department of Electrical and Electronic Engineering (EEE)',
-    link: '#',
+    link: 'faculty/profile.html?id=md-eyakub-ali',
   },
   {
     photo: '../images/faculty-members/md-mizanur-rahman.png',

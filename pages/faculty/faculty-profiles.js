@@ -1174,4 +1174,73 @@ const facultyProfiles = {
       ],
     },
   },
+  'md-eyakub-ali': {
+    name: 'Md. Eyakub Ali',
+    role: 'Lecturer',
+    department: 'Department of Electrical and Electronic Engineering (EEE)',
+    photo: '../../images/faculty-members/md-eyakub-ali.png',
+    address: [
+      'RTM Al-Kabir Technical University (RTM-AKTU)',
+      'Campus: RTM Point, East Shahi Eidgah, TB Gate, Sylhet-3100, Bangladesh',
+    ],
+    phone: '01705344484',
+    phoneHref: 'tel:+8801705344484',
+    email: 'eyakub@rtm-aktu.ac.bd',
+    bio: [
+      "Md. Eyakub Ali currently serves as a Lecturer in the Department of Electrical and Electronic Engineering at RTM Al-Kabir Technical University (RTM-AKTU), Sylhet, Bangladesh. He is an academic professional at RTM Al-Kabir Technical University (RTM-AKTU) with demonstrated commitment to excellence in teaching and research. Prior to his academic career, he worked as a Trainee Executive in Machine Learning at E-Learning and Earning Limited. He teaches programming and engineering courses and is proficient in C, Python, MATLAB, Arduino, and simulation tools such as NI Multisim and LTSpice. His current research explores AI-driven engineering applications and IoT-based systems, including AI-based rainfall prediction models, bioelectrical impedance analysis for health monitoring, and smart sensing devices for engineering applications. Outside academia, he actively contributes to student development and technical communities through leadership and innovation initiatives. He has also demonstrated strong leadership and organizational capabilities, serving as Vice President of the NSTU EEE Association, Treasurer of the RTM-AKTU Robotics Club, and Organizer of EEE Carnival 2025. He is a Member of IEEE and Founder of NSTU Robotics Club.",
+      "He holds both M.Sc. (Engg.) and B.Sc. degrees in Electrical and Electronic Engineering from Noakhali Science and Technology University.",
+      "His research interests lie in the fields of Machine Learning (ML), Internet of Things (IoT), robotics, and renewable energy systems, particularly solar cell technologies. He is especially interested in developing intelligent data-driven models, designing smart and connected systems, and integrating AI-based solutions into real-world engineering applications. His research focuses on machine learning, biomedical sensing, metamaterials, and rainfall forecasting. He has published in reputable journals, including Science of the Total Environment and Physica Scripta.",
+    ],
+    tabs: {
+      'Research Interest': 'His research interests span the fields of Machine Learning (ML), Internet of Things (IoT), Robotics, and Solar Cells.',
+      'Academic Information': [
+        {
+          items: [
+            'Bachelor of Science in Electrical and Electronic Engineering, 2021, Noakhali Science and Technology University, Noakhali.',
+            'Higher Secondary School Certificate, Science, 2017, Abdul Kadir Mollah City College, Dhaka Education Board.',
+            'Secondary School Certificate, Science, 2015, Homeland Ideal School, Sylhet Education Board.',
+          ],
+        },
+      ],
+      'Courses Taught': 'Physics-I, Physics-I Lab, Digital Electronics and Logic Design, Digital Electronics and Logic Design Lab, Electronic Devices and Circuits, Electronic Devices and Circuits Lab, Digital Logic Design, Digital Logic Design Lab.',
+      'Areas of Expertise': '',
+      'Experience': [
+        {
+          items: [
+            'Lecturer, Department of Electrical and Electronic Engineering, RTM-AKTU, from 01/03/2024 to till now.',
+            'Trainee Executive of Machine Learning, E-learning and Earning LTD, from 09/03/2023 to 30/09/2023.',
+          ],
+        },
+      ],
+      'Teaching and Academic Contributions': '',
+      'Publications & Research': [
+        {
+          items: [
+            'Hole Transport Layer Free Non-Toxic Perovskite Solar Cell Using ZnSe Electron Transport Material. (Accepted: MIET 2022 & Published on Springer: <a href="https://link.springer.com/chapter/10.1007/978-3-031-34622-4_39" target="_blank" rel="noopener">link</a>).',
+            'Amphibious Plastic Waste Collector with AI Image Recognition and Plastic Sensing Technique. (Accepted: BRIS, ID: GWT-1029).',
+          ],
+        },
+      ],
+      'Seminars/Workshops Participation': [
+        {
+          items: [
+            'Attended a day-long seminar on "PhD Talk" organized by NSTU Science Club.',
+            'Conducted a workshop on Basic C programming (2022).',
+            'Conducted a workshop on Introduction to Robotics (2022).',
+          ],
+        },
+      ],
+      'Contact': [
+        {
+          lines: [
+            'Department of Electrical and Electronic Engineering',
+            'RTM Al-Kabir Technical University (RTM-AKTU)',
+            'Campus: RTM Point, East Shahi Eidgah, TB Gate, Sylhet-3100, Bangladesh',
+            'Email: <a href="mailto:eyakub@rtm-aktu.ac.bd">eyakub@rtm-aktu.ac.bd</a>',
+            'Contact: <a href="tel:+8801705344484">+8801705344484</a>',
+          ],
+        },
+      ],
+    },
+  },
 };
