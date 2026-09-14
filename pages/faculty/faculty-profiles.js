@@ -1491,4 +1491,119 @@ const facultyProfiles = {
       ],
     },
   },
+  'md-ruhul-amin': {
+    name: 'Md. Ruhul Amin',
+    role: 'Lecturer',
+    department: 'Department of Electrical and Electronic Engineering (EEE)',
+    photo: '../../images/faculty-members/md-ruhul-amin.png',
+    address: [
+      'RTM Al-Kabir Technical University (RTM-AKTU)',
+      'Campus: RTM Point, East Shahi Eidgah, TB Gate, Sylhet-3100, Bangladesh',
+    ],
+    phone: '01616102587',
+    phoneHref: 'tel:+8801616102587',
+    email: 'ruhul@rtm-aktu.ac.bd',
+    bio: [
+      "Md. Ruhul Amin is a Lecturer in the Department of Electrical and Electronic Engineering at RTM Al-Kabir Technical University (RTM-AKTU), Sylhet, Bangladesh. His academic and professional activities reflect a strong commitment to teaching, research, and innovation in emerging areas of electrical and electronic engineering. Mr. Amin is proficient in simulation and analytical tools such as CST Microwave Studio, ANSYS, MATLAB/Simulink, LTSpice, and OriginPro, along with programming languages including Python, MATLAB, and C. His work integrates with advanced research and innovation in photonics, sensing technologies, and sustainable energy systems through collaborative and interdisciplinary approaches.",
+      "He is currently pursuing his M.Sc. in Electrical and Electronic Engineering at Shahjalal University of Science and Technology (SUST), where he previously completed his B.Sc. (Engg.) in the same discipline.",
+      "His research interests include photonics, terahertz metamaterials, biosensing devices, wireless power transfer, and energy systems. He is particularly engaged in the design and optimization of multiband terahertz metamaterial absorbers for high-sensitivity biochemical and biomedical sensing applications. He has contributed to several peer-reviewed journals and international conferences.",
+      "In addition to research, he is actively involved in interdisciplinary engineering projects, including wireless charging systems for electric vehicles, IoT-based smart energy monitoring, and power electronics applications.",
+    ],
+    tabs: {
+      'Research Interest': [
+        {
+          items: [
+            "THz Sensing",
+            "Metamaterials Absorption",
+            "Bio-Sensing Device",
+            "Photonics",
+            "Nonlinear Optics",
+            "Microelectronics",
+            "Bio Sensor",
+          ],
+        },
+      ],
+      'Academic Information': [
+        {
+          items: [
+            "M.Sc. in Electrical and Electronic Engineering, Shahjalal University of Science and Technology (Pursuing).",
+            "B.Sc. in Electrical and Electronic Engineering, Shahjalal University of Science and Technology.",
+            "Higher Secondary Certificate (H.S.C), 2018, Savar Model College, Savar, Dhaka.",
+            "Secondary School Certificate (S.S.C), 2016, Shahorail High School, Singair, Manikganj.",
+          ],
+        },
+      ],
+      'Courses Taught': [
+        {
+          heading: 'Theory',
+          items: [
+            "Power Electronics",
+            "Energy Conversion I",
+            "Energy Conversion II",
+            "Transmission and Distribution of Electric Power",
+            "Renewable Energy",
+            "Measurement and Instrumentation",
+            "Physics II",
+          ],
+        },
+        {
+          heading: 'Laboratory',
+          items: [
+            "Power Electronics Laboratory",
+            "Energy Conversion I Laboratory",
+            "Measurement and Instrumentation Laboratory",
+            "Engineering Drawing",
+          ],
+        },
+      ],
+      'Areas of Expertise': '',
+      'Experience': [
+        {
+          items: [
+            "Lecturer, Department of Electrical and Electronic Engineering, RTM-AKTU (Jan. 2025–Present).",
+            "Research Assistant, SUST Research Center (Aug. 2024–Present).",
+          ],
+        },
+      ],
+      'Teaching and Academic Contributions': '',
+      'Publications & Research': [
+        {
+          heading: 'International Journals',
+          items: [
+            "Mia, M. M. A., Ahmed, S. S., Amin, M. R., & Ali, M. E. (2025). Highly sensitive Triple-Band Terahertz perfect metamaterial absorber for sensing applications in organic substance. Physica Scripta. <a href=\"https://doi.org/10.1088/1402-4896/adda9c\" target=\"_blank\" rel=\"noopener\">https://doi.org/10.1088/1402-4896/adda9c</a>",
+          ],
+        },
+        {
+          heading: 'International Conference',
+          items: [
+            "Haque, H. R. Shipu, M. E. Ali, J. N. Novera, F. Mayoa, S. S. Ahmed, M. R. Amin, \"A Novel Hybrid Plasmonic Waveguide for Nano-Scale Light Confinement and Long Propagation Range,\" International Conference on Electrical, Computer and Communication Engineering (ECCE 2025), Chattogram, Bangladesh, 13-15 Feb. 2025 (Accepted).",
+            "M. M. A. Mia, S. S. Ahmed, M. R. Amin, M. E. Ali, and J. N. Novera, \"Highly Sensitive Multiband Terahertz Meta-Absorber with Concentric Resonators for Enhancing Virological and Biomolecular Sensing,\" Proc. 16th Int. Conf. Comput. Commun. Netw. Technol. (ICCCNT), IIT Indore, India, Jul. 6–11, 2025 (Accepted).",
+            "S. H. Sakil, M. A. A. Chy, M. R. Amin, and M. Rasedujjaman, \"Triple-Band I-Shaped Terahertz Metamaterial Perfect Absorber for Cancer Cell Detection,\" International Conference on Quantum Photonics, Artificial Intelligence & Nanotechnology (QPAIN 2025), Rangpur Division, Bangladesh, 23 Jun. 2025 (Accepted).",
+            "M. M. A. Mia, S. S. Ahmed, M. R. Amin, M. E. Ali, J. N. Novera, \"Triple-Band Terahertz Metamaterial Ultra-Sensitive Absorber for Multi-Class Cancer Cell Detection,\" International Conference on Quantum Photonics, Artificial Intelligence & Nanotechnology (QPAIN 2025), Rangpur Division, Bangladesh, 24 Jun. 2025 (Accepted).",
+          ],
+        },
+      ],
+      'Seminars/Workshops Participation': [
+        {
+          items: [
+            "VLSI Training at ULKASEMI (Nov. 2024 – Dec. 2024).",
+            "Industrial Training at TICI on SCADA, DCS, and PLC systems (Aug. 2023 – Sep. 2023).",
+            "Multiple technical workshops on robotics and embedded systems at SUST.",
+          ],
+        },
+      ],
+      'Contact': [
+        {
+          lines: [
+            "Department of Electrical and Electronic Engineering",
+            "RTM Al-Kabir Technical University (RTM-AKTU)",
+            "Campus: RTM Point, East Shahi Eidgah, TB Gate, Sylhet-3100, Bangladesh",
+            "Email: <a href=\"mailto:ruhul@rtm-aktu.ac.bd\">ruhul@rtm-aktu.ac.bd</a>",
+            "Contact: <a href=\"tel:+8801616102587\">+8801616102587</a>",
+            "Website: <a href=\"https://www.rtm-aktu.ac.bd\" target=\"_blank\" rel=\"noopener\">www.rtm-aktu.ac.bd</a>",
+          ],
+        },
+      ],
+    },
+  },
 };

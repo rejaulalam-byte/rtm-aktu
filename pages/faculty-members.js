@@ -125,7 +125,7 @@ const facultyMembers = [
     name: 'Md. Ruhul Amin',
     role: 'Lecturer',
     department: 'Department of Electrical and Electronic Engineering (EEE)',
-    link: '#',
+    link: 'faculty/profile.html?id=md-ruhul-amin',
   },
   {
     photo: '../images/faculty-members/md-samiul-alim.png',
