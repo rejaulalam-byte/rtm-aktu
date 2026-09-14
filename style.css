@@ -4261,6 +4261,44 @@ button {
   flex-shrink: 0;
 }
 
+/* Page-specific heading spacing tweaks for pages/fees-payments.html only. */
+.fees-heading--basic-fee-structure {
+  padding-top: 5px;
+  padding-bottom: 10px;
+}
+
+.fees-heading--fee-waiver {
+  padding-top: 5px;
+  padding-bottom: 10px;
+}
+
+.fees-heading--payment-options {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.fees-heading--important-notes {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.fees-heading--process {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.fees-heading--contact {
+  padding-top: 5px;
+  padding-bottom: 10px;
+}
+
+/* Fee-structure table images for pages/fees-payments.html only; stacked
+   with a bit less bottom margin than .instruction-doc-image's default
+   so the second image doesn't read as a separate, unrelated block. */
+.fees-doc-image {
+  margin-bottom: 0.75rem;
+}
+
 /* --- "University Inside" quick-links card --- */
 .cm-sidebar {
   background-color: var(--color-bg-light);
