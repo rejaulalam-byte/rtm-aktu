@@ -118,7 +118,7 @@ const facultyMembers = [
     name: 'Md. Nazrul Islam',
     role: 'Adjunct Faculty',
     department: 'Department of Applied Health and Nutrition',
-    link: '#',
+    link: 'faculty/profile.html?id=md-nazrul-islam',
   },
   {
     photo: '../images/faculty-members/md-ruhul-amin.png',
