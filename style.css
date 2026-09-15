@@ -6237,10 +6237,25 @@ a.notice-card:hover {
 }
 
 /* ==========================================================================
-   24. Academic Calendar Page (pages/academic-calendar.html)
-   ========================================================================== */
+   24. Academic Calendar Pages (pages/academic-calendar.html,
+       pages/academic-calendar-spring.html, and future Summer / All-calendar
+       pages) - shared tab-bar component.
 
-.ac-cards {
+       On term pages (Spring now; Summer / All-calendar later), each tab
+       links to its own page and whichever page is open renders its own
+       tab with .ac-tab--active, sitting on a shared dark baseline
+       (.ac-tabbar--has-active) - per Figma, inactive tabs are pale,
+       fully-rounded chips that float above that baseline while the active
+       tab is a solid, square-bottomed chip whose dark border sits flush
+       on it, reading as "attached" to the content below.
+
+       The hub page (academic-calendar.html) is the parent, not a term
+       page - per its Figma node (1837:219) it has no active tab and no
+       baseline at all, so it omits .ac-tabbar--has-active and its three
+       cards are plain independent links with only a hover lift, matching
+       the sitewide .adm-card:hover treatment. --- */
+
+.ac-tabbar {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
@@ -6248,28 +6263,87 @@ a.notice-card:hover {
 }
 
 @media (max-width: 760px) {
-  .ac-cards {
+  .ac-tabbar {
     grid-template-columns: 1fr;
   }
 }
 
-.ac-card {
-  background-color: rgba(212, 212, 212, 0.5);
-  border: 1px solid #d4d4d4;
+.ac-tabbar--has-active {
+  border-bottom: 2px solid #161616;
+}
+
+@media (max-width: 760px) {
+  .ac-tabbar--has-active {
+    border-bottom: none;
+  }
+}
+
+.ac-tab {
+  display: block;
+  background-color: rgba(212, 212, 212, 0.3);
+  border: 1px solid rgba(212, 212, 212, 0.6);
   border-radius: var(--radius-md);
   padding: 1.5rem 1.25rem;
   text-align: center;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
 }
 
-.ac-card__title {
+/* Stronger than the sitewide .adm-card:hover lift (-6px / var(--shadow-card))
+   because .ac-tab starts from a pale, low-contrast translucent fill instead
+   of a solid white card on a white page - the subtler shared values read as
+   almost invisible here, so the lift, shadow, and fill are all boosted to
+   keep the hovered card clearly distinguishable from its neighbors. */
+.ac-tab:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 32px rgba(12, 35, 80, 0.18);
+  background-color: rgba(212, 212, 212, 0.6);
+  border-color: rgba(22, 22, 22, 0.35);
+}
+
+.ac-tab__title {
+  display: block;
   color: #222;
   font-family: var(--font-heading);
-  font-weight: 600;
+  font-weight: 400;
   font-size: 1.2rem;
   margin-bottom: 0.35rem;
 }
 
-.ac-card__sub {
+.ac-tab__sub {
+  display: block;
   color: #222;
   font-size: 1rem;
+}
+
+.ac-tab--active {
+  background-color: #d4d4d4;
+  border-color: #161616;
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+}
+
+.ac-tab--active .ac-tab__title {
+  font-weight: 600;
+}
+
+/* The active tab already reads as "selected" via its solid fill and flush
+   baseline, so on hover it keeps that exact fill/border (re-asserted here
+   since .ac-tab:hover's higher specificity would otherwise override them
+   with the inactive-tab hover treatment) and skips the lift entirely -
+   floating it up would pull it off the shared baseline it's meant to sit
+   flush against. */
+.ac-tab--active:hover {
+  transform: none;
+  background-color: #d4d4d4;
+  border-color: #161616;
+}
+
+/* Term calendar document image (e.g. the Spring 2026 table) - reuses the
+   sitewide .instruction-doc-image treatment (radius + shadow) but centered
+   and sized for a full portrait document instead of a left-aligned
+   thumbnail-style embed. */
+.ac-calendar-image {
+  max-width: 700px;
+  margin: 1.5rem auto 0;
 }
