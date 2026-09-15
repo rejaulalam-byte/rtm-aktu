@@ -6235,3 +6235,41 @@ a.notice-card:hover {
   object-fit: cover;
   object-position: center;
 }
+
+/* ==========================================================================
+   24. Academic Calendar Page (pages/academic-calendar.html)
+   ========================================================================== */
+
+.ac-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+@media (max-width: 760px) {
+  .ac-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+.ac-card {
+  background-color: rgba(212, 212, 212, 0.5);
+  border: 1px solid #d4d4d4;
+  border-radius: var(--radius-md);
+  padding: 1.5rem 1.25rem;
+  text-align: center;
+}
+
+.ac-card__title {
+  color: #222;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin-bottom: 0.35rem;
+}
+
+.ac-card__sub {
+  color: #222;
+  font-size: 1rem;
+}
