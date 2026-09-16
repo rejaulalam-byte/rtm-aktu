@@ -6465,3 +6465,13 @@ a.notice-card:hover {
   border-radius: 10px;
   margin-bottom: 3rem;
 }
+
+/* Registrar detail page: same flat placeholder-box treatment as
+   .treasurer-photo-placeholder above - Figma has no portrait for the
+   Registrar either, just a plain light-grey box. */
+.registrar-photo-placeholder {
+  aspect-ratio: 1098 / 500;
+  background-color: #ededed;
+  border-radius: 10px;
+  margin-bottom: 3rem;
+}
