@@ -3851,6 +3851,27 @@ button {
   height: 28px;
 }
 
+/* --- The Chancellor detail page (pages/chancellor.html): name/role/contact
+   block sits centered above the left-aligned bio copy inside the shared
+   .cm-content template, so it needs its own centered wrapper. --- */
+.chancellor-bio {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chancellor-bio__contact {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.chancellor-source {
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+  text-align: right;
+  margin-top: 1rem;
+}
+
 /* ==========================================================================
    20. International Applicants Page
    ========================================================================== */
