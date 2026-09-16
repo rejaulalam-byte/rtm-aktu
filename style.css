@@ -6437,3 +6437,18 @@ a.notice-card:hover {
     overflow-x: auto;
   }
 }
+
+/* Vice Chancellor detail page: the caption sits directly under the portrait
+   with no bio name/role block between them (unlike the Chancellor page), so
+   .cm-photo's 3rem bottom margin (tuned for that bio block) and
+   .lm-photo-caption's 1rem top margin leave the caption looking disconnected
+   from the photo. Tighten that gap to 10px and open up a deliberate 50px
+   gap to the biography paragraph that follows instead. */
+.vc-bio-photo {
+  margin-bottom: 10px;
+}
+
+.vc-bio-caption {
+  margin-top: 0;
+  margin-bottom: 50px;
+}
