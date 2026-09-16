@@ -6452,3 +6452,16 @@ a.notice-card:hover {
   margin-top: 0;
   margin-bottom: 50px;
 }
+
+/* Treasurer detail page: Figma's design has no portrait for Professor
+   Momtaz Shamim at all, just a flat placeholder box (no icon, no "Image
+   Coming Soon" text) - unlike every other cm-photo usage on the site,
+   which always shows the .img-ph fallback. Kept as its own plain div
+   rather than reusing .img-ph, since that component always renders the
+   fallback icon/label markup. */
+.treasurer-photo-placeholder {
+  aspect-ratio: 1098 / 500;
+  background-color: #ededed;
+  border-radius: 10px;
+  margin-bottom: 3rem;
+}
