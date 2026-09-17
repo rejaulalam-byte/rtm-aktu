@@ -3380,6 +3380,21 @@ button {
   height: 44px;
 }
 
+/* Contact page's 4 info cards only (#contact-info-cards): both the circle
+   and the glyph at exactly 80% of the shared .adm-card__icon--lg size
+   (88px/44px), same ratio so the icon stays centered as before. Scoped
+   here rather than changing --lg itself, which other pages (e.g.
+   admissions.html) also use at the full size. */
+#contact-info-cards .adm-card__icon--lg {
+  width: 70.4px;
+  height: 70.4px;
+}
+
+#contact-info-cards .adm-card__icon--lg svg {
+  width: 35.2px;
+  height: 35.2px;
+}
+
 /* Left-align the icon with the heading/text below it (UG/PG panel cards) instead
    of the default horizontally-centered position. */
 .adm-card__icon--left {
