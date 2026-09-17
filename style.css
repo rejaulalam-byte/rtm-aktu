@@ -3918,6 +3918,26 @@ button {
    21. Contact Page
    ========================================================================== */
 
+/* Intro text block above the 4 info cards: measured gap from the end of the
+   second paragraph to the top of the card row was 145.6px (17.6px
+   .text-section__text margin-bottom + 80px .section-inner padding-bottom +
+   48px shared .adm-intro-grid margin-top, same kind of stacking as
+   international-applicants.html). Zero the first two here and set the
+   card row's margin-top scoped to this page only (#contact-info-cards),
+   so the shared .adm-intro-grid used elsewhere (e.g. admission.html) isn't
+   affected, landing the total at exactly half: 72.8px. */
+.cp-intro {
+  padding-bottom: 0;
+}
+
+.cp-intro-last {
+  margin-bottom: 0;
+}
+
+#contact-info-cards .adm-intro-grid {
+  margin-top: 72.8px;
+}
+
 /* --- Section heading with a short gold underline accent (Send Us a Message / Find Us Here) --- */
 .cp-heading {
   position: relative;
