@@ -3873,10 +3873,31 @@ button {
   margin: 2.5rem 0 1rem;
 }
 
-/* "Explore Our Programs" intro paragraph: 50px of space before the
-   Featured Programs image/card below it. */
+/* "Explore Our Programs" intro paragraph: exactly 100px of space before the
+   Featured Programs image/card below it. Zeroes out .text-section__text's
+   own margin-bottom so it can't stack on top of the padding - this is the
+   only paragraph in its block, so it needs no inter-paragraph spacing. */
 .ia-explore-intro {
-  padding-bottom: 50px;
+  padding-bottom: 100px;
+  margin-bottom: 0;
+}
+
+/* The intro text above and the Featured Programs card below both sit in one
+   <section>, but each lives in its own .section-inner, whose 80px top/bottom
+   padding would otherwise stack on both sides of the gap on top of
+   .ia-explore-intro's 100px, reading as two separated blocks instead of one
+   cohesive section. */
+.ia-programs-text {
+  padding-bottom: 0;
+}
+
+/* .split-section__grid's sitewide align-items: center would vertically
+   center this shorter photo against the taller text column beside it,
+   pushing its top well past the intended 100px gap. Top-align just this
+   instance so the image starts exactly 100px below the intro paragraph. */
+.ia-programs-grid {
+  padding-top: 0;
+  align-items: start;
 }
 
 /* Section 1's body copy must stay left-aligned per Figma while keeping
