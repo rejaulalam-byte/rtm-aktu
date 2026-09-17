@@ -6539,6 +6539,7 @@ a.notice-card:hover {
 .iqac-heading--organogram {
   font-size: 1.1em;
   font-family: inherit;
+  text-align: center;
   padding-top: 5px;
   padding-bottom: 20px;
 }
