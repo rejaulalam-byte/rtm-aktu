@@ -6531,11 +6531,14 @@ a.notice-card:hover {
   padding-bottom: 5px;
 }
 
-/* 2px above the sitewide .cm-content__heading 24px, to give the organogram
-   caption slightly more presence than the other in-body headings on this
-   page - font-family/weight untouched. */
+/* Smaller than the sitewide .cm-content__heading 24px: 1.1em against the
+   16px base font-size in effect at this point in the page (.cm-content
+   inherits body's 16px), resolving to 17.6px - stays bold via the sitewide
+   h1-h4 rule, but overrides font-family so it inherits the surrounding
+   paragraph's body font instead of the sitewide heading font. */
 .iqac-heading--organogram {
-  font-size: 26px;
+  font-size: 1.1em;
+  font-family: inherit;
   padding-top: 5px;
   padding-bottom: 20px;
 }
