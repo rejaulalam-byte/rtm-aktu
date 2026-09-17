@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initCampusLifeVideo();
   initContactPageForm();
   initDateWeekdays();
+  initBackToTop();
 });
 
 // ------------------------------------------------------------------
@@ -594,5 +595,33 @@ function initCampusLifeVideo() {
   playBtn.addEventListener('click', startPlayback);
   video.addEventListener('click', () => {
     if (video.paused) startPlayback();
+  });
+}
+
+// ------------------------------------------------------------------
+// Sitewide "Back to Top" button - injected once per page here rather
+// than pasted into all ~65 page files, since every page already loads
+// this shared script.
+// ------------------------------------------------------------------
+function initBackToTop() {
+  const button = document.createElement('button');
+  button.type = 'button';
+  button.id = 'backToTop';
+  button.className = 'back-to-top';
+  button.setAttribute('aria-label', 'Back to top');
+  button.innerHTML = '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 19V6M6 12l6-6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  document.body.appendChild(button);
+
+  const showThreshold = () => window.innerHeight / 2;
+
+  const toggleVisibility = () => {
+    button.classList.toggle('is-visible', window.scrollY > showThreshold());
+  };
+
+  toggleVisibility();
+  window.addEventListener('scroll', toggleVisibility, { passive: true });
+
+  button.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 }
