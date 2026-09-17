@@ -3875,6 +3875,17 @@ button {
   margin: 2.5rem 0 1rem;
 }
 
+/* Section 1's body copy must stay left-aligned per Figma while keeping
+   .text-section__inner--wide's 1100px column - .text-section--left (the
+   sitewide left-align modifier) also carries its own 1240px max-width via
+   var(--max-width), which would silently widen this column, so this
+   overrides just the alignment instead of swapping in that class. The
+   .section-heading--center wrapper around the main heading still wins
+   there since it sets text-align on itself directly. */
+.ia-content-left {
+  text-align: left;
+}
+
 /* ==========================================================================
    21. Contact Page
    ========================================================================== */
