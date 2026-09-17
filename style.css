@@ -6531,9 +6531,13 @@ a.notice-card:hover {
   padding-bottom: 5px;
 }
 
+/* 2px above the sitewide .cm-content__heading 24px, to give the organogram
+   caption slightly more presence than the other in-body headings on this
+   page - font-family/weight untouched. */
 .iqac-heading--organogram {
+  font-size: 26px;
   padding-top: 5px;
-  padding-bottom: 5px;
+  padding-bottom: 20px;
 }
 
 .iqac-heading--functions {
