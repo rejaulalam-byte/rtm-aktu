@@ -3864,64 +3864,15 @@ button {
    20. International Applicants Page
    ========================================================================== */
 
-/* --- Welcome Intro cost-category tags (Tuition/Accommodation/Food/Transport) --- */
-.ia-tag-row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
-  margin: 1.75rem 0;
-}
-
-.ia-tag {
-  padding: 0.65rem 1.5rem;
-  border-radius: 999px;
-  font-weight: 600;
-  font-size: 0.92rem;
-  text-decoration: none;
-  cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
-}
-
-.ia-tag:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 18px rgba(12, 35, 80, 0.16);
-}
-
-.ia-tag--navy {
-  background-color: rgba(12, 35, 80, 0.1);
-  color: var(--color-navy);
-}
-
-.ia-tag--navy:hover {
-  background-color: rgba(12, 35, 80, 0.18);
-}
-
-.ia-tag--gold {
-  background-color: rgba(201, 162, 39, 0.14);
-  color: var(--color-gold);
-}
-
-.ia-tag--gold:hover {
-  background-color: rgba(201, 162, 39, 0.24);
-}
-
-.ia-tag--red {
-  background-color: rgba(163, 45, 45, 0.1);
-  color: var(--color-red);
-}
-
-.ia-tag--red:hover {
-  background-color: rgba(163, 45, 45, 0.18);
-}
-
-.ia-tag--accent {
-  background-color: rgba(232, 98, 42, 0.12);
-  color: var(--color-footer-accent);
-}
-
-.ia-tag--accent:hover {
-  background-color: rgba(232, 98, 42, 0.2);
+/* International Applicants page: "Plan Your Stay" / "Tuition & Fees" /
+   "Living in Sylhet" group headings - a distinct, larger tier above the
+   sitewide 24px .cm-content__heading (used here for Accommodation/Food/
+   Transport Cost), matching the Figma spec's 32px Poppins Medium rather
+   than the h1-h4 default 700 weight. */
+.ia-subheading {
+  font-size: 32px;
+  font-weight: 500;
+  margin: 2.5rem 0 1rem;
 }
 
 /* ==========================================================================
