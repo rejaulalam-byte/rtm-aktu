@@ -3865,14 +3865,18 @@ button {
    ========================================================================== */
 
 /* International Applicants page: "Plan Your Stay" / "Tuition & Fees" /
-   "Living in Sylhet" group headings - a distinct, larger tier above the
-   sitewide 24px .cm-content__heading (used here for Accommodation/Food/
-   Transport Cost), matching the Figma spec's 32px Poppins Medium rather
-   than the h1-h4 default 700 weight. */
+   "Living in Sylhet" group headings - a distinct tier above the page-scoped
+   22px .ia-item-heading (used here for Accommodation/Food/Transport Cost). */
 .ia-subheading {
-  font-size: 32px;
-  font-weight: 500;
+  font-size: 26px;
+  font-weight: 700;
   margin: 2.5rem 0 1rem;
+}
+
+/* "Explore Our Programs" intro paragraph: 50px of space before the
+   Featured Programs image/card below it. */
+.ia-explore-intro {
+  padding-bottom: 50px;
 }
 
 /* Section 1's body copy must stay left-aligned per Figma while keeping
@@ -6497,4 +6501,12 @@ a.notice-card:hover {
 .iqac-heading--functions {
   padding-top: 5px;
   padding-bottom: 10px;
+}
+
+/* International Applicants page only: Accommodation/Food/Transport Cost
+   need to read smaller than the sitewide 24px .cm-content__heading here,
+   without changing that shared class everywhere else it's used. */
+.ia-item-heading {
+  font-size: 22px;
+  font-weight: 700;
 }
