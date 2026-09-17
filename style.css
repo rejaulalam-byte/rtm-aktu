@@ -3398,6 +3398,13 @@ button {
   margin-bottom: 1.1rem;
 }
 
+/* Contact page "Call Us" card: keeps a phone number and its "(role)" label
+   from wrapping mid-entry (e.g. "...1711983427 (Deputy" / "Registrar)") at
+   narrow card widths. */
+.adm-phone-entry {
+  white-space: nowrap;
+}
+
 .adm-card__link {
   color: var(--color-navy);
   font-weight: 600;
