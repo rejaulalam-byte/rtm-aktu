@@ -3866,9 +3866,12 @@ button {
 
 /* International Applicants page: "Plan Your Stay" / "Tuition & Fees" /
    "Living in Sylhet" group headings - a distinct tier above the page-scoped
-   22px .ia-item-heading (used here for Accommodation/Food/Transport Cost). */
+   20px .ia-item-heading (used here for Accommodation/Food/Transport Cost).
+   font-family/weight set explicitly rather than relying on the h1-h4 base
+   rule, so this stays correct even if the base rule changes later. */
 .ia-subheading {
-  font-size: 26px;
+  font-family: var(--font-heading);
+  font-size: 22px;
   font-weight: 700;
   margin: 2.5rem 0 1rem;
 }
@@ -6526,8 +6529,11 @@ a.notice-card:hover {
 
 /* International Applicants page only: Accommodation/Food/Transport Cost
    need to read smaller than the sitewide 24px .cm-content__heading here,
-   without changing that shared class everywhere else it's used. */
+   without changing that shared class everywhere else it's used.
+   font-family/weight set explicitly rather than relying on the h1-h4 base
+   rule, so this stays correct even if the base rule changes later. */
 .ia-item-heading {
-  font-size: 22px;
+  font-family: var(--font-heading);
+  font-size: 20px;
   font-weight: 700;
 }
