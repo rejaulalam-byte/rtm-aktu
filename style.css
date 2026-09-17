@@ -6475,3 +6475,68 @@ a.notice-card:hover {
   border-radius: 10px;
   margin-bottom: 3rem;
 }
+
+/* IQAC detail page: reuses .img-ph / .split-section__image for the rounded
+   frame and broken-image fallback (same mechanism as .cm-photo on the
+   Chancellor page), just with its own aspect ratio matching the real
+   1079x611 committee-meeting photo instead of .split-section__image's 4:3
+   default. */
+.iqac-meeting-photo {
+  aspect-ratio: 1079 / 611;
+  border-radius: 10px;
+  margin-bottom: 3rem;
+}
+
+/* IQAC organogram: the structure diagram is shown at its own width and
+   centered, rather than stretched to fill the content column like every
+   other .img-ph usage on the site - object-fit: contain keeps its labels
+   legible instead of cropping the diagram. */
+.iqac-organogram {
+  max-width: 480px;
+  margin: 0 auto 1.1rem;
+  aspect-ratio: 965 / 969;
+}
+
+.iqac-organogram img {
+  object-fit: contain;
+}
+
+/* Page-specific heading spacing tweaks for pages/iqac.html only. */
+.iqac-heading--vision {
+  padding-bottom: 10px;
+}
+
+.iqac-heading--mission {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.iqac-heading--general-objective {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.iqac-heading--specific-objectives {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.iqac-heading--strategy {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.iqac-heading--structure {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.iqac-heading--organogram {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.iqac-heading--functions {
+  padding-top: 5px;
+  padding-bottom: 10px;
+}
