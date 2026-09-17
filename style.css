@@ -3779,18 +3779,6 @@ button {
   margin-top: 1rem;
 }
 
-.lm-treasurer {
-  max-width: 1000px;
-}
-
-.lm-treasurer .adm-intro-text + .adm-intro-text {
-  margin-top: 1rem;
-}
-
-.lm-treasurer .btn {
-  margin-top: 1.5rem;
-}
-
 /* Scholarship banner is shared across pages (homepage, About Us, Academics,
    Admissions); this widens only the Leadership & Management page's instance,
    leaving the shared .scholarship__text max-width untouched everywhere else. */
