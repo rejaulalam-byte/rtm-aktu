@@ -1334,6 +1334,11 @@ button {
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
 }
 
+/* Same 1.75rem gap the paragraph above leaves before the pills. */
+.why-choose-us__cta {
+  margin-top: 1.75rem;
+}
+
 .why-choose-us__media {
   position: relative;
   z-index: 2;
