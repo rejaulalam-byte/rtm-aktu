@@ -296,6 +296,7 @@
         getDate: (item) => item.publishedDateIso,
         getSearchText: (item) => item.position,
         searchPlaceholder: 'Search by Position, Month or Month, Year',
+        pageSizeOptions: [15, 25, 50, { value: Infinity, label: 'All' }],
         pageSizeLabel: { before: 'Show Row', after: 'Per Page' },
         emptyMessage: 'No job circulars match your search.',
         renderEmpty: (message) => `<tr><td colspan="8" class="listing-empty">${message}</td></tr>`,
