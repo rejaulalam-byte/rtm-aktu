@@ -6660,7 +6660,6 @@ a.notice-card:hover {
   text-align: left;
   vertical-align: middle;
   font-family: 'Poppins', sans-serif;
-  font-size: 18px;
 }
 
 .jc-table thead th {
@@ -6674,6 +6673,7 @@ a.notice-card:hover {
 .jc-table tbody td {
   background-color: var(--color-white);
   font-weight: 400;
+  font-size: 16px;
 }
 
 .jc-table__num {
@@ -6702,7 +6702,7 @@ a.notice-card:hover {
   font-weight: 500;
 }
 
-.jc-table__closing {
+.jc-table tbody td.jc-table__closing {
   color: #ff2525;
   font-weight: 700;
 }
