@@ -17,6 +17,10 @@
 //     items: Object.entries(someData).map(([id, item]) => ({ id, ...item })),
 //     getDate: (item) => item.date,       // ISO 'YYYY-MM-DD'
 //     getSemester: (item) => item.semester || null,  // optional
+//     getSearchText: (item) => item.position,  // optional extra text match
+//     searchPlaceholder, pageSizeLabel: { before, after }, renderEmpty(msg)
+//       // optional overrides (used by pages/job-circular-all.html, whose
+//       // list is a <tbody> and so needs a <tr> empty state)
 //     renderItem: (item, index) => `...html for one row...`,
 //   });
 // ------------------------------------------------------------------
@@ -65,6 +69,10 @@ function initListingControls({
   pageSizeOptions = [15, 25, 50],
   defaultPageSize,
   emptyMessage = 'No entries match your search.',
+  getSearchText,
+  searchPlaceholder,
+  pageSizeLabel = { before: 'Show', after: 'per page' },
+  renderEmpty,
 }) {
   const firstOption = pageSizeOptions[0];
   defaultPageSize = defaultPageSize || (typeof firstOption === 'object' ? firstOption.value : firstOption);
@@ -96,7 +104,10 @@ function initListingControls({
 
     const q = raw.toLowerCase();
     const semester = getSemester(item);
-    return itemYear(item).includes(q) || (!!semester && semester.toLowerCase().includes(q));
+    const searchText = getSearchText ? getSearchText(item) : null;
+    return itemYear(item).includes(q)
+      || (!!semester && semester.toLowerCase().includes(q))
+      || (!!searchText && searchText.toLowerCase().includes(q));
   }
 
   function getFiltered() {
@@ -107,10 +118,10 @@ function initListingControls({
     controlsEl.innerHTML = `
       <div class="listing-controls__search">
         <svg class="listing-controls__search-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.8"/><path d="m20 20-3.5-3.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
-        <input type="search" id="listingSearchInput" class="listing-controls__search-input" placeholder="${hasSemester ? 'Search by year, month year, or semester' : 'Search by year or month, year'}" value="${query}">
+        <input type="search" id="listingSearchInput" class="listing-controls__search-input" placeholder="${searchPlaceholder || (hasSemester ? 'Search by year, month year, or semester' : 'Search by year or month, year')}" value="${query}">
       </div>
       <label class="listing-controls__page-size">
-        Show
+        ${pageSizeLabel.before}
         <select id="listingPageSizeSelect" class="listing-controls__page-size-select">
           ${pageSizeOptions
             .map((opt) => {
@@ -120,7 +131,7 @@ function initListingControls({
             })
             .join('')}
         </select>
-        per page
+        ${pageSizeLabel.after}
       </label>
     `;
 
@@ -149,7 +160,7 @@ function initListingControls({
 
     listEl.innerHTML = pageItems.length
       ? pageItems.map((item, i) => renderItem(item, start + i)).join('')
-      : `<p class="text-section__text listing-empty">${emptyMessage}</p>`;
+      : (renderEmpty ? renderEmpty(emptyMessage) : `<p class="text-section__text listing-empty">${emptyMessage}</p>`);
   }
 
   function renderPagination() {

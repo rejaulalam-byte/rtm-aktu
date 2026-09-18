@@ -6778,6 +6778,12 @@ a.notice-card:hover {
   color: var(--color-gold);
 }
 
+/* job-circular-all.html: its longer placeholder ("Search by Position,
+   Month or Month, Year") is clipped at the shared 360px max-width. */
+.listing-controls--wide-search .listing-controls__search {
+  max-width: 440px;
+}
+
 /* pages/job-circular-details.html (Figma node 2141:189) */
 .jcd-topbar__heading {
   margin-bottom: 40px;
