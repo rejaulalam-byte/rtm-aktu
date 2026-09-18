@@ -3758,6 +3758,23 @@ button {
   color: #FF6B4A;
 }
 
+/* Job Circular section standard (job-circular.html, job-circular-details.html
+   and every future Job-related page): line 1 in Figma's #fbff00 yellow
+   (pixel-measured from node 2141:383), line 2 white, on two separate lines. */
+.quote-banner__text--yellow {
+  color: #fbff00;
+}
+
+/* Wider container + smaller type so each of the two lines stays on a
+   single line at desktop width, as in Figma. */
+.quote-banner__inner--job {
+  max-width: 1240px;
+}
+
+.quote-banner__text--job {
+  font-size: clamp(0.8rem, 2.35vw, 1.875rem);
+}
+
 /* ==========================================================================
    20. Leadership & Management Page
    ========================================================================== */
