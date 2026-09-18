@@ -6656,7 +6656,7 @@ a.notice-card:hover {
 .jc-table th,
 .jc-table td {
   border: 1px solid #bebebe;
-  padding: 1rem 1.5rem;
+  padding: 1rem 0.5rem;
   text-align: left;
   vertical-align: middle;
   font-family: 'Poppins', sans-serif;
@@ -6673,10 +6673,16 @@ a.notice-card:hover {
 .jc-table tbody td {
   background-color: var(--color-white);
   font-weight: 400;
-  font-size: 16px;
+  font-size: 15px;
 }
 
 .jc-table__num {
+  text-align: center;
+}
+
+/* Position column (3rd) - header label and data cells both centered */
+.jc-table thead th:nth-child(3),
+.jc-table tbody td:nth-child(3) {
   text-align: center;
 }
 
