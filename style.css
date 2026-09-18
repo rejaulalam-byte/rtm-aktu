@@ -6854,8 +6854,8 @@ a.notice-card:hover {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
-  gap: 0.6rem 2rem;
+  justify-content: flex-start;
+  gap: 0.6rem 0;
   color: var(--color-text-muted);
   font-size: 0.85rem;
 }
@@ -6865,16 +6865,23 @@ a.notice-card:hover {
   font-weight: 600;
 }
 
+/* Fixed gaps between the three groups (Closing Date -> Published in ->
+   Published), independent of date/weekday text length, so every
+   record's info bar spaces identically. 90px is the largest equal gap at
+   which the longest current record (Assistant Registrar) still fits on one row. */
 .jcd-infobar__published-in {
-  position: relative;
-  right: 15px;
+  margin-left: 90px;
 }
 
-/* .jcd-infobar already has 1.5rem (24px) right padding, so this
-   26px margin lands the Published block exactly 50px from the
-   info-bar's right border rather than flush against it. */
 .jcd-infobar__published {
-  margin-right: 26px;
+  margin-left: 90px;
+}
+
+@media (max-width: 900px) {
+  .jcd-infobar__published-in,
+  .jcd-infobar__published {
+    margin-left: 2rem;
+  }
 }
 
 .jcd-document {
