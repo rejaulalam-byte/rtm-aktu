@@ -12,6 +12,15 @@
 //
 // Paths are relative to pages/ (job-circular.html and
 // job-circular-details.html both live at that same depth).
+//
+// `publishedDateIso` is the ISO form of `publishedDate`, used only to
+// compute each record's weekday label on the details page via the
+// sitewide initDateWeekdays()/.js-weekday pattern (script.js) - same
+// approach `closingDate` already provides for Closing Date's weekday.
+//
+// `documentImage` is the record's own scanned circular, shown on its
+// details page - one sub-folder per record under images/job-circular/
+// (job-01, job-02, ...), matching this file's job order.
 // ------------------------------------------------------------------
 const jobCircularData = {
   'assistant-registrar': {
@@ -23,8 +32,10 @@ const jobCircularData = {
     closingDate: '2025-03-12',
     closingDateDisplay: 'March 12, 2025',
     publishedIn: 'RTM-AKTU Website & BD-Jobs',
+    publishedDateIso: '2025-03-07',
     publishedDate: 'March 7, 2025',
     status: 'OPEN',
+    documentImage: '../images/job-circular/job-02/document.jpg',
   },
   'finance-officer': {
     slNo: 1,
@@ -35,7 +46,9 @@ const jobCircularData = {
     closingDate: '2024-05-02',
     closingDateDisplay: 'May 2, 2024',
     publishedIn: 'RTM-AKTU Website',
-    publishedDate: 'April 25, 2024',
+    publishedDateIso: '2024-04-21',
+    publishedDate: 'April 21, 2024',
     status: 'OPEN',
+    documentImage: '../images/job-circular/job-01/document.jpg',
   },
 };

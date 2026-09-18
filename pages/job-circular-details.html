@@ -92,33 +92,65 @@
     <section class="page-hero" style="background-image: url('../images/job-circular/hero-banner.jpg');">
       <div class="page-hero__overlay"></div>
       <div class="page-hero__inner">
-        <h1 class="page-hero__title" id="jcdTitle">Job Circular Details</h1>
+        <h1 class="page-hero__title">Carrier Opportunities</h1>
         <nav class="page-hero__breadcrumb" aria-label="Breadcrumb">
           <a href="../index.html">Home</a>
           <span class="page-hero__breadcrumb-sep">/</span>
-          <a href="job-circular.html">Career</a>
+          <a href="job-circular.html">Carrier</a>
           <span class="page-hero__breadcrumb-sep">/</span>
-          <span class="page-hero__breadcrumb-current">Details</span>
+          <span class="page-hero__breadcrumb-current" id="jcdBreadcrumb">Circular Details</span>
         </nav>
       </div>
     </section>
 
     <!-- ============================================================
-         4. PLACEHOLDER DETAILS CONTENT
-         Stub only - this page's own design has not been provided yet.
-         Shows the record's own data (pulled from job-circular-data.js
-         by the ?id= query param) so the whole-row click-through from
-         job-circular.html has somewhere real to land.
+         4. CIRCULAR DETAILS (Figma node 2141:189)
+         Data-driven from job-circular-data.js by the ?id= query param -
+         works for any record.
     ============================================================ -->
     <section class="bg-white">
       <div class="section-inner">
-        <div class="text-section__inner text-section--left">
-          <div class="section-heading section-heading--center">
-            <h2 class="section-heading__title" id="jcdPosition">Position</h2>
+
+        <div class="jcd-topbar">
+          <div class="section-heading section-heading--center jcd-topbar__heading">
+            <h2 class="section-heading__title" id="jcdHeading">Circular Details</h2>
           </div>
-          <dl id="jcdFields" class="jcd-fields"></dl>
-          <p><a href="job-circular.html" class="btn btn-primary">Back to Job Circular</a></p>
+          <a href="job-circular.html" class="jcd-viewall">
+            View Job Circular Page
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
         </div>
+
+        <p class="jcd-intro">RTM Al-Kabir Technical University invites applications from qualified, talented, and motivated individuals for available positions across the University. Each opportunity is designed for professionals who are passionate about contributing their skills, experience, and commitment to a dynamic academic environment. Interested candidates are encouraged to review the position details and application requirements carefully before applying.</p>
+
+        <div class="jcd-infobar">
+          <span class="jcd-infobar__badge" id="jcdBadge">01</span>
+          <div class="jcd-infobar__body">
+            <p class="jcd-infobar__title" id="jcdAnnouncement">Job announcement for the position of Finance Officer</p>
+            <div class="jcd-infobar__meta">
+              <span class="date-meta__item">
+                <strong class="jcd-infobar__label">Closing Date:</strong>
+                <svg class="date-meta__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M4 9h16M8 3v4M16 3v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                <span id="jcdClosingDate"></span>
+                <svg class="date-meta__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M4 9h16M8 3v4M16 3v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><rect x="7.5" y="12" width="4" height="4" rx="1" fill="currentColor"/></svg>
+                <span class="js-weekday" id="jcdClosingWeekday" data-date=""></span>
+              </span>
+              <span class="jcd-infobar__published-in" id="jcdPublishedIn"></span>
+              <span class="date-meta__item">
+                <strong class="jcd-infobar__label">Published:</strong>
+                <svg class="date-meta__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M4 9h16M8 3v4M16 3v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                <span id="jcdPublishedDate"></span>
+                <svg class="date-meta__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M4 9h16M8 3v4M16 3v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><rect x="7.5" y="12" width="4" height="4" rx="1" fill="currentColor"/></svg>
+                <span class="js-weekday" id="jcdPublishedWeekday" data-date=""></span>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="jcd-document">
+          <img id="jcdDocumentImage" src="" alt="">
+        </div>
+
       </div>
     </section>
 
@@ -128,7 +160,7 @@
     <section class="quote-banner" style="background-image: url('../images/job-circular/quote-bg.jpg');">
       <div class="quote-banner__overlay quote-banner__overlay--light"></div>
       <div class="quote-banner__inner quote-banner__inner--wide">
-        <p class="quote-banner__text quote-banner__text--shadow-center">Every application is a step toward a new opportunity. Bring your skills, passion, and potential to RTM-AKTU.</p>
+        <p class="quote-banner__text quote-banner__text--shadow-center quote-banner__text--pledge"><span class="quote-banner__text--gold">তোমরা দেশের ভবিষ্যৎ। দেশকে ভালোবাসো।</span><br>মন দিয়ে পড়াশোনা করো এবং সৎ পথে থেকে দেশের সেবা করার ব্রত নাও।</p>
       </div>
     </section>
 
@@ -243,29 +275,43 @@
   <script src="../script.js"></script>
   <script src="job-circular/job-circular-data.js"></script>
   <script>
-    // Placeholder details render: reads ?id= from the URL and shows that
-    // record's own fields from job-circular-data.js. Stand-in only, until
-    // this page's real design is provided.
+    // Renders the Circular Details page (Figma node 2141:189) from
+    // jobCircularData by the ?id= query param - works for any record.
+    // The two .js-weekday spans get their text filled in by script.js's
+    // own initDateWeekdays(), called later in the same DOMContentLoaded
+    // listener (script.js is loaded before this block), from the
+    // data-date attributes set below.
     document.addEventListener('DOMContentLoaded', () => {
       const id = new URLSearchParams(window.location.search).get('id');
       const item = id && typeof jobCircularData !== 'undefined' ? jobCircularData[id] : null;
-      const fieldsEl = document.getElementById('jcdFields');
+
       if (!item) {
-        document.getElementById('jcdPosition').textContent = 'Circular Not Found';
-        fieldsEl.innerHTML = '<p>This job circular could not be found. Please return to the <a href="job-circular.html">Job Circular</a> page.</p>';
+        document.getElementById('jcdHeading').textContent = 'Circular Not Found';
+        document.getElementById('jcdBreadcrumb').textContent = 'Circular Details';
+        document.querySelector('.jcd-intro').textContent = 'This job circular could not be found.';
+        document.querySelector('.jcd-infobar').style.display = 'none';
+        document.querySelector('.jcd-document').style.display = 'none';
         return;
       }
-      document.getElementById('jcdTitle').textContent = item.position;
-      document.getElementById('jcdPosition').textContent = item.position;
-      fieldsEl.innerHTML = `
-        <div class="jcd-fields__row"><dt>Sl. No.</dt><dd>${item.slNo}</dd></div>
-        <div class="jcd-fields__row"><dt>Position</dt><dd>${item.positionCount}</dd></div>
-        <div class="jcd-fields__row"><dt>Job Experience</dt><dd>${item.experience}</dd></div>
-        <div class="jcd-fields__row"><dt>Closing Date</dt><dd>${item.closingDateDisplay}</dd></div>
-        <div class="jcd-fields__row"><dt>Published in</dt><dd>${item.publishedIn}</dd></div>
-        <div class="jcd-fields__row"><dt>Published Date</dt><dd>${item.publishedDate}</dd></div>
-        <div class="jcd-fields__row"><dt>Status</dt><dd>${item.status}</dd></div>
-      `;
+
+      const slNoPadded = String(item.slNo).padStart(2, '0');
+      document.title = `Circular Details - ${item.position} | RTM Al-Kabir Technical University (RTM-AKTU)`;
+      document.getElementById('jcdBreadcrumb').textContent = `Circular Details - ${slNoPadded}`;
+      document.getElementById('jcdHeading').textContent = `Circular Details - ${item.position}`;
+      document.getElementById('jcdBadge').textContent = slNoPadded;
+      document.getElementById('jcdAnnouncement').textContent = `Job announcement for the position of ${item.position}`;
+      document.getElementById('jcdPublishedIn').textContent = `Published in ${item.publishedIn}`;
+
+      document.getElementById('jcdClosingDate').textContent = item.closingDateDisplay;
+      document.getElementById('jcdClosingWeekday').dataset.date = item.closingDate;
+      document.getElementById('jcdPublishedDate').textContent = item.publishedDate;
+      document.getElementById('jcdPublishedWeekday').dataset.date = item.publishedDateIso;
+
+      const img = document.getElementById('jcdDocumentImage');
+      img.src = item.documentImage;
+      img.alt = `Scanned job circular document for ${item.position}`;
+
+      initDateWeekdays();
     });
   </script>
 </body>

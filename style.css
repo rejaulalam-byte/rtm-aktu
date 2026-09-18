@@ -6761,25 +6761,119 @@ a.notice-card:hover {
   color: var(--color-gold);
 }
 
-/* pages/job-circular-details.html - stub only, no real design given yet */
-.jcd-fields {
-  margin: 0 0 2rem;
+/* pages/job-circular-details.html (Figma node 2141:189) */
+.jcd-topbar {
+  position: relative;
 }
 
-.jcd-fields__row {
-  display: flex;
-  gap: 0.75rem;
-  padding: 0.75rem 0;
-  border-bottom: 1px solid #e2e2e2;
+.jcd-topbar__heading {
+  margin-bottom: 2rem;
 }
 
-.jcd-fields__row dt {
-  width: 180px;
-  flex-shrink: 0;
-  font-weight: 600;
+.jcd-viewall {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
   color: var(--color-navy);
+  font-weight: 500;
+  font-size: 0.9rem;
+  text-decoration: none;
 }
 
-.jcd-fields__row dd {
-  margin: 0;
+.jcd-viewall svg {
+  width: 16px;
+  height: 16px;
+}
+
+.jcd-viewall:hover {
+  color: var(--color-gold);
+}
+
+.jcd-intro {
+  max-width: 900px;
+  margin: 0 auto 2rem;
+  text-align: center;
+  color: var(--color-text-muted);
+}
+
+/* Pixel-measured from the record's own screenshot: a very pale
+   rose-tinted white, not a pure grey - kept as-is rather than
+   substituted for a sitewide grey, since it's this bar's own color. */
+.jcd-infobar {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  background-color: #fff0f0;
+  border-radius: var(--radius-sm);
+  padding: 1rem 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.jcd-infobar__badge {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: var(--color-white);
+  color: var(--color-navy);
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.jcd-infobar__body {
+  flex: 1;
+  min-width: 0;
+}
+
+.jcd-infobar__title {
+  font-weight: 500;
+  color: var(--color-navy);
+  margin: 0 0 0.5rem;
+}
+
+.jcd-infobar__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem 2rem;
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+}
+
+.jcd-infobar__label {
+  color: var(--color-navy);
+  font-weight: 600;
+}
+
+.jcd-document {
+  max-width: 500px;
+  margin: 0 auto;
+  border: 1px solid #bebebe;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  aspect-ratio: 1295 / 1830;
+}
+
+.jcd-document img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+@media (max-width: 640px) {
+  .jcd-topbar__heading {
+    margin-bottom: 3rem;
+  }
+
+  .jcd-infobar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
