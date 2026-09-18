@@ -6850,12 +6850,18 @@ a.notice-card:hover {
   margin: 0 0 0.5rem;
 }
 
+/* Permanent template for every job circular's details page: a
+   3-column grid with fixed column widths, so each group starts at the
+   same x-position on every record whatever its text length.
+   Columns 340 + 320 leave the rest (1fr) for the Published group,
+   right-aligned; the 26px right padding + the info bar's own 24px
+   padding puts its right edge exactly 50px from the bar's border. */
 .jcd-infobar__meta {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 340px 320px 1fr;
   align-items: center;
-  justify-content: flex-start;
   gap: 0.6rem 0;
+  padding-right: 26px;
   color: var(--color-text-muted);
   font-size: 0.85rem;
 }
@@ -6865,22 +6871,18 @@ a.notice-card:hover {
   font-weight: 600;
 }
 
-/* Fixed gaps between the three groups (Closing Date -> Published in ->
-   Published), independent of date/weekday text length, so every
-   record's info bar spaces identically. 90px is the largest equal gap at
-   which the longest current record (Assistant Registrar) still fits on one row. */
-.jcd-infobar__published-in {
-  margin-left: 90px;
-}
-
 .jcd-infobar__published {
-  margin-left: 90px;
+  justify-self: end;
 }
 
 @media (max-width: 900px) {
-  .jcd-infobar__published-in,
+  .jcd-infobar__meta {
+    grid-template-columns: 1fr;
+    padding-right: 0;
+  }
+
   .jcd-infobar__published {
-    margin-left: 2rem;
+    justify-self: start;
   }
 }
 
