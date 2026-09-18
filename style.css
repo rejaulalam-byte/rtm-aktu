@@ -6636,13 +6636,6 @@ a.notice-card:hover {
    32. Job Circular Page (pages/job-circular.html)
    ========================================================================== */
 
-/* Figma spec for this page's own section heading (50px) is larger than the
-   sitewide .section-heading__title clamp (max 36px) - scoped override,
-   same pattern as .rtm-feature-section's own heading-size override. */
-.jc-heading .section-heading__title {
-  font-size: 50px;
-}
-
 .jc-table-wrap {
   margin-bottom: 1.5rem;
 }
@@ -6674,6 +6667,8 @@ a.notice-card:hover {
   background-color: #e2e2e2;
   color: var(--color-navy);
   font-weight: 500;
+  font-size: 14px;
+  white-space: nowrap;
 }
 
 .jc-table tbody td {
