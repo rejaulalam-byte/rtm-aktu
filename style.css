@@ -6762,19 +6762,14 @@ a.notice-card:hover {
 }
 
 /* pages/job-circular-details.html (Figma node 2141:189) */
-.jcd-topbar {
-  position: relative;
-}
-
 .jcd-topbar__heading {
-  margin-bottom: 2rem;
+  margin-bottom: 50px;
 }
 
 .jcd-viewall {
-  position: absolute;
-  top: 0;
-  right: 0;
-  display: inline-flex;
+  display: flex;
+  width: fit-content;
+  margin: 0 0 10px auto;
   align-items: center;
   gap: 0.35rem;
   color: var(--color-navy);
@@ -6877,10 +6872,6 @@ a.notice-card:hover {
 }
 
 @media (max-width: 640px) {
-  .jcd-topbar__heading {
-    margin-bottom: 3rem;
-  }
-
   .jcd-infobar {
     flex-direction: column;
     align-items: flex-start;
