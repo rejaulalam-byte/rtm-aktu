@@ -6763,7 +6763,7 @@ a.notice-card:hover {
 
 /* pages/job-circular-details.html (Figma node 2141:189) */
 .jcd-topbar__heading {
-  margin-bottom: 50px;
+  margin-bottom: 40px;
 }
 
 .jcd-viewall {
@@ -6846,6 +6846,11 @@ a.notice-card:hover {
 .jcd-infobar__label {
   color: var(--color-navy);
   font-weight: 600;
+}
+
+.jcd-infobar__published-in {
+  position: relative;
+  right: 15px;
 }
 
 /* .jcd-infobar already has 1.5rem (24px) right padding, so this
