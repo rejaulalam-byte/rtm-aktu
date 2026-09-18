@@ -269,6 +269,10 @@
     // Renders #jobCircularTableBody from jobCircularData (pages/job-circular/job-circular-data.js).
     // Sorted by createdOrder descending so the newest circular always shows
     // first, while each row keeps the permanent slNo it was created with.
+    //
+    // Only the "Name of the Position" cell links through to the record's
+    // detail page - the row itself is not clickable (revised from the
+    // earlier whole-row click-through).
     document.addEventListener('DOMContentLoaded', () => {
       const tbody = document.getElementById('jobCircularTableBody');
       if (!tbody || typeof jobCircularData === 'undefined') return;
@@ -278,9 +282,9 @@
         .sort((a, b) => b.createdOrder - a.createdOrder);
 
       tbody.innerHTML = records.map((item) => `
-        <tr class="jc-table__row" data-href="job-circular-details.html?id=${item.id}" tabindex="0" role="link">
+        <tr>
           <td class="jc-table__num"><span class="jc-table__badge">${item.slNo}</span></td>
-          <td>${item.position}</td>
+          <td><a href="job-circular-details.html?id=${item.id}" class="jc-table__link">${item.position}</a></td>
           <td>${item.positionCount}</td>
           <td>${item.experience}</td>
           <td class="jc-table__closing">${item.closingDateDisplay}</td>
@@ -289,14 +293,6 @@
           <td>${item.status}</td>
         </tr>
       `).join('');
-
-      tbody.querySelectorAll('.jc-table__row').forEach((row) => {
-        const go = () => { window.location.href = row.dataset.href; };
-        row.addEventListener('click', go);
-        row.addEventListener('keydown', (e) => {
-          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); }
-        });
-      });
     });
   </script>
 </body>

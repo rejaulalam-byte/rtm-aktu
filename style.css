@@ -6681,16 +6681,18 @@ a.notice-card:hover {
   font-weight: 400;
 }
 
-.jc-table__row {
-  cursor: pointer;
-}
-
-.jc-table__row:hover td {
-  background-color: #f7f7f7;
-}
-
 .jc-table__num {
   text-align: center;
+}
+
+.jc-table__link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.jc-table__link:hover {
+  color: var(--color-gold);
+  text-decoration: underline;
 }
 
 .jc-table__badge {
