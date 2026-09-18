@@ -6631,3 +6631,111 @@ a.notice-card:hover {
     height: 44px;
   }
 }
+
+/* ==========================================================================
+   32. Job Circular Page (pages/job-circular.html)
+   ========================================================================== */
+
+/* Figma spec for this page's own section heading (50px) is larger than the
+   sitewide .section-heading__title clamp (max 36px) - scoped override,
+   same pattern as .rtm-feature-section's own heading-size override. */
+.jc-heading .section-heading__title {
+  font-size: 50px;
+}
+
+.jc-table-wrap {
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 900px) {
+  .jc-table-wrap {
+    overflow-x: auto;
+  }
+}
+
+.jc-table {
+  width: 100%;
+  min-width: 900px;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.jc-table th,
+.jc-table td {
+  border: 1px solid #bebebe;
+  padding: 1rem 1.25rem;
+  text-align: left;
+  vertical-align: middle;
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+}
+
+.jc-table thead th {
+  background-color: #e2e2e2;
+  color: var(--color-navy);
+  font-weight: 500;
+}
+
+.jc-table tbody td {
+  background-color: var(--color-white);
+  font-weight: 400;
+}
+
+.jc-table__row {
+  cursor: pointer;
+}
+
+.jc-table__row:hover td {
+  background-color: #f7f7f7;
+}
+
+.jc-table__num {
+  text-align: center;
+}
+
+.jc-table__badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-color: #d7d7d7;
+  color: var(--color-navy);
+  font-weight: 500;
+}
+
+.jc-table__closing {
+  color: #ff2525;
+  font-weight: 700;
+}
+
+.jc-table-note {
+  text-align: right;
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+  margin-bottom: 0;
+}
+
+/* pages/job-circular-details.html - stub only, no real design given yet */
+.jcd-fields {
+  margin: 0 0 2rem;
+}
+
+.jcd-fields__row {
+  display: flex;
+  gap: 0.75rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #e2e2e2;
+}
+
+.jcd-fields__row dt {
+  width: 180px;
+  flex-shrink: 0;
+  font-weight: 600;
+  color: var(--color-navy);
+}
+
+.jcd-fields__row dd {
+  margin: 0;
+}
