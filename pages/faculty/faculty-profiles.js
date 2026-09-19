@@ -1827,4 +1827,136 @@ const facultyProfiles = {
       ],
     },
   },
+  'nusrat-rikza': {
+    name: 'Nusrat Rikza, Ph.D',
+    role: 'Associate Professor and Head',
+    department: 'Department of Education',
+    photo: '../../images/faculty-members/nusrat-rikza.png',
+    address: [
+      'RTM Al-Kabir Technical University (RTM-AKTU)',
+      'Campus: RTM Point, East Shahi Eidgah, TB Gate, Sylhet-3100, Bangladesh',
+    ],
+    phone: '01673635510',
+    phoneHref: 'tel:+8801673635510',
+    email: 'rikza@rtm-aktu.ac.bd',
+    bio: [
+      "Dr. Nusrat Rikza is an academic professional at RTM Al-Kabir Technical University (RTM-AKTU) with demonstrated commitment to excellence in teaching, research, and academic leadership. She is currently serving as an Associate Professor and Head of the Department of Education at RTM Al-Kabir Technical University (RTM-AKTU). Prior to this role, she worked as an Assistant Professor and Lecturer in the Department of English at North East University Bangladesh, Sylhet.",
+      "With extensive experience in undergraduate and graduate teaching, research supervision, and academic administration, she has also contributed to curriculum development following Outcome-Based Education (OBE) guidelines.",
+      "Dr. Rikza completed her PhD in English from Islamic University, Kushtia. She also obtained her Bachelor of Arts (BA) and Master of Arts (MA) degree from the prestigious Shahjalal University of Science & Technology (SUST). Her research and publications mainly focus on postcolonial literature, Marxist criticism, and socio-economic issues reflected in literary texts. With a unique blend of academic leadership, professional experience, and creative innovation, she continues to make meaningful contributions to the advancement of education and academic development.",
+    ],
+    tabs: {
+      'Research Interest': [
+        {
+          heading: 'Academic and Research Interests',
+          items: [
+            "Management Studies",
+            "Business Strategy",
+            "Organizational Development",
+            "Applied Research",
+            "Higher Education Pedagogy",
+          ],
+        },
+      ],
+      'Academic Information': [
+        {
+          items: [
+            "2017 – Present, PhD Student (Thesis Part), Department of English, Islamic University, Khustia, Bangladesh.",
+            "2005 - 2006 MA (Masters) in English, Department of English, Shahjalal University of Science and Technology, Sylhet, Bangladesh.",
+            "2001 - 2005 BA (Hons.) in English, Department of English, Shahjalal University of Science and Technology, Sylhet, Bangladesh.",
+            "2001 Higher Secondary Certificate (HSC), Humanities group, Sylhet Govt. Women's College, Sylhet, Bangladesh.",
+            "1999 Secondary School Certificate (SSC), Humanities group, Hazrat Shahporan High School, Sylhet, Bangladesh.",
+          ],
+        },
+      ],
+      'Courses Taught': [
+        {
+          lines: [
+            "Dr. Nusrat Rikza has taught a wide range of courses that integrate literary scholarship, critical theory, and advanced English language proficiency. Her teaching emphasizes analytical thinking, rhetorical awareness, and academic communication skills. The courses she has taught include:",
+          ],
+        },
+        {
+          items: [
+            "Postcolonial Literature – examining colonial and postcolonial narratives, identity, power, and resistance in global literary texts.",
+            "Literary Theory and Criticism – introducing key theoretical frameworks and critical approaches used in modern literary studies.",
+            "South Asian Literature – studying the cultural, historical, and political contexts shaping literary works from South Asia.",
+            "Research Methodology in Literary Studies – guiding students in academic research, scholarly writing, and methodological approaches to literary analysis.",
+            "Academic Writing – developing structured argumentation, scholarly style, and effective academic expression in English.",
+            "Discourse Analysis and Cultural Studies – analyzing language, ideology, and cultural representation in texts and social contexts.",
+            "English Language and Rhetorical Communication – focusing on persuasive writing, rhetorical strategies, and effective communication in academic and professional settings.",
+          ],
+        },
+      ],
+      'Areas of Expertise': [
+        {
+          items: [
+            "Business Administration",
+            "Teaching",
+            "Research",
+            "Academic Development",
+          ],
+        },
+        {
+          heading: 'Professional Engagement',
+          lines: [
+            "Contributes to academic and professional communities through research initiatives, collaborative projects, and institutional development activities.",
+          ],
+        },
+      ],
+      'Experience': [
+        {
+          items: [
+            "Assistant Professor [13/2022 – continue], Dept. of English, RTM Al-Kabir Technical University.",
+            "Assistant Professor [March 2016 – January 2022], Department of English, North East University Bangladesh, Sylhet.",
+            "Lecturer [March 2013 – March 2016], Department of English, North East University Bangladesh, Sylhet.",
+            "Convener [July 2018 – January 2022], Oppression against Women (Complaint Committee), North East University Bangladesh.",
+            "Assistant Proctor [September 2013 – November 2015], North East University Bangladesh.",
+            "Advisor [April 2013 – May 2018], NEUB Debating Society, North East University Bangladesh.",
+            "Advisor [April 2018 – January 2022], NEUB Photography Club, North East University Bangladesh.",
+            "Co-Advisor [January 2016 – January 2022], NEUB English Council, North East University Bangladesh.",
+            "Judge, 2019, English Olympiad, SUST.",
+          ],
+        },
+      ],
+      'Teaching and Academic Contributions': '',
+      'Publications & Research': [
+        {
+          lines: [
+            "PhD Title: Class Struggle and Socio-Political Evils in Anand's Novels: A Marxist Study",
+          ],
+        },
+        {
+          items: [
+            "Article published in NEUB Journal, North East University Bangladesh, 2017. Title: \"Identity as a means of Social Alienation in Mulk Raj Anand's Untouchable.\" Volume 2, Issue 1; ISSN 2415-1742.",
+            "Article published in Rabindra Journal, World Poet Rabindranath Institute of Agricultural Technology, Naogaon, 2016. Title: \"A Marxist Study of Mulk Raj Anand's Coolie.\" Volume 42, Issue 1; ISSN 2477-1714.",
+            "Article published in International Journal of Humanities and Social Science Invention (IJHSSI), India, 2016. Title: \"Homicides and Suicide are the effect of the Embryonic Psychology of the Protagonist in Things Fall Apart.\" Volume 5, Issue 1; ISSN: 2219-7714 (print), 2319-7722 (online).",
+            "Article published in International Journal of Humanities and Social Science Invention (IJHSSI), India, 2015. Title: \"Dr. Aziz is the Manifestation of E.M. Forster's Prejudice towards the British.\" Volume 4, Issue 9; ISSN: 2219-7714 (print), 2319-7722 (online).",
+          ],
+        },
+      ],
+      'Seminars/Workshops Participation': [
+        {
+          items: [
+            "Paper presenter Award in International Interdisciplinary Legal Studies Research Conference, University of Oxford, UK, March 2018.",
+            "Paper presenter Award in International Research Conference in NSU \"The River: Flows of Innovation and Exchange in the Global(i)zed English World,\" North South University, Bangladesh, 2016.",
+            "Workshop on \"Syllabus and Curriculum: Bloom's Taxonomy.\"",
+            "Training Workshop on \"Quality Assurance & Accreditation.\"",
+          ],
+        },
+      ],
+      'Contact': [
+        {
+          lines: [
+            "Nusrat Rikza, Ph.D",
+            "Associate Professor and Head",
+            "Department of Education",
+            "RTM Al-Kabir Technical University (RTM-AKTU)",
+            "Campus: RTM Point, East Shahi Eidgah, TB Gate, Sylhet-3100, Bangladesh",
+            "Email: <a href=\"mailto:rikza@rtm-aktu.ac.bd\">rikza@rtm-aktu.ac.bd</a>",
+            "Contact: <a href=\"tel:+8801673635510\">+8801673635510</a>",
+            "Website: <a href=\"https://www.rtm-aktu.ac.bd\" target=\"_blank\" rel=\"noopener\">www.rtm-aktu.ac.bd</a>",
+          ],
+        },
+      ],
+    },
+  },
 };

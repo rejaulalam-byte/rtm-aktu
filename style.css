@@ -7102,3 +7102,15 @@ a.notice-card:hover {
   color: #222;
   margin: 0;
 }
+
+/* Deans & Heads: a head's name links to their faculty profile - reads as
+   plain table text until hovered (same treatment as .jc-table__link). */
+.dh-table__name-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.dh-table__name-link:hover {
+  color: var(--color-gold);
+  text-decoration: underline;
+}

@@ -153,7 +153,7 @@ const facultyMembers = [
     name: 'Nusrat Rikza, Ph.D',
     role: 'Associate Professor and Head',
     department: 'Department of Education',
-    link: '#',
+    link: 'faculty/profile.html?id=nusrat-rikza',
   },
   {
     photo: '../images/faculty-members/rasa-iffat-helmi.png',
