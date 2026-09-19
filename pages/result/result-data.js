@@ -1,6 +1,7 @@
 // ------------------------------------------------------------------
 // Central data source for the Academic Result listing (pages/result.html)
-// and, later, the "View All Published RESULT" archive (pages/result-all.html).
+// and the "View All Published RESULT" archive (pages/result-all.html), both
+// rendered by pages/result/result-table.js.
 //
 // `slNo` is assigned once, in creation order, and never changes - it is
 // the record's permanent serial number. The table always renders
@@ -11,7 +12,7 @@
 // `examDateIso` (YYYY-MM-DD) drives the Year column and the month / month-
 // year search; `examDate` is the label shown in the Exam Date column.
 //
-// `resultSheet` is the record's downloadable result PDF. No files exist
+// `pdfUrl` is the record's result PDF (Program Name link + download icon). No files exist
 // yet, so it is '#' until each real sheet is added.
 // ------------------------------------------------------------------
 const resultData = {
@@ -23,7 +24,7 @@ const resultData = {
     program: 'BBA',
     examDate: '12 April',
     examDateIso: '2026-04-12',
-    resultSheet: '#',
+    pdfUrl: '#',
   },
   'cse-summer-2026': {
     slNo: 1,
@@ -33,6 +34,6 @@ const resultData = {
     program: 'CSE',
     examDate: '25 September',
     examDateIso: '2026-09-25',
-    resultSheet: '#',
+    pdfUrl: '#',
   },
 };

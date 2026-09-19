@@ -6992,3 +6992,15 @@ a.notice-card:hover {
 .rs-table__download:hover {
   color: var(--color-gold);
 }
+
+/* Program Name cell links to the record's result PDF - reads as plain
+   table text until hovered (same treatment as .jc-table__link). */
+.rs-table__link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.rs-table__link:hover {
+  color: var(--color-gold);
+  text-decoration: underline;
+}
