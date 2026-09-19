@@ -1959,4 +1959,112 @@ const facultyProfiles = {
       ],
     },
   },
+  'rasa-iffat-helmi': {
+    name: 'Rasa Iffat Helmi',
+    role: 'Assistant Professor',
+    department: 'Department of Computer Science and Engineering (CSE)',
+    photo: '../../images/faculty-members/rasa-iffat-helmi.png',
+    address: [
+      'RTM Al-Kabir Technical University (RTM-AKTU)',
+      'Campus: RTM Point, East Shahi Eidgah, TB Gate, Sylhet-3100, Bangladesh',
+    ],
+    phone: '01537331691',
+    phoneHref: 'tel:+8801537331691',
+    email: 'rasa@rtm-aktu.ac.bd',
+    bio: [
+      "Rasa Iffat Helmi serves as an Assistant Professor in the Department of Computer Science & Engineering (CSE) at RTM Al-Kabir Technical University (RTM-AKTU). Prior to her current role, she was a Lecturer in the Department of Computer Science & Engineering at the University of Engineering & Management (UEM); earlier, as a Teaching Assistant at the Institute of Engineering & Management (IEM), Kolkata, India. She also worked as a Research Assistant at Duksung Women's University, Seoul, South Korea. She secured 2nd rank as the coach of Team Dreaders, which received the Best Popular Team award at the ICPC Asia Dhaka Regional Competition 2023, and was honored with the Best New Faculty Member Award in 2020 from the IEM-UEM Group. Her earlier accomplishments include becoming the 1st Runner-Up in the ACM-ICPC International Programming Contest in 2018. In addition, she has actively contributed as a workshop conductor, leading a three-day remote workshop on Omnet++ in April 2025 at Techno India University and a five-day workshop on Graphics Design in 2023 at RTM Al-Kabir Technical University, thereby reinforcing her commitment to academic excellence and professional development.",
+      "Rasa holds a Master of Technology in Computer Science and Engineering from the Maulana Abul Kalam Azad University of Technology (MAKAUT), West Bengal, India.",
+      "Her research specializes in computer networks, particularly ad hoc networks, wireless communication systems, and VANET. She is the primary author of five SCOPUS-indexed international journal publications. She has taken part in several international conferences, seminars, and training programs organized by BAC, WIPO, NITTR, Springer, CDAC, the Computer Society of India, CodeChef, and other professional bodies. She also served as a reviewer for the UEM Conference in 2019.",
+    ],
+    tabs: {
+      'Research Interest': [
+        {
+          lines: [
+            "Research interests are broad and encompass network measurement, the design of new network architectures and network protocols, the design and implementation of networked applications and systems, and network performance analysis. Application domains of interest range from data communication to ad-hoc network to peer-to-peer systems.",
+          ],
+        },
+      ],
+      'Academic Information': [
+        {
+          items: [
+            "Master of Technology: Maulana Abul Kalam Azad University of Technology, West Bengal, India.",
+            "Bachelor in Engineering: Metropolitan University, Sylhet, Bangladesh.",
+            "Higher Secondary School Certificate (HSC): Sylhet Govt. Women's College, Sylhet, Bangladesh.",
+            "Secondary School Certificate (SSC): Blue Bird School & College, Sylhet, Bangladesh.",
+          ],
+        },
+      ],
+      'Courses Taught': [
+        {
+          items: [
+            "Advanced Engineering Mathematics",
+            "Advanced Operating System",
+            "Advanced Computer Architecture",
+            "Advanced Algorithms",
+            "Computer Graphics & Multimedia",
+            "Advanced Database Management System",
+            "Advanced Computer Network & Security",
+            "Theory of Computation",
+            "Soft Computing",
+            "Image Processing",
+            "Project Management & Entrepreneurship",
+            "Compiler Construction",
+          ],
+        },
+      ],
+      'Areas of Expertise': '',
+      'Experience': [
+        {
+          items: [
+            "Lecturer, RTM Al-Kabir Technical University, August 01, 2022 to Present.",
+            "Teaching Assistant, Institute of Engineering & Management, August 01, 2018 to Dec 30, 2021.",
+            "Research Assistant, Harvey E. Schmidt (Duksung Women's University), September 01, 2014 to July 31, 2018.",
+          ],
+        },
+      ],
+      'Teaching and Academic Contributions': '',
+      'Publications & Research': [
+        {
+          heading: 'Research Areas',
+          items: [
+            "Vehicular Ad-hoc Network (Parameters of VANET).",
+            "Mobile Communication (Wireless Communication).",
+          ],
+        },
+        {
+          heading: 'Publications',
+          items: [
+            "\"Analysis and Improvement of Performance Criteria in Vehicular Communication,\" International Journal of Scientific & Engineering Research, Volume 13, Issue 5, May 2022, Pp: 656-663, ISSN 2229-5518.",
+            "\"Performance Analysis and Improvement of Performance Criteria in Mobile Communication,\" International Journal of Scientific & Engineering Research, Volume 6, Issue 1, January 2015, Pp: 156-163, ISSN 2229-5518.",
+          ],
+        },
+      ],
+      'Seminars/Workshops Participation': [
+        {
+          items: [
+            "International Conference on Data, Analytics, Visualization: Uses and Abuses – 2020.",
+            "International Conference on Networking – IEMCON UENCON 2019.",
+            "Workshop on Machine and Deep Learning with Python – 2019.",
+            "International Conference on Artificial Intelligence – GLOBAL AI CONGRESS 2019.",
+            "International Conference on Emerging Technology in Modelling and Graphics – 2018.",
+            "Workshop on Image Processing using MATLAB – IEMGRAPH 2018.",
+          ],
+        },
+      ],
+      'Contact': [
+        {
+          lines: [
+            "Rasa Iffat Helmi",
+            "Assistant Professor",
+            "Department of Computer Science and Engineering (CSE)",
+            "RTM Al-Kabir Technical University (RTM-AKTU)",
+            "Campus: RTM Point, East Shahi Eidgah, TB Gate, Sylhet-3100, Bangladesh",
+            "Email: <a href=\"mailto:rasa@rtm-aktu.ac.bd\">rasa@rtm-aktu.ac.bd</a>",
+            "Contact: <a href=\"tel:+8801537331691\">+8801537331691</a>",
+            "Website: <a href=\"https://www.rtm-aktu.ac.bd\" target=\"_blank\" rel=\"noopener\">www.rtm-aktu.ac.bd</a>",
+          ],
+        },
+      ],
+    },
+  },
 };

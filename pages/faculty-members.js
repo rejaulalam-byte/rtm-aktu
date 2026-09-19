@@ -160,7 +160,7 @@ const facultyMembers = [
     name: 'Rasa Iffat Helmi',
     role: 'Assistant Professor',
     department: 'Department of Computer Science and Engineering (CSE)',
-    link: '#',
+    link: 'faculty/profile.html?id=rasa-iffat-helmi',
   },
   {
     photo: '../images/faculty-members/sam-thahmid.png',
