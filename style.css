@@ -7048,3 +7048,41 @@ a.notice-card:hover {
     margin-right: 0;
   }
 }
+
+/* ==========================================================================
+   35. Alumni Page (pages/alumni.html)
+   Full-width wide photo under the heading, then a right-floated portrait
+   that the following paragraphs wrap around (same float-wrap technique as
+   .library-body / .news-detail-body: the photo comes BEFORE the text it
+   should sit beside, and ::after clears so nothing rides up beside it).
+   ========================================================================== */
+.alumni-banner-photo {
+  width: 100%;
+  aspect-ratio: 1391 / 582;
+  border-radius: var(--radius-md);
+  margin-bottom: 2rem;
+}
+
+.alumni-body::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.alumni-photo {
+  float: right;
+  width: 33%;
+  max-width: 100%;
+  aspect-ratio: 468 / 536;
+  border-radius: var(--radius-md);
+  margin-left: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 760px) {
+  .alumni-photo {
+    float: none;
+    width: 100%;
+    margin-left: 0;
+  }
+}
