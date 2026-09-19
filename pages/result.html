@@ -329,6 +329,7 @@
         getSearchText: (item) => item.program,
         searchPlaceholder: 'Search by Month, Year, Semester, Program',
         pageSizeLabel: { before: 'Show', after: 'Per Page' },
+        pageSizeOptions: [15, 25, 50, { value: Infinity, label: 'All' }],
         emptyMessage: 'No results match your search.',
         renderEmpty: (message) => `<tr><td colspan="6" class="listing-empty">${message}</td></tr>`,
         renderItem: (item) => `

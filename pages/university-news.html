@@ -302,6 +302,7 @@
         paginationEl,
         items,
         getDate: (item) => item.date,
+        pageSizeOptions: [15, 25, 50, { value: Infinity, label: 'All' }],
         emptyMessage: 'No news items match your search.',
         renderItem: (item, index) => {
           const number = String(index + 1).padStart(2, '0');
