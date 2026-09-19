@@ -7004,3 +7004,47 @@ a.notice-card:hover {
   color: var(--color-gold);
   text-decoration: underline;
 }
+
+/* ==========================================================================
+   34. Library Page (pages/library.html)
+   Same float-wrap technique as .news-detail-body (section 23): each photo
+   comes BEFORE the paragraph it should sit beside in the markup and floats
+   out, so the following paragraphs flow around it and return to full width
+   once they clear its bottom. ::after clears the floats so the section
+   below never rides up beside a tall photo.
+   ========================================================================== */
+.library-body::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.library-photo {
+  max-width: 100%;
+  margin-bottom: 1.5rem;
+  border-radius: var(--radius-md);
+}
+
+.library-photo--right {
+  float: right;
+  width: 36%;
+  aspect-ratio: 403 / 605;
+  margin-left: 2rem;
+}
+
+.library-photo--left {
+  float: left;
+  width: 38%;
+  aspect-ratio: 420 / 280;
+  margin-right: 2rem;
+}
+
+@media (max-width: 760px) {
+  .library-photo--right,
+  .library-photo--left {
+    float: none;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
