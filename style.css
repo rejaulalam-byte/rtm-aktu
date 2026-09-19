@@ -7114,3 +7114,14 @@ a.notice-card:hover {
   color: var(--color-gold);
   text-decoration: underline;
 }
+
+/* Opt-in numbered variant of .text-section__list (faculty profile tabs with
+   long numbered lists, e.g. conference papers): decimal markers, with a wider
+   left margin so two-digit numbers don't hang outside the panel. */
+.text-section__list--ordered {
+  margin-left: 1.8rem;
+}
+
+.text-section__list--ordered li {
+  list-style: decimal;
+}

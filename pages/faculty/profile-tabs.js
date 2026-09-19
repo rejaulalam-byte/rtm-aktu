@@ -49,7 +49,10 @@ function renderProfileTabBody(content) {
         : '';
       if (section.items) {
         const items = section.items.map((item) => `<li>${item}</li>`).join('');
-        return `${heading}<ul class="text-section__list">${items}</ul>`;
+        // `ordered: true` (opt-in) numbers the items, e.g. long publication lists.
+        return section.ordered
+          ? `${heading}<ol class="text-section__list text-section__list--ordered">${items}</ol>`
+          : `${heading}<ul class="text-section__list">${items}</ul>`;
       }
       if (section.lines) {
         const lines = section.lines.map((line) => `<p class="fpr-tabs__panel-text">${line}</p>`).join('');

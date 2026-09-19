@@ -174,7 +174,7 @@ const facultyMembers = [
     name: 'Sayed Shifat Ahmed',
     role: 'Lecturer',
     department: 'Department of Electrical and Electronic Engineering (EEE)',
-    link: '#',
+    link: 'faculty/profile.html?id=sayed-shifat-ahmed',
   },
   {
     photo: '../images/faculty-members/shahnaz-jasmeen-keya.png',

@@ -2067,4 +2067,155 @@ const facultyProfiles = {
       ],
     },
   },
+  'sayed-shifat-ahmed': {
+    name: 'Sayed Shifat Ahmed',
+    role: 'Lecturer',
+    department: 'Department of Electrical and Electronic Engineering (EEE)',
+    photo: '../../images/faculty-members/sayed-shifat-ahmed.png',
+    address: [
+      'RTM Al-Kabir Technical University (RTM-AKTU)',
+      'Campus: RTM Point, East Shahi Eidgah, TB Gate, Sylhet-3100, Bangladesh',
+    ],
+    phone: '01790443944',
+    phoneHref: 'tel:+8801790443944',
+    email: 'shifat@rtm-aktu.ac.bd',
+    bio: [
+      "Sayed Shifat Ahmed is an academic professional at RTM Al-Kabir Technical University (RTM-AKTU) with demonstrated commitment to excellence in teaching and research. Currently he holds the position of Lecturer in the Department of Electrical and Electronic Engineering at RTM Al-Kabir Technical University (RTM-AKTU). During his academic journey Mr. Sayed Shifat Ahmed has gained extensive project and research experience with several publications in reputable international conferences and journals. He has a special interest in teaching and conducting research, and also an active member of the IEEE Antennas and Propagation Society (AP-S), IEEE Women in Engineering (WIE) and IEEE Young Professionals.",
+      "He completed his M.Sc. in Electrical and Electronic Engineering from Rajshahi University of Engineering and Technology (RUET). Earlier, he earned his Bachelor of Science degree from Pabna University of Science and Technology (PUST) and achieved 1st class 1st position in the department of Electrical, Electronic and Communication Engineering and also nominated as the \"Dean's Award 2024\".",
+      "His core area of research is Microwave Technology and Microcontroller-based embedded systems. He has a strong ability to generate a wide range of intriguing ideas to address challenges and is capable of putting his ideas into reality individually or in a team. His research interests also includes biomedical engineering, photonic metamaterial absorbers, microcontroller-based embedded systems, and Internet of Things (IoT) technologies.",
+    ],
+    tabs: {
+      'Research Interest': [
+        {
+          items: [
+            "Antenna design & wave propagation",
+            "Biomedical engineering",
+            "Wireless communication",
+            "Photonics",
+            "THz Meta-absorber",
+            "Microcontroller & IoT embedded applications",
+          ],
+        },
+      ],
+      'Academic Information': [
+        {
+          items: [
+            "Master of Science in Electrical and Electronic Engineering, Ongoing, Rajshahi University of Engineering and Technology, Rajshahi.",
+            "Bachelor of Science in Electrical, Electronic and Communication Engineering, 2020, Pabna University of Science and Technology, Pabna (1st class 1st position with Dean's Award).",
+            "Higher Secondary School Certificate, Science, 2016, Rajshahi Govt. City College, Rajshahi.",
+            "Secondary School Certificate, Science, 2014, Shiroil Govt. High School, Rajshahi.",
+          ],
+        },
+      ],
+      'Courses Taught': [
+        {
+          items: [
+            "Physics",
+            "Electronics I",
+            "Electronics II",
+            "Electronic Devices and Circuits",
+            "Power Plant Engineering",
+            "Control Systems",
+            "Continuous Signals and Linear Systems",
+            "Telecommunication Engineering",
+            "Electromagnetic Fields and Waves",
+          ],
+        },
+      ],
+      'Areas of Expertise': '',
+      'Experience': [
+        {
+          items: [
+            "Lecturer, Department of EEE, RTM Al-Kabir Technical University, Sylhet, from 1st July 2024 to till now.",
+          ],
+        },
+      ],
+      'Teaching and Academic Contributions': '',
+      'Publications & Research': [
+        {
+          heading: 'International Journal',
+          ordered: true,
+          items: [
+            "M. M. A. Mia, S. S. Ahmed, Md. R. Amin, and Md. E. Ali, \"Triple-Band Terahertz Metamaterial Absorber for Label-Free Detection of Industrial Contaminants with Machine Learning Driven Technique,\" Optical and Quantum Electronics. (In review)",
+            "M. M. A. Mia, Md. R. Amin, S. S. Ahmed and Md. E. Ali, \"Machine Learning Driven Optimization of a Triple-Band Terahertz Metamaterial Perfect Absorber for Biomedical Applications and Biomarker Detection,\" Advanced Theory and Simulations. (In review)",
+            "S.S. Ahmed, L.C. Paul, T. Rani, S. Gupta, M.A. Haque, S. Arefin, J. Rai, A. Hamdan, \"Wideband Compact MIMO Antenna with High Isolation for WiFi-5/6 GHz, WLAN, C-Band, and IoT Applications,\" Nature, Scientific Reports (Accepted)",
+            "M. M. A. Mia, S. S. Ahmed, Md. R. Amin, and Md. E. Ali, \"Highly Sensitive Triple-Band Terahertz Perfect Metamaterial Absorber for Sensing Applications in Organic Substance,\" Physica Scripta, May 2025, doi: 10.1088/1402-4896/adda9c.",
+            "L.C. Paul, S.S. Ahmed, T. Rani, M.A. Haque, T.K. Roy, M.N. Hossain and M.A. Hossain, \"A Smart Medicine Reminder Kit with Mobile Phone Calls and Some Health Monitoring Features for Senior Citizens,\" Heliyon, vol. 10, no. 4, p. e26308, Feb. 2024, impact factor: 4.00, doi: 10.1016/j.heliyon.2024.e26308.",
+          ],
+        },
+        {
+          heading: 'International Conference',
+          ordered: true,
+          items: [
+            "L.C. Paul, S.S. Ahmed, T. Rani, S.A. Shezan, M.A. Haque and A.H Alenezi, \"Miniaturized Triple-Wideband Double-Overlapped e-Shaped Antenna with Parasitic Elements for High-Speed THz Wireless Indoor Communications,\" 13th International Conference on Electrical and Electronics Engineering (ICEEE 2026), Antalya, Turkey. (In review)",
+            "S.S. Ahmed, M.M.A. Mia, S.M.T. Ahmed, M.M. Hassan, M.S. Hossain, M.A.H. Rafi, \"Dual-Band Terahertz Metamaterial Absorber with Near-Unity Absorption for Explosive Identification,\" 6th IEEE International Conference on Telecommunications and Photonics (ICTP), BUET, Dhaka, Bangladesh. (Presented)",
+            "S.S. Ahmed, T. Rani, L.C. Paul, M.S. Pervez, A.Z. Abedin, A.K. Sarker, \"A Miniaturized Low-SAR Antenna for Breast Tumor Diagnosis,\" 6th IEEE International Conference on Telecommunications and Photonics (ICTP), BUET, Dhaka, Bangladesh. (Presented)",
+            "S.M.T. Ahmed, S.S. Ahmed, M. A. Hossain, M. M. Hassan, M.S. Hossain, S. Tabassum, \"A Compact High Gain Dual Band Square Slotted Octagonal Patch Antenna for X, Ku and Upper 5G Bands,\" 6th International Conference on Electrical Information and Communication Technology (EICT), KUET, Khulna-9203, Bangladesh. (Presented)",
+            "S.S. Ahmed, S.M.T. Ahmed, M. A. Hossain, M. M. Hassan, M.S. Hossain, S. Tabassum, \"An Efficient Miniaturized Tri-band THz Antenna for Future 6G Systems and Beyond,\" 11th IEEE International Women in Engineering Conference on Electrical and Computer Engineering 2025 (WIECON-ECE), Cox's Bazar, Bangladesh. (Presented)",
+            "S.S. Ahmed, I.H. Sayem, M.T.A. Juwel, S. Ferdaus, M.A.H. Siam, S. Rahman, M.R. Amin, \"AgriCall: An IoT-Integrated GSM-Based Irrigation Control System for Sustainable Agriculture,\" 2nd Undergraduate Conference on Intelligent Computing and Systems (UCICS), Varendra University, Rajshahi, Bangladesh. (Presented)",
+            "S.S. Ahmed, S.M.T. Ahmed, M. A. Hossain, M. M. Hassan, M.S. Hossain, S. Tabassum, \"A Novel Modified Triangular Shaped Microstrip Patch Antenna for C-band Applications in Wireless and Satellite Communication,\" IEEE International Conference on Signal Processing, Information, Communication and Systems 2025 (SPICSCON), Rajshahi University, Rajshahi, Bangladesh. (Presented)",
+            "M.N. Hossain, S.S. Ahmed, M.S. Hossain, T. Shimamura, \"Design and Performance Analysis of Slotted Patch Antenna for Sub-6 GHz 5G Communications,\" IEEE International Conference on Signal Processing, Information, Communication and Systems 2025 (SPICSCON), Rajshahi University, Rajshahi, Bangladesh. (Presented)",
+            "M. M. A. Mia, S. S. Ahmed, Md. R. Amin, and Md. E. Ali, \"Highly Sensitive Multiband Terahertz Meta-Absorber with Concentric Resonators for Enhancing Virological and Biomolecular Sensing,\" 16th International IEEE Conference on Computing, Communication and Networking Technologies (ICCCNT), Indore, Madhya Pradesh, India. (Presented)",
+            "L.C. Paul, N. Rashid, T. Rani, M.A. Haque, S.S. Ahmed and S. Khatun, \"A Dual-band 10-element Antenna with Good Gain and Efficiency for ISM and Industrial Automation Applications,\" 16th International IEEE Conference on Computing, Communication and Networking Technologies (ICCCNT), Indore, Madhya Pradesh, India. (Presented)",
+            "M. M. A. Mia, S. S. Ahmed, M. R. Amin, M. E. Ali and J. N. Novera, \"Triple-Band Terahertz Metamaterial Ultra-Sensitive Absorber for Multi-Class Cancer Cell Detection,\" 2025 International Conference on Quantum Photonics, Artificial Intelligence, and Networking (QPAIN), Rangpur, Bangladesh, 2025, pp. 1-6, doi: 10.1109/QPAIN66474.2025.11172193.",
+            "M. R. Biswas, T. Rani, L. C. Paul, S. S. Ahmed, M. A. Haque and P. M. Ghosh, \"IoT and Mobile App-Based Real-Time Remote E-Health Care System for Rural Communities in Bangladesh,\" 2025 International Conference on Quantum Photonics, Artificial Intelligence, and Networking (QPAIN), Rangpur, Bangladesh, 2025, pp. 1-6, doi: 10.1109/QPAIN66474.2025.11171985.",
+            "M. A. Hossain, L. C. Paul, T. Rani, S. S. Ahmed, M. A. Haque and J. K. Rai, \"IoT-Based Smart Waste Management System Using NodeMCU and Cloud Computing: A Case Study at PUST,\" 2025 International Conference on Quantum Photonics, Artificial Intelligence, and Networking (QPAIN), Rangpur, Bangladesh, 2025, pp. 1-6, doi: 10.1109/QPAIN66474.2025.11171905.",
+            "M. H. Islam, T. Rani, L. C. Paul, S. S. Ahmed, M. A. Haque and M. S. Hosain, \"An IoT-Based Smart Adaptive Highway Management System for Sound Pollution Reduction and Traffic Control,\" 2025 International Conference on Quantum Photonics, Artificial Intelligence, and Networking (QPAIN), Rangpur, Bangladesh, 2025, pp. 1-6, doi: 10.1109/QPAIN66474.2025.11172235.",
+            "L. C. Paul, S. S. Ahmed, T. Rani, S. Arefin, M.A. Haque, A. Hamdan, \"A Super Wideband Miniaturized THz Antenna with a Slotted Partial Ground Plane for Ultra-High Speed 6G Communication Systems,\" 2025 IEEE International Workshop on Electromagnetics: Applications and Student Innovation Competition (iWEM), Kowloon, Hong Kong. (Presented)",
+            "A. Haque, H. R. Shipu, M. E. Ali, J. N. Novera, F. Mayoa, S. S. Ahmed, M. R. Amin, \"A Novel Hybrid Plasmonic Waveguide for Nano-Scale Light Confinement and Long Propagation Range,\" 2025 International Conference on Electrical, Computer and Communication Engineering (ECCE), Chittagong, Bangladesh, 2025, pp. 1-5, doi: 10.1109/ECCE64574.2025.11013926.",
+            "N. Rashid, T. Rani, L. C. Paul, S. C. Das, M. A. Haque, S. S. Ahmed, \"Low-profile Wideband 1×2 Array Antenna for IEEE 802.11a/h/j/n/ac/ax WLAN Applications,\" 11th Int'l Conf. on Informatics, Electronics & Vision, London, UK, pp. 1-6, 26-29 Oct. 2023.",
+            "M. R. Kabir, S. S. Ahmed, L. C. Paul, T. Rani and M. Karaaslan, \"Development of an Intravenous Fluid Monitoring, Warning, and Reverse Flow Blocking System,\" 2022 IEEE International Women in Engineering (WIE) Conference on Electrical and Computer Engineering (WIECON-ECE), Naya Raipur, India, 2022, pp. 89-94, doi: 10.1109/WIECON-ECE57977.2022.10150612.",
+            "L.C. Paul, S. S. Ahmed and K. K. Karmakar, \"A Smart Multi-User Wireless Nurse Calling System and E-notice Board for Health Care Management,\" 3rd Int'l Conf. on Trends in Computational and Cognitive Engineering, Malaysia, pp. 421-431, 21-22 October, Lecture Notes in Networks and Systems, vol. 348, Springer, 2021, doi: 10.1007/978-981-16-7597-3_35.",
+            "M.N. Hossain, S.S. Ahmed, M.S. Hossain, T. Shimamura, \"Design of a High-Efficiency Compact Four-Element Slotted MIMO Antenna for X-Band Wireless Communications,\" 12th International Conference on Computing and Artificial Intelligence (ICCAI 2026), Okinawa, Japan. (In review)",
+            "M.N. Hossain, M.S. Hossain, S.S. Ahmed, T. Shimamura, \"Isolation-Enhanced Compact Four element MIMO Antenna for 5G NR Millimeter-Wave and D2D Applications,\" 12th International Conference on Computing and Artificial Intelligence (ICCAI 2026), Okinawa, Japan. (In review)",
+            "S.S. Ahmed, T. Rani, L.C. Paul, M.R Kabir, A.Z. Abadin, A.K. Sarkar, \"A Miniaturized WBAN-Compatible Parasitic Patch Antenna for Non-Invasive Brain Tumor Localization,\" 2nd International Conference on Quantum Photonics, Artificial Intelligence, and Networking (QPAIN), Chittagong, Bangladesh, 2026. (In review)",
+            "S.S. Ahmed, L.C. Paul, M.T. Ahmed, A.Z. Abadin, M. A. Hossain, \"A DGS-Based Symmetrical Patch THz Antenna for IoT and Future 6G Applications,\" 2nd International Conference on Quantum Photonics, Artificial Intelligence, and Networking (QPAIN), Chittagong, Bangladesh, 2026. (In review)",
+            "S.S. Ahmed, M.N. Hossain, M.T. Ahmed, M.M.A. Mia, M.R. Amin, \"A Compact Wideband Slot-Modified Microstrip Antenna for WiFi-6/6E/7 and Emerging 6G WLAN Systems,\" 2nd International Conference on Quantum Photonics, Artificial Intelligence, and Networking (QPAIN), Chittagong, Bangladesh, 2026. (In review)",
+            "N. Rashid, L.C. Paul, M.R. Kabir, S.S. Ahmed, P.M. Ghosh, \"Compact and Efficient Antenna with Sharp Multi-Notch Loaded Partial Ground Plane for WiFi, WLAN, and Sub-6 GHz 5G NR Bands,\" 2026 IEEE International Symposium on Dynamic Spectrum Access Networks (DySPAN), Washington, DC, USA. (In review)",
+            "S.S. Ahmed, A.K. Sarkar, \"Development of a Compact Integrated Antenna System for Early-Stage Breast Tumor Detection Using Microwave Technology,\" 2nd International Conference on Quantum Photonics, Artificial Intelligence, and Networking (QPAIN), Chittagong, Bangladesh, 2026. (In review)",
+            "S.M.T. Ahmed, S.S. Ahmed, M. M. Hassan, M. A. Hossain, M.S. Hossain, N. Sanjana, \"A Compact Dual Band Octagonal Shaped Patch Antenna for Ku band and 5G Applications,\" IEEE International Conference on Microwave, Antennas, RF and Sensors (MARSCON) 2026. (In review)",
+            "M.N. Hossain, S.S. Ahmed, M.S. Hossain, T. Shimamura, \"Performance Analysis of a Four-element Triple-Band MIMO Antenna for 5G mmWave and Ka/Q-Band Satellite Communication,\" 2026 IEEE International Symposium on Dynamic Spectrum Access Networks (DySPAN), Washington, DC, USA. (In review)",
+            "M.N. Hossain, S.S. Ahmed, M.S. Hossain, T. Shimamura, \"Performance Analysis of Compact Size Slotted Microstrip Patch Antenna for X-band Applications,\" 2026 IEEE International Symposium on Dynamic Spectrum Access Networks (DySPAN), Washington, DC, USA. (In review)",
+          ],
+        },
+        {
+          heading: 'Funding & Projects',
+          items: [
+            "\"Advancing Clean Energy Cooking Technologies in Bangladesh: Development of a Hybrid Parabolic Solar Cooker for Rural Off-Grid and Coastal Community Applications,\" Under National Academy for Planning and Development (NAPD) for FY 2025-26 (Submitted)",
+            "\"Development of an AI-Driven Hybrid for High Resolution Rainfall Forecasting in Bangladesh: Application in Agriculture, Disaster Risk Reduction and Climate Resilience,\" Under National Academy for Planning and Development (NAPD) for FY 2025-26 (Submitted)",
+            "\"AgriCall: An IoT and GSM-Driven Smart Irrigation System for Enhancing Water Efficiency and Sustainable Crop Production,\" Under BIAM Foundation Research Center (BFRC) for FY 2025-26 (Submitted)",
+          ],
+        },
+      ],
+      'Seminars/Workshops Participation': [
+        {
+          items: [
+            "\"A Miniaturized Low-SAR Antenna for Breast Tumor Diagnosis,\" 6th IEEE International Conference on Telecommunications and Photonics (ICTP), BUET, Dhaka, Bangladesh, 2025.",
+            "\"Dual-Band Terahertz Metamaterial Absorber with Near-Unity Absorption for Explosive Identification,\" 6th IEEE International Conference on Telecommunications and Photonics (ICTP), BUET, Dhaka, Bangladesh, 2025.",
+            "\"An Efficient Miniaturized Tri-band THz Antenna for Future 6G Systems and Beyond,\" 11th IEEE International Women in Engineering Conference on Electrical and Computer Engineering 2025 (WIECON-ECE), Cox's Bazar, Bangladesh, 2025.",
+            "\"A Novel Modified Triangular Shaped Microstrip Patch Antenna for C-band Applications in Wireless and Satellite Communication,\" IEEE International Conference on Signal Processing, Information, Communication and Systems 2025 (SPICSCON), Rajshahi University, Rajshahi, Bangladesh, 2025.",
+            "\"Design and Performance Analysis of Slotted Patch Antenna for Sub-6 GHz 5G Communications,\" IEEE International Conference on Signal Processing, Information, Communication and Systems 2025 (SPICSCON), Rajshahi University, Rajshahi, Bangladesh, 2025.",
+            "\"Triple-Band Terahertz Metamaterial Ultra-Sensitive Absorber for Multi-Class Cancer Cell Detection,\" IEEE International Conference on Quantum Photonics, Artificial Intelligence, and Networking (QPAIN), BAUST, Rangpur, Bangladesh, 2025.",
+            "\"A Smart Multi-User Wireless Nurse Calling System and E-notice Board for Health Care Management,\" 3rd Int'l Conf. on Trends in Computational and Cognitive Engineering, Malaysia, 2020.",
+            "\"Operation and Maintenance of Kodda 150 MW Dual Fuel Power Plant,\" B-R Powergen Limited, Gazipur, Bangladesh, 2022.",
+            "\"Mobile Game Application & Animation Project,\" ICT Ministry of Bangladesh, 2018.",
+          ],
+        },
+      ],
+      'Contact': [
+        {
+          lines: [
+            "Sayed Shifat Ahmed",
+            "Lecturer",
+            "Department of Electrical and Electronic Engineering (EEE)",
+            "RTM Al-Kabir Technical University (RTM-AKTU)",
+            "Campus: RTM Point, East Shahi Eidgah, TB Gate, Sylhet-3100, Bangladesh",
+            "Email: <a href=\"mailto:shifat@rtm-aktu.ac.bd\">shifat@rtm-aktu.ac.bd</a>",
+            "Contact: <a href=\"tel:+8801790443944\">+8801790443944</a>",
+            "Website: <a href=\"https://www.rtm-aktu.ac.bd\" target=\"_blank\" rel=\"noopener\">www.rtm-aktu.ac.bd</a>",
+          ],
+        },
+      ],
+    },
+  },
 };
