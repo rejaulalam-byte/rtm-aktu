@@ -7232,10 +7232,18 @@ a.notice-card:hover {
   margin-bottom: 10px;
 }
 
-/* Contact block: one tight paragraph (single-spaced, no blank lines), with
-   the telephone number lines indented one level. */
-.program-contact {
-  line-height: 1.5;
+/* Bank lines sit one indent level in, same 2rem as the Contact telephone
+   numbers. */
+.program-deposit__indent {
+  padding-left: 2rem;
+}
+
+/* Contact block: one paragraph with no blank lines, at the normal body line
+   height (1.65, inherited), the telephone number lines indented one level and
+   10px of air below the "Admission Desk" label. */
+.program-contact__head {
+  display: block;
+  padding-bottom: 10px;
 }
 
 .program-contact__indent {
