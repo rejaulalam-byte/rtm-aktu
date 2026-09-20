@@ -195,7 +195,7 @@ const facultyMembers = [
     name: 'Tarana Hasan',
     role: 'Lecturer',
     department: 'Department of Business Administration',
-    link: '#',
+    link: 'faculty/profile.html?id=tarana-hasan',
   },
 ];
 

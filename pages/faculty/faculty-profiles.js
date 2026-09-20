@@ -2398,4 +2398,83 @@ const facultyProfiles = {
       ],
     },
   },
+  'tarana-hasan': {
+    name: 'Tarana Hasan',
+    role: 'Lecturer',
+    department: 'Department of Business and Development Studies',
+    photo: '../../images/faculty-members/tarana-hasan.png',
+    address: [
+      'RTM Al-Kabir Technical University (RTM-AKTU)',
+      'Campus: RTM Point, East Shahi Eidgah, TB Gate, Sylhet-3100, Bangladesh',
+    ],
+    phone: '01843423060',
+    phoneHref: 'tel:+8801843423060',
+    email: 'tarana@rtm-aktu.ac.bd',
+    bio: [
+      "Ms. Tarana Hasan is currently serving as a Lecturer in the Department of Business and Development Studies at RTM Al-Kabir Technical University (RTM-AKTU). Before joining RTM AKTU, she has worked on various initiatives, including RMG sector and famous Private Manufacturing Industry like Abul Khair Group. Her practical knowledge and excellent academic credentials will add a lot in our curriculum.",
+      "She received her MBA and BBA degree from University of Chittagong with excellent grades. In MBA, she achieved first class first position in her major in HRM. She also completed Foundation Skill Program on Accounting & Finance under LICT program organized by Bangladesh Computer Council & Ministry of ICT, Bangladesh. In addition, she achieved certificates on \"Sustainable Tourism-promoting environmental public health\" authorized by University of Copenhagen; and on \"Managerial Accounting\" authorized by University of Illinois.",
+      "Her research interests span the fields of Leadership, Training and Development, Conflict Management and Negotiations and Employee Satisfaction.",
+    ],
+    tabs: {
+      'Research Interest': [
+        {
+          items: [
+            "Her research interests span the fields of Leadership, Training and Development , Conflict Management and Negotiations and Employee Satisfaction.",
+          ],
+        },
+      ],
+      'Academic Information': [
+        {
+          items: [
+            "Master in Business Administration [M,B,A], 2017<br>Major: Human Resource Management<br>Result: CGPA: 3.89 on the scale of 4.00<br>University of Chittagong",
+            "Bachelor of Business Administration [B,B,A], 2016<br>Major: Management<br>Result: CGPA: 3.79 on the scale of 4.00<br>University of Chittagong",
+            "Higher Secondary School Certificate [H,S,C], 2011<br>Group: Science<br>Result: GPA 4.70 on the scale of 5.00<br>Ispahani Public School &College, Chattogram",
+            "Secondary School Certificate [S,S,C], 2009<br>Group: Science<br>Result: GPA 5.00 on the scale of 5.00<br>BN School & College, Chattogram",
+          ],
+        },
+      ],
+      'Courses Taught': [
+        {
+          items: [
+            "Business Proposal Writing and Development, Managerial Economics, Operations Management, Legal Environment of Business, Value Chain Process Management, Mathematics for Decision Making and Principles of Management.",
+          ],
+        },
+      ],
+      'Areas of Expertise': '',
+      'Experience': [
+        {
+          items: [
+            "Lecturer, Department of Business and Development Studies, RTM-AKTU, from 01/03/2024 to till now.",
+            "Management Trainee-HR Audit & Excellence, Abul Khair Group, from 01/10/2020 to 29/2/2024.",
+            "HR-Intern, Midas Safety Bangladesh, from 08-02-2018 to 06-04-2018.",
+          ],
+        },
+      ],
+      'Teaching and Academic Contributions': '',
+      'Publications & Research': '',
+      'Seminars/Workshops Participation': [
+        {
+          items: [
+            "Completed Foundation Skill Program on Accounting & Finance under LICT program organized by Bangladesh Computer Council & Ministry of ICT, Bangladesh in the year of 2018.",
+            "Completed an online course on \"Sustainable Tourism-promoting environmental public health\" authorized by University of Copenhagen and offered through Coursera from 7th June 2020 to 20th June 2020.",
+            "Completed an online course on \"Managerial Accounting\" authorized by University of Illinois and offered through Coursera from 15th June 2020 to 30th June 2020.",
+            "Completed an online course on \"Building your leadership skills\" authorized by HEC Paris and offered through Coursera from 1st July 2020 to 15th July 2020.",
+            "Completed a 9 days online course on \"Biodiversity and Nature Conservation\" hosted by Chittagong University Nature Club held on the occasion of World Environment Day 2020, from 6-14th June.",
+          ],
+        },
+      ],
+      'Contact': [
+        {
+          lines: [
+            "Department of Business and Development Studies",
+            "RTM Al-Kabir Technical University (RTM-AKTU)",
+            "Campus: RTM Point, East Shahi Eidgah, TB Gate, Sylhet-3100, Bangladesh",
+            "Email: <a href=\"mailto:tarana@rtm-aktu.ac.bd\">tarana@rtm-aktu.ac.bd</a>",
+            "<a href=\"mailto:taranahasancu60@gmail.com\">taranahasancu60@gmail.com</a>",
+            "Contact: <a href=\"tel:+8801843423060\">+8801843423060</a>",
+          ],
+        },
+      ],
+    },
+  },
 };
