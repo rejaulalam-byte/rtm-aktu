@@ -2220,7 +2220,7 @@ const facultyProfiles = {
   },
   'shahnaz-jasmeen-keya': {
     name: 'Shahnaz Jasmeen Keya',
-    role: 'Lecturer',
+    role: 'Language Instructor in English',
     department: 'Department of Education',
     photo: '../../images/faculty-members/shahnaz-jasmeen-keya.png',
     address: [
@@ -2289,7 +2289,7 @@ const facultyProfiles = {
         {
           lines: [
             "Shahnaz Jasmeen Keya",
-            "Lecturer",
+            "Language Instructor in English",
             "Department of Education",
             "RTM Al-Kabir Technical University (RTM-AKTU)",
             "Campus: RTM Point, East Shahi Eidgah, TB Gate, Sylhet-3100, Bangladesh",
