@@ -10,7 +10,8 @@
 // while keeping whatever slNo it was given at creation.
 //
 // `publishedDateIso` (YYYY-MM-DD) drives the Year column and the month / month-
-// year search; `publishedDate` is the label shown in the Published Date column.
+// year search, and is also what the Published Date column displays, formatted by
+// formatPublishedDate() below (e.g. 2026-04-12 -> 12-Apr-2026).
 //
 // `batch` is the student batch the result is for (shown right after Program Name
 // and searchable), a plain number.
@@ -26,7 +27,6 @@ const resultData = {
     semester: 'Spring',
     program: 'BBA',
     batch: '15',
-    publishedDate: '12 April',
     publishedDateIso: '2026-04-12',
     pdfUrl: '#',
   },
@@ -37,8 +37,15 @@ const resultData = {
     semester: 'Summer',
     program: 'CSE',
     batch: '12',
-    publishedDate: '25 September',
     publishedDateIso: '2026-09-25',
     pdfUrl: '#',
   },
 };
+
+// 'YYYY-MM-DD' -> 'DD-Mon-YYYY' (2-digit day, 3-letter month, year), e.g. 12-Apr-2026 or 05-Apr-2026.
+// Shared by result.html and result-all.html via result-table.js.
+function formatPublishedDate(iso) {
+  const [year, month, day] = iso.split('-').map(Number);
+  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  return `${String(day).padStart(2, '0')}-${months[month - 1]}-${year}`;
+}

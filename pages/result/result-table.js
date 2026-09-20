@@ -38,7 +38,7 @@ function initResultListing() {
         <td>${item.semester}</td>
         <td><a href="${item.pdfUrl}" target="_blank" rel="noopener" class="rs-table__link">${item.program}</a></td>
         <td>${item.batch}</td>
-        <td class="rs-table__date">${item.publishedDate}</td>
+        <td class="rs-table__date">${formatPublishedDate(item.publishedDateIso)}</td>
         <td>
           <a href="${item.pdfUrl}" download class="rs-table__download" aria-label="Download result sheet - ${item.program} ${item.semester} ${item.year}">
             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 4v11m0 0-4-4m4 4 4-4M5 19h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
