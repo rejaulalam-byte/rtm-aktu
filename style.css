@@ -7125,3 +7125,83 @@ a.notice-card:hover {
 .text-section__list--ordered li {
   list-style: decimal;
 }
+
+/* ==========================================================================
+   37. Program Pages (pages/programs/*.html)
+   Same float-wrap technique as .library-body / .news-detail-body: a figure
+   comes BEFORE the text it should sit beside and floats out, so following
+   paragraphs wrap around it and return to full width once they clear its
+   bottom. ::after clears the floats so the quote banner never rides up
+   beside a tall photo; headings clear too so a heading never squeezes in
+   next to a float.
+   ========================================================================== */
+.program-body::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.program-body .cm-content__heading {
+  clear: both;
+  margin-top: 1.5rem;
+}
+
+.program-photo {
+  margin: 0 0 1.25rem;
+  width: 32%;
+}
+
+.program-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+}
+
+.program-photo--right {
+  float: right;
+  margin-left: 2rem;
+}
+
+.program-photo--left {
+  float: left;
+  margin-right: 2rem;
+}
+
+.program-photo__caption {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  text-align: center;
+  color: var(--color-text-muted);
+}
+
+/* Course/fee tables are wider and denser than the Deans & Heads table this
+   builds on: let columns size to their content instead of the fixed equal
+   split, with tighter cell padding so the 7-column fee table fits. */
+.program-body .dh-table {
+  table-layout: auto;
+}
+
+.program-body .dh-table th,
+.program-body .dh-table td {
+  padding: 0.7rem 0.9rem;
+}
+
+.program-body .dh-table thead th {
+  text-align: center;
+}
+
+@media (max-width: 760px) {
+  .program-photo--right,
+  .program-photo--left {
+    float: none;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .program-body .dh-table {
+    display: block;
+    overflow-x: auto;
+  }
+}
