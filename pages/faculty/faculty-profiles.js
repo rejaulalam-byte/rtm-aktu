@@ -2301,4 +2301,101 @@ const facultyProfiles = {
       ],
     },
   },
+  'shanta-yeasmin': {
+    name: 'Shanta Yeasmin',
+    role: 'Lecturer and Acting Head',
+    department: 'Department of Technology (Fashion Design)',
+    photo: '../../images/faculty-members/shanta-yeasmin.png',
+    address: [
+      'RTM Al-Kabir Technical University (RTM-AKTU)',
+      'Campus: RTM Point, East Shahi Eidgah, TB Gate, Sylhet-3100, Bangladesh',
+    ],
+    phone: '0179095649',
+    phoneHref: 'tel:+880179095649',
+    email: 'shanta@rtm-aktu.ac.bd',
+    bio: [
+      "Shanta Yeasmin-is an academic professional at RTM Al-Kabir Technical University (RTM-AKTU) with demonstrated commitment to excellence in teaching, research, and academic leadership. She is acting as the Head of the Department of Technology (Fashion Design) at RTM Al-Kabir Technical University (RTM-AKTU). Prior to this role, she worked as a Lecturer in the B.Sc. (Hons.) program in Fashion Design & Technology at the esteemed National Institute of Design (NID). Her professional journey also includes valuable industry experience as a Fashion Designer at Promoda Textile Limited and Abonti Color Tex, where she demonstrated strong creative and technical expertise in fashion design and textile development. In addition to her academic and professional achievements, she has been recognized as a Key Winner in Bangladesh for her contributions and excellence in the fashion sector.",
+      "Shanta Yeasmin completed her Bachelor of Science (B.Sc.) in Fashion Design and Technology from the prestigious BGMEA University of Fashion & Technology (BUFT). With a blend of academic leadership, industry experience, and creative innovation, she continues to contribute significantly to fashion education and design development.",
+      "Her research interests lie in the fields of product development &fashion trend analysis, pattern technology, and textile technology. she is particularly interested in exploring innovative approaches to fashion design, learning emerging fashion trends, and integrating modern textile technologies into contemporary fashion development.",
+    ],
+    tabs: {
+      'Research Interest': [
+        {
+          lines: [
+            "Her research interests lie in the fields of product development &fashion trend analysis, pattern technology, and textile technology. she is particularly interested in exploring innovative approaches to fashion design, learning emerging fashion trends, and integrating modern textile technologies into contemporary fashion development.",
+          ],
+        },
+        {
+          heading: 'Academic and Research Interests',
+          items: [
+            'Management Studies',
+            'Business Strategy',
+            'Organizational Development',
+            'Applied Research',
+            'Higher Education Pedagogy',
+          ],
+        },
+      ],
+      'Academic Information': [
+        {
+          items: [
+            "2016 B.Sc. (Hon's) in Fashion Design & Technology, BGMEA University of Fashion & Technology, Dhaka, Bangladesh.",
+            "2010 Higher Secondary Certificate (HSC) Humanities group, Firoz Miah Degree College, Brahmanbaria, Bangladesh.",
+            "2008 Secondary School Certificate (SSC) Humanities group, Roushan Ara Jalil Girls High School, Brahmanbaria, Bangladesh.",
+          ],
+        },
+      ],
+      'Courses Taught': "Delivered undergraduate-level instruction in fashion design and apparel technology, integrating theoretical knowledge with practical studio-based learning. Courses taught include Fashion Styling and Promotion, Textile Technology, Quality Control, Product Development, Advanced Pattern Making, Pattern Drafting, Fashion Art, Sewing Technology, Computer-Aided Design (CAD), and Industrial Training. Developed course materials, lesson plans, and assessment strategies to support student learning and skill development. Supervised studio practice, guided students in creative design processes, technical pattern development, and garment construction techniques. Emphasized industry-relevant practices, quality standards, and production processes to prepare students for professional roles in the fashion and textile sector. Provided academic mentoring, evaluated student projects, and supported students during industrial training placements to strengthen their practical and professional competencies.",
+      'Areas of Expertise': [
+        {
+          items: [
+            'Business Administration',
+            'Teaching',
+            'Research',
+            'Academic Development',
+          ],
+        },
+        {
+          heading: 'Professional Engagement',
+          lines: [
+            'Contributes to academic and professional communities through research initiatives, collaborative projects, and institutional development activities.',
+          ],
+        },
+      ],
+      'Experience': [
+        {
+          items: [
+            "Lecturer [March 2021–July 2023], Department of Fashion Design & Technology, National Institute of Design (NID), Dhaka, Bangladesh.",
+            "Sourcing & Development [February 2020 – February 2021] at Key Winner Bangladesh liaison office, Farm gate (Head-office), Dhaka, Bangladesh.",
+            "Product Developer [01/09/2019 - 30/01/2020] at Abanti ColourTex (Crony Group LTD), Narayangonj, Plot: S.A-646, Shasongoan, Enayetnagor, Dhaka, Bangladesh.",
+            "Product Developer [02/07/2018 t- 30/08/2019] at Promoda Textiles Ltd. (buying office), Netherland based Company, Gulshan-1, Dhaka, Bangladesh.",
+          ],
+        },
+      ],
+      'Teaching and Academic Contributions': 'Actively engaged in curriculum development, student mentoring, and innovative teaching methodologies that enhance learning outcomes and academic performance.',
+      'Publications & Research': '',
+      'Seminars/Workshops Participation': [
+        {
+          ordered: true,
+          items: [
+            "Completed the sewing technology course by UNICEF.",
+            "Completed the course on Freelancing to Entrepreneurship by BACCO.",
+            "Completed the course on Professional Digital Content Management (PDCM) by BACCO.",
+          ],
+        },
+      ],
+      'Contact': [
+        {
+          lines: [
+            "Department of Technology (Fashion Design)",
+            "RTM Al-Kabir Technical University (RTM-AKTU)",
+            "Campus: RTM Point, East Shahi Eidgah, TB Gate, Sylhet-3100, Bangladesh",
+            "Email: <a href=\"mailto:shanta@rtm-aktu.ac.bd\">shanta@rtm-aktu.ac.bd</a>",
+            "Contact: <a href=\"tel:+880179095649\">+880179095649</a>",
+            "Website: <a href=\"https://www.rtm-aktu.ac.bd\" target=\"_blank\" rel=\"noopener\">www.rtm-aktu.ac.bd</a>",
+          ],
+        },
+      ],
+    },
+  },
 };

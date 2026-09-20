@@ -188,7 +188,7 @@ const facultyMembers = [
     name: 'Shanta Yeasmin',
     role: 'Lecturer and Acting Head',
     department: 'Department of Technology',
-    link: '#',
+    link: 'faculty/profile.html?id=shanta-yeasmin',
   },
   {
     photo: '../images/faculty-members/tarana-hasan.png',
