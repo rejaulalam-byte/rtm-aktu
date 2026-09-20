@@ -7205,3 +7205,133 @@ a.notice-card:hover {
     overflow-x: auto;
   }
 }
+
+/* --------------------------------------------------------------------------
+   Program pages, refinement round 2 (opt-in via .program-body--refined so
+   pages can adopt it one at a time).
+   -------------------------------------------------------------------------- */
+
+/* Exactly 15px between a section heading and the content right below it. */
+.program-body--refined .cm-content__heading {
+  padding-bottom: 15px;
+}
+
+/* Bank-deposit block: label line + one line per detail, no bullets, 10px
+   between lines. Sits under the "Payment Option" heading. */
+.program-deposit {
+  margin-bottom: 1.1rem;
+}
+
+.program-deposit p {
+  margin: 0;
+  color: var(--color-text-muted);
+}
+
+/* Only the first gap (below "Deposit") is open; the detail lines sit tight. */
+.program-deposit p:first-child {
+  margin-bottom: 10px;
+}
+
+/* Contact block: one tight paragraph (single-spaced, no blank lines), with
+   the telephone number lines indented one level. */
+.program-contact {
+  line-height: 1.5;
+}
+
+.program-contact__indent {
+  display: block;
+  padding-left: 2rem;
+}
+
+/* Faculty row as a scrollable carousel. The arrows are always rendered -
+   even when every card fits - so it's clear more people can be added and
+   scrolled to later; an arrow just dims when there's nothing to scroll to
+   in that direction. */
+.fac-carousel {
+  position: relative;
+  padding: 0 3rem;
+}
+
+.fac-carousel__track {
+  display: flex;
+  gap: 1.25rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.fac-carousel__track::-webkit-scrollbar {
+  display: none;
+}
+
+.fac-carousel__track .fmp-card {
+  flex: 0 0 calc((100% - 2.5rem) / 3);
+  scroll-snap-align: start;
+}
+
+.fac-carousel__btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 50%;
+  background: var(--color-navy);
+  color: var(--color-white);
+  cursor: pointer;
+  transition: opacity 0.2s ease, background-color 0.2s ease;
+}
+
+.fac-carousel__btn:hover {
+  background: var(--color-gold);
+}
+
+.fac-carousel__btn--prev {
+  left: 0;
+}
+
+.fac-carousel__btn--next {
+  right: 0;
+}
+
+.fac-carousel__btn svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.fac-carousel__btn.is-disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.fac-carousel__btn.is-disabled:hover {
+  background: var(--color-navy);
+}
+
+@media (max-width: 720px) {
+  .fac-carousel__track .fmp-card {
+    flex-basis: calc((100% - 1.25rem) / 2);
+  }
+}
+
+@media (max-width: 480px) {
+  .fac-carousel {
+    padding: 0 2.5rem;
+  }
+
+  .fac-carousel__track .fmp-card {
+    flex-basis: 100%;
+  }
+}
+
+/* Narrower content columns make three cards narrower than the 183px photo:
+   let the photo shrink with its card instead of overflowing it. */
+.fac-carousel .fmp-card__photo {
+  width: min(183px, 100%);
+  height: auto;
+  aspect-ratio: 1;
+}

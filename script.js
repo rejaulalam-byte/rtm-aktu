@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initContactPageForm();
   initDateWeekdays();
   initBackToTop();
+  initFacultyCarousels();
 });
 
 // ------------------------------------------------------------------
@@ -623,5 +624,37 @@ function initBackToTop() {
 
   button.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
+
+// ------------------------------------------------------------------
+// Faculty carousel (program pages): prev/next buttons scroll the card
+// track by one card. Buttons stay visible even with nothing to scroll;
+// they just dim (is-disabled) at either end.
+// ------------------------------------------------------------------
+function initFacultyCarousels() {
+  document.querySelectorAll('[data-fac-carousel]').forEach((carousel) => {
+    const track = carousel.querySelector('.fac-carousel__track');
+    const prev = carousel.querySelector('.fac-carousel__btn--prev');
+    const next = carousel.querySelector('.fac-carousel__btn--next');
+    if (!track || !prev || !next) return;
+
+    const step = () => {
+      const card = track.querySelector('.fmp-card');
+      const gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+      return card ? card.getBoundingClientRect().width + gap : track.clientWidth;
+    };
+
+    const update = () => {
+      const max = track.scrollWidth - track.clientWidth;
+      prev.classList.toggle('is-disabled', track.scrollLeft <= 1);
+      next.classList.toggle('is-disabled', track.scrollLeft >= max - 1);
+    };
+
+    prev.addEventListener('click', () => track.scrollBy({ left: -step(), behavior: 'smooth' }));
+    next.addEventListener('click', () => track.scrollBy({ left: step(), behavior: 'smooth' }));
+    track.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    update();
   });
 }
