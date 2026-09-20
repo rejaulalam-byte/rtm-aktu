@@ -209,7 +209,7 @@ const heroSlides = [
     ],
     showSeal: false,
     buttons: [
-      { text: 'Apply Now', style: 'primary', href: 'pages/admissions.html' },
+      { text: 'Apply Now', style: 'primary', href: 'http://203.190.9.114:4500/' },
     ],
   },
   {
@@ -247,7 +247,8 @@ function renderHeroSlide(slide, index) {
     ? `<div class="hero__actions">${buttons
         .map(({ text, style, href }) => {
           const cls = style === 'primary' ? 'btn btn-primary' : 'btn btn-outline btn-outline--light';
-          return `<a href="${href}" class="${cls}">${text}</a>`;
+          const externalAttrs = /^https?:\/\//.test(href) ? ' target="_blank" rel="noopener noreferrer"' : '';
+          return `<a href="${href}"${externalAttrs} class="${cls}">${text}</a>`;
         })
         .join('')}</div>`
     : '';
