@@ -5789,7 +5789,10 @@ a.notice-card:hover {
     align-items: stretch;
   }
 
+  /* In a column layout the desktop `flex: 1 1 260px` becomes a 260px-tall box
+     (the search icon then floats far below the input) - size to content. */
   .listing-controls__search {
+    flex: none;
     max-width: none;
   }
 
@@ -6940,7 +6943,7 @@ a.notice-card:hover {
 
 .rs-table {
   width: 100%;
-  min-width: 640px;
+  min-width: 760px;
   border-collapse: collapse;
   table-layout: fixed;
 }
@@ -6968,7 +6971,24 @@ a.notice-card:hover {
   font-size: 15px;
 }
 
-/* Exam Date is Medium weight in the Figma design */
+/* On phones the single grid column (1fr = minmax(auto, 1fr)) grew to the wide
+   results table's min-width, so the whole page scrolled sideways. Let this
+   layout's column shrink to the screen so the table scrolls inside
+   .rs-table-wrap instead. Scoped to layouts that hold a results table. */
+@media (max-width: 860px) {
+  .cm-layout:has(.rs-table-wrap) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  /* .cm-content is justify-self: start (shrink-to-fit), which would still let it
+     size to the table's min-width - pin it to the column instead. */
+  .cm-layout:has(.rs-table-wrap) > .cm-content {
+    width: 100%;
+    min-width: 0;
+  }
+}
+
+/* Published Date (formerly Exam Date) is Medium weight in the Figma design */
 .rs-table tbody td.rs-table__date {
   font-weight: 500;
 }

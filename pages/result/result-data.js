@@ -9,8 +9,11 @@
 // script), so a new record with a higher createdOrder appears at the top
 // while keeping whatever slNo it was given at creation.
 //
-// `examDateIso` (YYYY-MM-DD) drives the Year column and the month / month-
-// year search; `examDate` is the label shown in the Exam Date column.
+// `publishedDateIso` (YYYY-MM-DD) drives the Year column and the month / month-
+// year search; `publishedDate` is the label shown in the Published Date column.
+//
+// `batch` is the student batch the result is for (shown right after Program Name
+// and searchable), a plain number.
 //
 // `pdfUrl` is the record's result PDF (Program Name link + download icon). No files exist
 // yet, so it is '#' until each real sheet is added.
@@ -22,8 +25,9 @@ const resultData = {
     year: '2026',
     semester: 'Spring',
     program: 'BBA',
-    examDate: '12 April',
-    examDateIso: '2026-04-12',
+    batch: '15',
+    publishedDate: '12 April',
+    publishedDateIso: '2026-04-12',
     pdfUrl: '#',
   },
   'cse-summer-2026': {
@@ -32,8 +36,9 @@ const resultData = {
     year: '2026',
     semester: 'Summer',
     program: 'CSE',
-    examDate: '25 September',
-    examDateIso: '2026-09-25',
+    batch: '12',
+    publishedDate: '25 September',
+    publishedDateIso: '2026-09-25',
     pdfUrl: '#',
   },
 };
