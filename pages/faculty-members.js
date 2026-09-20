@@ -181,7 +181,7 @@ const facultyMembers = [
     name: 'Shahnaz Jasmeen Keya',
     role: 'Language Instructor in English',
     department: 'Department of Education',
-    link: '#',
+    link: 'faculty/profile.html?id=shahnaz-jasmeen-keya',
   },
   {
     photo: '../images/faculty-members/shanta-yeasmin.png',

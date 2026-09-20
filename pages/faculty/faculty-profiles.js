@@ -2218,4 +2218,87 @@ const facultyProfiles = {
       ],
     },
   },
+  'shahnaz-jasmeen-keya': {
+    name: 'Shahnaz Jasmeen Keya',
+    role: 'Lecturer',
+    department: 'Department of Education',
+    photo: '../../images/faculty-members/shahnaz-jasmeen-keya.png',
+    address: [
+      'RTM Al-Kabir Technical University (RTM-AKTU)',
+      'Campus: RTM Point, East Shahi Eidgah, TB Gate, Sylhet-3100, Bangladesh',
+    ],
+    phone: '01748551830',
+    phoneHref: 'tel:+8801748551830',
+    email: 'shahnaz@rtm-aktu.ac.bd',
+    bio: [
+      "Shahnaz Jasmeen Keya currently holds the position of Lecturer in the Department of Education at RTM Al-Kabir Technical University (RTM-AKTU). Prior to this role, she worked as a teacher at Al Amanah Academy and Scholarshome South Surma, Sylhet. Her professional journey also includes valuable experience in teaching, where she demonstrated strong communication, classroom management, and instructional skills.",
+      "Shahnaz Jasmeen Keya completed her Bachelor of Arts (B.A. Honours) and subsequently her Master of Arts (M.A.) at Metropolitan University, Sylhet. During her academic years, she served as the Vice President of the MU Speakers Club of English.",
+      "In addition to her academic and professional achievements, she has successfully completed Teachers Training on TESOL Methodology delivered by the University of Maryland, Baltimore County, offered by the US Embassy. She has also completed a course on Professional Development for Teacher Trainers provided by Arizona State University as part of the Online Professional English Network.",
+      "Being enthusiastic towards academic research, Shahnaz Jasmeen Keya has contributed to academic and creative writing. Her research abstracts include \"Patriarchy in a Modern Man: A Study of Satyajit Ray's Mahanagar\" presented at the Discover English 2023 Conference at American International University-Bangladesh (AIUB), and \"The Marginalization of Bangla among the English Medium Schools: A Decolonial Approach Inspired by Ngũgĩ wa Thiong'o's Decolonizing the Mind\" published in the ULAB National Symposium Handbook (2025).",
+      "In addition to her academic work, she is also a published author on Spillwords.com and has contributed two poems to Bengali poetry collections titled Chander Alokbarsha and Shata Kabir Shata Kabita. With a combination of academic experience, professional training, and creative engagement, she continues to contribute to education and literary development.",
+    ],
+    tabs: {
+      'Research Interest': [
+        {
+          lines: [
+            "Her research interests follow Diaspora Studies, Postcolonial Studies, Repository of Tagore, Films of Satyajit Ray and English Language Teaching Methods. Having two published abstracts in different South Asian conferences, she has a fascination for academic research.",
+          ],
+        },
+        {
+          heading: 'Academic and Research Interests',
+          items: [
+            'Management Studies',
+            'Business Strategy',
+            'Organizational Development',
+            'Applied Research',
+            'Higher Education Pedagogy',
+          ],
+        },
+      ],
+      'Academic Information': '',
+      'Courses Taught': "Delivered undergraduate-level instruction in literature and social sciences, integrating theoretical knowledge with critical analysis and interactive learning. Courses taught include Postcolonial Literature, Modern English Poetry and Drama, Victorian Literature, American Literature II, Introduction to Sociology and Anthropology, and Listening and Speaking. Developed course materials, lesson plans, and assessment strategies to support student learning and intellectual growth. Facilitated discussions, guided students in textual interpretation, critical thinking, theoretical interpretation and effective communication skills. Emphasized interdisciplinary approaches, cultural contexts, and academic research methods to prepare students for advanced study and professional engagement. Provided academic mentoring, evaluated student assignments, guided skill development and supported students in developing both analytical and practical competencies.",
+      'Areas of Expertise': [
+        {
+          items: [
+            'Business Administration',
+            'Teaching',
+            'Research',
+            'Academic Development',
+          ],
+        },
+        {
+          heading: 'Professional Engagement',
+          lines: [
+            'Contributes to academic and professional communities through research initiatives, collaborative projects, and institutional development activities.',
+          ],
+        },
+      ],
+      'Experience': '',
+      'Teaching and Academic Contributions': 'Actively engaged in curriculum development, student mentoring, and innovative teaching methodologies that enhance learning outcomes and academic performance.',
+      'Publications & Research': [
+        {
+          items: [
+            "\"Patriarchy in a Modern Man: A Study of Satyajit Ray's Mahanagar\" — research abstract presented at the Discover English 2023 Conference, American International University-Bangladesh (AIUB).",
+            "\"The Marginalization of Bangla among the English Medium Schools: A Decolonial Approach Inspired by Ngũgĩ wa Thiong'o's Decolonizing the Mind\" — published in the ULAB National Symposium Handbook (2025).",
+            "Published author on Spillwords.com; contributed two poems to the Bengali poetry collections \"Chander Alokbarsha\" and \"Shata Kabir Shata Kabita.\"",
+          ],
+        },
+      ],
+      'Seminars/Workshops Participation': "She participated in the BELTA-SIU-THT 19th Teacher Development Conference 2025, the US Embassy-LPC-BELTA Teacher Training Workshop for Secondary School English Teachers, and received an Online Teachers Training on TESOL Methodology delivered by the University of Maryland and offered by the US Embassy.",
+      'Contact': [
+        {
+          lines: [
+            "Shahnaz Jasmeen Keya",
+            "Lecturer",
+            "Department of Education",
+            "RTM Al-Kabir Technical University (RTM-AKTU)",
+            "Campus: RTM Point, East Shahi Eidgah, TB Gate, Sylhet-3100, Bangladesh",
+            "Email: <a href=\"mailto:shahnaz@rtm-aktu.ac.bd\">shahnaz@rtm-aktu.ac.bd</a>",
+            "Contact: <a href=\"tel:+8801748551830\">+8801748551830</a>",
+            "Website: <a href=\"https://www.rtm-aktu.ac.bd\" target=\"_blank\" rel=\"noopener\">www.rtm-aktu.ac.bd</a>",
+          ],
+        },
+      ],
+    },
+  },
 };
