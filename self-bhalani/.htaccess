@@ -1,0 +1,5 @@
+# bootstrap.php and auth-check.php are meant to be `require`d by the pages
+# in this folder, never requested directly.
+<FilesMatch "^(bootstrap|auth-check)\.php$">
+  Require all denied
+</FilesMatch>
