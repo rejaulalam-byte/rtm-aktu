@@ -6633,7 +6633,7 @@ a.notice-card:hover {
   right: 30px;
   width: 48px;
   height: 48px;
-  border: none;
+  border: 2px solid var(--color-gold);
   border-radius: 50%;
   background-color: var(--color-navy);
   color: var(--color-gold);
