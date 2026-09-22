@@ -57,6 +57,18 @@ function h(string $s): string
     return htmlspecialchars($s, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
 }
 
+// Same rule database/create-admin.php uses when it creates the first
+// Administrator, so every password in the system meets one standard.
+const MIN_PASSWORD_LENGTH = 12;
+
+/** Returns an error message, or null if the password is acceptable. */
+function passwordError(string $pw, string $email): ?string
+{
+    if (strlen($pw) < MIN_PASSWORD_LENGTH) return 'Password must be at least ' . MIN_PASSWORD_LENGTH . ' characters.';
+    if (strcasecmp($pw, $email) === 0)     return 'Password must not be the e-mail address.';
+    return null;
+}
+
 function isHttps(): bool
 {
     return (!empty($_SERVER['HTTPS']) && strtolower((string)$_SERVER['HTTPS']) !== 'off')

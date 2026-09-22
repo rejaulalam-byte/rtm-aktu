@@ -11,6 +11,7 @@ require_once __DIR__ . '/auth-check.php';
 
 $user = currentUser();
 $roleLabel = $user['role'] === 'administrator' ? 'Administrator' : 'Content Editor';
+$notice = ($_GET['notice'] ?? '') === 'password_changed' ? 'Password changed.' : null;
 ?>
 <!doctype html>
 <html lang="en">
@@ -38,6 +39,7 @@ $roleLabel = $user['role'] === 'administrator' ? 'Administrator' : 'Content Edit
   }
   header .brand { font-weight: 700; letter-spacing: .02em; }
   header .brand span { color: var(--gold); }
+  header nav { display: flex; gap: .6rem; }
   header a {
     color: #fff;
     background: rgba(255, 255, 255, .12);
@@ -51,6 +53,15 @@ $roleLabel = $user['role'] === 'administrator' ? 'Administrator' : 'Content Edit
     max-width: 640px;
     margin: 3rem auto;
     padding: 0 1.5rem;
+  }
+  .notice {
+    background: #eaf3fb;
+    color: #1c4e73;
+    border: 1px solid #c3ddef;
+    padding: .65rem .8rem;
+    border-radius: 6px;
+    font-size: .85rem;
+    margin-bottom: 1rem;
   }
   .card {
     background: #fff;
@@ -76,9 +87,15 @@ $roleLabel = $user['role'] === 'administrator' ? 'Administrator' : 'Content Edit
 <body>
   <header>
     <div class="brand">RTM-AKTU <span>Admin</span></div>
-    <a href="logout.php">Log out</a>
+    <nav>
+      <a href="change-password.php">Change Password</a>
+      <a href="logout.php">Log out</a>
+    </nav>
   </header>
   <main>
+    <?php if ($notice !== null): ?>
+      <div class="notice"><?= h($notice) ?></div>
+    <?php endif; ?>
     <div class="card">
       <h1>Welcome, <?= h($user['name']) ?></h1>
       <p class="role"><?= h($roleLabel) ?></p>
