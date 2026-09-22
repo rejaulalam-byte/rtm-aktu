@@ -12,6 +12,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
+
+  <!-- The hero's center seal logo is injected by script.js (heroSlides ->
+       renderHeroSlide), so the browser can't discover it from markup until
+       that JS runs - this preload starts the fetch immediately instead of
+       waiting on JS execution, which is why it was popping in late. -->
+  <link rel="preload" as="image" href="images/Logo-Seal.png">
 </head>
 <body>
 

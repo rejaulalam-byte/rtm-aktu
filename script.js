@@ -212,6 +212,10 @@ const heroSlides = [
       { text: 'Fall 2026', color: 'gold' },
     ],
     showSeal: false,
+    // This is a real photo (not a solid navy background like slide-1/3), so
+    // it needs its own stronger text-side overlay instead of the shared
+    // .hero__overlay safety net - see .hero__overlay--scrim-left.
+    overlay: 'scrim-left',
     buttons: [
       { text: 'Apply Now', style: 'primary', href: 'http://203.190.9.114:4500/' },
     ],
@@ -229,8 +233,9 @@ const heroSlides = [
 ];
 
 function renderHeroSlide(slide, index) {
-  const { backgroundImage, pillLabel, heading, subText, showSeal, buttons, verticalPosition } = slide;
+  const { backgroundImage, pillLabel, heading, subText, showSeal, buttons, verticalPosition, overlay } = slide;
   const position = verticalPosition || 'center';
+  const overlayClass = overlay ? ` hero__overlay--${overlay}` : '';
 
   const pillHtml = pillLabel
     ? `<p class="pill pill--light"><img src="images/icons/student-cap.png" alt="" class="pill__icon">${pillLabel}</p>`
@@ -268,13 +273,13 @@ function renderHeroSlide(slide, index) {
             <textPath href="#${sealPathId}">RTM AL-KABIR TECHNICAL UNIVERSITY (RTM-AKTU) &middot; SYLHET &middot;</textPath>
           </text>
         </svg>
-        <img src="images/Logo-Seal.png" alt="" class="hero__seal-logo">
+        <img src="images/Logo-Seal.png" alt="" class="hero__seal-logo" fetchpriority="high">
       </div>`
     : '';
 
   return `
     <div class="hero__slide" style="background-image: url('${backgroundImage}');">
-      <div class="hero__overlay"></div>
+      <div class="hero__overlay${overlayClass}"></div>
       <div class="hero__inner">
         <div class="hero__content hero__content--${position}">
           ${pillHtml}
