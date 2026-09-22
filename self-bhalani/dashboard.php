@@ -11,7 +11,7 @@ require_once __DIR__ . '/auth-check.php';
 
 $user = currentUser();
 $roleLabel = $user['role'] === 'administrator' ? 'Administrator' : 'Content Editor';
-$notice = ($_GET['notice'] ?? '') === 'password_changed' ? 'Password changed.' : null;
+$notice = ($_GET['notice'] ?? '') === 'password_changed' ? 'You have successfully changed your password.' : null;
 ?>
 <!doctype html>
 <html lang="en">
