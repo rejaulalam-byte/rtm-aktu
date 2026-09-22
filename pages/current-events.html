@@ -288,13 +288,18 @@
     // through the shared pagination/search controls - same list markup as
     // pages/university-news.html's .uni-news-list rendering, now driven by
     // pages/listing-controls.js instead of a single flat render pass.
+    //
+    // Sorted by createdOrder descending so the newest-added item always
+    // shows first (Sl. No. 01), same convention as job-circular.html.
     document.addEventListener('DOMContentLoaded', () => {
       const listEl = document.getElementById('eventsList');
       const controlsEl = document.getElementById('listingControls');
       const paginationEl = document.getElementById('listingPagination');
       if (!listEl || !controlsEl || !paginationEl) return;
 
-      const items = Object.entries(eventsData).map(([id, item]) => ({ id, ...item }));
+      const items = Object.entries(eventsData)
+        .map(([id, item]) => ({ id, ...item }))
+        .sort((a, b) => b.createdOrder - a.createdOrder);
 
       initListingControls({
         listEl,

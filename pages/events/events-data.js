@@ -22,6 +22,13 @@
 // `body` holds the same placeholder paragraph copy used across
 // News/Notices until real per-event article text is written.
 //
+// `createdOrder` is assigned once, in creation order, and never changes -
+// same permanent-identity pattern as jobCircularData's createdOrder
+// (pages/job-circular/job-circular-data.js) and newsData's createdOrder.
+// Every list/carousel that reads this file (current-events.html, the
+// Admissions "Current Events" card) sorts by createdOrder descending so
+// the newest-added event always shows first, regardless of its `date`.
+//
 // Paths below are relative to pages/ (current-events.html, admissions.html
 // and event-details.html all live at that same depth).
 // ------------------------------------------------------------------
@@ -32,6 +39,7 @@ const eventsPlaceholderBody = [
 
 const eventsData = {
   'orientation-day-for-new-undergraduate-students': {
+    createdOrder: 1,
     headline: 'Orientation Day for New Undergraduate Students',
     date: '2026-09-02',
     image: '../images/current-events/event-01.jpg',
@@ -40,6 +48,7 @@ const eventsData = {
     body: eventsPlaceholderBody,
   },
   'annual-tech-fest-2026-opens-registration-for-student-teams': {
+    createdOrder: 2,
     headline: 'Annual Tech Fest 2026 Opens Registration for Student Teams',
     date: '2026-09-20',
     image: '../images/current-events/event-02.jpg',
@@ -48,6 +57,7 @@ const eventsData = {
     body: eventsPlaceholderBody,
   },
   'career-fair-brings-regional-employers-to-campus': {
+    createdOrder: 3,
     headline: 'Career Fair Brings Regional Employers to Campus',
     date: '2026-10-10',
     image: '../images/current-events/event-03.jpg',

@@ -11,10 +11,13 @@ document.addEventListener('DOMContentLoaded', () => {
 // headline and the photo are the only two clickable elements, both
 // linking to that item's News Details page. Flip the flag on a
 // news-data.js entry (and give it an `excerpt`) to include it here —
-// no HTML markup to duplicate.
+// no HTML markup to duplicate. Sorted by createdOrder descending so the
+// newest-added item is the first one shown, same convention as the
+// university-news.html listing and job-circular.html.
 // ------------------------------------------------------------------
 const newsItems = Object.entries(newsData)
   .filter(([, item]) => item.showOnAdmissions)
+  .sort(([, a], [, b]) => b.createdOrder - a.createdOrder)
   .map(([id, item]) => ({
     id,
     image: item.image,
@@ -91,6 +94,7 @@ function initNewsCarousel() {
 const filterCategories = {
   events: Object.values(eventsData)
     .filter((item) => item.showOnAdmissions)
+    .sort((a, b) => b.createdOrder - a.createdOrder)
     .map((item) => ({
       image: item.image,
       headline: item.headline,

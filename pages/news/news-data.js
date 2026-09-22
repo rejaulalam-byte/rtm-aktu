@@ -18,6 +18,13 @@
 // design) reused across every item until real per-item article text is
 // written - same handling as the faculty-profile boilerplate blocks.
 //
+// `createdOrder` is assigned once, in creation order, and never changes -
+// same permanent-identity pattern as jobCircularData's createdOrder
+// (pages/job-circular/job-circular-data.js). Every list/carousel that reads
+// this file (university-news.html, the Admissions "Current News" carousel,
+// the home page's Current News list) sorts by createdOrder descending so
+// the newest-added item always shows first, regardless of its `date`.
+//
 // Paths below are relative to pages/ (university-news.html, admissions.html
 // and news-details.html all live at that same depth).
 // ------------------------------------------------------------------
@@ -28,6 +35,7 @@ const newsPlaceholderBody = [
 
 const newsData = {
   'rtm-aktu-hosts-international-research-conference-2026': {
+    createdOrder: 1,
     headline: 'RTM-AKTU Hosts International Research Conference 2026',
     date: '2026-08-28',
     image: '../images/university-news/news-01.jpg',
@@ -36,6 +44,7 @@ const newsData = {
     body: newsPlaceholderBody,
   },
   'new-academic-programs-introduced-this-semester': {
+    createdOrder: 2,
     headline: 'New Academic Programs Introduced This Semester.',
     date: '2026-08-26',
     image: '../images/university-news/news-02.jpg',
@@ -44,6 +53,7 @@ const newsData = {
     body: newsPlaceholderBody,
   },
   'students-achieve-outstanding-results-in-national-competitions': {
+    createdOrder: 3,
     headline: 'Students Achieve Outstanding Results in National Competitions',
     date: '2026-08-26',
     image: '../images/university-news/news-03.jpg',
@@ -52,6 +62,7 @@ const newsData = {
     body: newsPlaceholderBody,
   },
   'ugc-member-inaugurates-laboratories': {
+    createdOrder: 4,
     headline: "Professor Dr. Anwar Hossain, Honorable Member of the UGC, officially inaugurated the laboratories during his visit to RTM-AKTU on Sept. 20, 2025.",
     date: '2026-08-26',
     image: '../images/university-news/news-04.jpg',
@@ -60,6 +71,7 @@ const newsData = {
     body: newsPlaceholderBody,
   },
   'rtm-aktu-opens-admission-window-for-upcoming-academic-session': {
+    createdOrder: 5,
     headline: 'RTM-AKTU Opens Admission Window for Upcoming Academic Session',
     date: '2026-08-18',
     image: '../images/admissions/news-1.jpg',
@@ -69,6 +81,7 @@ const newsData = {
     body: newsPlaceholderBody,
   },
   'new-scholarship-fund-launched-for-first-generation-university-students': {
+    createdOrder: 6,
     headline: 'New Scholarship Fund Launched for First-Generation University Students',
     date: '2026-08-25',
     image: '../images/admissions/news-2.jpg',
@@ -78,6 +91,7 @@ const newsData = {
     body: newsPlaceholderBody,
   },
   'department-of-cse-signs-research-partnership-with-regional-tech-firm': {
+    createdOrder: 7,
     headline: 'Department of CSE Signs Research Partnership with Regional Tech Firm',
     date: '2026-09-05',
     image: '../images/admissions/news-3.jpg',

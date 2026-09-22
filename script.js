@@ -138,6 +138,9 @@ function initAnnouncementMarquee() {
 // entry to swap what shows here - no HTML markup to duplicate.
 // initDateWeekdays(), called later in this same DOMContentLoaded
 // listener, fills in the .js-weekday spans rendered below.
+//
+// Sorted by createdOrder descending so the newest-added item is always
+// first, same convention as university-news.html and job-circular.html.
 // ------------------------------------------------------------------
 function renderCurrentNews() {
   const listEl = document.getElementById('currentNewsList');
@@ -145,7 +148,8 @@ function renderCurrentNews() {
 
   const items = Object.entries(newsData)
     .filter(([, item]) => item.showOnHome)
-    .map(([id, item]) => ({ id, ...item }));
+    .map(([id, item]) => ({ id, ...item }))
+    .sort((a, b) => b.createdOrder - a.createdOrder);
 
   listEl.innerHTML = items
     .map((item, index) => {

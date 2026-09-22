@@ -288,13 +288,18 @@
     // row a link to its News Details page, through the shared
     // pagination/search controls (pages/listing-controls.js) instead of a
     // single flat render pass - same item markup as before.
+    //
+    // Sorted by createdOrder descending so the newest-added item always
+    // shows first (Sl. No. 01), same convention as job-circular.html.
     document.addEventListener('DOMContentLoaded', () => {
       const listEl = document.getElementById('uniNewsList');
       const controlsEl = document.getElementById('listingControls');
       const paginationEl = document.getElementById('listingPagination');
       if (!listEl || !controlsEl || !paginationEl) return;
 
-      const items = Object.entries(newsData).map(([id, item]) => ({ id, ...item }));
+      const items = Object.entries(newsData)
+        .map(([id, item]) => ({ id, ...item }))
+        .sort((a, b) => b.createdOrder - a.createdOrder);
 
       initListingControls({
         listEl,
