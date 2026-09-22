@@ -354,10 +354,10 @@ function initHeroSlider() {
 // images/gallery/) — no HTML markup to duplicate.
 // ------------------------------------------------------------------
 const galleryImages = [
-  { src: 'images/gallery/gallery-1.png', alt: 'Annual Sports Week celebration', id: 'annual-sports-competition-2025' },
-  { src: 'images/gallery/gallery-2.png', alt: 'Tree Plantation Week planting activity', id: 'tree-plantation-week-2026' },
-  { src: 'images/gallery/gallery-3.png', alt: 'Convocation 2025 graduation ceremony', id: 'convocation-2025' },
-  { src: 'images/gallery/gallery-4.png', alt: "University's Victory Day observance", id: 'victory-day-2022' },
+  { src: 'images/gallery/gallery-1.jpg', alt: 'Annual Sports Week celebration', id: 'annual-sports-competition-2025' },
+  { src: 'images/gallery/gallery-2.jpg', alt: 'Tree Plantation Week planting activity', id: 'tree-plantation-week-2026' },
+  { src: 'images/gallery/gallery-3.jpg', alt: 'Convocation 2025 graduation ceremony', id: 'convocation-2025' },
+  { src: 'images/gallery/gallery-4.jpg', alt: "University's Victory Day observance", id: 'victory-day-2022' },
 ];
 
 function renderGallery() {
