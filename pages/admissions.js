@@ -200,6 +200,13 @@ function initFilterCarousel() {
     tab.addEventListener('click', () => selectCategory(tab.dataset.category));
   });
 
+  // Initial paint: replace the placeholder markup baked into admissions.html
+  // with the newest event (filterCategories.events is sorted createdOrder
+  // descending) - previously render() only ran on an arrow/tab click, so the
+  // stale placeholder showed until then. Runs once either way; the
+  // ?tab=notices path below only swaps visibility and never calls render().
+  if (filterCategories[category].length) render();
+
   // Sidebar "Notices" links elsewhere (admissions.html?tab=notices#news-events-tabs)
   // land with that tab already selected instead of the default Current Events.
   const requestedTab = new URLSearchParams(window.location.search).get('tab');
