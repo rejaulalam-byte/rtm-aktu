@@ -328,7 +328,7 @@
         <div id="news-events-tabs"></div>
         <div class="adm-filter-tabs" id="filterTabs">
           <button type="button" class="adm-filter-tab is-active" data-category="events">Current Events</button>
-          <a href="notice-updates.html" class="adm-filter-tab">Notices</a>
+          <button type="button" class="adm-filter-tab" data-category="notices">Notices</button>
           <a href="result.html" class="adm-filter-tab">Result</a>
         </div>
 
@@ -348,6 +348,31 @@
             <a href="current-events.html" class="btn btn-outline" id="filterLink">View All Events &rarr;</a>
           </div>
           <button type="button" class="adm-news-card__nav adm-news-card__nav--next" id="filterNext" aria-label="Next item">&rsaquo;</button>
+        </div>
+
+        <div class="adm-notice-card" id="filterCardNotice" hidden>
+          <button type="button" class="adm-news-card__nav adm-news-card__nav--prev" id="filterNoticePrev" aria-label="Previous notice">&lsaquo;</button>
+          <a href="#" class="notice-card adm-notice-card__inner" id="filterNoticeLinkCard">
+            <span class="notice-card__badge" id="filterNoticeBadge">01</span>
+            <div class="notice-card__body">
+              <p class="notice-card__text" id="filterNoticeText">&nbsp;</p>
+              <div class="date-meta">
+                <span class="date-meta__item">
+                  <svg class="date-meta__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M4 9h16M8 3v4M16 3v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                  <span id="filterNoticeDate"></span>
+                </span>
+                <span class="date-meta__item">
+                  <svg class="date-meta__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M4 9h16M8 3v4M16 3v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><rect x="7.5" y="12" width="4" height="4" rx="1" fill="currentColor"/></svg>
+                  <span id="filterNoticeWeekday"></span>
+                </span>
+              </div>
+              <span class="adm-notice-card__details-link">View Notice Details &rarr;</span>
+            </div>
+          </a>
+          <button type="button" class="adm-news-card__nav adm-news-card__nav--next" id="filterNoticeNext" aria-label="Next notice">&rsaquo;</button>
+        </div>
+        <div class="adm-notice-card__footer" id="filterCardNoticeFooter" hidden>
+          <a href="notice-updates.html" class="btn btn-outline">View All Notice &rarr;</a>
         </div>
         </div>
       </div>
@@ -474,6 +499,7 @@
   <script src="../script.js"></script>
   <script src="news/news-data.js"></script>
   <script src="events/events-data.js"></script>
+  <script src="notices/notices-data.js"></script>
   <script src="admissions.js"></script>
 </body>
 </html>

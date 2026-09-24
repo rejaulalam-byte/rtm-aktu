@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   initNewsCarousel();
   initFilterCarousel();
+  initNoticeCarousel();
 });
 
 // ------------------------------------------------------------------
@@ -72,13 +73,14 @@ function initNewsCarousel() {
 }
 
 // ------------------------------------------------------------------
-// Filter tabs card (pages/admissions.html): "Current Events" is still a
-// live in-page filter (data-category="events") - clicking it switches
-// the card below and the prev/next arrows cycle through its items.
-// "Notices" and "Result" are plain deferred links (href="#", no
-// data-category) pending the real All Notices / Results pages, so they
-// no longer drive this card - see initFilterCarousel()'s `tabs` query,
-// which only wires up elements that still have data-category.
+// Filter tabs card (pages/admissions.html): "Current Events"
+// (data-category="events") and "Notices" (data-category="notices") are
+// live in-page tabs. "Result" is a plain link to result.html (no
+// data-category), so it doesn't drive this card - see
+// initFilterCarousel()'s `tabs` query, which only wires up elements that
+// have data-category. "Notices" swaps #filterCard out for its own
+// #filterCardNotice (a .notice-card, not the image card), driven by
+// initNoticeCarousel() below.
 //
 // `events` is now sourced from the shared pages/events/events-data.js
 // (loaded before this file) instead of its own inline array - same
@@ -86,10 +88,10 @@ function initNewsCarousel() {
 // pages/news/news-data.js. Only items flagged `showOnAdmissions: true`
 // appear here; flip that flag on an events-data.js entry to include it.
 //
-// The `results` and `others` entries below are unused now but kept as
-// ready-made content for whenever "Notices"/"Result" get wired to real
-// pages (or re-enabled as filter tabs) - re-add data-category="others"
-// (Notices) / data-category="results" (Result) to bring one back.
+// The `results` and `others` entries below are unused (Notices now
+// reads pages/notices/notices-data.js instead of `others`) but kept as
+// ready-made content - re-add data-category="results" to the "Result"
+// tab to bring that one back.
 // ------------------------------------------------------------------
 const filterCategories = {
   events: Object.values(eventsData)
@@ -163,6 +165,9 @@ function initFilterCarousel() {
   const imageWrap = document.getElementById('filterImageWrap');
   const image = document.getElementById('filterImage');
   const tabs = Array.from(tabsWrap.querySelectorAll('.adm-filter-tab[data-category]'));
+  const filterCard = document.getElementById('filterCard');
+  const noticeCard = document.getElementById('filterCardNotice');
+  const noticeFooter = document.getElementById('filterCardNoticeFooter');
 
   let category = 'events';
   let index = 0;
@@ -185,7 +190,12 @@ function initFilterCarousel() {
       category = next;
       index = 0;
       tabs.forEach((t) => t.classList.toggle('is-active', t === tab));
-      render();
+
+      const showNotices = category === 'notices';
+      if (filterCard) filterCard.hidden = showNotices;
+      if (noticeCard) noticeCard.hidden = !showNotices;
+      if (noticeFooter) noticeFooter.hidden = !showNotices;
+      if (!showNotices) render();
     });
   });
 
@@ -198,6 +208,80 @@ function initFilterCarousel() {
   nextBtn.addEventListener('click', () => {
     const items = filterCategories[category];
     index = (index + 1) % items.length;
+    render();
+  });
+}
+
+// ------------------------------------------------------------------
+// "Notices" filter tab card (#filterCardNotice): the arrows cycle
+// through the notices flagged `showOnAdmissions: true` in the shared
+// pages/notices/notices-data.js (loaded before this file), newest-added
+// first (createdOrder descending) - same convention as the Current News
+// and Current Events cards. Both fields are written by the admin panel's
+// notice export (self-bhalani/notice-lib.php) and are read defensively
+// (`?? false` / `?? 0`) so hand-written entries without them still load.
+// With no flagged notices the card shows a short empty message linking
+// to notice-updates.html instead of a blank card.
+// ------------------------------------------------------------------
+const noticeItems = Object.entries(typeof noticesData === 'undefined' ? {} : noticesData)
+  .filter(([, item]) => item.showOnAdmissions ?? false)
+  .sort(([, a], [, b]) => (b.createdOrder ?? 0) - (a.createdOrder ?? 0))
+  .map(([id, item]) => ({
+    id,
+    text: item.text,
+    date: formatNoticeDateLong(item.date),
+    weekday: formatNoticeWeekday(item.date),
+  }));
+
+function initNoticeCarousel() {
+  const card = document.getElementById('filterCardNotice');
+  const prevBtn = document.getElementById('filterNoticePrev');
+  const nextBtn = document.getElementById('filterNoticeNext');
+  const linkCard = document.getElementById('filterNoticeLinkCard');
+  if (!card || !prevBtn || !nextBtn || !linkCard) return;
+
+  const badge = document.getElementById('filterNoticeBadge');
+  const text = document.getElementById('filterNoticeText');
+  const date = document.getElementById('filterNoticeDate');
+  const weekday = document.getElementById('filterNoticeWeekday');
+  const dateMeta = linkCard.querySelector('.date-meta');
+  const detailsLink = linkCard.querySelector('.adm-notice-card__details-link');
+
+  if (!noticeItems.length) {
+    linkCard.href = 'notice-updates.html';
+    text.textContent = 'No notices are featured here right now. See all notices on the Notice & Updates page.';
+    [badge, dateMeta, detailsLink, prevBtn, nextBtn].forEach((el) => {
+      if (el) el.hidden = true;
+    });
+    return;
+  }
+
+  // A single notice has nothing to cycle through.
+  if (noticeItems.length === 1) {
+    prevBtn.style.visibility = 'hidden';
+    nextBtn.style.visibility = 'hidden';
+  }
+
+  let index = 0;
+
+  const render = () => {
+    const item = noticeItems[index];
+    linkCard.href = `notice-details.html?id=${encodeURIComponent(item.id)}`;
+    badge.textContent = String(index + 1).padStart(2, '0');
+    text.textContent = item.text;
+    date.textContent = item.date;
+    weekday.textContent = item.weekday;
+  };
+
+  render();
+
+  prevBtn.addEventListener('click', () => {
+    index = (index - 1 + noticeItems.length) % noticeItems.length;
+    render();
+  });
+
+  nextBtn.addEventListener('click', () => {
+    index = (index + 1) % noticeItems.length;
     render();
   });
 }

@@ -4922,6 +4922,49 @@ a.notice-card:hover {
   }
 }
 
+/* Admissions page (pages/admissions.html) "Notices" filter tab: one
+   .notice-card at a time between the shared .adm-news-card__nav arrows,
+   swapped in for #filterCard by initFilterCarousel() in admissions.js.
+   Declared after .notice-card so __inner's overrides win on source
+   order. The [hidden] rules are needed because both cards set their own
+   display value, which would otherwise override the hidden attribute. */
+.adm-news-card[hidden],
+.adm-notice-card[hidden],
+.adm-notice-card__footer[hidden] {
+  display: none;
+}
+
+.adm-notice-card {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.adm-notice-card__inner {
+  flex: 1;
+  min-width: 0;
+}
+
+.adm-notice-card__details-link {
+  display: inline-block;
+  margin-top: 0.75rem;
+  color: var(--color-navy);
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: color 0.2s ease;
+}
+
+a.adm-notice-card__inner:hover .adm-notice-card__details-link {
+  color: var(--color-red);
+}
+
+.adm-notice-card__footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1.75rem;
+}
+
 /* Notice Details page (pages/notice-details.html), News Details page
    (pages/news-details.html), and Event Details page
    (pages/event-details.html): the "View All Notices"/"View Latest News &
