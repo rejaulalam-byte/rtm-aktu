@@ -183,21 +183,29 @@ function initFilterCarousel() {
     image.alt = item.headline;
   };
 
-  tabs.forEach((tab) => {
-    tab.addEventListener('click', () => {
-      const next = tab.dataset.category;
-      if (next === category) return;
-      category = next;
-      index = 0;
-      tabs.forEach((t) => t.classList.toggle('is-active', t === tab));
+  const selectCategory = (next) => {
+    if (next === category) return;
+    category = next;
+    index = 0;
+    tabs.forEach((t) => t.classList.toggle('is-active', t.dataset.category === next));
 
-      const showNotices = category === 'notices';
-      if (filterCard) filterCard.hidden = showNotices;
-      if (noticeCard) noticeCard.hidden = !showNotices;
-      if (noticeFooter) noticeFooter.hidden = !showNotices;
-      if (!showNotices) render();
-    });
+    const showNotices = category === 'notices';
+    if (filterCard) filterCard.hidden = showNotices;
+    if (noticeCard) noticeCard.hidden = !showNotices;
+    if (noticeFooter) noticeFooter.hidden = !showNotices;
+    if (!showNotices) render();
+  };
+
+  tabs.forEach((tab) => {
+    tab.addEventListener('click', () => selectCategory(tab.dataset.category));
   });
+
+  // Sidebar "Notices" links elsewhere (admissions.html?tab=notices#news-events-tabs)
+  // land with that tab already selected instead of the default Current Events.
+  const requestedTab = new URLSearchParams(window.location.search).get('tab');
+  if (requestedTab === 'notices' && tabs.some((t) => t.dataset.category === 'notices')) {
+    selectCategory('notices');
+  }
 
   prevBtn.addEventListener('click', () => {
     const items = filterCategories[category];
