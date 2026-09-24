@@ -52,12 +52,14 @@ const noticesData = {
   'admission-circular-for-spring-2026-session-published': {
     text: 'Admission Circular for Spring 2026 Session Published',
     date: '2026-08-10',
+    showOnHome: true,
     body: noticePlaceholderBody,
     document: noticePlaceholderDocument,
   },
   'semester-fee-payment-deadline-august-30-2026': {
     text: 'Semester Fee Payment Deadline: August 30, 2026',
     date: '2026-08-05',
+    showOnHome: true,
     body: noticePlaceholderBody,
     document: noticePlaceholderDocument,
   },
@@ -69,7 +71,250 @@ function formatNoticeDateLong(isoDate) {
   return date.toLocaleDateString('en-US', { day: 'numeric', month: 'long', year: 'numeric' });
 }
 
+// Same "Aug 05, 2026" form as formatNewsDateShort() - used by the Home
+// page Notice Board (renderNoticeBoard() in script.js).
+function formatNoticeDateShort(isoDate) {
+  const date = new Date(`${isoDate}T00:00:00`);
+  return date.toLocaleDateString('en-US', { month: 'short', day: '2-digit', year: 'numeric' });
+}
+
 function formatNoticeWeekday(isoDate) {
   const date = new Date(`${isoDate}T00:00:00`);
   return date.toLocaleDateString('en-US', { weekday: 'long' });
+}
+
+// Notice text/body comes from the admin panel, so every listing that
+// builds HTML with a template string runs it through this first - a `<`
+// or `"` in a notice must print as text, never become markup.
+function escapeNoticeHtml(text) {
+  return String(text)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+// A record's `body` is either a plain-text string (older/hand-written
+// entries), or (when written with the admin panel's rich-text editor) a
+// string of HTML - same rich-text editor and toolbar as News. That
+// HTML is already sanitized by the admin panel before it is saved; it is
+// rebuilt here once more through the same allow-list (noticeSanitizeHtml()
+// in self-bhalani/notice-lib.php - keep the two in step), element by element
+// with createElement/textContent, so a hand-edited file can't inject
+// markup either. The site's own body-copy classes are added on the way.
+const NOTICE_HTML_RULES = {
+  P: { tag: 'p', className: 'text-section__text', styleProps: ['text-align', 'margin-left', 'line-height'] },
+  H3: { tag: 'h3', className: 'cm-content__heading', styleProps: ['text-align', 'margin-left', 'line-height'] },
+  H4: { tag: 'h4', className: 'text-section__subheading', styleProps: ['text-align', 'margin-left', 'line-height'] },
+  LI: { tag: 'li', styleProps: ['text-align', 'margin-left', 'line-height'] },
+  UL: { tag: 'ul', className: 'text-section__list' },
+  OL: { tag: 'ol', className: 'text-section__list text-section__list--ordered' },
+  STRONG: { tag: 'strong' }, B: { tag: 'strong' },
+  EM: { tag: 'em' }, I: { tag: 'em' },
+  U: { tag: 'u' },
+  // Text/background color (forecolor/backcolor), font family/size/weight -
+  // all always arrive wrapped in a <span style="..."> by TinyMCE.
+  SPAN: { tag: 'span', styleProps: ['color', 'background-color', 'font-family', 'font-size', 'font-weight'] },
+  BR: { tag: 'br' },
+  A: { tag: 'a', className: 'text-section__link' },
+  IMG: { tag: 'img', className: 'news-inline-img' },
+  // Tables from the editor's table plugin. The table's default look
+  // (padding, header shading, base grid) comes from style.css
+  // (.news-detail-text table) - a cell's/row's own background-color/border
+  // (set via the editor's "Cell properties"/"Row properties" Advanced tab)
+  // overrides that default, since inline style wins over the class rule
+  // (mirrors NOTICE_STYLE_ALLOWED in self-bhalani/notice-lib.php).
+  TABLE: { tag: 'table' },
+  THEAD: { tag: 'thead' },
+  TBODY: { tag: 'tbody' },
+  TR: { tag: 'tr', styleProps: ['background-color', 'border', 'border-width', 'border-style', 'border-color'] },
+  // border-top/-right/-bottom/-left: the editor's per-side cell border
+  // controls (Cell Color & Border button) - mirrors NOTICE_STYLE_ALLOWED in
+  // self-bhalani/notice-lib.php, keep the two in step.
+  TH: {
+    tag: 'th',
+    styleProps: ['text-align', 'background-color', 'border', 'border-width', 'border-style', 'border-color',
+      'border-top', 'border-right', 'border-bottom', 'border-left'],
+    cell: true,
+  },
+  TD: {
+    tag: 'td',
+    styleProps: ['text-align', 'background-color', 'border', 'border-width', 'border-style', 'border-color',
+      'border-top', 'border-right', 'border-bottom', 'border-left'],
+    cell: true,
+  },
+};
+const NOTICE_HTML_DROP = new Set(['SCRIPT', 'STYLE', 'IFRAME', 'FRAME', 'FRAMESET', 'OBJECT', 'EMBED', 'APPLET', 'TEMPLATE',
+  'SVG', 'MATH', 'NOSCRIPT', 'TEXTAREA', 'SELECT', 'BUTTON', 'INPUT', 'FORM', 'HEAD', 'TITLE', 'META', 'LINK', 'BASE',
+  'VIDEO', 'AUDIO', 'CANVAS']);
+const NOTICE_IMG_CLASSES = ['news-inline-img--left', 'news-inline-img--left-sm', 'news-inline-img--right',
+  'news-inline-img--right-sm', 'news-inline-img--center'];
+const NOTICE_IMG_SRC_RE = /^\.\.\/images\/notices-body\/[A-Za-z0-9_-]+\.(?:jpg|png|webp)$/;
+
+function noticeSafeHref(href) {
+  const value = href.trim();
+  if (!value) return null;
+  const scheme = value.replace(/[\x00-\x20\x7F]+/g, '').match(/^([a-z][a-z0-9+.-]*):/i);
+  if (scheme && !['http', 'https', 'mailto', 'tel'].includes(scheme[1].toLowerCase())) return null;
+  return value;
+}
+
+// font-family/font-size/font-weight are matched against these fixed lists
+// (not a free-form regex) - only the site's own two brand fonts, and only
+// the sizes/weights the editor's own dropdowns offer, ever reach the page.
+// Keep in step with NOTICE_FONT_FAMILIES/SIZES/WEIGHTS in self-bhalani/notice-lib.php.
+const NOTICE_FONT_FAMILIES = { 'inter, sans-serif': 'Inter, sans-serif', 'poppins, sans-serif': 'Poppins, sans-serif' };
+const NOTICE_FONT_SIZES = ['12px', '14px', '15px', '16px', '18px', '20px', '24px', '28px', '32px'];
+const NOTICE_FONT_WEIGHTS = ['300', '400', '500', '600', '700', '800'];
+
+// Matches either #hex or the browser's rgb()/rgba() form - TinyMCE's own
+// getContent() re-serializes any color inside a compound value (border-top/
+// -right/-bottom/-left, the plain 'border' shorthand, border-color) as
+// rgb(r, g, b) even though the editor's color picker supplied hex; a plain
+// background-color/color is left as the authored hex. Both forms need
+// accepting here or the "Cell Color & Border" dialog's border colors would
+// be silently stripped. Mirrors NOTICE_COLOR_RE in self-bhalani/notice-lib.php.
+const NOTICE_COLOR_RE_SRC = '(#[0-9a-f]{3}(?:[0-9a-f]{3})?|rgba?\\(\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*(?:,\\s*[0-9.]+\\s*)?\\))';
+
+// Normalizes either color form above to lowercase #rrggbb, or returns null
+// if it's neither. Mirrors noticeColorToHex() in self-bhalani/notice-lib.php.
+function noticeColorToHex(val) {
+  const v = val.trim();
+  if (/^#[0-9a-f]{3}(?:[0-9a-f]{3})?$/i.test(v)) return v.toLowerCase();
+  const m = v.match(/^rgba?\(\s*(\d{1,3})\s*,\s*(\d{1,3})\s*,\s*(\d{1,3})\s*(?:,\s*[0-9.]+\s*)?\)$/i);
+  if (!m) return null;
+  const clamp = (n) => Math.max(0, Math.min(255, Number(n)));
+  return '#' + [m[1], m[2], m[3]].map((n) => clamp(n).toString(16).padStart(2, '0')).join('');
+}
+
+// Editor-supplied style attribute -> only the declarations `styleProps`
+// permits, with each value itself checked against a fixed pattern or list -
+// never passed through as free-form CSS. Mirrors noticeCleanStyle() in
+// self-bhalani/notice-lib.php - keep the two in step.
+function noticeCleanStyle(styleProps, styleAttr) {
+  const out = [];
+  (styleAttr || '').split(';').forEach((decl) => {
+    const m = decl.match(/^\s*([a-z-]+)\s*:\s*(.+?)\s*$/i);
+    if (!m) return;
+    const prop = m[1].toLowerCase();
+    const val = m[2].trim();
+    if (!styleProps.includes(prop)) return;
+    let hex;
+    if (prop === 'text-align' && /^(left|center|right|justify)$/i.test(val)) {
+      out.push(`text-align: ${val.toLowerCase()}`);
+    } else if ((prop === 'color' || prop === 'background-color') && (hex = noticeColorToHex(val)) !== null) {
+      out.push(`${prop}: ${hex}`);
+    } else if (prop === 'margin-left') {
+      const mm = val.match(/^([0-9]{1,3})px$/);
+      if (mm && Number(mm[1]) <= 200) out.push(`margin-left: ${Number(mm[1])}px`);
+    } else if (prop === 'line-height' && /^[0-3](?:\.[0-9]{1,2})?$/.test(val)) {
+      out.push(`line-height: ${val}`);
+    } else if (prop === 'font-family') {
+      const norm = val.trim().replace(/^["']|["']$/g, '').toLowerCase().replace(/\s*,\s*/g, ', ');
+      if (NOTICE_FONT_FAMILIES[norm]) out.push(`font-family: ${NOTICE_FONT_FAMILIES[norm]}`);
+    } else if (prop === 'font-size' && NOTICE_FONT_SIZES.includes(val)) {
+      out.push(`font-size: ${val}`);
+    } else if (prop === 'font-weight' && NOTICE_FONT_WEIGHTS.includes(val)) {
+      out.push(`font-weight: ${val}`);
+    } else if (prop === 'border-width') {
+      const mm = val.match(/^([0-9]{1,2})px$/);
+      if (mm && Number(mm[1]) >= 1 && Number(mm[1]) <= 10) out.push(`border-width: ${Number(mm[1])}px`);
+    } else if (prop === 'border-style' && /^(none|solid|dashed|dotted|double|groove|ridge|inset|outset)$/i.test(val)) {
+      out.push(`border-style: ${val.toLowerCase()}`);
+    } else if (prop === 'border-color' && (hex = noticeColorToHex(val)) !== null) {
+      out.push(`border-color: ${hex}`);
+    } else if (prop === 'border') {
+      const mm = val.match(new RegExp(`^([0-9]{1,2})px\\s+(none|solid|dashed|dotted|double|groove|ridge|inset|outset)\\s+${NOTICE_COLOR_RE_SRC}$`, 'i'));
+      if (mm && Number(mm[1]) <= 10 && (hex = noticeColorToHex(mm[3])) !== null) {
+        out.push(`border: ${Number(mm[1])}px ${mm[2].toLowerCase()} ${hex}`);
+      }
+    } else if (['border-top', 'border-right', 'border-bottom', 'border-left'].includes(prop)) {
+      const mm = val.match(new RegExp(`^([0-9]{1,2})px\\s+(none|solid|dashed|dotted|double|groove|ridge|inset|outset)\\s+${NOTICE_COLOR_RE_SRC}$`, 'i'));
+      if (mm && Number(mm[1]) <= 10 && (hex = noticeColorToHex(mm[3])) !== null) {
+        out.push(`${prop}: ${Number(mm[1])}px ${mm[2].toLowerCase()} ${hex}`);
+      }
+    }
+  });
+  return out.length ? `${out.join('; ')};` : '';
+}
+
+function sanitizeNoticeHtml(html) {
+  // DOMParser documents are inert: nothing in them runs or loads.
+  const source = new DOMParser().parseFromString(`<body>${html}</body>`, 'text/html').body;
+  const fragment = document.createDocumentFragment();
+  source.childNodes.forEach((child) => appendCleanNoticeNode(child, fragment));
+  return fragment;
+}
+
+function appendCleanNoticeNode(node, parent) {
+  if (node.nodeType === Node.TEXT_NODE) {
+    parent.appendChild(document.createTextNode(node.textContent));
+    return;
+  }
+  if (node.nodeType !== Node.ELEMENT_NODE || NOTICE_HTML_DROP.has(node.tagName.toUpperCase())) return;
+
+  const rule = NOTICE_HTML_RULES[node.tagName.toUpperCase()];
+  let target = parent; // unknown tag: keep its text, drop the tag
+  if (rule) {
+    const el = document.createElement(rule.tag);
+    if (rule.className) el.className = rule.className;
+
+    if (rule.tag === 'img') {
+      const src = (node.getAttribute('src') || '').trim();
+      if (!NOTICE_IMG_SRC_RE.test(src)) return;
+      el.src = src;
+      el.alt = node.getAttribute('alt') || '';
+      el.loading = 'lazy';
+      const floatClass = (node.getAttribute('class') || '').split(/\s+/).find((c) => NOTICE_IMG_CLASSES.includes(c));
+      if (floatClass) el.classList.add(floatClass);
+      parent.appendChild(el);
+      return;
+    }
+    if (rule.tag === 'a') {
+      const href = noticeSafeHref(node.getAttribute('href') || '');
+      if (href !== null) {
+        el.href = href;
+        if (node.getAttribute('target') === '_blank') {
+          el.target = '_blank';
+          el.rel = 'noopener noreferrer';
+        }
+        target = el;
+      }
+    } else {
+      target = el;
+    }
+    if (rule.styleProps) {
+      const style = noticeCleanStyle(rule.styleProps, node.getAttribute('style') || '');
+      if (style) el.setAttribute('style', style);
+    }
+    if (rule.cell) {
+      ['colspan', 'rowspan'].forEach((attr) => {
+        const v = (node.getAttribute(attr) || '').trim();
+        if (/^[1-9][0-9]?$/.test(v)) el.setAttribute(attr, v);
+      });
+    }
+    if (target === el) parent.appendChild(el);
+  }
+  node.childNodes.forEach((child) => appendCleanNoticeNode(child, target));
+}
+
+// Fills `container` with a notice's body. A body with no HTML tags in it
+// (every entry written before the rich-text editor, and the seed data)
+// is kept as the one plain-text paragraph it always rendered as; anything
+// else goes through sanitizeNoticeHtml() above.
+function renderNoticeBody(body, container) {
+  const text = String(body || '');
+  if (!/<[a-z][^>]*>/i.test(text)) {
+    if (!text.trim()) {
+      container.replaceChildren();
+      return;
+    }
+    const p = document.createElement('p');
+    p.className = 'text-section__text';
+    p.textContent = text;
+    container.replaceChildren(p);
+    return;
+  }
+  container.replaceChildren(sanitizeNoticeHtml(text));
 }

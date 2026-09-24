@@ -174,7 +174,7 @@
               </div>
             </article>
 
-            <p class="text-section__text notice-detail-intro" id="ndBody"></p>
+            <div class="news-detail-text notice-detail-intro" id="ndBody"></div>
 
             <div class="img-ph notice-detail-document">
               <img id="ndDocument" src="" alt="" loading="lazy" onerror="this.closest('.img-ph').classList.add('img-ph--broken')">
@@ -330,7 +330,7 @@
       document.getElementById('ndText').textContent = item.text;
       document.getElementById('ndDate').textContent = formatNoticeDateLong(item.date);
       document.getElementById('ndWeekday').textContent = formatNoticeWeekday(item.date);
-      document.getElementById('ndBody').textContent = item.body;
+      renderNoticeBody(item.body || '', document.getElementById('ndBody'));
 
       const doc = document.getElementById('ndDocument');
       doc.closest('.img-ph').classList.remove('img-ph--broken');

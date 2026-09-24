@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initHeroSlider();
   initAnnouncementMarquee();
   renderCurrentNews();
+  renderNoticeBoard();
   renderGallery();
   initSlider({
     trackId: 'galleryTrack',
@@ -174,6 +175,49 @@ function renderCurrentNews() {
           </a>
         </li>`;
     })
+    .join('');
+}
+
+// ------------------------------------------------------------------
+// Home page "Notice Board" (#noticeBoardList): renders the notices
+// flagged `showOnHome: true` in the shared pages/notices/notices-data.js
+// (loaded before this file on index.html), each row linking to its
+// Notice Details page - same pattern as renderCurrentNews() above. Tick
+// "Show on Home page" on a notice in the admin panel to swap what shows
+// here. initDateWeekdays() fills in the .js-weekday spans rendered below.
+//
+// Sorted by createdOrder descending (newest-added first); `?? 0` keeps
+// entries written before the admin panel added createdOrder sortable.
+// ------------------------------------------------------------------
+function renderNoticeBoard() {
+  const listEl = document.getElementById('noticeBoardList');
+  if (!listEl || typeof noticesData === 'undefined') return;
+
+  const items = Object.entries(noticesData)
+    .filter(([, item]) => item.showOnHome)
+    .map(([id, item]) => ({ id, ...item }))
+    .sort((a, b) => (b.createdOrder ?? 0) - (a.createdOrder ?? 0));
+
+  listEl.innerHTML = items
+    .map((item) => `
+      <a href="pages/notice-details.html?id=${encodeURIComponent(item.id)}" class="notice-box__item">
+        <span class="notice-box__icon">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 4h16v13H8l-4 4V4Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+        </span>
+        <div>
+          <p class="notice-box__title">${escapeNoticeHtml(item.text)}</p>
+          <div class="date-meta">
+            <span class="date-meta__item">
+              <svg class="date-meta__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M4 9h16M8 3v4M16 3v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+              ${formatNoticeDateShort(item.date)}
+            </span>
+            <span class="date-meta__item">
+              <svg class="date-meta__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M4 9h16M8 3v4M16 3v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><rect x="7.5" y="12" width="4" height="4" rx="1" fill="currentColor"/></svg>
+              <span class="js-weekday" data-date="${escapeNoticeHtml(item.date)}"></span>
+            </span>
+          </div>
+        </div>
+      </a>`)
     .join('');
 }
 
