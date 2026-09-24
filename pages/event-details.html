@@ -332,9 +332,7 @@
       document.getElementById('edDate').textContent = formatEventDateLong(item.date);
       document.getElementById('edWeekday').textContent = formatEventWeekday(item.date);
 
-      document.getElementById('edBody').innerHTML = item.body
-        .map((paragraph) => `<p class="text-section__text">${paragraph}</p>`)
-        .join('');
+      renderEventBody(item.body, document.getElementById('edBody'));
 
       const photo = document.getElementById('edPhoto');
       photo.closest('.img-ph').classList.remove('img-ph--broken');

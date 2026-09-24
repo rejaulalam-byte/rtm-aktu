@@ -315,7 +315,7 @@
             <a href="event-details.html?id=${item.id}" class="uni-news-item">
               <span class="uni-news-item__number">${number}</span>
               <div class="uni-news-item__body">
-                <p class="uni-news-item__headline">${item.headline}</p>
+                <p class="uni-news-item__headline">${escapeEventHtml(item.headline)}</p>
                 <div class="date-meta">
                   <span class="date-meta__item">
                     <svg class="date-meta__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M4 9h16M8 3v4M16 3v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
@@ -328,7 +328,7 @@
                 </div>
               </div>
               <div class="img-ph uni-news-item__thumb">
-                <img src="${item.image}" alt="${item.headline}" loading="lazy" onerror="this.closest('.img-ph').classList.add('img-ph--broken')">
+                <img src="${item.image}" alt="${escapeEventHtml(item.headline)}" loading="lazy" onerror="this.closest('.img-ph').classList.add('img-ph--broken')">
                 <div class="img-ph__fallback" aria-hidden="true">
                   <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="4" width="18" height="16" rx="2" stroke="currentColor" stroke-width="1.6"/><circle cx="8.5" cy="9.5" r="1.5" stroke="currentColor" stroke-width="1.6"/><path d="m4 17 5-5 3 3 3-3.5L21 15" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 </div>
