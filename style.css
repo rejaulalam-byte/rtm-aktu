@@ -4934,16 +4934,22 @@ a.notice-card:hover {
   display: none;
 }
 
+/* margin-bottom matches #filterCard's (.adm-news-card), so switching tabs
+   doesn't shift the section's bottom edge now that the "View All Notice"
+   row sits above the card instead of below it. */
 .adm-notice-card {
   display: flex;
   align-items: center;
   gap: 1.75rem;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.75rem;
 }
 
+/* 15px more badge-to-text gap than the shared .notice-card (1.5rem) -
+   Admissions Notices card only. */
 .adm-notice-card__inner {
   flex: 1;
   min-width: 0;
+  gap: calc(1.5rem + 15px);
 }
 
 .adm-notice-card__details-link {
@@ -4959,10 +4965,12 @@ a.adm-notice-card__inner:hover .adm-notice-card__details-link {
   color: var(--color-red);
 }
 
+/* "View All Notice" row: right-aligned above the card, styled as a plain
+   .adm-news-header__link like "View All News". */
 .adm-notice-card__footer {
   display: flex;
   justify-content: flex-end;
-  margin-bottom: 1.75rem;
+  margin-bottom: 0.75rem;
 }
 
 /* Notice Details page (pages/notice-details.html), News Details page
