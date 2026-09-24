@@ -300,16 +300,19 @@
         pageSizeLabel: { before: 'Show Row', after: 'Per Page' },
         emptyMessage: 'No job circulars match your search.',
         renderEmpty: (message) => `<tr><td colspan="8" class="listing-empty">${message}</td></tr>`,
+        // Status comes from isJobCircularClosed() (job-circular-data.js),
+        // not the stored value, so a circular past its closing date reads
+        // "Closed" here without the admin changing anything.
         renderItem: (item) => `
           <tr>
-            <td class="jc-table__num"><span class="jc-table__badge">${item.slNo}</span></td>
-            <td><a href="job-circular-details.html?id=${item.id}" class="jc-table__link">${item.position}</a></td>
-            <td>${item.positionCount}</td>
-            <td>${item.experience}</td>
-            <td class="jc-table__closing">${item.closingDateDisplay}</td>
-            <td>${item.publishedIn}</td>
-            <td>${item.publishedDate}</td>
-            <td>${item.status}</td>
+            <td class="jc-table__num"><span class="jc-table__badge">${escapeJobHtml(item.slNo)}</span></td>
+            <td><a href="job-circular-details.html?id=${encodeURIComponent(item.id)}" class="jc-table__link">${escapeJobHtml(item.position)}</a></td>
+            <td>${escapeJobHtml(item.positionCount)}</td>
+            <td>${escapeJobHtml(item.experience)}</td>
+            <td class="jc-table__closing">${escapeJobHtml(item.closingDateDisplay)}</td>
+            <td>${escapeJobHtml(item.publishedIn)}</td>
+            <td>${escapeJobHtml(item.publishedDate)}</td>
+            <td>${isJobCircularClosed(item) ? 'Closed' : 'Open'}</td>
           </tr>
         `,
       });

@@ -273,24 +273,35 @@
     // Only the "Name of the Position" cell links through to the record's
     // detail page - the row itself is not clickable (revised from the
     // earlier whole-row click-through).
+    //
+    // Only circulars still open are listed: isJobCircularClosed() (in
+    // job-circular-data.js) drops ones the admin set to CLOSED and ones
+    // whose closing date has passed. Closed ones stay on
+    // job-circular-all.html. With none open, one "Not Available Now" row.
     document.addEventListener('DOMContentLoaded', () => {
       const tbody = document.getElementById('jobCircularTableBody');
       if (!tbody || typeof jobCircularData === 'undefined') return;
 
       const records = Object.entries(jobCircularData)
         .map(([id, item]) => ({ id, ...item }))
+        .filter((item) => !isJobCircularClosed(item))
         .sort((a, b) => b.createdOrder - a.createdOrder);
+
+      if (!records.length) {
+        tbody.innerHTML = '<tr><td colspan="8" class="listing-empty">Not Available Now</td></tr>';
+        return;
+      }
 
       tbody.innerHTML = records.map((item) => `
         <tr>
-          <td class="jc-table__num"><span class="jc-table__badge">${item.slNo}</span></td>
-          <td><a href="job-circular-details.html?id=${item.id}" class="jc-table__link">${item.position}</a></td>
-          <td>${item.positionCount}</td>
-          <td>${item.experience}</td>
-          <td class="jc-table__closing">${item.closingDateDisplay}</td>
-          <td>${item.publishedIn}</td>
-          <td>${item.publishedDate}</td>
-          <td>${item.status}</td>
+          <td class="jc-table__num"><span class="jc-table__badge">${escapeJobHtml(item.slNo)}</span></td>
+          <td><a href="job-circular-details.html?id=${encodeURIComponent(item.id)}" class="jc-table__link">${escapeJobHtml(item.position)}</a></td>
+          <td>${escapeJobHtml(item.positionCount)}</td>
+          <td>${escapeJobHtml(item.experience)}</td>
+          <td class="jc-table__closing">${escapeJobHtml(item.closingDateDisplay)}</td>
+          <td>${escapeJobHtml(item.publishedIn)}</td>
+          <td>${escapeJobHtml(item.publishedDate)}</td>
+          <td>Open</td>
         </tr>
       `).join('');
     });
