@@ -124,3 +124,180 @@ function getJobCircularDisplayNumber(slug) {
   const { openRankBySlug, archiveRankBySlug } = getJobCircularDisplayRanks();
   return openRankBySlug[slug] ?? archiveRankBySlug[slug] ?? null;
 }
+
+// A record's `description` is rich-text HTML written with the admin panel's
+// editor. It is already sanitized there before it is saved; it is rebuilt
+// here once more through the same allow-list (jobSanitizeDescriptionHtml()
+// in self-bhalani/job-circular-lib.php - keep the two in step), element by
+// element with createElement/textContent, so a hand-edited data file can't
+// inject markup either. Same technique as sanitizeNewsHtml() in
+// pages/news/news-data.js. Tags stay bare (no site classes) -
+// .jcd-description in style.css styles them.
+const JOB_DESC_HTML_RULES = {
+  P: { tag: 'p', styleProps: ['text-align', 'margin-left', 'line-height'] },
+  H4: { tag: 'h4', styleProps: ['text-align', 'margin-left', 'line-height'] },
+  LI: { tag: 'li', styleProps: ['text-align', 'margin-left', 'line-height'] },
+  UL: { tag: 'ul' },
+  OL: { tag: 'ol' },
+  STRONG: { tag: 'strong' }, B: { tag: 'strong' },
+  EM: { tag: 'em' }, I: { tag: 'em' },
+  U: { tag: 'u' },
+  SPAN: { tag: 'span', styleProps: ['color', 'background-color', 'font-family', 'font-size', 'font-weight'] },
+  BR: { tag: 'br' },
+  A: { tag: 'a' },
+  // width/height: a photo drag-resized in the editor keeps its size.
+  IMG: { tag: 'img', styleProps: ['width', 'height'] },
+  TABLE: { tag: 'table' },
+  THEAD: { tag: 'thead' },
+  TBODY: { tag: 'tbody' },
+  TR: { tag: 'tr', styleProps: ['background-color', 'border', 'border-width', 'border-style', 'border-color'] },
+  TH: {
+    tag: 'th',
+    styleProps: ['text-align', 'background-color', 'border', 'border-width', 'border-style', 'border-color',
+      'border-top', 'border-right', 'border-bottom', 'border-left'],
+    cell: true,
+  },
+  TD: {
+    tag: 'td',
+    styleProps: ['text-align', 'background-color', 'border', 'border-width', 'border-style', 'border-color',
+      'border-top', 'border-right', 'border-bottom', 'border-left'],
+    cell: true,
+  },
+};
+const JOB_DESC_HTML_DROP = new Set(['SCRIPT', 'STYLE', 'IFRAME', 'FRAME', 'FRAMESET', 'OBJECT', 'EMBED', 'APPLET',
+  'TEMPLATE', 'SVG', 'MATH', 'NOSCRIPT', 'TEXTAREA', 'SELECT', 'BUTTON', 'INPUT', 'FORM', 'HEAD', 'TITLE', 'META',
+  'LINK', 'BASE', 'VIDEO', 'AUDIO', 'CANVAS']);
+const JOB_DESC_IMG_CLASSES = ['news-inline-img--left', 'news-inline-img--left-sm', 'news-inline-img--right',
+  'news-inline-img--right-sm', 'news-inline-img--center'];
+const JOB_DESC_IMG_SRC_RE = /^\.\.\/images\/job-circular-body\/[A-Za-z0-9_-]+\.(?:jpg|png|webp)$/;
+const JOB_DESC_FONT_FAMILIES = { 'inter, sans-serif': 'Inter, sans-serif', 'poppins, sans-serif': 'Poppins, sans-serif' };
+const JOB_DESC_FONT_SIZES = ['12px', '14px', '15px', '16px', '18px', '20px', '24px', '28px', '32px'];
+const JOB_DESC_FONT_WEIGHTS = ['300', '400', '500', '600', '700', '800'];
+const JOB_DESC_BORDER_STYLES = 'none|solid|dashed|dotted|double|groove|ridge|inset|outset';
+// #hex, or the rgb()/rgba() form TinyMCE re-serializes compound border
+// values into. Mirrors JOB_DESC_COLOR_RE in self-bhalani/job-circular-lib.php.
+const JOB_DESC_COLOR_RE_SRC = '(#[0-9a-f]{3}(?:[0-9a-f]{3})?|rgba?\\(\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*(?:,\\s*[0-9.]+\\s*)?\\))';
+
+function jobDescSafeHref(href) {
+  const value = href.trim();
+  if (!value) return null;
+  const scheme = value.replace(/[\x00-\x20\x7F]+/g, '').match(/^([a-z][a-z0-9+.-]*):/i);
+  if (scheme && !['http', 'https', 'mailto', 'tel'].includes(scheme[1].toLowerCase())) return null;
+  return value;
+}
+
+// Either color form -> lowercase #hex, or null. Mirrors jobDescColorToHex().
+function jobDescColorToHex(val) {
+  const v = val.trim();
+  if (/^#[0-9a-f]{3}(?:[0-9a-f]{3})?$/i.test(v)) return v.toLowerCase();
+  const m = v.match(/^rgba?\(\s*(\d{1,3})\s*,\s*(\d{1,3})\s*,\s*(\d{1,3})\s*(?:,\s*[0-9.]+\s*)?\)$/i);
+  if (!m) return null;
+  const clamp = (n) => Math.max(0, Math.min(255, Number(n)));
+  return '#' + [m[1], m[2], m[3]].map((n) => clamp(n).toString(16).padStart(2, '0')).join('');
+}
+
+// Style attribute -> only the declarations `styleProps` permits, each value
+// checked against a fixed pattern or list. Mirrors jobCleanDescStyle().
+function jobDescCleanStyle(styleProps, styleAttr) {
+  const borderRe = new RegExp(`^([0-9]{1,2})px\\s+(${JOB_DESC_BORDER_STYLES})\\s+${JOB_DESC_COLOR_RE_SRC}$`, 'i');
+  const out = [];
+  (styleAttr || '').split(';').forEach((decl) => {
+    const m = decl.match(/^\s*([a-z-]+)\s*:\s*(.+?)\s*$/i);
+    if (!m) return;
+    const prop = m[1].toLowerCase();
+    const val = m[2].trim();
+    if (!styleProps.includes(prop)) return;
+    let hex;
+    let mm;
+    if (prop === 'text-align' && /^(left|center|right|justify)$/i.test(val)) {
+      out.push(`text-align: ${val.toLowerCase()}`);
+    } else if ((prop === 'color' || prop === 'background-color') && (hex = jobDescColorToHex(val)) !== null) {
+      out.push(`${prop}: ${hex}`);
+    } else if (prop === 'margin-left' && (mm = val.match(/^([0-9]{1,3})px$/)) && Number(mm[1]) <= 200) {
+      out.push(`margin-left: ${Number(mm[1])}px`);
+    } else if (prop === 'line-height' && /^[0-3](?:\.[0-9]{1,2})?$/.test(val)) {
+      out.push(`line-height: ${val}`);
+    } else if (prop === 'font-family') {
+      const norm = val.replace(/^[\s"']+|[\s"']+$/g, '').toLowerCase().replace(/\s*,\s*/g, ', ');
+      if (JOB_DESC_FONT_FAMILIES[norm]) out.push(`font-family: ${JOB_DESC_FONT_FAMILIES[norm]}`);
+    } else if (prop === 'font-size' && JOB_DESC_FONT_SIZES.includes(val)) {
+      out.push(`font-size: ${val}`);
+    } else if (prop === 'font-weight' && JOB_DESC_FONT_WEIGHTS.includes(val)) {
+      out.push(`font-weight: ${val}`);
+    } else if ((prop === 'width' || prop === 'height') && (mm = val.match(/^([0-9]{1,4})px$/))
+      && Number(mm[1]) >= 10 && Number(mm[1]) <= 2000) {
+      out.push(`${prop}: ${Number(mm[1])}px`);
+    } else if (prop === 'border-width' && (mm = val.match(/^([0-9]{1,2})px$/))
+      && Number(mm[1]) >= 1 && Number(mm[1]) <= 10) {
+      out.push(`border-width: ${Number(mm[1])}px`);
+    } else if (prop === 'border-style' && new RegExp(`^(${JOB_DESC_BORDER_STYLES})$`, 'i').test(val)) {
+      out.push(`border-style: ${val.toLowerCase()}`);
+    } else if (prop === 'border-color' && (hex = jobDescColorToHex(val)) !== null) {
+      out.push(`border-color: ${hex}`);
+    } else if (['border', 'border-top', 'border-right', 'border-bottom', 'border-left'].includes(prop)
+      && (mm = val.match(borderRe)) && Number(mm[1]) <= 10 && (hex = jobDescColorToHex(mm[3])) !== null) {
+      out.push(`${prop}: ${Number(mm[1])}px ${mm[2].toLowerCase()} ${hex}`);
+    }
+  });
+  return out.length ? `${out.join('; ')};` : '';
+}
+
+function sanitizeJobDescriptionHtml(html) {
+  // DOMParser documents are inert: nothing in them runs or loads.
+  const source = new DOMParser().parseFromString(`<body>${html}</body>`, 'text/html').body;
+  const fragment = document.createDocumentFragment();
+  source.childNodes.forEach((child) => appendCleanJobDescNode(child, fragment));
+  return fragment;
+}
+
+function appendCleanJobDescNode(node, parent) {
+  if (node.nodeType === Node.TEXT_NODE) {
+    parent.appendChild(document.createTextNode(node.textContent));
+    return;
+  }
+  if (node.nodeType !== Node.ELEMENT_NODE || JOB_DESC_HTML_DROP.has(node.tagName.toUpperCase())) return;
+
+  const rule = JOB_DESC_HTML_RULES[node.tagName.toUpperCase()];
+  let target = parent; // unknown tag: keep its text, drop the tag
+  if (rule) {
+    const el = document.createElement(rule.tag);
+
+    if (rule.tag === 'img') {
+      const src = (node.getAttribute('src') || '').trim();
+      if (!JOB_DESC_IMG_SRC_RE.test(src)) return;
+      el.src = src;
+      el.alt = node.getAttribute('alt') || '';
+      const floatClass = (node.getAttribute('class') || '').split(/\s+/).find((c) => JOB_DESC_IMG_CLASSES.includes(c));
+      if (floatClass) el.className = floatClass;
+      const style = jobDescCleanStyle(rule.styleProps, node.getAttribute('style') || '');
+      if (style) el.setAttribute('style', style);
+      parent.appendChild(el);
+      return;
+    }
+    if (rule.tag === 'a') {
+      const href = jobDescSafeHref(node.getAttribute('href') || '');
+      if (href !== null) {
+        el.href = href;
+        if (node.getAttribute('target') === '_blank') {
+          el.target = '_blank';
+          el.rel = 'noopener noreferrer';
+        }
+        target = el;
+      }
+    } else {
+      target = el;
+    }
+    if (rule.styleProps) {
+      const style = jobDescCleanStyle(rule.styleProps, node.getAttribute('style') || '');
+      if (style) el.setAttribute('style', style);
+    }
+    if (rule.cell) {
+      ['colspan', 'rowspan'].forEach((attr) => {
+        const v = (node.getAttribute(attr) || '').trim();
+        if (/^[1-9][0-9]?$/.test(v)) el.setAttribute(attr, v);
+      });
+    }
+    if (target === el) parent.appendChild(el);
+  }
+  node.childNodes.forEach((child) => appendCleanJobDescNode(child, target));
+}

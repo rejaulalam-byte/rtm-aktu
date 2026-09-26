@@ -310,12 +310,13 @@
       document.getElementById('jcdPublishedDate').textContent = item.publishedDate;
       document.getElementById('jcdPublishedWeekday').dataset.date = item.publishedDateIso;
 
-      // The admin panel's own description (sanitized rich-text HTML, may
-      // include images/PDF links) replaces the generic intro paragraph;
+      // The admin panel's own description (rich-text HTML, may include
+      // images/PDF links, rebuilt through sanitizeJobDescriptionHtml() in
+      // job-circular-data.js) replaces the generic intro paragraph;
       // circulars without one keep the generic intro.
       if (item.description) {
         const description = document.getElementById('jcdDescription');
-        description.innerHTML = item.description;
+        description.replaceChildren(sanitizeJobDescriptionHtml(String(item.description)));
         description.hidden = false;
         document.getElementById('jcdIntro').hidden = true;
       }
