@@ -721,6 +721,15 @@ function initContactPageForm() {
     });
   }
 
+  // A phone field left at just the pre-filled "+880 " is sent as empty -
+  // contact-submit.php would otherwise reject the bare "+880" as an
+  // invalid number and block the whole (optional-phone) message.
+  form.addEventListener('formdata', (e) => {
+    form.querySelectorAll('input[type="tel"]').forEach((input) => {
+      if (input.name && input.value.trim() === CONTACT_PHONE_PREFIX.trim()) e.formData.set(input.name, '');
+    });
+  });
+
   wireBackendForm(form, status, 'contact-submit.php', 'Thank you - your message has been received.');
 }
 
@@ -750,9 +759,23 @@ function buildContactField(field) {
   if (field.placeholder) input.placeholder = field.placeholder;
   input.required = field.required === true;
 
+  // Phone fields start with the country code already typed, so visitors
+  // only enter the rest. defaultValue (not just value) so form.reset()
+  // after a successful send brings the prefix back. The caret is moved
+  // to the end after the click has placed it (hence the timeout), so
+  // typing continues straight after "+880 ".
+  if (field.type === 'tel') {
+    input.defaultValue = CONTACT_PHONE_PREFIX;
+    input.addEventListener('focus', () => {
+      setTimeout(() => input.setSelectionRange(input.value.length, input.value.length), 0);
+    });
+  }
+
   wrap.append(label, input);
   return wrap;
 }
+
+const CONTACT_PHONE_PREFIX = '+880 ';
 
 // ------------------------------------------------------------------
 // News & Notice date rows: the weekday label next to each date is
