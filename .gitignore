@@ -12,3 +12,9 @@ config/config.php
 
 # Admin database scripts, seeds and backups - local only, uploaded via cPanel
 database/
+
+# Admin config (config.php holds DB credentials) - local only, uploaded via cPanel
+config/
+
+# Claude session scratch/export output
+Claude outputs/
