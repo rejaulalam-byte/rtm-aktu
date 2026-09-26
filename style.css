@@ -2912,11 +2912,15 @@ button {
   background-color: #E5E9F0;
 }
 
+/* Transparent text color hides the alt text a browser paints inside the
+   frame while a photo is still loading, so .img-ph's grey fill shows
+   instead (sitewide - every page using this placeholder). */
 .img-ph img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
+  color: transparent;
 }
 
 .img-ph__fallback {
@@ -5597,12 +5601,16 @@ a.adm-notice-card__inner:hover .adm-notice-card__details-link {
   text-align: center;
 }
 
+/* Transparent text color hides the alt text a browser paints inside the
+   box while the photo is still loading; the grey fill stands in instead. */
 .fpr-card__photo {
   width: 183px;
   height: 183px;
   border-radius: 50%;
   object-fit: cover;
   margin: 0 auto 1rem;
+  background-color: #e6e6ec;
+  color: transparent;
 }
 
 .fpr-card__role {
