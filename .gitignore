@@ -9,3 +9,6 @@ node_modules/
 
 # Admin panel secrets
 config/config.php
+
+# Admin database scripts, seeds and backups - local only, uploaded via cPanel
+database/

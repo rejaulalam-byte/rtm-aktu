@@ -9,9 +9,11 @@
         "-ExecutionPolicy",
         "Bypass",
         "-File",
-        "C:\\Users\\REJAUL~1\\AppData\\Local\\Temp\\claude\\E--0000-Claude-Code---RTM-AKTU\\cab5500e-c822-4f29-9ff1-220159d612a0\\scratchpad\\static-server.ps1"
+        "E:\\0000 Claude Code - RTM-AKTU\\scripts\\preview-server.ps1",
+        "-Port",
+        "8844"
       ],
-      "port": 8843
+      "port": 8844
     }
   ]
 }
