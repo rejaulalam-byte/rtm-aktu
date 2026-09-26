@@ -268,7 +268,8 @@
   <script>
     // Renders #jobCircularTableBody from jobCircularData (pages/job-circular/job-circular-data.js).
     // Sorted by createdOrder descending so the newest circular always shows
-    // first, while each row keeps the permanent slNo it was created with.
+    // first. Sl.No is the open rank from getJobCircularDisplayNumber() (in
+    // job-circular-data.js) - compact 1..N, renumbered whenever one closes.
     //
     // Only the "Name of the Position" cell links through to the record's
     // detail page - the row itself is not clickable (revised from the
@@ -294,8 +295,8 @@
 
       tbody.innerHTML = records.map((item) => `
         <tr>
-          <td class="jc-table__num"><span class="jc-table__badge">${escapeJobHtml(item.slNo)}</span></td>
-          <td><a href="job-circular-details.html?id=${encodeURIComponent(item.id)}" class="jc-table__link">${escapeJobHtml(item.position)}</a></td>
+          <td class="jc-table__num"><span class="jc-table__badge">${escapeJobHtml(getJobCircularDisplayNumber(item.id))}</span></td>
+          <td class="jc-table__position"><a href="job-circular-details.html?id=${encodeURIComponent(item.id)}" class="jc-table__link">${escapeJobHtml(item.position)}</a></td>
           <td>${escapeJobHtml(item.positionCount)}</td>
           <td>${escapeJobHtml(item.experience)}</td>
           <td class="jc-table__closing">${escapeJobHtml(item.closingDateDisplay)}</td>

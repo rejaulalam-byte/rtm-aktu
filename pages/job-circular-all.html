@@ -272,8 +272,11 @@
   <script src="job-circular/job-circular-data.js"></script>
   <script src="listing-controls.js"></script>
   <script>
-    // Archive of EVERY job circular in jobCircularData (no status
-    // filtering), newest-created first, through the shared
+    // Archive of CLOSED job circulars only - isJobCircularClosed() (in
+    // job-circular-data.js), the reverse of job-circular.html's filter, so
+    // a circular moves here the day it closes and back if it's reopened.
+    // Sl.No is the archive rank from getJobCircularDisplayRanks(), shown
+    // highest first (newest closure on top), through the shared
     // pages/listing-controls.js search + pagination. Search matches the
     // position name as well as the Published Date's year / month-year.
     // Only the "Name of the Position" cell links through to the record's
@@ -284,9 +287,11 @@
       const paginationEl = document.getElementById('listingPagination');
       if (!listEl || !controlsEl || !paginationEl || typeof jobCircularData === 'undefined') return;
 
+      const { archiveRankBySlug } = getJobCircularDisplayRanks();
       const items = Object.entries(jobCircularData)
         .map(([id, item]) => ({ id, ...item }))
-        .sort((a, b) => b.createdOrder - a.createdOrder);
+        .filter((item) => isJobCircularClosed(item))
+        .sort((a, b) => archiveRankBySlug[b.id] - archiveRankBySlug[a.id]);
 
       initListingControls({
         listEl,
@@ -305,8 +310,8 @@
         // "Closed" here without the admin changing anything.
         renderItem: (item) => `
           <tr>
-            <td class="jc-table__num"><span class="jc-table__badge">${escapeJobHtml(item.slNo)}</span></td>
-            <td><a href="job-circular-details.html?id=${encodeURIComponent(item.id)}" class="jc-table__link">${escapeJobHtml(item.position)}</a></td>
+            <td class="jc-table__num"><span class="jc-table__badge">${escapeJobHtml(getJobCircularDisplayNumber(item.id))}</span></td>
+            <td class="jc-table__position"><a href="job-circular-details.html?id=${encodeURIComponent(item.id)}" class="jc-table__link">${escapeJobHtml(item.position)}</a></td>
             <td>${escapeJobHtml(item.positionCount)}</td>
             <td>${escapeJobHtml(item.experience)}</td>
             <td class="jc-table__closing">${escapeJobHtml(item.closingDateDisplay)}</td>

@@ -4,11 +4,10 @@
 // same data-driven pattern as pages/news/news-data.js and
 // pages/notices/notices-data.js.
 //
-// `slNo` is assigned once, in creation order, and never changes - it is
-// the record's permanent serial number. The table itself always renders
-// newest-first (sorted by `createdOrder` descending in job-circular.html's
-// own script), so a new record with a higher createdOrder appears at the
-// top while keeping whatever slNo it was given at creation.
+// `slNo` is the record's permanent internal serial number (admin panel
+// and image folder names only) - visitors never see it. The Sl.No shown
+// on the public pages comes from getJobCircularDisplayNumber() below,
+// recomputed on every page view from createdOrder/closingDate/status.
 //
 // Paths are relative to pages/ (job-circular.html and
 // job-circular-details.html both live at that same depth).
@@ -83,9 +82,45 @@ function jobCircularTodayIso() {
 // closing date has passed (the closing day itself still counts as open).
 // Worked out in the browser on every page view, so a circular closes on
 // time with no admin action or re-publish - the site has no server-side
-// scheduler. Used by job-circular.html (hides closed ones) and
-// job-circular-all.html (shows Open/Closed).
+// scheduler. Used by job-circular.html (open ones only) and
+// job-circular-all.html (closed ones only).
 function isJobCircularClosed(item) {
   if (item.status === 'CLOSED') return true;
   return Boolean(item.closingDate) && jobCircularTodayIso() > item.closingDate;
+}
+
+// The two display-only Sl.No rank sets - never stored, always recomputed
+// from jobCircularData + the visitor's current date, so a circular that
+// closes (or is reopened) renumbers both pages with no admin action.
+//   - Open rank (job-circular.html): oldest open = 1 ... newest open = N,
+//     so the page's newest-first order always puts N (= how many are
+//     open right now) on top.
+//   - Archive rank (job-circular-all.html): independent counter, earliest
+//     closing date = 1, same-day closures tie-broken by createdOrder; the
+//     page renders highest first, so the newest closure sits on top.
+// closingDate is YYYY-MM-DD, so it compares as a plain string.
+function getJobCircularDisplayRanks() {
+  const entries = Object.entries(jobCircularData);
+
+  const openRankBySlug = {};
+  entries
+    .filter(([, item]) => !isJobCircularClosed(item))
+    .sort((a, b) => a[1].createdOrder - b[1].createdOrder)
+    .forEach(([slug], i) => { openRankBySlug[slug] = i + 1; });
+
+  const archiveRankBySlug = {};
+  entries
+    .filter(([, item]) => isJobCircularClosed(item))
+    .sort((a, b) => String(a[1].closingDate || '').localeCompare(String(b[1].closingDate || ''))
+      || a[1].createdOrder - b[1].createdOrder)
+    .forEach(([slug], i) => { archiveRankBySlug[slug] = i + 1; });
+
+  return { openRankBySlug, archiveRankBySlug };
+}
+
+// The Sl.No a circular shows wherever it currently appears - main page if
+// open, archive page if closed (used by the details page's badge too).
+function getJobCircularDisplayNumber(slug) {
+  const { openRankBySlug, archiveRankBySlug } = getJobCircularDisplayRanks();
+  return openRankBySlug[slug] ?? archiveRankBySlug[slug] ?? null;
 }

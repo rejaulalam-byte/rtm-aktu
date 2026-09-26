@@ -6856,9 +6856,28 @@ a.adm-notice-card__inner:hover .adm-notice-card__details-link {
   text-decoration: none;
 }
 
-.jc-table__link:hover {
-  color: var(--color-gold);
-  text-decoration: underline;
+/* Name of the Position cell (job-circular.html + job-circular-all.html):
+   the whole cell is the link - the <a>'s ::after stretches over the full
+   cell (whatever the row's height), so a click anywhere in it opens the
+   details page - and the cell takes a light tint of the site's gold
+   accent (--color-gold #C9A227 at 40%) on hover/keyboard focus, navy
+   text on top. */
+.jc-table tbody td.jc-table__position {
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.jc-table__position .jc-table__link::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+}
+
+.jc-table tbody td.jc-table__position:hover,
+.jc-table tbody td.jc-table__position:focus-within {
+  background-color: rgba(201, 162, 39, 0.4);
+  color: var(--color-navy);
 }
 
 .jc-table__badge {
@@ -6915,6 +6934,16 @@ a.adm-notice-card__inner:hover .adm-notice-card__details-link {
 /* pages/job-circular-details.html (Figma node 2141:189) */
 .jcd-topbar__heading {
   margin-bottom: 40px;
+  /* Lift the shared .section-heading 640px cap - "Circular Details -
+     <position>" needs ~700px at the title's 36px desktop size and was
+     wrapping. Font size still scales via the shared clamp(). */
+  max-width: none;
+}
+
+/* A position name too long for one line still breaks into two
+   even-length lines instead of leaving one word on its own. */
+.jcd-topbar__heading .section-heading__title {
+  text-wrap: balance;
 }
 
 .jcd-viewall {
@@ -6984,20 +7013,36 @@ a.adm-notice-card__inner:hover .adm-notice-card__details-link {
   margin: 0 0 0.5rem;
 }
 
-/* Permanent template for every job circular's details page: a
-   3-column grid with fixed column widths, so each group starts at the
-   same x-position on every record whatever its text length.
-   Columns 340 + 320 leave the rest (1fr) for the Published group,
-   right-aligned; the 26px right padding + the info bar's own 24px
-   padding puts its right edge exactly 50px from the bar's border. */
+/* Permanent template for every job circular's details page: the first
+   two groups get a minimum width, so each group starts at the same
+   x-position on every record with typical text lengths - but (unlike
+   the fixed-width grid this replaced) a longer date or "Published in"
+   value widens its own group instead of overflowing into the next one,
+   and the 1.5rem column gap always keeps groups visibly apart. Groups
+   never break internally; one that no longer fits drops to the next
+   line whole. The Published group is pushed right; the 26px right
+   padding + the info bar's own 24px padding puts its right edge
+   exactly 50px from the bar's border. */
 .jcd-infobar__meta {
-  display: grid;
-  grid-template-columns: 340px 320px 1fr;
+  display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 0.6rem 0;
+  gap: 0.5rem 1.5rem;
   padding-right: 26px;
   color: var(--color-text-muted);
-  font-size: 0.85rem;
+  font-size: 0.75rem;
+}
+
+.jcd-infobar__meta > * {
+  white-space: nowrap;
+}
+
+.jcd-infobar__meta > :nth-child(1) {
+  min-width: 300px;
+}
+
+.jcd-infobar__meta > :nth-child(2) {
+  min-width: 280px;
 }
 
 .jcd-infobar__label {
@@ -7006,17 +7051,25 @@ a.adm-notice-card__inner:hover .adm-notice-card__details-link {
 }
 
 .jcd-infobar__published {
-  justify-self: end;
+  margin-left: auto;
 }
 
 @media (max-width: 900px) {
   .jcd-infobar__meta {
-    grid-template-columns: 1fr;
+    flex-direction: column;
+    align-items: flex-start;
     padding-right: 0;
   }
 
+  .jcd-infobar__meta > *,
+  .jcd-infobar__meta > :nth-child(1),
+  .jcd-infobar__meta > :nth-child(2) {
+    min-width: 0;
+    white-space: normal;
+  }
+
   .jcd-infobar__published {
-    justify-self: start;
+    margin-left: 0;
   }
 }
 
@@ -7033,6 +7086,71 @@ a.adm-notice-card__inner:hover .adm-notice-card__details-link {
   width: 100%;
   height: 100%;
   object-fit: contain;
+  display: block;
+}
+
+/* Admin-written circular description (rich-text HTML from the admin
+   panel's editor) - reuses .jcd-intro's width/color/spacing, but left-
+   aligned since centered headings and bullet lists read as broken.
+   Headings/lists copy the faculty tab values (.fpr-tabs__panel-text),
+   links copy .text-section__link. */
+.jcd-description {
+  text-align: left;
+}
+
+.jcd-description p {
+  margin-bottom: 0.9rem;
+}
+
+.jcd-description h4 {
+  font-size: 24px;
+  margin: 0.5rem 0 0.9rem;
+}
+
+.jcd-description ul,
+.jcd-description ol {
+  margin: 0 0 1.1rem 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.jcd-description ol {
+  margin-left: 1.8rem;
+}
+
+.jcd-description ul li {
+  list-style: disc;
+}
+
+.jcd-description ol li {
+  list-style: decimal;
+}
+
+.jcd-description > :last-child {
+  margin-bottom: 0;
+}
+
+.jcd-description a {
+  color: var(--color-navy);
+  text-decoration: underline;
+}
+
+.jcd-description a:hover {
+  color: var(--color-gold);
+}
+
+.jcd-description img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+/* Un-classed (not floated) images keep the original block look. Floated
+   ones (.news-inline-img--*, section 23) are excluded - this selector
+   outranks those classes, so its margin: 1rem 0 would wipe their side gap. */
+.jcd-description img:not([class*="news-inline-img--"]) {
+  margin: 1rem 0;
   display: block;
 }
 

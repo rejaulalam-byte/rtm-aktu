@@ -145,7 +145,8 @@
           </div>
         </div>
 
-        <p class="jcd-intro">RTM Al-Kabir Technical University invites applications from qualified, talented, and motivated individuals for available positions across the University. Each opportunity is designed for professionals who are passionate about contributing their skills, experience, and commitment to a dynamic academic environment. Interested candidates are encouraged to review the position details and application requirements carefully before applying.</p>
+        <p class="jcd-intro" id="jcdIntro">RTM Al-Kabir Technical University invites applications from qualified, talented, and motivated individuals for available positions across the University. Each opportunity is designed for professionals who are passionate about contributing their skills, experience, and commitment to a dynamic academic environment. Interested candidates are encouraged to review the position details and application requirements carefully before applying.</p>
+        <div class="jcd-intro jcd-description" id="jcdDescription" hidden></div>
 
         <div class="jcd-document">
           <img id="jcdDocumentImage" src="" alt="">
@@ -288,13 +289,15 @@
       if (!item) {
         document.getElementById('jcdHeading').textContent = 'Circular Not Found';
         document.getElementById('jcdBreadcrumb').textContent = 'Circular Details';
-        document.querySelector('.jcd-intro').textContent = 'This job circular could not be found.';
+        document.getElementById('jcdIntro').textContent = 'This job circular could not be found.';
         document.querySelector('.jcd-infobar').style.display = 'none';
         document.querySelector('.jcd-document').style.display = 'none';
         return;
       }
 
-      const slNoPadded = String(item.slNo).padStart(2, '0');
+      // Same Sl.No the circular shows on whichever listing it's on right
+      // now (open rank on job-circular.html, archive rank once closed).
+      const slNoPadded = String(getJobCircularDisplayNumber(id)).padStart(2, '0');
       document.title = `Circular Details - ${item.position} | RTM Al-Kabir Technical University (RTM-AKTU)`;
       document.getElementById('jcdBreadcrumb').textContent = `Circular Details - ${slNoPadded}`;
       document.getElementById('jcdHeading').textContent = `Circular Details - ${item.position}`;
@@ -307,9 +310,24 @@
       document.getElementById('jcdPublishedDate').textContent = item.publishedDate;
       document.getElementById('jcdPublishedWeekday').dataset.date = item.publishedDateIso;
 
-      const img = document.getElementById('jcdDocumentImage');
-      img.src = item.documentImage;
-      img.alt = `Scanned job circular document for ${item.position}`;
+      // The admin panel's own description (sanitized rich-text HTML, may
+      // include images/PDF links) replaces the generic intro paragraph;
+      // circulars without one keep the generic intro.
+      if (item.description) {
+        const description = document.getElementById('jcdDescription');
+        description.innerHTML = item.description;
+        description.hidden = false;
+        document.getElementById('jcdIntro').hidden = true;
+      }
+
+      // A circular with no scanned document drops the empty frame entirely.
+      if (item.documentImage) {
+        const img = document.getElementById('jcdDocumentImage');
+        img.src = item.documentImage;
+        img.alt = `Scanned job circular document for ${item.position}`;
+      } else {
+        document.querySelector('.jcd-document').style.display = 'none';
+      }
 
       initDateWeekdays();
     });
