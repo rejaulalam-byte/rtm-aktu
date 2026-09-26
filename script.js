@@ -5,6 +5,12 @@
 // item or ticker from flashing on screen first.
 applySiteSettings();
 
+// Site root URL, taken from where this file itself was loaded from
+// (script.js sits at the site root) - used to reach the root-level form
+// endpoints (contact-submit.php, subscribe-submit.php) from any page depth,
+// and wherever the site is hosted (domain root or a subfolder).
+const SITE_ROOT_URL = new URL('.', document.currentScript.src);
+
 document.addEventListener('DOMContentLoaded', () => {
   initMobileNav();
   initStickyHeader();
@@ -634,26 +640,118 @@ function initNewsletterForm() {
   const status = document.getElementById('newsletterStatus');
   if (!form || !status) return;
 
-  form.addEventListener('submit', (e) => {
+  // Heading/placeholder text from the admin panel's Site Settings.
+  if (typeof siteSettings !== 'undefined') {
+    const label = form.querySelector('.newsletter-form__label');
+    const input = form.querySelector('#newsletterEmail');
+    if (label && siteSettings.subscribeLabel) label.textContent = siteSettings.subscribeLabel;
+    if (input && siteSettings.subscribePlaceholder) input.placeholder = siteSettings.subscribePlaceholder;
+  }
+
+  wireBackendForm(form, status, 'subscribe-submit.php', 'Subscribed - thank you.');
+}
+
+// Posts a form to one of the site-root PHP endpoints, which answer with
+// JSON {ok: true, message} or {ok: false, error}. Shows the server's own
+// text; resets the form only on success. A tripped honeypot gets a bare
+// {ok: true} (no message), hence the fallback text.
+function wireBackendForm(form, status, endpoint, fallbackMessage) {
+  const submitBtn = form.querySelector('[type="submit"]');
+
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    status.textContent = 'Thanks for subscribing! Check your inbox to confirm.';
-    form.reset();
+    if (submitBtn) submitBtn.disabled = true;
+    status.textContent = 'Sending...';
+    try {
+      const response = await fetch(new URL(endpoint, SITE_ROOT_URL), { method: 'POST', body: new FormData(form) });
+      const data = await response.json();
+      if (data.ok === true) {
+        status.textContent = data.message || fallbackMessage;
+        form.reset();
+      } else {
+        status.textContent = data.error || 'Something went wrong, please try again.';
+      }
+    } catch (err) {
+      status.textContent = 'Something went wrong, please try again.';
+    } finally {
+      if (submitBtn) submitBtn.disabled = false;
+    }
   });
 }
 
 // ------------------------------------------------------------------
-// Contact page: "Send Us a Message" form (front-end only, no backend wired up)
+// Contact page: "Send Us a Message" form, posted to contact-submit.php.
+// The fields come from the admin panel's Site Settings
+// (siteSettings.contactFormFields) - the static fields in contact.html are
+// only the fallback if site-settings.js is missing. Consecutive email/tel
+// fields pair up side by side (.cp-field-row), like the original
+// Email + Phone row; everything else takes a full row.
 // ------------------------------------------------------------------
 function initContactPageForm() {
   const form = document.getElementById('contactPageForm');
   const status = document.getElementById('contactPageStatus');
   if (!form || !status) return;
 
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    status.textContent = 'Thank you! Your message has been sent — our team will get back to you soon.';
-    form.reset();
-  });
+  const container = document.getElementById('contactFieldsContainer');
+  const fields = typeof siteSettings !== 'undefined' && Array.isArray(siteSettings.contactFormFields)
+    ? siteSettings.contactFormFields.filter((field) => field && field.key)
+    : [];
+  if (container && fields.length) {
+    container.replaceChildren();
+    let row = null;
+    fields.forEach((field) => {
+      const el = buildContactField(field);
+      const pairs = field.type === 'email' || field.type === 'tel';
+      if (pairs && row && row.childElementCount === 1) {
+        row.appendChild(el);
+        row = null;
+      } else if (pairs) {
+        row = document.createElement('div');
+        row.className = 'cp-field-row';
+        row.appendChild(el);
+        container.appendChild(row);
+      } else {
+        row = null;
+        container.appendChild(el);
+      }
+    });
+    // An email/tel field with no partner takes a full row, not half of one.
+    container.querySelectorAll('.cp-field-row').forEach((r) => {
+      if (r.childElementCount === 1) r.replaceWith(r.firstElementChild);
+    });
+  }
+
+  wireBackendForm(form, status, 'contact-submit.php', 'Thank you - your message has been received.');
+}
+
+// Built with createElement/textContent, never innerHTML - the labels,
+// keys and placeholders are admin-entered text.
+function buildContactField(field) {
+  const wrap = document.createElement('div');
+  wrap.className = 'cp-field';
+
+  const id = `cp-${field.key}`;
+  const label = document.createElement('label');
+  label.className = 'cp-field__label';
+  label.htmlFor = id;
+  label.textContent = field.label || field.key;
+
+  let input;
+  if (field.type === 'textarea') {
+    input = document.createElement('textarea');
+    input.className = 'cp-field__textarea';
+  } else {
+    input = document.createElement('input');
+    input.type = field.type === 'email' || field.type === 'tel' ? field.type : 'text';
+    input.className = 'cp-field__input';
+  }
+  input.id = id;
+  input.name = field.key;
+  if (field.placeholder) input.placeholder = field.placeholder;
+  input.required = field.required === true;
+
+  wrap.append(label, input);
+  return wrap;
 }
 
 // ------------------------------------------------------------------

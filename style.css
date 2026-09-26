@@ -4039,6 +4039,13 @@ button {
   gap: 1.25rem;
 }
 
+/* Wrapper script.js fills from Site Settings' contactFormFields -
+   display: contents keeps its fields direct flex items of .cp-form, so
+   the 1.25rem gap between them is unchanged. */
+#contactFieldsContainer {
+  display: contents;
+}
+
 .cp-field {
   display: flex;
   flex-direction: column;

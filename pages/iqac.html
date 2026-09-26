@@ -255,11 +255,12 @@
       <form class="newsletter-form" id="newsletterForm">
         <label for="newsletterEmail" class="newsletter-form__label">Never Miss a Campus Update</label>
         <div class="newsletter-form__row">
-          <input type="email" id="newsletterEmail" class="newsletter-form__input" placeholder="Join Our Network by Email" required>
+          <input type="email" id="newsletterEmail" name="email" class="newsletter-form__input" placeholder="Join Our Network by Email" required>
           <button type="submit" class="newsletter-form__submit" aria-label="Subscribe">
             <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 2 11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 2 15 22l-4-9-9-4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </button>
         </div>
+        <input type="text" name="website" autocomplete="off" tabindex="-1" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0" aria-hidden="true">
         <p class="newsletter-form__status" id="newsletterStatus" role="status"></p>
       </form>
     </div>

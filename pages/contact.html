@@ -159,31 +159,38 @@
           <h2 class="section-heading__title cp-heading">Send Us a Message</h2>
 
           <form class="cp-form" id="contactPageForm">
-            <div class="cp-field">
-              <label for="cpName" class="cp-field__label">Full Name *</label>
-              <input type="text" id="cpName" class="cp-field__input" placeholder="Enter your full name" required>
-            </div>
-
-            <div class="cp-field">
-              <label for="cpSubject" class="cp-field__label">Subject *</label>
-              <input type="text" id="cpSubject" class="cp-field__input" placeholder="What is this regarding?" required>
-            </div>
-
-            <div class="cp-field-row">
+            <!-- Rebuilt by script.js from Site Settings (contactFormFields); these
+                 static fields are only the fallback. -->
+            <div id="contactFieldsContainer">
               <div class="cp-field">
-                <label for="cpEmail" class="cp-field__label">Email Address *</label>
-                <input type="email" id="cpEmail" class="cp-field__input" placeholder="you@example.com" required>
+                <label for="cpName" class="cp-field__label">Full Name *</label>
+                <input type="text" id="cpName" name="name" class="cp-field__input" placeholder="Enter your full name" required>
               </div>
+
               <div class="cp-field">
-                <label for="cpPhone" class="cp-field__label">Phone Number</label>
-                <input type="tel" id="cpPhone" class="cp-field__input" placeholder="+880 ...">
+                <label for="cpSubject" class="cp-field__label">Subject *</label>
+                <input type="text" id="cpSubject" name="subject" class="cp-field__input" placeholder="What is this regarding?" required>
+              </div>
+
+              <div class="cp-field-row">
+                <div class="cp-field">
+                  <label for="cpEmail" class="cp-field__label">Email Address *</label>
+                  <input type="email" id="cpEmail" name="email" class="cp-field__input" placeholder="you@example.com" required>
+                </div>
+                <div class="cp-field">
+                  <label for="cpPhone" class="cp-field__label">Phone Number</label>
+                  <input type="tel" id="cpPhone" name="phone" class="cp-field__input" placeholder="+880 ...">
+                </div>
+              </div>
+
+              <div class="cp-field">
+                <label for="cpMessage" class="cp-field__label">Message</label>
+                <textarea id="cpMessage" name="message" class="cp-field__textarea" placeholder="Write your message here..."></textarea>
               </div>
             </div>
 
-            <div class="cp-field">
-              <label for="cpMessage" class="cp-field__label">Message</label>
-              <textarea id="cpMessage" class="cp-field__textarea" placeholder="Write your message here..."></textarea>
-            </div>
+            <!-- Honeypot: hidden from people, bots that fill every field trip it. -->
+            <input type="text" name="website" autocomplete="off" tabindex="-1" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0" aria-hidden="true">
 
             <button type="submit" class="btn btn-primary cp-form__submit">
               SEND
@@ -247,11 +254,12 @@
       <form class="newsletter-form" id="newsletterForm">
         <label for="newsletterEmail" class="newsletter-form__label">Never Miss a Campus Update</label>
         <div class="newsletter-form__row">
-          <input type="email" id="newsletterEmail" class="newsletter-form__input" placeholder="Join Our Network by Email" required>
+          <input type="email" id="newsletterEmail" name="email" class="newsletter-form__input" placeholder="Join Our Network by Email" required>
           <button type="submit" class="newsletter-form__submit" aria-label="Subscribe">
             <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 2 11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 2 15 22l-4-9-9-4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </button>
         </div>
+        <input type="text" name="website" autocomplete="off" tabindex="-1" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0" aria-hidden="true">
         <p class="newsletter-form__status" id="newsletterStatus" role="status"></p>
       </form>
     </div>
