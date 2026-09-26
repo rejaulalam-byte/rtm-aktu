@@ -17,6 +17,9 @@
 // `body` holds placeholder paragraph copy (from the Figma News Details
 // design) reused across every item until real per-item article text is
 // written - same handling as the faculty-profile boilerplate blocks.
+// A body is either an array of plain-text paragraphs or, for an item
+// written with formatting in the admin panel's editor, one HTML string -
+// renderNewsBody() at the bottom of this file handles both.
 //
 // `createdOrder` is assigned once, in creation order, and never changes -
 // same permanent-identity pattern as jobCircularData's createdOrder
@@ -134,4 +137,104 @@ function escapeNewsHtml(text) {
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;')
     .replace(/'/g, '&#39;');
+}
+
+// A record's `body` is either an array of plain-text paragraphs, or (when
+// written with the admin panel's rich-text editor) a string of HTML. That
+// HTML is already sanitized by the admin panel before it is saved; it is
+// rebuilt here once more through the same allow-list (newsSanitizeHtml()
+// in self-bhalani/news-lib.php - keep the two in step), element by element
+// with createElement/textContent, so a hand-edited file can't inject
+// markup either. The site's own body-copy classes are added on the way.
+const NEWS_HTML_RULES = {
+  P: { tag: 'p', className: 'text-section__text', align: true },
+  H3: { tag: 'h3', className: 'cm-content__heading', align: true },
+  H4: { tag: 'h4', className: 'text-section__subheading', align: true },
+  LI: { tag: 'li', align: true },
+  UL: { tag: 'ul', className: 'text-section__list' },
+  OL: { tag: 'ol', className: 'text-section__list text-section__list--ordered' },
+  STRONG: { tag: 'strong' }, B: { tag: 'strong' },
+  EM: { tag: 'em' }, I: { tag: 'em' },
+  U: { tag: 'u' },
+  BR: { tag: 'br' },
+  A: { tag: 'a', className: 'text-section__link' },
+  IMG: { tag: 'img', className: 'news-inline-img' },
+};
+const NEWS_HTML_DROP = new Set(['SCRIPT', 'STYLE', 'IFRAME', 'FRAME', 'FRAMESET', 'OBJECT', 'EMBED', 'APPLET', 'TEMPLATE',
+  'SVG', 'MATH', 'NOSCRIPT', 'TEXTAREA', 'SELECT', 'BUTTON', 'INPUT', 'FORM', 'HEAD', 'TITLE', 'META', 'LINK', 'BASE',
+  'VIDEO', 'AUDIO', 'CANVAS']);
+const NEWS_IMG_CLASSES = ['news-inline-img--left', 'news-inline-img--right', 'news-inline-img--center'];
+const NEWS_IMG_SRC_RE = /^\.\.\/images\/university-news\/[A-Za-z0-9_-]+\.(?:jpg|png|webp)$/;
+
+function newsSafeHref(href) {
+  const value = href.trim();
+  if (!value) return null;
+  const scheme = value.replace(/[\x00-\x20\x7F]+/g, '').match(/^([a-z][a-z0-9+.-]*):/i);
+  if (scheme && !['http', 'https', 'mailto', 'tel'].includes(scheme[1].toLowerCase())) return null;
+  return value;
+}
+
+function sanitizeNewsHtml(html) {
+  // DOMParser documents are inert: nothing in them runs or loads.
+  const source = new DOMParser().parseFromString(`<body>${html}</body>`, 'text/html').body;
+  const fragment = document.createDocumentFragment();
+  source.childNodes.forEach((child) => appendCleanNewsNode(child, fragment));
+  return fragment;
+}
+
+function appendCleanNewsNode(node, parent) {
+  if (node.nodeType === Node.TEXT_NODE) {
+    parent.appendChild(document.createTextNode(node.textContent));
+    return;
+  }
+  if (node.nodeType !== Node.ELEMENT_NODE || NEWS_HTML_DROP.has(node.tagName.toUpperCase())) return;
+
+  const rule = NEWS_HTML_RULES[node.tagName.toUpperCase()];
+  let target = parent; // unknown tag: keep its text, drop the tag
+  if (rule) {
+    const el = document.createElement(rule.tag);
+    if (rule.className) el.className = rule.className;
+
+    if (rule.tag === 'img') {
+      const src = (node.getAttribute('src') || '').trim();
+      if (!NEWS_IMG_SRC_RE.test(src)) return;
+      el.src = src;
+      el.alt = node.getAttribute('alt') || '';
+      el.loading = 'lazy';
+      const floatClass = (node.getAttribute('class') || '').split(/\s+/).find((c) => NEWS_IMG_CLASSES.includes(c));
+      if (floatClass) el.classList.add(floatClass);
+      parent.appendChild(el);
+      return;
+    }
+    if (rule.tag === 'a') {
+      const href = newsSafeHref(node.getAttribute('href') || '');
+      if (href !== null) {
+        el.href = href;
+        if (node.getAttribute('target') === '_blank') {
+          el.target = '_blank';
+          el.rel = 'noopener noreferrer';
+        }
+        target = el;
+      }
+    } else {
+      target = el;
+    }
+    if (rule.align) {
+      const align = (node.getAttribute('style') || '').match(/(?:^|;)\s*text-align\s*:\s*(left|center|right|justify)\s*(?:;|$)/i);
+      if (align) el.style.textAlign = align[1].toLowerCase();
+    }
+    if (target === el) parent.appendChild(el);
+  }
+  node.childNodes.forEach((child) => appendCleanNewsNode(child, target));
+}
+
+// Fills `container` with a record's body in either of its two shapes.
+function renderNewsBody(body, container) {
+  if (Array.isArray(body)) {
+    container.innerHTML = body
+      .map((paragraph) => `<p class="text-section__text">${escapeNewsHtml(paragraph)}</p>`)
+      .join('');
+    return;
+  }
+  container.replaceChildren(sanitizeNewsHtml(String(body)));
 }

@@ -4860,6 +4860,51 @@ a.uni-news-item:hover .date-meta__icon {
   }
 }
 
+/* Photos placed inside a news body with the admin panel's editor
+   (sanitizeNewsHtml() in pages/news/news-data.js adds these classes).
+   Same float-wrap technique as .news-detail-photo / .library-photo--*:
+   the photo sits in the text flow before the paragraphs it should sit
+   beside, floats out, and .news-detail-body::after clears it. No fixed
+   aspect-ratio (unlike the page-specific photos) since editors upload
+   photos of any shape - height follows the image. `clear` on the same
+   side stops a photo near the top from stacking beside the right-floated
+   .news-detail-photo (or an earlier inline photo) and squeezing the text
+   into a sliver between them - it drops below instead. */
+.news-inline-img {
+  height: auto;
+  margin-bottom: 1.5rem;
+  border-radius: var(--radius-md);
+}
+
+.news-inline-img--right {
+  float: right;
+  clear: right;
+  width: 38%;
+  margin-left: 2rem;
+}
+
+.news-inline-img--left {
+  float: left;
+  clear: left;
+  width: 38%;
+  margin-right: 2rem;
+}
+
+.news-inline-img--center {
+  clear: both;
+  width: 100%;
+}
+
+@media (max-width: 760px) {
+  .news-inline-img--right,
+  .news-inline-img--left {
+    float: none;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
 /* Notice & Updates page (pages/notice-updates.html): each notice is a
    bordered white card - a circular numbered badge beside its text and
    .date-meta row. The badge is solid navy/white rather than the flat

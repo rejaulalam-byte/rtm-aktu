@@ -332,9 +332,7 @@
       document.getElementById('ndDate').textContent = formatNewsDateLong(item.date);
       document.getElementById('ndWeekday').textContent = formatNewsWeekday(item.date);
 
-      document.getElementById('ndBody').innerHTML = item.body
-        .map((paragraph) => `<p class="text-section__text">${escapeNewsHtml(paragraph)}</p>`)
-        .join('');
+      renderNewsBody(item.body, document.getElementById('ndBody'));
 
       const photo = document.getElementById('ndPhoto');
       photo.closest('.img-ph').classList.remove('img-ph--broken');
