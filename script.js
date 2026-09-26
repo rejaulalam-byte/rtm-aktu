@@ -1,3 +1,10 @@
+// Site Settings from the admin panel (pages/site-settings.js, loaded just
+// before this file on every page). Run straight away rather than on
+// DOMContentLoaded - this script sits at the end of <body>, so the header
+// already exists, and hiding things this early keeps a switched-off menu
+// item or ticker from flashing on screen first.
+applySiteSettings();
+
 document.addEventListener('DOMContentLoaded', () => {
   initMobileNav();
   initStickyHeader();
@@ -21,6 +28,39 @@ document.addEventListener('DOMContentLoaded', () => {
   initBackToTop();
   initFacultyCarousels();
 });
+
+// ------------------------------------------------------------------
+// Site Settings (pages/site-settings.js): main-menu visibility and the
+// top bar's "Admission Going On" ticker.
+// ------------------------------------------------------------------
+function applySiteSettings() {
+  if (typeof siteSettings === 'undefined') return;
+
+  // Each main-menu link maps to its menuVisibility key by its target page's
+  // file name - the header is copied into every page with different
+  // relative paths (about-us.html, ../about-us.html, pages/about-us.html),
+  // but the file name is the same everywhere. Home is "#home" on the
+  // homepage itself and index.html elsewhere.
+  const visibility = siteSettings.menuVisibility || {};
+  document.querySelectorAll('.site-nav__list .site-nav__link').forEach((link) => {
+    const href = link.getAttribute('href') || '';
+    const key = href === '#home' ? 'home' : href.split('/').pop().replace(/\.html$/, '').replace(/^index$/, 'home');
+    if (visibility[key] === false) link.closest('li').style.display = 'none';
+  });
+
+  // Inline display, not the hidden attribute - .utility-bar__ticker's own
+  // display: flex would override [hidden]. The bar's space-between layout
+  // keeps the contact info and links at the two ends either way.
+  const ticker = document.querySelector('.utility-bar__ticker');
+  if (ticker) {
+    if (siteSettings.admissionButtonOn === false) {
+      ticker.style.display = 'none';
+    } else if (siteSettings.admissionButtonText) {
+      const label = ticker.querySelector('span:not(.utility-bar__ticker-dot)');
+      if (label) label.textContent = siteSettings.admissionButtonText;
+    }
+  }
+}
 
 // ------------------------------------------------------------------
 // Mobile hamburger navigation
