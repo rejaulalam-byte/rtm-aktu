@@ -5,6 +5,7 @@
 // FACULTY_PROFILE_TAB_FIELDS in profile-tabs.js - only fields with
 // real content need a non-empty value, the rest can be left as ''.
 // ------------------------------------------------------------------
+// @admin-export-start facultyProfiles
 const facultyProfiles = {
   'adiba-sabiha': {
     name: 'Adiba Sabiha',
@@ -2478,3 +2479,4 @@ const facultyProfiles = {
     },
   },
 };
+// @admin-export-end facultyProfiles

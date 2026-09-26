@@ -3278,7 +3278,6 @@ button {
 .fm-card__link:hover .fm-card__photo {
   border-color: var(--color-navy);
 }
-
 .fm-card__name {
   font-size: 1.05rem;
   margin-bottom: 0.25rem;
@@ -5676,6 +5675,14 @@ a.adm-notice-card__inner:hover .adm-notice-card__details-link {
   min-width: 0;
 }
 
+/* Bio paragraphs saved from the admin panel's editor arrive as bare <p>
+   tags; same values as .text-section__text. */
+#fprBio p {
+  color: var(--color-text-muted);
+  text-align: left;
+  margin-bottom: 1.1rem;
+}
+
 .fpr-bio__heading {
   font-size: 20px;
   font-weight: 600;
@@ -5748,6 +5755,46 @@ a.adm-notice-card__inner:hover .adm-notice-card__details-link {
 .fpr-tabs__panel-text {
   color: var(--color-text-muted);
   line-height: 1.6;
+}
+
+/* Rich-text tab bodies saved from the admin panel's TinyMCE editor arrive
+   as bare tags (no site classes), so they're styled here to match the
+   classed markup the array-based tabs render: headings copy
+   .text-section__subheading + .cm-content__heading, lists copy
+   .text-section__list / --ordered. */
+.fpr-tabs__panel-text p {
+  margin-bottom: 0.9rem;
+}
+
+.fpr-tabs__panel-text h2,
+.fpr-tabs__panel-text h3,
+.fpr-tabs__panel-text h4 {
+  font-size: 24px;
+  margin: 0.5rem 0 0.9rem;
+}
+
+.fpr-tabs__panel-text ul,
+.fpr-tabs__panel-text ol {
+  margin: 0 0 1.1rem 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.fpr-tabs__panel-text ol {
+  margin-left: 1.8rem;
+}
+
+.fpr-tabs__panel-text ul li {
+  list-style: disc;
+}
+
+.fpr-tabs__panel-text ol li {
+  list-style: decimal;
+}
+
+.fpr-tabs__panel-text > :last-child {
+  margin-bottom: 0;
 }
 
 /* ==========================================================================

@@ -24,7 +24,9 @@ const FACULTY_PROFILE_TAB_FIELDS = [
 ];
 
 // A tab field's value can be either:
-//  - a plain string -> rendered as a single paragraph (e.g. Research Interest)
+//  - a string -> plain text, or rich-text HTML saved from the admin panel's
+//    TinyMCE editor (<p>/<h4>/<ul>/<a>...). Wrapped in a <div>, not a <p>,
+//    since a <p> can't legally contain those block-level tags.
 //  - an array of sections -> each section is { heading?, items? } for a
 //    bullet list, or { heading?, lines? } for stacked plain-text lines
 //    (e.g. Contact). `heading` is optional on any section - omit it for
@@ -37,9 +39,19 @@ function hasTabContent(content) {
   return false;
 }
 
+// Photos placed in the Bio/tab editors are saved with a src relative to the
+// admin panel (self-bhalani/) and to pages/*.html: "../images/faculty-body/...".
+// This page sits one folder deeper (pages/faculty/), where that path would
+// resolve to pages/images/ and 404 - with alt="" the photo then vanishes
+// without even a broken-image icon. Re-based here, at render time, so the
+// saved data keeps working in the admin editor's own preview.
+function fixFacultyBodyImagePaths(html) {
+  return html.replace(/(\bsrc=["'])\.\.\/images\/faculty-body\//g, '$1../../images/faculty-body/');
+}
+
 function renderProfileTabBody(content) {
   if (typeof content === 'string') {
-    return `<p class="fpr-tabs__panel-text">${content}</p>`;
+    return `<div class="fpr-tabs__panel-text">${fixFacultyBodyImagePaths(content)}</div>`;
   }
 
   return content

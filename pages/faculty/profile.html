@@ -117,7 +117,7 @@
 
           <div class="fpr-layout">
             <div class="fpr-card">
-              <img id="fprPhoto" class="fpr-card__photo" src="" alt="" loading="lazy">
+              <img id="fprPhoto" class="fpr-card__photo" src="" alt="">
               <p class="fpr-card__role" id="fprRole"></p>
               <p class="fpr-card__dept" id="fprDept"></p>
 
@@ -303,9 +303,13 @@
       emailLink.href = `mailto:${profile.email}`;
       emailLink.textContent = profile.email;
 
-      document.getElementById('fprBio').innerHTML = profile.bio
-        .map((paragraph) => `<p class="text-section__text">${paragraph}</p>`)
-        .join('');
+      // bio is rich-text HTML (with its own <p> tags) saved from the admin
+      // panel's editor; older exports still hold an array of paragraph
+      // strings, so both shapes are accepted until every profile is
+      // re-published.
+      document.getElementById('fprBio').innerHTML = Array.isArray(profile.bio)
+        ? profile.bio.map((paragraph) => `<p class="text-section__text">${paragraph}</p>`).join('')
+        : fixFacultyBodyImagePaths(profile.bio);
 
       renderProfileTabs(profile.tabs);
     });

@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // Paths below are relative to pages/faculty-members.html, since that
 // is the only page this file renders onto.
 // ------------------------------------------------------------------
+// @admin-export-start facultyMembers
 const facultyMembers = [
   {
     photo: '../images/faculty-members/abdullah-rajib.png',
@@ -198,6 +199,7 @@ const facultyMembers = [
     link: 'faculty/profile.html?id=tarana-hasan',
   },
 ];
+// @admin-export-end facultyMembers
 
 // A member's role can carry a literal "<br>" for card display (e.g. Abu
 // Syeed Muhammed Abdullah's two-line title) - the search dropdown and the
