@@ -3,7 +3,10 @@
 // reads resultData (pages/result/result-data.js), sorts newest-created
 // first, and renders the 7-column result table through the shared
 // pages/listing-controls.js search + pagination. Both pages call
-// initResultListing() - no status filtering, every record is shown.
+// initResultListing(). result.html passes { excludeArchived: true } to
+// drop records the admin moved to All Results (`archived: true`, set from
+// the admin panel's "Move to All Results" button); result-all.html lists
+// every record, archived or not.
 //
 // Program Name links to the record's PDF in a new tab; the Result Sheet
 // download icon links to the same PDF with a `download` attribute.
@@ -22,7 +25,7 @@ function escapeResultHtml(text) {
     .replace(/'/g, '&#39;');
 }
 
-function initResultListing() {
+function initResultListing({ excludeArchived = false } = {}) {
   const listEl = document.getElementById('resultTableBody');
   const controlsEl = document.getElementById('listingControls');
   const paginationEl = document.getElementById('listingPagination');
@@ -30,6 +33,7 @@ function initResultListing() {
 
   const items = Object.entries(resultData)
     .map(([id, item]) => ({ id, ...item }))
+    .filter((item) => !(excludeArchived && item.archived === true))
     .sort((a, b) => b.createdOrder - a.createdOrder);
 
   initListingControls({

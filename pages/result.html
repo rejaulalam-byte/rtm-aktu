@@ -309,7 +309,7 @@
   <script src="listing-controls.js"></script>
   <script src="result/result-table.js"></script>
   <script>
-    document.addEventListener('DOMContentLoaded', initResultListing);
+    document.addEventListener('DOMContentLoaded', () => initResultListing({ excludeArchived: true }));
   </script>
 </body>
 </html>
