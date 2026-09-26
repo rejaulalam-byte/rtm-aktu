@@ -19,6 +19,7 @@
 // `pdfUrl` is the record's result PDF (Program Name link + download icon). No files exist
 // yet, so it is '#' until each real sheet is added.
 // ------------------------------------------------------------------
+// @admin-export-start resultData
 const resultData = {
   'bba-spring-2026': {
     slNo: 2,
@@ -41,6 +42,7 @@ const resultData = {
     pdfUrl: '#',
   },
 };
+// @admin-export-end resultData
 
 // 'YYYY-MM-DD' -> 'DD-Mon-YYYY' (2-digit day, 3-letter month, year), e.g. 12-Apr-2026 or 05-Apr-2026.
 // Shared by result.html and result-all.html via result-table.js.
