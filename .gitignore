@@ -6,3 +6,6 @@ desktop.ini
 # Editor/tooling
 .vscode/
 node_modules/
+
+# Admin panel secrets
+config/config.php

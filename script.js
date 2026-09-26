@@ -160,7 +160,7 @@ function renderCurrentNews() {
           <a href="pages/news-details.html?id=${item.id}" class="news-list__item">
             <span class="news-list__number">${number}</span>
             <div>
-              <p class="news-list__headline">${item.headline}</p>
+              <p class="news-list__headline">${escapeNewsHtml(item.headline)}</p>
               <div class="date-meta">
                 <span class="date-meta__item">
                   <svg class="date-meta__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M4 9h16M8 3v4M16 3v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
