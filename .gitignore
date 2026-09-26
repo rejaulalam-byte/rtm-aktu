@@ -16,5 +16,17 @@ database/
 # Admin config (config.php holds DB credentials) - local only, uploaded via cPanel
 config/
 
+# Admin panel source (self-bhalani/) - never pushed to public GitHub, local
+# only, uploaded via cPanel. Added 2026-09-26: this was missing from
+# .gitignore even though it's been treated as GitHub-excluded all along -
+# closing that gap now.
+self-bhalani/
+
+# Public backend endpoints that talk to the DB (contact/subscribe forms) -
+# same reasoning as self-bhalani/: local only, uploaded via cPanel, never
+# pushed to public GitHub.
+contact-submit.php
+subscribe-submit.php
+
 # Claude session scratch/export output
 Claude outputs/
