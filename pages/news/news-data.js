@@ -147,23 +147,52 @@ function escapeNewsHtml(text) {
 // with createElement/textContent, so a hand-edited file can't inject
 // markup either. The site's own body-copy classes are added on the way.
 const NEWS_HTML_RULES = {
-  P: { tag: 'p', className: 'text-section__text', align: true },
-  H3: { tag: 'h3', className: 'cm-content__heading', align: true },
-  H4: { tag: 'h4', className: 'text-section__subheading', align: true },
-  LI: { tag: 'li', align: true },
+  P: { tag: 'p', className: 'text-section__text', styleProps: ['text-align', 'margin-left', 'line-height'] },
+  H3: { tag: 'h3', className: 'cm-content__heading', styleProps: ['text-align', 'margin-left', 'line-height'] },
+  H4: { tag: 'h4', className: 'text-section__subheading', styleProps: ['text-align', 'margin-left', 'line-height'] },
+  LI: { tag: 'li', styleProps: ['text-align', 'margin-left', 'line-height'] },
   UL: { tag: 'ul', className: 'text-section__list' },
   OL: { tag: 'ol', className: 'text-section__list text-section__list--ordered' },
   STRONG: { tag: 'strong' }, B: { tag: 'strong' },
   EM: { tag: 'em' }, I: { tag: 'em' },
   U: { tag: 'u' },
+  // Text/background color (forecolor/backcolor), font family/size/weight -
+  // all always arrive wrapped in a <span style="..."> by TinyMCE.
+  SPAN: { tag: 'span', styleProps: ['color', 'background-color', 'font-family', 'font-size', 'font-weight'] },
   BR: { tag: 'br' },
   A: { tag: 'a', className: 'text-section__link' },
   IMG: { tag: 'img', className: 'news-inline-img' },
+  // Tables from the editor's table plugin. The table's default look
+  // (padding, header shading, base grid) comes from style.css
+  // (.news-detail-text table) - a cell's/row's own background-color/border
+  // (set via the editor's "Cell properties"/"Row properties" Advanced tab)
+  // overrides that default, since inline style wins over the class rule
+  // (mirrors NEWS_STYLE_ALLOWED in self-bhalani/news-lib.php).
+  TABLE: { tag: 'table' },
+  THEAD: { tag: 'thead' },
+  TBODY: { tag: 'tbody' },
+  TR: { tag: 'tr', styleProps: ['background-color', 'border', 'border-width', 'border-style', 'border-color'] },
+  // border-top/-right/-bottom/-left: the editor's per-side cell border
+  // controls (Cell Color & Border button) - mirrors NEWS_STYLE_ALLOWED in
+  // self-bhalani/news-lib.php, keep the two in step.
+  TH: {
+    tag: 'th',
+    styleProps: ['text-align', 'background-color', 'border', 'border-width', 'border-style', 'border-color',
+      'border-top', 'border-right', 'border-bottom', 'border-left'],
+    cell: true,
+  },
+  TD: {
+    tag: 'td',
+    styleProps: ['text-align', 'background-color', 'border', 'border-width', 'border-style', 'border-color',
+      'border-top', 'border-right', 'border-bottom', 'border-left'],
+    cell: true,
+  },
 };
 const NEWS_HTML_DROP = new Set(['SCRIPT', 'STYLE', 'IFRAME', 'FRAME', 'FRAMESET', 'OBJECT', 'EMBED', 'APPLET', 'TEMPLATE',
   'SVG', 'MATH', 'NOSCRIPT', 'TEXTAREA', 'SELECT', 'BUTTON', 'INPUT', 'FORM', 'HEAD', 'TITLE', 'META', 'LINK', 'BASE',
   'VIDEO', 'AUDIO', 'CANVAS']);
-const NEWS_IMG_CLASSES = ['news-inline-img--left', 'news-inline-img--right', 'news-inline-img--center'];
+const NEWS_IMG_CLASSES = ['news-inline-img--left', 'news-inline-img--left-sm', 'news-inline-img--right',
+  'news-inline-img--right-sm', 'news-inline-img--center'];
 const NEWS_IMG_SRC_RE = /^\.\.\/images\/university-news\/[A-Za-z0-9_-]+\.(?:jpg|png|webp)$/;
 
 function newsSafeHref(href) {
@@ -172,6 +201,85 @@ function newsSafeHref(href) {
   const scheme = value.replace(/[\x00-\x20\x7F]+/g, '').match(/^([a-z][a-z0-9+.-]*):/i);
   if (scheme && !['http', 'https', 'mailto', 'tel'].includes(scheme[1].toLowerCase())) return null;
   return value;
+}
+
+// font-family/font-size/font-weight are matched against these fixed lists
+// (not a free-form regex) - only the site's own two brand fonts, and only
+// the sizes/weights the editor's own dropdowns offer, ever reach the page.
+// Keep in step with NEWS_FONT_FAMILIES/SIZES/WEIGHTS in self-bhalani/news-lib.php.
+const NEWS_FONT_FAMILIES = { 'inter, sans-serif': 'Inter, sans-serif', 'poppins, sans-serif': 'Poppins, sans-serif' };
+const NEWS_FONT_SIZES = ['12px', '14px', '15px', '16px', '18px', '20px', '24px', '28px', '32px'];
+const NEWS_FONT_WEIGHTS = ['300', '400', '500', '600', '700', '800'];
+
+// Matches either #hex or the browser's rgb()/rgba() form - TinyMCE's own
+// getContent() re-serializes any color inside a compound value (border-top/
+// -right/-bottom/-left, the plain 'border' shorthand, border-color) as
+// rgb(r, g, b) even though the editor's color picker supplied hex; a plain
+// background-color/color is left as the authored hex. Both forms need
+// accepting here or the "Cell Color & Border" dialog's border colors would
+// be silently stripped. Mirrors NEWS_COLOR_RE in self-bhalani/news-lib.php.
+const NEWS_COLOR_RE_SRC = '(#[0-9a-f]{3}(?:[0-9a-f]{3})?|rgba?\\(\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*(?:,\\s*[0-9.]+\\s*)?\\))';
+
+// Normalizes either color form above to lowercase #rrggbb, or returns null
+// if it's neither. Mirrors newsColorToHex() in self-bhalani/news-lib.php.
+function newsColorToHex(val) {
+  const v = val.trim();
+  if (/^#[0-9a-f]{3}(?:[0-9a-f]{3})?$/i.test(v)) return v.toLowerCase();
+  const m = v.match(/^rgba?\(\s*(\d{1,3})\s*,\s*(\d{1,3})\s*,\s*(\d{1,3})\s*(?:,\s*[0-9.]+\s*)?\)$/i);
+  if (!m) return null;
+  const clamp = (n) => Math.max(0, Math.min(255, Number(n)));
+  return '#' + [m[1], m[2], m[3]].map((n) => clamp(n).toString(16).padStart(2, '0')).join('');
+}
+
+// Editor-supplied style attribute -> only the declarations `styleProps`
+// permits, with each value itself checked against a fixed pattern or list -
+// never passed through as free-form CSS. Mirrors newsCleanStyle() in
+// self-bhalani/news-lib.php - keep the two in step.
+function newsCleanStyle(styleProps, styleAttr) {
+  const out = [];
+  (styleAttr || '').split(';').forEach((decl) => {
+    const m = decl.match(/^\s*([a-z-]+)\s*:\s*(.+?)\s*$/i);
+    if (!m) return;
+    const prop = m[1].toLowerCase();
+    const val = m[2].trim();
+    if (!styleProps.includes(prop)) return;
+    let hex;
+    if (prop === 'text-align' && /^(left|center|right|justify)$/i.test(val)) {
+      out.push(`text-align: ${val.toLowerCase()}`);
+    } else if ((prop === 'color' || prop === 'background-color') && (hex = newsColorToHex(val)) !== null) {
+      out.push(`${prop}: ${hex}`);
+    } else if (prop === 'margin-left') {
+      const mm = val.match(/^([0-9]{1,3})px$/);
+      if (mm && Number(mm[1]) <= 200) out.push(`margin-left: ${Number(mm[1])}px`);
+    } else if (prop === 'line-height' && /^[0-3](?:\.[0-9]{1,2})?$/.test(val)) {
+      out.push(`line-height: ${val}`);
+    } else if (prop === 'font-family') {
+      const norm = val.trim().replace(/^["']|["']$/g, '').toLowerCase().replace(/\s*,\s*/g, ', ');
+      if (NEWS_FONT_FAMILIES[norm]) out.push(`font-family: ${NEWS_FONT_FAMILIES[norm]}`);
+    } else if (prop === 'font-size' && NEWS_FONT_SIZES.includes(val)) {
+      out.push(`font-size: ${val}`);
+    } else if (prop === 'font-weight' && NEWS_FONT_WEIGHTS.includes(val)) {
+      out.push(`font-weight: ${val}`);
+    } else if (prop === 'border-width') {
+      const mm = val.match(/^([0-9]{1,2})px$/);
+      if (mm && Number(mm[1]) >= 1 && Number(mm[1]) <= 10) out.push(`border-width: ${Number(mm[1])}px`);
+    } else if (prop === 'border-style' && /^(none|solid|dashed|dotted|double|groove|ridge|inset|outset)$/i.test(val)) {
+      out.push(`border-style: ${val.toLowerCase()}`);
+    } else if (prop === 'border-color' && (hex = newsColorToHex(val)) !== null) {
+      out.push(`border-color: ${hex}`);
+    } else if (prop === 'border') {
+      const mm = val.match(new RegExp(`^([0-9]{1,2})px\\s+(none|solid|dashed|dotted|double|groove|ridge|inset|outset)\\s+${NEWS_COLOR_RE_SRC}$`, 'i'));
+      if (mm && Number(mm[1]) <= 10 && (hex = newsColorToHex(mm[3])) !== null) {
+        out.push(`border: ${Number(mm[1])}px ${mm[2].toLowerCase()} ${hex}`);
+      }
+    } else if (['border-top', 'border-right', 'border-bottom', 'border-left'].includes(prop)) {
+      const mm = val.match(new RegExp(`^([0-9]{1,2})px\\s+(none|solid|dashed|dotted|double|groove|ridge|inset|outset)\\s+${NEWS_COLOR_RE_SRC}$`, 'i'));
+      if (mm && Number(mm[1]) <= 10 && (hex = newsColorToHex(mm[3])) !== null) {
+        out.push(`${prop}: ${Number(mm[1])}px ${mm[2].toLowerCase()} ${hex}`);
+      }
+    }
+  });
+  return out.length ? `${out.join('; ')};` : '';
 }
 
 function sanitizeNewsHtml(html) {
@@ -219,9 +327,15 @@ function appendCleanNewsNode(node, parent) {
     } else {
       target = el;
     }
-    if (rule.align) {
-      const align = (node.getAttribute('style') || '').match(/(?:^|;)\s*text-align\s*:\s*(left|center|right|justify)\s*(?:;|$)/i);
-      if (align) el.style.textAlign = align[1].toLowerCase();
+    if (rule.styleProps) {
+      const style = newsCleanStyle(rule.styleProps, node.getAttribute('style') || '');
+      if (style) el.setAttribute('style', style);
+    }
+    if (rule.cell) {
+      ['colspan', 'rowspan'].forEach((attr) => {
+        const v = (node.getAttribute(attr) || '').trim();
+        if (/^[1-9][0-9]?$/.test(v)) el.setAttribute(attr, v);
+      });
     }
     if (target === el) parent.appendChild(el);
   }

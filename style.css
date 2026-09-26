@@ -4898,9 +4898,27 @@ a.uni-news-item:hover .date-meta__icon {
   width: 100%;
 }
 
+/* Smaller float variant, useful beside a data table or dense text where the
+   38% default would crowd the columns. */
+.news-inline-img--right-sm {
+  float: right;
+  clear: right;
+  width: 22%;
+  margin-left: 1.25rem;
+}
+
+.news-inline-img--left-sm {
+  float: left;
+  clear: left;
+  width: 22%;
+  margin-right: 1.25rem;
+}
+
 @media (max-width: 760px) {
   .news-inline-img--right,
-  .news-inline-img--left {
+  .news-inline-img--left,
+  .news-inline-img--right-sm,
+  .news-inline-img--left-sm {
     float: none;
     width: 100%;
     margin-left: 0;
@@ -7647,4 +7665,102 @@ a.adm-notice-card__inner:hover .adm-notice-card__details-link {
   width: min(183px, 100%);
   height: auto;
   aspect-ratio: 1;
+}
+
+/* ==========================================================================
+   17. News Details - admin-panel rich-text body
+   (pages/news-details.html's #ndBody, class .news-detail-text)
+   ========================================================================== */
+
+/* Slightly tighter paragraph/list rhythm than the sitewide
+   .text-section__text/.text-section__list default (1.1rem), and gives a
+   heading (.cm-content__heading, which the sitewide rule leaves with no
+   margin of its own - see style.css search "cm-content__heading") the same
+   breathing room above and below it. Scoped to .news-detail-text so this
+   doesn't change any other page that reuses those shared classes. */
+.news-detail-text .text-section__text,
+.news-detail-text .text-section__list {
+  margin-bottom: 0.9rem;
+}
+
+.news-detail-text .cm-content__heading {
+  margin-top: 1.5rem;
+  margin-bottom: 0.9rem;
+}
+
+.news-detail-text .cm-content__heading:first-child {
+  margin-top: 0;
+}
+
+/* Tables inserted via the admin panel's editor (TinyMCE's table plugin).
+   The editor's own inline styling on <table>/<td>/<th> is stripped by the
+   sanitizer (newsSanitizeHtml() in self-bhalani/news-lib.php only keeps
+   text-align/background-color on td/th - see that file), so the borders,
+   padding and header shading live here instead, once, in the site's own
+   look - same convention as .dh-table (Deans & Heads page). A per-cell
+   background-color set from the editor's "Cell properties" still shows
+   through, since that inline style is one of the ones kept.
+   Shared with the Job Circular description (.jcd-description) and faculty
+   tab bodies + bio (.fpr-tabs__panel-text, #fprBio), whose editors have the same toolset. */
+.news-detail-text table,
+.jcd-description table,
+.fpr-tabs__panel-text table,
+#fprBio table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+}
+
+.news-detail-text th,
+.news-detail-text td,
+.jcd-description th,
+.jcd-description td,
+.fpr-tabs__panel-text th,
+.fpr-tabs__panel-text td,
+#fprBio th,
+#fprBio td {
+  border: 1px solid #bebebe;
+  padding: 0.6rem 0.9rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.news-detail-text thead th,
+.jcd-description thead th,
+.fpr-tabs__panel-text thead th,
+#fprBio thead th {
+  background-color: rgba(12, 35, 80, 0.06);
+  color: var(--color-navy);
+  font-weight: 600;
+}
+
+/* Floated editor photos: news bodies get the base .news-inline-img class
+   from the frontend sanitizer, these containers take the admin HTML as
+   saved (modifier class only), so the base look is repeated here, and the
+   container clears its own floats like .news-detail-body::after does. */
+.jcd-description img[class*="news-inline-img--"],
+.fpr-tabs__panel-text img,
+#fprBio img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 1.5rem;
+  border-radius: var(--radius-md);
+}
+
+.jcd-description::after,
+.fpr-tabs__panel-text::after,
+#fprBio::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media (max-width: 760px) {
+  .news-detail-text table,
+  .jcd-description table,
+  .fpr-tabs__panel-text table,
+  #fprBio table {
+    display: block;
+    overflow-x: auto;
+  }
 }

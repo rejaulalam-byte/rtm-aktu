@@ -9,7 +9,12 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- Full 300-800 weight range for both families: the admin panel's rich-text
+       editor now offers a Light-to-Extra-Bold weight picker (see
+       self-bhalani/news-edit.php), and a news body's font-weight span needs
+       the matching real weight loaded here or the browser fakes it
+       (synthetic bold), which looks noticeably worse than the real cut. -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="../style.css">
 </head>
